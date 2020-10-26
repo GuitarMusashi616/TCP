@@ -40,6 +40,13 @@ def setup_args():
                         choices=['r', 'w'],
                         help='r = read from server, w = write to server')
 
+    parser.add_argument('-k',
+                        action='store',
+                        dest='unknown',
+                        type=int,
+                        help='specify unknown number',
+                        required=True)
+
     return parser.parse_args()
 
 

@@ -76,14 +76,15 @@ def print_args():
     print(sys.argv)
 
 
-def read_file():
+def test_args():
     args = setup_args()
     filename = args.filename
     sp = args.server_port
     cp = args.client_port
     mode = args.mode
-    print(filename, sp, cp, mode)
+    unknown = args.unknwon
+    print(filename, sp, cp, unknown, mode)
 
 
 if __name__ == '__main__':
-    read_file()
+    test_args()
