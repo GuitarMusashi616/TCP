@@ -7,6 +7,12 @@ from threading import Thread, Event
 import math
 import sys
 
+
+# ssh 137.229.181.232 -l amwilliams24
+# 31181318
+# python3 /home/A365/tcp/tester.py -f test.py
+
+
 def test_setup():
     s = setup_socket()
 
@@ -63,7 +69,6 @@ def test_tcp_address():
 
 def test_listening_state():
     tcp = TCP()
-
     tcp.state = Listen(tcp.state)
 
 
@@ -71,5 +76,14 @@ def print_args():
     print(sys.argv)
 
 
+def read_file():
+    args = setup_args()
+    filename = args.filename
+    sp = args.server_port
+    cp = args.client_port
+    mode = args.mode
+    print(filename, sp, cp, mode)
+
+
 if __name__ == '__main__':
-    print_args()
+    read_file()
