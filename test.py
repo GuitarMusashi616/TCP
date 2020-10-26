@@ -82,7 +82,7 @@ def test_args():
     sp = args.server_port
     cp = args.port
     mode = args.mode
-    unknown = args.unknwon
+    unknown = args.unknown
     print(filename, sp, cp, unknown, mode)
 
 
