@@ -1,5 +1,5 @@
 from main import *
-from packet import *
+from header import *
 from state import *
 from tcp import *
 from args import *
@@ -18,13 +18,13 @@ def test_setup():
 
 
 def test_headers():
-    header = Packet()
+    header = Header()
     print(header.dest_port)
     print(dir(header))
 
 
 def test_random():
-    header = Packet()
+    header = Header()
     header.destination_port = math.pow(2, 16)
     print(header.destination_port)
 
@@ -84,6 +84,10 @@ def test_args():
     mode = args.mode
     unknown = args.unknown
     print(filename, sp, cp, unknown, mode)
+
+
+def test_download():
+    Header()
 
 
 if __name__ == '__main__':

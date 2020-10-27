@@ -1,6 +1,6 @@
 from typing import Iterable
 from types import FunctionType
-from packet import *
+from header import *
 
 
 class State:
@@ -24,7 +24,7 @@ class Listen(State):
 class Closed(State):
     def active_open(self, dest_addr):
         self.tcp.open()
-        syn = Packet.create_syn(dest_addr)
+        syn = Header.create_syn(dest_addr)
         self.tcp.send(syn)
 
     def passive_open(self):

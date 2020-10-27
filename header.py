@@ -1,8 +1,9 @@
 import numpy as np
 import math
+from bitstring import BitArray, BitStream, pack
 
 
-class PacketType:
+class HeaderType:
     URG = 0
     ACK = 2
     PSH = 4
@@ -12,10 +13,10 @@ class PacketType:
 
 
 def to_int(num, bit):
-    return int(num) % math.pow(2, bit)
+    return int(num) % int(math.pow(2, bit))
 
 
-class Packet:
+class Header:
     def __init__(self, source_port=0, dest_port=0, seq_num=0, ack_num=0, offset=0, reserved=0, control_bits=0, window=0, checksum=0,
                  urgent_ptr=0, options=0, padding=0, data=0):
 
@@ -35,4 +36,11 @@ class Packet:
 
     @classmethod
     def create_syn(cls, dest_addr):
-        return Packet(dest_port=dest_addr, control_bits=PacketType.SYN)
+        return Header(dest_port=dest_addr, control_bits=HeaderType.SYN)
+
+
+def create_header():
+    Header()
+    BitArray
+
+
