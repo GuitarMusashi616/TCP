@@ -11,6 +11,7 @@ import sys
 
 # ssh 137.229.181.232 -l amwilliams24
 # 31181318
+# cd pycharm/TCP
 # python3 /home/A365/tcp/tester.py -f test.py
 
 
@@ -101,9 +102,8 @@ def test_download():
     tcp.open(args.port)
     tcp.send((args.ip, args.server_port), h)
     header_bytes, addr = tcp.listen()
-    print(Header(header_bytes))
-    print(addr)
     print(header_bytes)
+    print(addr)
 
 
 if __name__ == '__main__':

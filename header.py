@@ -19,7 +19,7 @@ def to_int(num, bit):
 class Header:
     def __init__(self, source_port=0, dest_port=0, seq_num=0, ack_num=0, offset=0, reserved=0, control_bits=0, window=0, checksum=0,
                  urgent_ptr=0):
-        self.__bits = BitArray(256)
+        self._bits = BitArray(256)
         self.source_port = source_port
         self.dest_port = dest_port
         self.seq_num = seq_num
@@ -39,106 +39,106 @@ class Header:
 
     @property
     def source_port(self):
-        return self.__bits[0:16].int
+        return self._bits[0:16].uint
 
     @source_port.setter
     def source_port(self, value):
-        self.__bits[0:16] = pack('uint:16', value)
+        self._bits[0:16] = pack('uint:16', value)
 
     @property
     def dest_port(self):
-        return self.__bits[16:32].int
+        return self._bits[16:32].uint
 
     @dest_port.setter
     def dest_port(self, value):
-        self.__bits[16:32] = pack('uint:16', value)
+        self._bits[16:32] = pack('uint:16', value)
 
     @property
     def seq_num(self):
-        return self.__bits[32:64].int
+        return self._bits[32:64].uint
 
     @seq_num.setter
     def seq_num(self, value):
-        self.__bits[32:64] = pack('uint:32', value)
+        self._bits[32:64] = pack('uint:32', value)
 
     @property
     def ack_num(self):
-        return self.__bits[64:96].int
+        return self._bits[64:96].uint
 
     @ack_num.setter
     def ack_num(self, value):
-        self.__bits[64:96] = pack('uint:32', value)
+        self._bits[64:96] = pack('uint:32', value)
 
     @property
     def offset(self):
-        return self.__bits[96:100].int
+        return self._bits[96:100].uint
 
     @offset.setter
     def offset(self, value):
-        self.__bits[96:100] = pack('uint:4', value)
+        self._bits[96:100] = pack('uint:4', value)
 
     @property
     def reserved(self):
-        return self.__bits[100:106].int
+        return self._bits[100:106].uint
 
     @reserved.setter
     def reserved(self, value):
-        self.__bits[100:106] = pack('uint:6', value)
+        self._bits[100:106] = pack('uint:6', value)
 
     @property
     def control_bits(self):
-        return self.__bits[106:112].int
+        return self._bits[106:112].uint
 
     @control_bits.setter
     def control_bits(self, value):
-        self.__bits[106:112] = pack('uint:6', value)
+        self._bits[106:112] = pack('uint:6', value)
 
     @property
     def window(self):
-        return self.__bits[112:128].int
+        return self._bits[112:128].uint
 
     @window.setter
     def window(self, value):
-        self.__bits[112:128] = pack('uint:16', value)
+        self._bits[112:128] = pack('uint:16', value)
 
     @property
     def checksum(self):
-        return self.__bits[128:144].int
+        return self._bits[128:144].uint
 
     @checksum.setter
     def checksum(self, value):
-        self.__bits[128:144] = pack('uint:16', value)
+        self._bits[128:144] = pack('uint:16', value)
 
     @property
     def urgent_ptr(self):
-        return self.__bits[144:160].int
+        return self._bits[144:160].uint
 
     @urgent_ptr.setter
     def urgent_ptr(self, value):
-        self.__bits[144:160] = pack('uint:16', value)
+        self._bits[144:160] = pack('uint:16', value)
 
     @property
     def options(self):
-        if self.__bits[160:168].int == 2 and self.__bits[168:176].int == 4:
-            return self.__bits[160:168].int, self.__bits[168:176].int, self.__bits[176:192].int,
+        if self._bits[160:168].uint == 2 and self._bits[168:176].uint == 4:
+            return self._bits[160:168].uint, self._bits[168:176].uint, self._bits[176:192].uint,
         else:
-            return self.__bits[160:168].int, 0, 0
+            return self._bits[160:168].uint, 0, 0
 
     @options.setter
     def options(self, value):
         assert isinstance(value, tuple) and len(value) == 3, "Value must be a tuple of length 3"
         assert value[0] in [0, 1, 2] and value[1] in [0, 2], "Value must be (0,0,0), (1,0,0), or (2,4,*)"
 
-        self.__bits[160:168] = pack('uint:8', value[0])
-        self.__bits[168:176] = pack('uint:8', value[1])
-        self.__bits[176:192] = pack('uint:16', value[2])
+        self._bits[160:168] = pack('uint:8', value[0])
+        self._bits[168:176] = pack('uint:8', value[1])
+        self._bits[176:192] = pack('uint:16', value[2])
 
     @property
     def data(self):
-        return self.__bits[192:].bytes
+        return self._bits[192:].bytes
 
     def __bytes__(self):
-        return self.__bits.bytes
+        return self._bits.bytes
 
     def __repr__(self):
         string = 'Source Port: ' + str(self.source_port)+'\n'
