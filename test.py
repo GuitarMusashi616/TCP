@@ -4,6 +4,7 @@ from state import *
 from tcp import *
 from args import *
 from threading import Thread, Event
+from time import sleep
 import math
 import sys
 
@@ -87,8 +88,23 @@ def test_args():
 
 
 def test_download():
-    Header()
+    sleep(5)
+    args = setup_args()
+    h = Header()
+    h.control_bits = HeaderType.SYN
+    h.source_port = args.port
+    h.dest_port = args.server_port
+    h.seq_num = 0
+    h.ack_num = 0
+
+    tcp = TCP()
+    tcp.open(args.port)
+    tcp.send((args.ip, args.server_port), h)
+    header_bytes, addr = tcp.listen()
+    print(Header(header_bytes))
+    print(addr)
+    print(header_bytes)
 
 
 if __name__ == '__main__':
-    test_args()
+    test_download()

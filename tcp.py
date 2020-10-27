@@ -3,15 +3,13 @@ from state import *
 
 
 class TCP:
-    DEST_IP = 'localhost'
-
     def __init__(self):
         self.socket = None
         self.state = Closed(self)
 
     @property
     def address(self):
-        assert self.socket, "socket must be set up first"
+        assert self.socket, "tcp socket must be opened first"
         return self.socket.getsockname()
 
     def open(self, port):
@@ -22,9 +20,8 @@ class TCP:
         self.socket.close()
         self.socket = None
 
-    def send(self, header):
-        dest_addr = (TCP.DEST_IP, header.dest_port)
-        self.socket.sendto(bytes(header), dest_addr)
+    def send(self, address, header):
+        self.socket.sendto(bytes(header), address)
 
     def listen(self):
         header_bytes, addr = self.socket.recvfrom(2048)
