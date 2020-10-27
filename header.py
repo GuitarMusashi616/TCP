@@ -141,12 +141,12 @@ class Header:
         return self.__bits.bytes
 
     def __repr__(self):
-        string = f"Source Port: {self.source_port}\n"
-        string += f"Destination Port: {self.dest_port}\n"
-        string += f"Sequence Number: {self.seq_num}\n"
-        string += f"Ack Number: {self.ack_num}\n"
-        string += f"Control Bits: {self.control_bits}\n"
-        string += f"Window: {self.window}\n"
+        string = 'Source Port: ' + str(self.source_port)+'\n'
+        string += 'Destination Port: ' + str(self.dest_port)+'\n'
+        string += 'Sequence Number: ' + str(self.seq_num)+'\n'
+        string += 'Ack Number: ' + str(self.ack_num)+'\n'
+        string += 'Control Bits: ' + str(self.control_bits)+'\n'
+        string += 'Window: ' + str(self.window)+'\n'
 
         return string
 
