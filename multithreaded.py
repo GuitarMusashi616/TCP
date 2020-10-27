@@ -1,6 +1,7 @@
 import socket
 from threading import Thread, Event
 from time import sleep
+import argparse
 
 SECONDS_UNTIL_TIMEOUT = 10
 SECONDS_UNTIL_RETRANSMISSION = 1
@@ -17,11 +18,7 @@ def wait_for_result(s: socket.socket, args: argparse.Namespace, connection_event
     addr = None
     while not msg:
         try:
-            msg, addr = s.recvfrom(516)
-            if addr != (args.ip, args.server_port):
-                error_msg = bytes(ErrorMessage(5, "Unexpected TID"))
-                s.sendto(error_msg, addr)
-                msg = None
+            msg, addr = s.recvfrom(1500)
         except ConnectionResetError:
             continue
 

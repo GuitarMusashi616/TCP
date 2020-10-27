@@ -1,6 +1,7 @@
 from main import *
 from header import *
 from state import *
+from multithreaded import *
 from tcp import *
 from args import *
 from threading import Thread, Event
@@ -106,5 +107,24 @@ def test_download():
     print(addr)
 
 
+def test_multithread_download():
+    sleep(3)
+    args = setup_args()
+    h = Header()
+    h.control_bits = HeaderType.SYN
+    h.source_port = args.port
+    h.dest_port = args.server_port
+    h.seq_num = 0
+    h.ack_num = 0
+
+    s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+    s.bind(('', args.port))
+    inbox = []
+    send(s, args, bytes(h), inbox)
+    for s in inbox:
+        print(s)
+        print()
+
+
 if __name__ == '__main__':
-    test_download()
+    test_multithread_download()
