@@ -1,0 +1,2 @@
+0.000 NEW RUN: Server, TEST: Read_file__Corruption
+0.107 Received: b'\xd6\x9fG\x91\r\x8c\x1d%\xd1\xd5\xd3\x06\xb1\xd6\xaa\x1b'

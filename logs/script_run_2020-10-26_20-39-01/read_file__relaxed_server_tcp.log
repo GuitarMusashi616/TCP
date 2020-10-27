@@ -1,0 +1,16 @@
+0.000 NEW RUN: Server, TEST: Read_file__Relaxed
+0.053 Received: b'M\xa3\x17m\x0b,\x89\xb0\x10M[R\xa6\x03\x99\x85'
+0.053 Warning: Checksum incorrect
+0.053 Disassembled: source: 19875, dest: 5997, seq: 187468208, ack: 273505106, window: 39301, SYN, FIN
+0.053 Warning: Unexpected finish flag
+0.054 SYN accepted; new connection: 127.0.0.1 on port 61624
+0.054 Assembling: source: 27530, dest: 61624, seq: 2357549831, ack: 187468209, window: 39301, ACK, SYN
+0.054 Sent: b'k\x8a\xf0\xb8\x8c\x85[\x07\x0b,\x89\xb1P\x12\x99\x85\xc2B\x00\x00'
+0.554 Sent: b'k\x8a\xf0\xb8\x8c\x85[\x07\x0b,\x89\xb1P\x12\x99\x85\xc2B\x00\x00'
+1.055 Sent: b'k\x8a\xf0\xb8\x8c\x85[\x07\x0b,\x89\xb1P\x12\x99\x85\xc2B\x00\x00'
+1.555 Sent: b'k\x8a\xf0\xb8\x8c\x85[\x07\x0b,\x89\xb1P\x12\x99\x85\xc2B\x00\x00'
+2.056 Sent: b'k\x8a\xf0\xb8\x8c\x85[\x07\x0b,\x89\xb1P\x12\x99\x85\xc2B\x00\x00'
+2.557 Sent: b'k\x8a\xf0\xb8\x8c\x85[\x07\x0b,\x89\xb1P\x12\x99\x85\xc2B\x00\x00'
+3.057 Error: Connection timed out
+3.058 Closed connection
+3.058 Shutting down

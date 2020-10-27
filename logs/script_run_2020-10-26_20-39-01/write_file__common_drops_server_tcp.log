@@ -1,0 +1,4 @@
+0.000 NEW RUN: Server, TEST: Write_file__Common_drops
+0.059 Failed to receive packet
+1.060 Failed to receive packet
+2.064 Received: b'\xedr\x96\xea\xa4\x1f\xb6_k\xac\x88i\x8d\x04A\xee'

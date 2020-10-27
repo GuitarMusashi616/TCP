@@ -1,0 +1,5 @@
+0.000 NEW RUN: Server, TEST: Read_file__Relaxed
+5.067 Received: b'$\xd8Tv\xd0\xff"\xffc\xd4S\x89\x8e\xdf\xb8K\xab\xdc\xb4\xea\x80\xbc2\x06'
+5.068 Warning: Checksum incorrect
+5.068 Disassembled: source: 9432, dest: 21622, seq: 3506381567, ack: 1674859401, window: 47179, ACK, SYN, FIN, data: b'\x80\xbc2\x06'
+5.068 Error: No connection
