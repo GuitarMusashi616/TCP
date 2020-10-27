@@ -108,7 +108,6 @@ def test_download():
 
 
 def test_multithread_download():
-    sleep(3)
     args = setup_args()
     h = Header()
     h.control_bits = HeaderType.SYN

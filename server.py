@@ -5,5 +5,6 @@ if __name__ == "__main__":
     while True:
         msg, addr = s.recvfrom(500)
         print(msg, addr)
+        print(len(msg))
         s.sendto('received'.encode(), addr)
 

@@ -19,7 +19,7 @@ def to_int(num, bit):
 class Header:
     def __init__(self, source_port=0, dest_port=0, seq_num=0, ack_num=0, offset=0, reserved=0, control_bits=0, window=0, checksum=0,
                  urgent_ptr=0):
-        self._bits = BitArray(256)
+        self._bits = BitArray(192)
         self.source_port = source_port
         self.dest_port = dest_port
         self.seq_num = seq_num
