@@ -110,7 +110,7 @@ def test_download():
 def test_multithread_download():
     args = setup_args()
     h = Header()
-    h.control_bits = HeaderType.SYN
+    h.SYN = True
     h.source_port = args.port
     h.dest_port = args.server_port
     h.seq_num = 0
@@ -126,4 +126,5 @@ def test_multithread_download():
 
 
 if __name__ == '__main__':
+    print_args()
     test_multithread_download()

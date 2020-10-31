@@ -2,9 +2,6 @@ import argparse
 import socket
 
 
-
-
-
 def setup_socket(port):
     s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
     s.bind(('', port))

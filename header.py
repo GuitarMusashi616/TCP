@@ -3,33 +3,9 @@ import math
 from bitstring import BitArray, BitStream, pack
 
 
-class HeaderType:
-    URG = 0
-    ACK = 2
-    PSH = 4
-    RST = 8
-    SYN = 16
-    FIN = 32
-
-
-def to_int(num, bit):
-    return int(num) % int(math.pow(2, bit))
-
-
 class Header:
-    def __init__(self, source_port=0, dest_port=0, seq_num=0, ack_num=0, offset=0, reserved=0, control_bits=0, window=0, checksum=0,
-                 urgent_ptr=0):
-        self._bits = BitArray(192)
-        self.source_port = source_port
-        self.dest_port = dest_port
-        self.seq_num = seq_num
-        self.ack_num = ack_num
-        self.offset = offset
-        self.reserved = reserved
-        self.control_bits = control_bits
-        self.window = window
-        self.checksum = checksum
-        self.urgent_ptr = urgent_ptr
+    def __init__(self, bits=None):
+        self._bits = BitArray(192) if bits is None else BitArray(bits)
 
     @classmethod
     def from_header(cls, header):
@@ -86,12 +62,56 @@ class Header:
         self._bits[100:106] = pack('uint:6', value)
 
     @property
+    def URG(self):
+        return self._bits[106]
+
+    @URG.setter
+    def URG(self, value):
+        self._bits[106] = pack('uint:1', value)
+
+    @property
+    def ACK(self):
+        return self._bits[107]
+
+    @ACK.setter
+    def ACK(self, value):
+        self._bits[107] = pack('uint:1', value)
+
+    @property
+    def PSH(self):
+        return self._bits[108]
+
+    @PSH.setter
+    def PSH(self, value):
+        self._bits[108] = pack('uint:1', value)
+
+    @property
+    def RST(self):
+        return self._bits[109]
+
+    @RST.setter
+    def RST(self, value):
+        self._bits[109] = pack('uint:1', value)
+
+    @property
+    def SYN(self):
+        return self._bits[110]
+
+    @SYN.setter
+    def SYN(self, value):
+        self._bits[110] = pack('uint:1', value)
+
+    @property
+    def FIN(self):
+        return self._bits[111]
+
+    @FIN.setter
+    def FIN(self, value):
+        self._bits[111] = pack('uint:1', value)
+
+    @property
     def control_bits(self):
         return self._bits[106:112].uint
-
-    @control_bits.setter
-    def control_bits(self, value):
-        self._bits[106:112] = pack('uint:6', value)
 
     @property
     def window(self):
@@ -141,23 +161,22 @@ class Header:
         return self._bits.bytes
 
     def __repr__(self):
-        string = 'Source Port: ' + str(self.source_port)+'\n'
-        string += 'Destination Port: ' + str(self.dest_port)+'\n'
-        string += 'Sequence Number: ' + str(self.seq_num)+'\n'
-        string += 'Ack Number: ' + str(self.ack_num)+'\n'
-        string += 'Control Bits: ' + str(self.control_bits)+'\n'
-        string += 'Window: ' + str(self.window)+'\n'
+        string = 'Source Port: ' + str(self.source_port) + '\n\n'
+        string += 'Destination Port: ' + str(self.dest_port) + '\n\n'
+        string += 'Sequence Number: ' + str(self.seq_num) + '\n\n'
+        string += 'Ack Number: ' + str(self.ack_num) + '\n\n'
+        string += 'Control Bits: ' + '\n'
+        string += '\tURG: ' + str(self.URG) + '\n'
+        string += '\tACK: ' + str(self.ACK) + '\n'
+        string += '\tPSH: ' + str(self.PSH) + '\n'
+        string += '\tRST: ' + str(self.RST) + '\n'
+        string += '\tSYN: ' + str(self.SYN) + '\n'
+        string += '\tFIN: ' + str(self.FIN) + '\n\n'
+        string += 'Window: ' + str(self.window) + '\n'
 
         return string
-
-    @classmethod
-    def create_syn(cls, dest_addr):
-        return Header(dest_port=dest_addr, control_bits=HeaderType.SYN)
 
 
 def create_header():
     h = Header()
     h.control_bits = HeaderType.SYN
-
-
-
