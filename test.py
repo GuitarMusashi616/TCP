@@ -8,6 +8,7 @@ from threading import Thread, Event
 from time import sleep
 import math
 import sys
+from socket import timeout
 
 
 # ssh 137.229.181.232 -l amwilliams24
@@ -144,7 +145,7 @@ def test_download():
         print(addr)
         print(header)
         print(Header(header))
-    except (TimeoutError, ValueError, TypeError) as e:
+    except (timeout, ValueError, TypeError) as e:
         print(e)
 
 
