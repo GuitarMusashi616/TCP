@@ -89,7 +89,7 @@ def test_args():
     print(filename, sp, cp, unknown, mode)
 
 
-def test_download():
+def test_tcp_download():
     sleep(5)
     args = setup_args()
     h = Header()
@@ -125,6 +125,24 @@ def test_multithread_download():
         print()
 
 
+def test_download():
+    args = setup_args()
+    h = Header()
+    h.SYN = True
+    h.source_port = args.port
+    h.dest_port = args.server_port
+    h.seq_num = 0
+    h.ack_num = 0
+
+    s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+    s.bind(('', args.port))
+    s.sendto(bytes(h), (args.ip, args.server_port))
+    try:
+        s.settimeout(3)
+        s.recvfrom(1500)
+    except Exception as e:
+        print(e)
+
+
 if __name__ == '__main__':
-    print_args()
-    test_multithread_download()
+    test_download()
