@@ -136,6 +136,7 @@ def test_download():
 
     s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
     s.bind(('', args.port))
+    sleep(1)
     s.sendto(bytes(h), (args.ip, args.server_port))
     try:
         s.settimeout(3)
