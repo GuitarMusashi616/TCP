@@ -140,8 +140,11 @@ def test_download():
     s.sendto(bytes(h), (args.ip, args.server_port))
     try:
         s.settimeout(3)
-        s.recvfrom(1500)
-    except TimeoutError as e:
+        header, addr = s.recvfrom(1500)
+        print(addr)
+        print(header)
+        print(Header(header))
+    except (TimeoutError, ValueError, TypeError) as e:
         print(e)
 
 
