@@ -141,7 +141,7 @@ def test_download():
     try:
         s.settimeout(3)
         s.recvfrom(1500)
-    except Exception as e:
+    except TimeoutError as e:
         print(e)
 
 
