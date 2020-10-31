@@ -93,7 +93,7 @@ def test_download():
     sleep(5)
     args = setup_args()
     h = Header()
-    h.control_bits = HeaderType.SYN
+    h.SYN = True
     h.source_port = args.port
     h.dest_port = args.server_port
     h.seq_num = 0
