@@ -9,7 +9,10 @@ class TCP:
         self.dest_address = dest_address
         self.socket = None
         self.tcb = None
+        # self.tcb = TCB(source_address, dest_address)
         self.state = Closed(self)
+        # self.state.open()
+
 
     @property
     def state(self):
@@ -24,6 +27,9 @@ class TCP:
     def address(self):
         assert self.socket, "tcp socket must be opened first"
         return self.socket.getsockname()
+
+    def startup(self):
+        self.state.startup()
 
     def open(self):
         self.state.open()
@@ -56,12 +62,10 @@ class TCP:
         pass
 
 
-
-
-
 class TCB:
-    def __init__(self):
-        pass
+    def __init__(self, source_address, dest_address=None):
+        self.source_address = source_address
+        self.dest_address = dest_address
 
 
 

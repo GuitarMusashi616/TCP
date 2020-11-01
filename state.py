@@ -184,17 +184,18 @@ class SynReceived(State):
     def receive(self):
         header_bytes, addr = self._recvfrom_socket()
         header = Header(header_bytes)
-        if header.SYN and header.ACK:
+        if header.ACK:
             self.tcp.state = Established(self.tcp)
 
     def close(self):
         self._send_fin()
-        self.tcp.state = FinWait1
+        self.tcp.state = FinWait1(self.tcp)
 
 
 class Established(State):
     def close(self):
         self._send_fin()
+        self.tcp.state = FinWait1(self.tcp)
 
     def receive(self):
         header_bytes, addr = self._recvfrom_socket()
@@ -204,25 +205,50 @@ class Established(State):
             self.tcp.state = CloseWait(self.tcp)
 
 
-class CloseWait(State):
-    pass
-
-
 class FinWait1(State):
-    pass
+    def receive(self):
+        header_bytes, addr = self._recvfrom_socket()
+        header = Header(header_bytes)
+        if header.ACK:
+            self.tcp.state = FinWait2(self.tcp)
+
+        if header.FIN:
+            self._send_ack()
+            self.tcp.state = Closing(self.tcp)
 
 
 class FinWait2(State):
-    pass
+    def receive(self):
+        header_bytes, addr = self._recvfrom_socket()
+        header = Header(header_bytes)
+        if header.FIN:
+            self._send_ack()
+            self.tcp.state = TimeWait(self.tcp)
 
 
+class CloseWait(State):
+    def close(self):
+        self._send_fin()
+        self.tcp.state = LastAck(self.tcp)
 
 
 class LastAck(State):
-    pass
+    def receive(self):
+        header_bytes, addr = self._recvfrom_socket()
+        header = Header(header_bytes)
+        if header.ACK:
+            self.tcp.state = Closed(self.tcp)
+
 
 class Closing(State):
-    pass
+    def receive(self):
+        header_bytes, addr = self._recvfrom_socket()
+        header = Header(header_bytes)
+        if header.ACK:
+            self.tcp.state = TimeWait(self.tcp)
+
 
 class TimeWait(State):
-    pass
+    def startup(self):
+        # sleep(2*MSL)
+        self.tcp.state = Closed(self.tcp)

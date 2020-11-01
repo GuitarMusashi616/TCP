@@ -184,7 +184,7 @@ class Header:
         string += 'Urgent Pointer: ' + str(self.urgent_ptr) + '\n\n'
         if self.offset > 5:
             string += 'Options: ' + str(self.options) + '\n\n'
-            string += 'Data: ' + str(self.data) + '\n\n'
+            string += 'Data: ' + str(self.data) + '\n'
 
         return string
 

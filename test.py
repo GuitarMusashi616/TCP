@@ -175,6 +175,19 @@ def test_states_receiving():
     print(tcp.state)
     tcp.receive()
     print(tcp.state)
+    # established
+    tcp.close()
+    print(tcp.state)
+    # fin-wait1
+    tcp.receive()
+    print(tcp.state)
+    # fin-wait2
+    tcp.receive()
+    print(tcp.state)
+    # time wait
+    tcp.startup()
+    print(tcp.state)
+    # closed
 
 
 if __name__ == '__main__':

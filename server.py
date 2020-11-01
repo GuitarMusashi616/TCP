@@ -32,8 +32,25 @@ def respond():
 
 def tcp_listen():
     tcp = TCP(('', 54321))
+    print(tcp.state)
     tcp.open()
+    print(tcp.state)
+    # listen
     tcp.receive()
+    print(tcp.state)
+    # syn-received
+    tcp.receive()
+    print(tcp.state)
+    # established
+    tcp.receive()
+    print(tcp.state)
+    # close-wait
+    tcp.close()
+    print(tcp.state)
+    # last-ack
+    tcp.receive()
+    print(tcp.state)
+    # closed
 
 
 if __name__ == "__main__":
