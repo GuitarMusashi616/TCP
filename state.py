@@ -119,7 +119,7 @@ class State:
 
 class Closed(State):
     def startup(self):
-        self.open()
+        pass
 
     def open(self):
         self._open_socket()
@@ -148,6 +148,9 @@ class Closed(State):
 
 
 class Listen(State):
+    def startup(self):
+        self.receive()
+
     def receive(self):
         header_bytes, addr = self._recvfrom_socket()
         header = Header(header_bytes)
@@ -166,6 +169,9 @@ class Listen(State):
 
 
 class SynSent(State):
+    def startup(self):
+        self.receive()
+
     def close(self):
         self._close_socket()
         self.tcp.state = Closed(self.tcp)
@@ -182,6 +188,9 @@ class SynSent(State):
 
 
 class SynReceived(State):
+    def startup(self):
+        self.receive()
+
     def receive(self):
         header_bytes, addr = self._recvfrom_socket()
         header = Header(header_bytes)
@@ -194,6 +203,9 @@ class SynReceived(State):
 
 
 class Established(State):
+    def startup(self):
+        pass
+
     def close(self):
         self._send_fin()
         self.tcp.state = FinWait1(self.tcp)
@@ -207,6 +219,9 @@ class Established(State):
 
 
 class FinWait1(State):
+    def startup(self):
+        self.receive()
+
     def receive(self):
         header_bytes, addr = self._recvfrom_socket()
         header = Header(header_bytes)
@@ -219,6 +234,9 @@ class FinWait1(State):
 
 
 class FinWait2(State):
+    def startup(self):
+        self.receive()
+
     def receive(self):
         header_bytes, addr = self._recvfrom_socket()
         header = Header(header_bytes)
@@ -228,12 +246,18 @@ class FinWait2(State):
 
 
 class CloseWait(State):
+    def startup(self):
+        self.close()
+
     def close(self):
         self._send_fin()
         self.tcp.state = LastAck(self.tcp)
 
 
 class LastAck(State):
+    def startup(self):
+        self.receive()
+
     def receive(self):
         header_bytes, addr = self._recvfrom_socket()
         header = Header(header_bytes)
@@ -242,6 +266,9 @@ class LastAck(State):
 
 
 class Closing(State):
+    def startup(self):
+        self.receive()
+
     def receive(self):
         header_bytes, addr = self._recvfrom_socket()
         header = Header(header_bytes)

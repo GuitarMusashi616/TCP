@@ -11,8 +11,8 @@ class TCP:
         # self.tcb = None
         self.tcb = TCB(source_address, dest_address)
         self.state = Closed(self)
+        self.open()
         # self.state.open()
-
 
     @property
     def state(self):
@@ -22,6 +22,7 @@ class TCP:
     def state(self, state: State):
         assert isinstance(state, State)
         self._state = state
+        self._state.startup()
 
     @property
     def address(self):
@@ -66,6 +67,19 @@ class TCB:
     def __init__(self, source_address, dest_address=None):
         self.source_address = source_address
         self.dest_address = dest_address
+
+        self.SND_UNA = None
+        self.SND_NXT = None
+        self.WND = None
+        self.UP = None
+        self.WL1 = None
+        self.WL2 = None
+        self.ISS = None
+
+        self.RCV_NXT = None
+        self.RCV_WND = None
+        self.RCV_UP = None
+        self.RSS = None
 
 
 

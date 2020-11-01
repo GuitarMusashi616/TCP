@@ -190,5 +190,14 @@ def test_states_receiving():
     # closed
 
 
+def automatic_states():
+    tcp = TCP(('', 12345), ('127.0.0.1', 54321))
+    print(tcp.state)
+    # established
+    tcp.close()
+    print(tcp.state)
+    # closed
+
+
 if __name__ == '__main__':
-    test_states_receiving()
+    automatic_states()

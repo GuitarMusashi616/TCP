@@ -53,6 +53,15 @@ def tcp_listen():
     # closed
 
 
+def auto_listen():
+    tcp = TCP(('', 54321))
+    print(tcp.state)
+    # established
+    tcp.receive()
+    print(tcp.state)
+    # closed
+
+
 if __name__ == "__main__":
-    tcp_listen()
+    auto_listen()
 
