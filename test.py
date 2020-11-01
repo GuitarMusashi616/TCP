@@ -176,13 +176,6 @@ def test_states_receiving():
     tcp.receive()
     print(tcp.state)
 
-    # tcp2 = TCP(('', 12345))
-    # print(tcp2.state)
-    # tcp2.open()
-    # print(tcp2.state)
-    # tcp2.receive()
-    # print(tcp2.state)
-
 
 if __name__ == '__main__':
     test_states_receiving()

@@ -23,7 +23,7 @@ class State:
     def open(self):
         raise NotImplementedError
 
-    def send_syn(self):
+    def send(self):
         raise NotImplementedError
 
     def receive(self):
@@ -60,6 +60,18 @@ class State:
         h.SYN = True
         self.tcp.socket.sendto(bytes(h), self.tcp.dest_address)
 
+    def _send_ack(self):
+        check_address(self.tcp.source_address)
+        check_address(self.tcp.dest_address)
+        check_socket(self.tcp.socket)
+
+        _, port = self.tcp.source_address
+        ip, server_port = self.tcp.dest_address
+
+        h = Header.new(port, server_port, 0, 0)
+        h.ACK = True
+        self.tcp.socket.sendto(bytes(h), self.tcp.dest_address)
+
     def _send_syn_ack(self):
         check_address(self.tcp.source_address)
         check_address(self.tcp.dest_address)
@@ -73,11 +85,24 @@ class State:
         h.ACK = True
         self.tcp.socket.sendto(bytes(h), self.tcp.dest_address)
 
+    def _send_fin(self):
+        check_address(self.tcp.source_address)
+        check_address(self.tcp.dest_address)
+        check_socket(self.tcp.socket)
+
+        _, port = self.tcp.source_address
+        ip, server_port = self.tcp.dest_address
+
+        h = Header.new(port, server_port, 0, 0)
+        h.FIN = True
+        self.tcp.socket.sendto(bytes(h), self.tcp.dest_address)
+
     def _recvfrom_socket(self):
         attempts = 3
         while attempts > 0:
             try:
                 header_bytes, addr = self.tcp.socket.recvfrom(1500)
+                print(f"{self}\n{Header(header_bytes)}")
                 return header_bytes, addr
             except socket.timeout:
                 attempts -= 1
@@ -105,7 +130,7 @@ class Closed(State):
             self._send_syn()
             self.tcp.state = SynSent(self.tcp)
 
-    def send_syn(self):
+    def send(self):
         print("Current state does not support this method")
 
     def receive(self):
@@ -126,10 +151,11 @@ class Listen(State):
         header_bytes, addr = self._recvfrom_socket()
         header = Header(header_bytes)
         if header.SYN:
+            self.tcp.dest_address = addr if self.tcp.dest_address is None else self.tcp.dest_address
             self._send_syn_ack()
             self.tcp.state = SynReceived(self.tcp)
 
-    def send_syn(self):
+    def send(self):
         self._send_syn()
         self.tcp.state = SynSent(self.tcp)
 
@@ -146,14 +172,57 @@ class SynSent(State):
     def receive(self):
         header_bytes, addr = self._recvfrom_socket()
         header = Header(header_bytes)
-        if header.SYN:
+        if header.SYN and header.ACK:
+            self._send_ack()
+            self.tcp.state = Established(self.tcp)
+        elif header.SYN:
             self._send_syn_ack()
             self.tcp.state = SynReceived(self.tcp)
 
 
 class SynReceived(State):
-    pass
+    def receive(self):
+        header_bytes, addr = self._recvfrom_socket()
+        header = Header(header_bytes)
+        if header.SYN and header.ACK:
+            self.tcp.state = Established(self.tcp)
+
+    def close(self):
+        self._send_fin()
+        self.tcp.state = FinWait1
 
 
 class Established(State):
+    def close(self):
+        self._send_fin()
+
+    def receive(self):
+        header_bytes, addr = self._recvfrom_socket()
+        header = Header(header_bytes)
+        if header.FIN:
+            self._send_ack()
+            self.tcp.state = CloseWait(self.tcp)
+
+
+class CloseWait(State):
+    pass
+
+
+class FinWait1(State):
+    pass
+
+
+class FinWait2(State):
+    pass
+
+
+
+
+class LastAck(State):
+    pass
+
+class Closing(State):
+    pass
+
+class TimeWait(State):
     pass

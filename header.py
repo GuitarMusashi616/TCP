@@ -5,7 +5,8 @@ from bitstring import BitArray, BitStream, pack
 
 class Header:
     def __init__(self, bits=None):
-        self._bits = BitArray(192) if bits is None else BitArray(bits)
+        self._bits = BitArray(160) if bits is None else BitArray(bits)
+        self.offset = 5
 
     @classmethod
     def from_header(cls, header):
@@ -157,14 +158,20 @@ class Header:
     def data(self):
         return self._bits[192:].bytes
 
+    def __len__(self):
+        return len(self._bits)
+
     def __bytes__(self):
         return self._bits.bytes
 
     def __repr__(self):
+
         string = 'Source Port: ' + str(self.source_port) + '\n\n'
         string += 'Destination Port: ' + str(self.dest_port) + '\n\n'
         string += 'Sequence Number: ' + str(self.seq_num) + '\n\n'
         string += 'Ack Number: ' + str(self.ack_num) + '\n\n'
+        string += 'Offset: ' + str(self.offset) + '\n\n'
+        string += 'Reserved: ' + str(self.reserved) + '\n\n'
         string += 'Control Bits: ' + '\n'
         string += '\tURG: ' + str(self.URG) + '\n'
         string += '\tACK: ' + str(self.ACK) + '\n'
@@ -172,7 +179,12 @@ class Header:
         string += '\tRST: ' + str(self.RST) + '\n'
         string += '\tSYN: ' + str(self.SYN) + '\n'
         string += '\tFIN: ' + str(self.FIN) + '\n\n'
-        string += 'Window: ' + str(self.window) + '\n'
+        string += 'Window: ' + str(self.window) + '\n\n'
+        string += 'Checksum: ' + str(self.checksum) + '\n\n'
+        string += 'Urgent Pointer: ' + str(self.urgent_ptr) + '\n\n'
+        if self.offset > 5:
+            string += 'Options: ' + str(self.options) + '\n\n'
+            string += 'Data: ' + str(self.data) + '\n\n'
 
         return string
 

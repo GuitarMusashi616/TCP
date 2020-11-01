@@ -1,5 +1,6 @@
 from main import *
 from header import *
+from tcp import *
 
 
 def simple():
@@ -29,6 +30,12 @@ def respond():
             s.sendto(bytes(ack), addr)
 
 
+def tcp_listen():
+    tcp = TCP(('', 54321))
+    tcp.open()
+    tcp.receive()
+
+
 if __name__ == "__main__":
-    respond()
+    tcp_listen()
 
