@@ -176,7 +176,19 @@ class Header:
 
         return string
 
+    @classmethod
+    def new(cls, source_port, dest_port, seq_num, ack_num):
+        h = Header()
+        h.source_port = source_port
+        h.dest_port = dest_port
+        h.seq_num = seq_num
+        h.ack_num = ack_num
+        return h
 
-def create_header():
-    h = Header()
-    h.control_bits = HeaderType.SYN
+    @classmethod
+    def new_syn(cls, source_port, dest_port, seq_num, ack_num):
+        h = Header.new(source_port, dest_port, seq_num, ack_num)
+        h.SYN = True
+        return h
+
+

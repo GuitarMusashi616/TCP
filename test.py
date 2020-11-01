@@ -50,7 +50,7 @@ def simple_setup():
     ip = 'localhost'
     server_port = 54321
 
-    s.sendto('hello'.encode(), (ip, server_port))
+    s.send((ip, server_port), 'hello'.encode())
     print(s.recvfrom(512))
 
 
@@ -59,7 +59,7 @@ def test_tcp_methods():
     tcp.open(12345)
     s = setup_socket(54321)
     t1 = Thread(target=tcp.listen, args=())
-    t2 = Thread(target=s.sendto, args=(b'hello', ('localhost', 12345)))
+    t2 = Thread(target=s.send, args=(b'hello', ('localhost', 12345)))
 
     t1.start()
     t2.start()
@@ -91,18 +91,13 @@ def test_args():
 
 
 def test_tcp_download():
-    sleep(5)
     args = setup_args()
-    h = Header()
-    h.SYN = True
-    h.source_port = args.port
-    h.dest_port = args.server_port
-    h.seq_num = 0
-    h.ack_num = 0
+    h = Header.new_syn(args.port, args.server_port, 0, 0)
 
     tcp = TCP()
     tcp.open(args.port)
-    tcp.send((args.ip, args.server_port), h)
+    tcp.send(bytes(h), (args.ip, args.server_port))
+
     header_bytes, addr = tcp.listen()
     print(header_bytes)
     print(addr)
@@ -149,5 +144,45 @@ def test_download():
         print(e)
 
 
+def test_states():
+    tcp = TCP(('', 12345), ('127.0.0.1', 54321))
+    print(tcp.state)
+    tcp.open()
+    print(tcp.state)
+    tcp.close()
+    print(tcp.state)
+
+    tcp2 = TCP(('', 12346))
+    print(tcp2.state)
+    tcp2.open()
+    print(tcp2.state)
+    tcp2.close()
+    print(tcp2.state)
+
+
+def test_respond_server():
+    tcp = TCP(('', 12345), ('127.0.0.1', 54321))
+    tcp.open()
+    syn = Header.new(tcp.source_address[1], tcp.dest_address[1], 0, 0)
+    syn.SYN = True
+    tcp.socket.sendto(bytes(syn), tcp.dest_address)
+
+
+def test_states_receiving():
+    tcp = TCP(('', 12345), ('127.0.0.1', 54321))
+    print(tcp.state)
+    tcp.open()
+    print(tcp.state)
+    tcp.receive()
+    print(tcp.state)
+
+    # tcp2 = TCP(('', 12345))
+    # print(tcp2.state)
+    # tcp2.open()
+    # print(tcp2.state)
+    # tcp2.receive()
+    # print(tcp2.state)
+
+
 if __name__ == '__main__':
-    test_download()
+    test_states_receiving()

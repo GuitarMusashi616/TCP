@@ -1,5 +1,6 @@
 import argparse
 import socket
+from args import setup_args
 
 
 def setup_socket(port):
@@ -11,4 +12,4 @@ def setup_socket(port):
 if __name__ == '__main__':
     # setup the args and the socket
     args = setup_args()
-    s = setup_socket()
+    s = setup_socket(12345)
