@@ -16,6 +16,7 @@ def check_socket(socket):
 class State:
     def __init__(self, tcp):
         self.tcp = tcp
+        self.tcb = tcp.tcb
 
     def startup(self):
         raise NotImplementedError
@@ -39,9 +40,9 @@ class State:
         raise NotImplementedError
 
     def _open_socket(self):
-        check_address(self.tcp.source_address)
+        check_address(self.tcb.source_address)
         self.tcp.socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-        self.tcp.socket.bind(self.tcp.source_address)
+        self.tcp.socket.bind(self.tcb.source_address)
         self.tcp.socket.settimeout(3)
 
     def _close_socket(self):
@@ -49,53 +50,53 @@ class State:
         self.tcp.socket = None
 
     def _send_syn(self):
-        check_address(self.tcp.source_address)
-        check_address(self.tcp.dest_address)
+        check_address(self.tcb.source_address)
+        check_address(self.tcb.dest_address)
         check_socket(self.tcp.socket)
 
-        _, port = self.tcp.source_address
-        ip, server_port = self.tcp.dest_address
+        _, port = self.tcb.source_address
+        ip, server_port = self.tcb.dest_address
 
         h = Header.new(port, server_port, 0, 0)
         h.SYN = True
-        self.tcp.socket.sendto(bytes(h), self.tcp.dest_address)
+        self.tcp.socket.sendto(bytes(h), self.tcb.dest_address)
 
     def _send_ack(self):
-        check_address(self.tcp.source_address)
-        check_address(self.tcp.dest_address)
+        check_address(self.tcb.source_address)
+        check_address(self.tcb.dest_address)
         check_socket(self.tcp.socket)
 
-        _, port = self.tcp.source_address
-        ip, server_port = self.tcp.dest_address
+        _, port = self.tcb.source_address
+        ip, server_port = self.tcb.dest_address
 
         h = Header.new(port, server_port, 0, 0)
         h.ACK = True
-        self.tcp.socket.sendto(bytes(h), self.tcp.dest_address)
+        self.tcp.socket.sendto(bytes(h), self.tcb.dest_address)
 
     def _send_syn_ack(self):
-        check_address(self.tcp.source_address)
-        check_address(self.tcp.dest_address)
+        check_address(self.tcb.source_address)
+        check_address(self.tcb.dest_address)
         check_socket(self.tcp.socket)
 
-        _, port = self.tcp.source_address
-        ip, server_port = self.tcp.dest_address
+        _, port = self.tcb.source_address
+        ip, server_port = self.tcb.dest_address
 
         h = Header.new(port, server_port, 0, 0)
         h.SYN = True
         h.ACK = True
-        self.tcp.socket.sendto(bytes(h), self.tcp.dest_address)
+        self.tcp.socket.sendto(bytes(h), self.tcb.dest_address)
 
     def _send_fin(self):
-        check_address(self.tcp.source_address)
-        check_address(self.tcp.dest_address)
+        check_address(self.tcb.source_address)
+        check_address(self.tcb.dest_address)
         check_socket(self.tcp.socket)
 
-        _, port = self.tcp.source_address
-        ip, server_port = self.tcp.dest_address
+        _, port = self.tcb.source_address
+        ip, server_port = self.tcb.dest_address
 
         h = Header.new(port, server_port, 0, 0)
         h.FIN = True
-        self.tcp.socket.sendto(bytes(h), self.tcp.dest_address)
+        self.tcp.socket.sendto(bytes(h), self.tcb.dest_address)
 
     def _recvfrom_socket(self):
         attempts = 3
@@ -122,7 +123,7 @@ class Closed(State):
 
     def open(self):
         self._open_socket()
-        if self.tcp.dest_address is None:
+        if self.tcb.dest_address is None:
             # passive open
             self.tcp.state = Listen(self.tcp)
         else:
@@ -151,7 +152,7 @@ class Listen(State):
         header_bytes, addr = self._recvfrom_socket()
         header = Header(header_bytes)
         if header.SYN:
-            self.tcp.dest_address = addr if self.tcp.dest_address is None else self.tcp.dest_address
+            self.tcb.dest_address = addr if self.tcb.dest_address is None else self.tcb.dest_address
             self._send_syn_ack()
             self.tcp.state = SynReceived(self.tcp)
 

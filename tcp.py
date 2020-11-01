@@ -5,11 +5,11 @@ from socket import timeout
 
 class TCP:
     def __init__(self, source_address, dest_address=None):
-        self.source_address = source_address
-        self.dest_address = dest_address
+        # self.source_address = source_address
+        # self.dest_address = dest_address
         self.socket = None
-        self.tcb = None
-        # self.tcb = TCB(source_address, dest_address)
+        # self.tcb = None
+        self.tcb = TCB(source_address, dest_address)
         self.state = Closed(self)
         # self.state.open()
 
