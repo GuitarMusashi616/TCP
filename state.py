@@ -89,6 +89,7 @@ class State:
         check_socket(self.tcp.socket)
 
         h = Header.from_tcb(self.tcb, data)
+        print(h)
         self.tcp.socket.sendto(bytes(h), self.tcb.dest_address)
 
     def _send_fin(self):
@@ -258,10 +259,13 @@ class Established(State):
             header_bytes, addr = self._recvfrom_socket()
             header = Header(header_bytes)
             self.tcb.sync(header)
+            print(header)
             if not header.ACK:
                 break
 
             # break if last of file
+            print(len(data))
+            print(self.tcb.SND_WND)
             if len(data) < self.tcb.SND_WND:
                 break
         f.close()
