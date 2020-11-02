@@ -88,9 +88,7 @@ class State:
         check_address(self.tcb.dest_address)
         check_socket(self.tcp.socket)
 
-        h = Header.from_tcb(self.tcb, 192)
-        h.ACK = True
-        h.data = data
+        h = Header.from_tcb(self.tcb, data)
         self.tcp.socket.sendto(bytes(h), self.tcb.dest_address)
 
     def _send_fin(self):
@@ -250,22 +248,21 @@ class Established(State):
 
     def upload(self, filename):
         f = open(filename, 'rb')
-        while True:
+        is_uploading = True
+        while is_uploading:
             # read file
-            data = f.read(1448)
-
+            data = f.read(self.tcb.SND_WND)
             self._send_data(data)
-
-            # break if last of file
-            if len(data) < 1448:
-                break
 
             # wait for ack
             header_bytes, addr = self._recvfrom_socket()
             header = Header(header_bytes)
             self.tcb.sync(header)
             self._send_ack()
-            # print(header)
+
+            # break if last of file
+            if len(data) < self.tcb.SND_WND:
+                is_uploading = False
         f.close()
 
 

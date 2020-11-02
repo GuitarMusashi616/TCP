@@ -203,18 +203,22 @@ class Header:
         return h
 
     @classmethod
-    def from_tcb(cls, tcb, size=160):
+    def from_tcb(cls, tcb, data=None):
         try:
-            h = Header(size)
+            h = Header()
             h.source_port = tcb.source_address[1]
             h.dest_port = tcb.dest_address[1]
             h.seq_num = tcb.SND_NXT
             h.ack_num = tcb.RCV_NXT
             h.window = tcb.SND_WND
-
-            tcb.SND_NXT += 1
+            if data:
+                h.data = data
+                tcb.SND_NXT += len(data)
+            else:
+                tcb.SND_NXT += 1
             # todo: make it increase by num bits
             return h
 
         except (AttributeError, TypeError) as e:
             print("tcb could not create header from tcb", str(e))
+
