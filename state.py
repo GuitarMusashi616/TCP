@@ -235,6 +235,8 @@ class Established(State):
 
             if len(header) > 192:
                 f.write(header.data)
+                self.tcb.sync(header)
+                self._send_ack()
             else:
                 break
         f.close()
@@ -253,6 +255,9 @@ class Established(State):
 
             # wait for ack
             header_bytes, addr = self._recvfrom_socket()
+            header = Header(header_bytes)
+            self.tcb.sync(header)
+            self._send_ack()
             # print(header)
         f.close()
 
