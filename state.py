@@ -62,6 +62,7 @@ class State:
 
         h = Header.from_tcb(self.tcb)
         h.SYN = True
+        print(h)
         self.tcp.socket.sendto(bytes(h), self.tcb.dest_address)
 
     def _send_ack(self):
@@ -71,6 +72,7 @@ class State:
 
         h = Header.from_tcb(self.tcb)
         h.ACK = True
+        print(h)
         self.tcp.socket.sendto(bytes(h), self.tcb.dest_address)
 
     def _send_syn_ack(self):
@@ -81,6 +83,7 @@ class State:
         h = Header.from_tcb(self.tcb)
         h.SYN = True
         h.ACK = True
+        print(h)
         self.tcp.socket.sendto(bytes(h), self.tcb.dest_address)
 
     def _send_data(self, data):
@@ -91,6 +94,7 @@ class State:
         h = Header.from_tcb(self.tcb, 192)
         h.ACK = True
         h.data = data
+        print(h)
         self.tcp.socket.sendto(bytes(h), self.tcb.dest_address)
 
     def _send_fin(self):
@@ -100,6 +104,7 @@ class State:
 
         h = Header.from_tcb(self.tcb)
         h.FIN = True
+        print(h)
         self.tcp.socket.sendto(bytes(h), self.tcb.dest_address)
 
     def _recvfrom_socket(self):
@@ -107,7 +112,7 @@ class State:
         while attempts > 0:
             try:
                 header_bytes, addr = self.tcp.socket.recvfrom(1500)
-                # print(Header(header_bytes))
+                print(Header(header_bytes))
                 return header_bytes, addr
             except (socket.timeout, ConnectionResetError):
                 attempts -= 1
