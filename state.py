@@ -231,16 +231,21 @@ class Established(State):
             header_bytes, addr = self._recvfrom_socket()
             header = Header(header_bytes)
             print(len(header))
-            print(header)
+            print(len(header.data))
+            print(header.window)
             print(header_bytes)
+            print()
+            print(header)
 
-            if len(header) > 192:
+            if header.data:
                 f.write(header.data)
                 self.tcb.sync(header)
                 self._send_ack()
-                f.close()
+                if len(header.data) < header.window:
+                    break
             else:
                 break
+            f.close()
 
     def upload(self, filename):
         f = open(filename, 'rb')

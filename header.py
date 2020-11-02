@@ -139,29 +139,29 @@ class Header:
     def urgent_ptr(self, value):
         self._bits[144:160] = pack('uint:16', value)
 
-    @property
-    def options(self):
-        if self._bits[160:168].uint == 2 and self._bits[168:176].uint == 4:
-            return self._bits[160:168].uint, self._bits[168:176].uint, self._bits[176:192].uint,
-        else:
-            return self._bits[160:168].uint, 0, 0
+#     @property
+#     def options(self):
+#         if self._bits[160:168].uint == 2 and self._bits[168:176].uint == 4:
+#             return self._bits[160:168].uint, self._bits[168:176].uint, self._bits[176:192].uint,
+#         else:
+#             return self._bits[160:168].uint, 0, 0
 
-    @options.setter
-    def options(self, value):
-        assert isinstance(value, tuple) and len(value) == 3, "Value must be a tuple of length 3"
-        assert value[0] in [0, 1, 2] and value[1] in [0, 2], "Value must be (0,0,0), (1,0,0), or (2,4,*)"
+#     @options.setter
+#     def options(self, value):
+#         assert isinstance(value, tuple) and len(value) == 3, "Value must be a tuple of length 3"
+#         assert value[0] in [0, 1, 2] and value[1] in [0, 2], "Value must be (0,0,0), (1,0,0), or (2,4,*)"
 
-        self._bits[160:168] = pack('uint:8', value[0])
-        self._bits[168:176] = pack('uint:8', value[1])
-        self._bits[176:192] = pack('uint:16', value[2])
+#         self._bits[160:168] = pack('uint:8', value[0])
+#         self._bits[168:176] = pack('uint:8', value[1])
+#         self._bits[176:192] = pack('uint:16', value[2])
 
     @property
     def data(self):
-        return self._bits[192:].bytes
+        return self._bits[160:].bytes
 
     @data.setter
     def data(self, value):
-        self._bits = self._bits[:192] + BitArray(value)
+        self._bits = self._bits[:160] + BitArray(value)
 
     def __len__(self):
         return len(self._bits)
@@ -188,7 +188,7 @@ class Header:
         string += 'Checksum: ' + str(self.checksum) + '\n\n'
         string += 'Urgent Pointer: ' + str(self.urgent_ptr) + '\n\n'
         if len(self._bits) > 160:
-            string += 'Options: ' + str(self.options) + '\n\n'
+#             string += 'Options: ' + str(self.options) + '\n\n'
             string += 'Data: ' + str(self.data) + '\n'
 
         return string
@@ -218,7 +218,3 @@ class Header:
 
         except (AttributeError, TypeError) as e:
             print("tcb could not create header from tcb", str(e))
-
-
-
-
