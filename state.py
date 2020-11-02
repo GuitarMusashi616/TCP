@@ -236,7 +236,7 @@ class Established(State):
             # print(header.window)
             # print(header_bytes)
             # print()
-            print(header)
+            # print(header)
 
             if header.data:
                 f.write(header.data)
