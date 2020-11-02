@@ -237,9 +237,9 @@ class Established(State):
                 f.write(header.data)
                 self.tcb.sync(header)
                 self._send_ack()
+                f.close()
             else:
                 break
-        f.close()
 
     def upload(self, filename):
         f = open(filename, 'rb')
