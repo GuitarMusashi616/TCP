@@ -232,6 +232,7 @@ class Established(State):
             header = Header(header_bytes)
             print(len(header))
             print(header)
+            print(header_bytes)
 
             if len(header) > 192:
                 f.write(header.data)
