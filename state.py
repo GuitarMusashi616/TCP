@@ -257,7 +257,7 @@ class Established(State):
         while is_uploading:
             # read file
             data = f.read(self.tcb.SND_WND)
-            # self._send_data(data)
+            self._send_data(data)
 
             # wait for ack
             header_bytes, addr = self._recvfrom_socket()
