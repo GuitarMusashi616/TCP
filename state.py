@@ -255,10 +255,6 @@ class Established(State):
         f = open(filename, 'rb')
         is_uploading = True
         while is_uploading:
-            # read file
-            data = f.read(self.tcb.SND_WND)
-            self._send_data(data)
-
             # wait for ack
             header_bytes, addr = self._recvfrom_socket()
             header = Header(header_bytes)
@@ -266,6 +262,10 @@ class Established(State):
             # print(header)
             if not header.ACK:
                 break
+
+            # read file
+            data = f.read(self.tcb.SND_WND)
+            self._send_data(data)
 
             # break if last of file
             print(len(data))
