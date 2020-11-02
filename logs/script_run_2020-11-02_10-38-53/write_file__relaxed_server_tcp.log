@@ -1,0 +1,20 @@
+0.000 NEW RUN: Server, TEST: Write_file__Relaxed
+0.205 Received: b',\xfe\xe5\x96\x00\x00\x00:\x00\x00\x00\x00P\x02\x05\xa8\x00\x00\x00\x00'
+0.206 Disassembled: source: 11518, dest: 58774, seq: 58, window: 1448, SYN
+0.206 SYN accepted; new connection: 127.0.0.1 on port 11518
+0.206 Assembling: source: 58774, dest: 11518, seq: 2346634048, ack: 59, window: 5808, ACK, SYN
+0.207 Sent: b'\xe5\x96,\xfe\x8b\xde\xcb@\x00\x00\x00;P\x12\x16\xb0\x00\x00\x00\x00'
+0.208 Received: b',\xfe\xe5\x96\x00\x00\x00;\x8b\xde\xcbAP\x10\x16\xb0\x00\x00\x00\x00'
+0.208 Disassembled: source: 11518, dest: 58774, seq: 59, ack: 2346634049, window: 5808, ACK
+0.208 Assembling: source: 58774, dest: 11518, seq: 2346634049, ack: 59, window: 5808, ACK
+0.209 Received: b',\xfe\xe5\x96\x00\x00\x00<\x8b\xde\xcbAP\x00\x16\xb0\x00\x00\x00\x00'
+0.209 Sent: b'\xe5\x96,\xfe\x8b\xde\xcbA\x00\x00\x00;P\x10\x16\xb0\x00\x00\x00\x00'
+0.209 Disassembled: source: 11518, dest: 58774, seq: 60, ack: 2346634049, window: 5808
+0.209 Error: Incorrect acknowledgement flag
+0.709 Sent: b'\xe5\x96,\xfe\x8b\xde\xcbA\x00\x00\x00;P\x10\x16\xb0\x00\x00\x00\x00'
+1.210 Sent: b'\xe5\x96,\xfe\x8b\xde\xcbA\x00\x00\x00;P\x10\x16\xb0\x00\x00\x00\x00'
+1.710 Sent: b'\xe5\x96,\xfe\x8b\xde\xcbA\x00\x00\x00;P\x10\x16\xb0\x00\x00\x00\x00'
+2.211 Sent: b'\xe5\x96,\xfe\x8b\xde\xcbA\x00\x00\x00;P\x10\x16\xb0\x00\x00\x00\x00'
+2.711 Error: Connection timed out
+2.711 Closed connection
+2.717 Shutting down

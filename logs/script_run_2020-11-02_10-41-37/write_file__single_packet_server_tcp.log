@@ -1,0 +1,20 @@
+0.000 NEW RUN: Server, TEST: Write_file__Single_packet
+0.202 Received: b'NP\x15t\x00\x00\x00\x03\x00\x00\x00\x00P\x02\x05\xa8\x00\x00\x00\x00'
+0.203 Disassembled: source: 20048, dest: 5492, seq: 3, window: 1448, SYN
+0.203 SYN accepted; new connection: 127.0.0.1 on port 20048
+0.204 Assembling: source: 5492, dest: 20048, seq: 2516189231, ack: 4, window: 5808, ACK, SYN
+0.204 Sent: b'\x15tNP\x95\xfa\x00/\x00\x00\x00\x04P\x12\x16\xb0\x00\x00\x00\x00'
+0.205 Received: b'NP\x15t\x00\x00\x00\x04\x95\xfa\x000P\x10\x16\xb0\x00\x00\x00\x00'
+0.205 Disassembled: source: 20048, dest: 5492, seq: 4, ack: 2516189232, window: 5808, ACK
+0.205 Assembling: source: 5492, dest: 20048, seq: 2516189232, ack: 4, window: 5808, ACK
+0.206 Sent: b'\x15tNP\x95\xfa\x000\x00\x00\x00\x04P\x10\x16\xb0\x00\x00\x00\x00'
+0.206 Received: b'NP\x15t\x00\x00\x00\x05\x95\xfa\x000P\x00\x16\xb0\x00\x00\x00\x00This file fits i'...
+0.206 Disassembled: source: 20048, dest: 5492, seq: 5, ack: 2516189232, window: 5808, data: "This file fits i"...
+0.207 Error: Incorrect acknowledgement flag
+0.706 Sent: b'\x15tNP\x95\xfa\x000\x00\x00\x00\x04P\x10\x16\xb0\x00\x00\x00\x00'
+1.206 Sent: b'\x15tNP\x95\xfa\x000\x00\x00\x00\x04P\x10\x16\xb0\x00\x00\x00\x00'
+1.707 Sent: b'\x15tNP\x95\xfa\x000\x00\x00\x00\x04P\x10\x16\xb0\x00\x00\x00\x00'
+2.208 Sent: b'\x15tNP\x95\xfa\x000\x00\x00\x00\x04P\x10\x16\xb0\x00\x00\x00\x00'
+2.708 Error: Connection timed out
+2.708 Closed connection
+2.709 Shutting down

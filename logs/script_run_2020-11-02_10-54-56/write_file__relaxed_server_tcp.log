@@ -1,0 +1,20 @@
+0.000 NEW RUN: Server, TEST: Write_file__Relaxed
+0.216 Received: b'\x86s0\x9c\x00\x00\x00K\x00\x00\x00\x00P\x02\x05\xa8\x00\x00\x00\x00'
+0.216 Disassembled: source: 34419, dest: 12444, seq: 75, window: 1448, SYN
+0.216 SYN accepted; new connection: 127.0.0.1 on port 34419
+0.216 Assembling: source: 12444, dest: 34419, seq: 3310119884, ack: 76, window: 5808, ACK, SYN
+0.217 Sent: b'0\x9c\x86s\xc5Lk\xcc\x00\x00\x00LP\x12\x16\xb0\x00\x00\x00\x00'
+0.218 Received: b'\x86s0\x9c\x00\x00\x00L\xc5Lk\xccP\x10\x16\xb0\x00\x00\x00\x00'
+0.218 Disassembled: source: 34419, dest: 12444, seq: 76, ack: 3310119884, window: 5808, ACK
+0.218 Error: Acknowledgement number too low
+0.219 Received: b'\x86s0\x9c\x00\x00\x00M\xc5Lk\xccP\x00\x16\xb0\x00\x00\x00\x00'
+0.220 Disassembled: source: 34419, dest: 12444, seq: 77, ack: 3310119884, window: 5808
+0.220 Error: Acknowledgement number too low
+0.717 Sent: b'0\x9c\x86s\xc5Lk\xcc\x00\x00\x00LP\x12\x16\xb0\x00\x00\x00\x00'
+1.217 Sent: b'0\x9c\x86s\xc5Lk\xcc\x00\x00\x00LP\x12\x16\xb0\x00\x00\x00\x00'
+1.718 Sent: b'0\x9c\x86s\xc5Lk\xcc\x00\x00\x00LP\x12\x16\xb0\x00\x00\x00\x00'
+2.218 Sent: b'0\x9c\x86s\xc5Lk\xcc\x00\x00\x00LP\x12\x16\xb0\x00\x00\x00\x00'
+2.719 Sent: b'0\x9c\x86s\xc5Lk\xcc\x00\x00\x00LP\x12\x16\xb0\x00\x00\x00\x00'
+3.219 Error: Connection timed out
+3.219 Closed connection
+3.227 Shutting down
