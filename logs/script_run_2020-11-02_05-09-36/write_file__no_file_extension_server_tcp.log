@@ -1,0 +1,14 @@
+0.000 NEW RUN: Server, TEST: Write_file__No_file_extension
+0.205 Received: b'\xb4_n\xef\x00\x00\x00S\x00\x00\x00\x00P\x02\x05\xa8\x00\x00\x00\x00'
+0.206 Disassembled: source: 46175, dest: 28399, seq: 83, window: 1448, SYN
+0.206 SYN accepted; new connection: 127.0.0.1 on port 46175
+0.206 Assembling: source: 28399, dest: 46175, seq: 624245768, ack: 84, window: 5808, ACK, SYN
+0.206 Sent: b'n\xef\xb4_%5<\x08\x00\x00\x00TP\x12\x16\xb0\x00\x00\x00\x00'
+0.208 Received: b'\xb4_n\xef\x00\x00\x00T%5<\tP\x10\x16\xb0\x00\x00\x00\x00'
+0.208 Disassembled: source: 46175, dest: 28399, seq: 84, ack: 624245769, window: 5808, ACK
+0.208 Assembling: source: 28399, dest: 46175, seq: 624245769, ack: 84, window: 5808, ACK
+0.209 Sent: b'n\xef\xb4_%5<\t\x00\x00\x00TP\x10\x16\xb0\x00\x00\x00\x00'
+0.209 Received: b'\xb4_n\xef\x00\x00\x00U%5<\t`\x10\x16\xb0\x00\x00\x00\x00\x00\x00\x00\x00Lorem ipsum '...
+0.209 Error: Data offset is not 5
+0.209 Closed connection
+0.209 Shutting down

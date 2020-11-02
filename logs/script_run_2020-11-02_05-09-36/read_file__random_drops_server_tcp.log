@@ -1,0 +1,20 @@
+0.000 NEW RUN: Server, TEST: Read_file__Random_drops
+0.209 Received: b'P\x17\xb31\x00\x00\x00\x19\x00\x00\x00\x00P\x02\x05\xa8\x00\x00\x00\x00'
+0.209 Disassembled: source: 20503, dest: 45873, seq: 25, window: 1448, SYN
+0.210 SYN accepted; new connection: 127.0.0.1 on port 20503
+0.210 Assembling: source: 45873, dest: 20503, seq: 627846966, ack: 26, window: 1448, ACK, SYN
+0.210 Sent: b'\xb31P\x17%l/6\x00\x00\x00\x1aP\x12\x05\xa8\x00\x00\x00\x00'
+0.214 Received: b'P\x17\xb31\x00\x00\x00\x1a%l/7P\x10\x05\xa8\x00\x00\x00\x00'
+0.214 Disassembled: source: 20503, dest: 45873, seq: 26, ack: 627846967, window: 1448, ACK
+0.214 Handshake complete
+0.214 Acknowledged seq: 627846966
+0.215 Assembling: source: 45873, dest: 20503, seq: 627846967, ack: 27, window: 1448, data: "Lorem ipsum dolo"...
+0.215 Sent: b'\xb31P\x17%l/7\x00\x00\x00\x1bP\x00\x05\xa8\x00\x00\x00\x00Lorem ipsum dolo'...
+0.715 Sent: b'\xb31P\x17%l/7\x00\x00\x00\x1bP\x00\x05\xa8\x00\x00\x00\x00Lorem ipsum dolo'...
+1.216 Sent: b'\xb31P\x17%l/7\x00\x00\x00\x1bP\x00\x05\xa8\x00\x00\x00\x00Lorem ipsum dolo'...
+1.716 Sent: b'\xb31P\x17%l/7\x00\x00\x00\x1bP\x00\x05\xa8\x00\x00\x00\x00Lorem ipsum dolo'...
+2.217 Sent: b'\xb31P\x17%l/7\x00\x00\x00\x1bP\x00\x05\xa8\x00\x00\x00\x00Lorem ipsum dolo'...
+2.717 Failed to send packet
+3.217 Error: Connection timed out
+3.218 Closed connection
+3.218 Shutting down

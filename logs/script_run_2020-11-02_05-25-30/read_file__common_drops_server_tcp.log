@@ -1,0 +1,21 @@
+0.000 NEW RUN: Server, TEST: Read_file__Common_drops
+0.206 Received: b'\x1a2\xa3*\x00\x00\x00\x1e\x00\x00\x00\x00P\x02\x05\xa8\x00\x00\x00\x00'
+0.206 Disassembled: source: 6706, dest: 41770, seq: 30, window: 1448, SYN
+0.207 SYN accepted; new connection: 127.0.0.1 on port 6706
+0.207 Assembling: source: 41770, dest: 6706, seq: 1631538207, ack: 31, window: 1448, ACK, SYN
+0.207 Failed to send packet
+0.707 Sent: b'\xa3*\x1a2a?L\x1f\x00\x00\x00\x1fP\x12\x05\xa8\x00\x00\x00\x00'
+0.710 Received: b'\x1a2\xa3*\x00\x00\x00\x1fa?L P\x10\x05\xa8\x00\x00\x00\x00'
+0.711 Disassembled: source: 6706, dest: 41770, seq: 31, ack: 1631538208, window: 1448, ACK
+0.711 Handshake complete
+0.711 Acknowledged seq: 1631538207
+0.712 Assembling: source: 41770, dest: 6706, seq: 1631538208, ack: 32, window: 1448, data: "Lorem ipsum dolo"...
+0.712 Sent: b'\xa3*\x1a2a?L \x00\x00\x00 P\x00\x05\xa8\x00\x00\x00\x00Lorem ipsum dolo'...
+1.213 Sent: b'\xa3*\x1a2a?L \x00\x00\x00 P\x00\x05\xa8\x00\x00\x00\x00Lorem ipsum dolo'...
+1.713 Failed to send packet
+2.213 Sent: b'\xa3*\x1a2a?L \x00\x00\x00 P\x00\x05\xa8\x00\x00\x00\x00Lorem ipsum dolo'...
+2.714 Sent: b'\xa3*\x1a2a?L \x00\x00\x00 P\x00\x05\xa8\x00\x00\x00\x00Lorem ipsum dolo'...
+3.214 Sent: b'\xa3*\x1a2a?L \x00\x00\x00 P\x00\x05\xa8\x00\x00\x00\x00Lorem ipsum dolo'...
+3.715 Error: Connection timed out
+3.715 Closed connection
+3.715 Shutting down

@@ -1,0 +1,14 @@
+0.000 NEW RUN: Server, TEST: Write_file__Large_multi-packet
+0.206 Received: b'z\x19\'"\x00\x00\x00\x1b\x00\x00\x00\x00P\x02\x05\xa8\x00\x00\x00\x00'
+0.206 Disassembled: source: 31257, dest: 10018, seq: 27, window: 1448, SYN
+0.206 SYN accepted; new connection: 127.0.0.1 on port 31257
+0.207 Assembling: source: 10018, dest: 31257, seq: 620641732, ack: 28, window: 5808, ACK, SYN
+0.207 Sent: b'\'"z\x19$\xfe=\xc4\x00\x00\x00\x1cP\x12\x16\xb0\x00\x00\x00\x00'
+0.209 Received: b'z\x19\'"\x00\x00\x00\x1c$\xfe=\xc5P\x10\x16\xb0\x00\x00\x00\x00'
+0.209 Disassembled: source: 31257, dest: 10018, seq: 28, ack: 620641733, window: 5808, ACK
+0.210 Assembling: source: 10018, dest: 31257, seq: 620641733, ack: 28, window: 5808, ACK
+0.210 Sent: b'\'"z\x19$\xfe=\xc5\x00\x00\x00\x1cP\x10\x16\xb0\x00\x00\x00\x00'
+0.210 Received: b'z\x19\'"\x00\x00\x00\x1d$\xfe=\xc5`\x10\x16\xb0\x00\x00\x00\x00\x00\x00\x00\x00Lorem ipsum '...
+0.211 Error: Data offset is not 5
+0.211 Closed connection
+0.211 Shutting down

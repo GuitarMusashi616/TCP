@@ -1,0 +1,20 @@
+0.000 NEW RUN: Server, TEST: Write_file__Common_drops
+0.220 Received: b'\xef\x0f\xf9\x05\x00\x00\x00<\x00\x00\x00\x00P\x02\x05\xa8\x00\x00\x00\x00'
+0.220 Disassembled: source: 61199, dest: 63749, seq: 60, window: 1448, SYN
+0.221 SYN accepted; new connection: 127.0.0.1 on port 61199
+0.221 Assembling: source: 63749, dest: 61199, seq: 1644104619, ack: 61, window: 5808, ACK, SYN
+0.221 Sent: b'\xf9\x05\xef\x0fa\xff\x0b\xab\x00\x00\x00=P\x12\x16\xb0\x00\x00\x00\x00'
+0.223 Received: b'\xef\x0f\xf9\x05\x00\x00\x00=a\xff\x0b\xacP\x10\x16\xb0\x00\x00\x00\x00'
+0.223 Disassembled: source: 61199, dest: 63749, seq: 61, ack: 1644104620, window: 5808, ACK
+0.223 Assembling: source: 63749, dest: 61199, seq: 1644104620, ack: 61, window: 5808, ACK
+0.223 Sent: b'\xf9\x05\xef\x0fa\xff\x0b\xac\x00\x00\x00=P\x10\x16\xb0\x00\x00\x00\x00'
+0.224 Failed to receive packet
+0.225 Failed to receive packet
+0.724 Failed to send packet
+1.224 Failed to send packet
+1.724 Failed to send packet
+2.225 Sent: b'\xf9\x05\xef\x0fa\xff\x0b\xac\x00\x00\x00=P\x10\x16\xb0\x00\x00\x00\x00'
+2.227 Failed to receive packet
+2.725 Error: Connection timed out
+2.725 Closed connection
+2.728 Shutting down

@@ -1,0 +1,14 @@
+0.000 NEW RUN: Server, TEST: Write_file__Very_large_multi-packet
+0.207 Received: b'R>\x9b\xb4\x00\x00\x00\r\x00\x00\x00\x00P\x02\x05\xa8\x00\x00\x00\x00'
+0.208 Disassembled: source: 21054, dest: 39860, seq: 13, window: 1448, SYN
+0.208 SYN accepted; new connection: 127.0.0.1 on port 21054
+0.208 Assembling: source: 39860, dest: 21054, seq: 675401485, ack: 14, window: 5808, ACK, SYN
+0.209 Sent: b'\x9b\xb4R>(A\xcf\r\x00\x00\x00\x0eP\x12\x16\xb0\x00\x00\x00\x00'
+0.211 Received: b'R>\x9b\xb4\x00\x00\x00\x0e(A\xcf\x0eP\x10\x16\xb0\x00\x00\x00\x00'
+0.211 Disassembled: source: 21054, dest: 39860, seq: 14, ack: 675401486, window: 5808, ACK
+0.212 Assembling: source: 39860, dest: 21054, seq: 675401486, ack: 14, window: 5808, ACK
+0.212 Sent: b'\x9b\xb4R>(A\xcf\x0e\x00\x00\x00\x0eP\x10\x16\xb0\x00\x00\x00\x00'
+0.213 Received: b'R>\x9b\xb4\x00\x00\x00\x0f(A\xcf\x0e`\x10\x16\xb0\x00\x00\x00\x00\x00\x00\x00\x00@\x96o\xec!c\x93Z\xed\x08f\xcd'...
+0.213 Error: Data offset is not 5
+0.213 Closed connection
+0.214 Shutting down

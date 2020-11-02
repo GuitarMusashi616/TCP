@@ -1,0 +1,14 @@
+0.000 NEW RUN: Server, TEST: Write_file__Small_multi-packet
+0.215 Received: b'X(a0\x00\x00\x00\x17\x00\x00\x00\x00P\x02\x05\xa8\x00\x00\x00\x00'
+0.215 Disassembled: source: 22568, dest: 24880, seq: 23, window: 1448, SYN
+0.215 SYN accepted; new connection: 127.0.0.1 on port 22568
+0.215 Assembling: source: 24880, dest: 22568, seq: 617041382, ack: 24, window: 5808, ACK, SYN
+0.216 Sent: b'a0X($\xc7M\xe6\x00\x00\x00\x18P\x12\x16\xb0\x00\x00\x00\x00'
+0.218 Received: b'X(a0\x00\x00\x00\x18$\xc7M\xe7P\x10\x16\xb0\x00\x00\x00\x00'
+0.219 Disassembled: source: 22568, dest: 24880, seq: 24, ack: 617041383, window: 5808, ACK
+0.219 Assembling: source: 24880, dest: 22568, seq: 617041383, ack: 24, window: 5808, ACK
+0.219 Sent: b'a0X($\xc7M\xe7\x00\x00\x00\x18P\x10\x16\xb0\x00\x00\x00\x00'
+0.219 Received: b'X(a0\x00\x00\x00\x19$\xc7M\xe7`\x10\x16\xb0\x00\x00\x00\x00\x00\x00\x00\x00Lorem ipsum '...
+0.220 Error: Data offset is not 5
+0.220 Closed connection
+0.220 Shutting down
