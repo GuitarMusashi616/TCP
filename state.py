@@ -240,9 +240,9 @@ class Established(State):
     def download(self, filename):
         f = open(filename, 'wb')
         while True:
-            header_bytes, addr = self.tcp.socket.recvfrom(1500)
+            header_bytes, addr = self._recvfrom_socket()
             header = Header(header_bytes)
-            print(header)
+            # print(header)
             if len(header) > 192:
                 f.write(header.data)
             else:
@@ -262,9 +262,8 @@ class Established(State):
                 break
 
             # wait for ack
-            header_bytes, addr = self.tcp.socket.recvfrom(1500)
-            header = Header(header_bytes)
-            print(header)
+            header_bytes, addr = self._recvfrom_socket()
+            # print(header)
         f.close()
 
 

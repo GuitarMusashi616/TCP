@@ -6,8 +6,8 @@ from bitstring import BitArray, BitStream, pack
 class Header:
     def __init__(self, bits=None):
         self._bits = BitArray(160) if bits is None else BitArray(bits)
-        max_bits = 192 if len(self._bits) > 192 else len(self._bits)
-        self.offset = max_bits // 32
+        # max_bits = 192 if len(self._bits) > 192 else len(self._bits)
+        self.offset = 5
 
     @classmethod
     def from_header(cls, header):
