@@ -240,7 +240,7 @@ class Established(State):
 
             if header.data:
                 f.write(header.data)
-                self.tcb.sync(header)
+                self.tcb.sync(header, len(header.data))
                 self._send_ack()
                 if len(header.data) < header.window:
                     is_downloading = False
