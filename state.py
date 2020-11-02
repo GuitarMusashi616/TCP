@@ -258,11 +258,12 @@ class Established(State):
             header_bytes, addr = self._recvfrom_socket()
             header = Header(header_bytes)
             self.tcb.sync(header)
-            self._send_ack()
+            if not header.ACK:
+                break
 
             # break if last of file
             if len(data) < self.tcb.SND_WND:
-                is_uploading = False
+                break
         f.close()
 
 
