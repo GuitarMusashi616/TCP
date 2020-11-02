@@ -231,11 +231,11 @@ class Established(State):
         while is_downloading:
             header_bytes, addr = self._recvfrom_socket()
             header = Header(header_bytes)
-            print(len(header))
-            print(len(header.data))
-            print(header.window)
-            print(header_bytes)
-            print()
+            # print(len(header))
+            # print(len(header.data))
+            # print(header.window)
+            # print(header_bytes)
+            # print()
             print(header)
 
             if header.data:
