@@ -62,6 +62,7 @@ class State:
 
         h = Header.from_tcb(self.tcb)
         h.SYN = True
+        print(h)
         self.tcp.socket.sendto(bytes(h), self.tcb.dest_address)
 
     def _send_ack(self):
@@ -71,6 +72,7 @@ class State:
 
         h = Header.from_tcb(self.tcb)
         h.ACK = True
+        print(h)
         self.tcp.socket.sendto(bytes(h), self.tcb.dest_address)
 
     def _send_syn_ack(self):
@@ -81,6 +83,7 @@ class State:
         h = Header.from_tcb(self.tcb)
         h.SYN = True
         h.ACK = True
+        print(h)
         self.tcp.socket.sendto(bytes(h), self.tcb.dest_address)
 
     def _send_data(self, data):
@@ -99,6 +102,7 @@ class State:
 
         h = Header.from_tcb(self.tcb)
         h.FIN = True
+        print(h)
         self.tcp.socket.sendto(bytes(h), self.tcb.dest_address)
 
     def _recvfrom_socket(self):
