@@ -245,7 +245,7 @@ class Established(State):
                     break
             else:
                 break
-            f.close()
+        f.close()
 
     def upload(self, filename):
         f = open(filename, 'rb')
