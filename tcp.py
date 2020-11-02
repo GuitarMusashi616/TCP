@@ -95,8 +95,8 @@ class TCB:
         self.RCV_UP = header.urgent_ptr
         self.sync(header)
 
-    def sync(self, header):
-        self.RCV_NXT = header.seq_num + 1 if not self.RCV_NXT else self.RCV_NXT + 1
+    def sync(self, header, increment=1):
+        self.RCV_NXT = header.seq_num + increment if not self.RCV_NXT else self.RCV_NXT + increment
 
     @property
     def ISS(self):

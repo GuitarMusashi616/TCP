@@ -227,7 +227,8 @@ class Established(State):
 
     def download(self, filename):
         f = open(filename, 'wb')
-        while True:
+        is_downloading = True
+        while is_downloading:
             header_bytes, addr = self._recvfrom_socket()
             header = Header(header_bytes)
             print(len(header))
@@ -242,9 +243,9 @@ class Established(State):
                 self.tcb.sync(header)
                 self._send_ack()
                 if len(header.data) < header.window:
-                    break
+                    is_downloading = False
             else:
-                break
+                is_downloading = False
         f.close()
 
     def upload(self, filename):
