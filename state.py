@@ -92,6 +92,16 @@ class State:
         h.ACK = True
         self.tcp.socket.sendto(bytes(h), self.tcb.dest_address)
 
+    def _send_data(self, data):
+        check_address(self.tcb.source_address)
+        check_address(self.tcb.dest_address)
+        check_socket(self.tcp.socket)
+
+        h = Header.from_tcb(self.tcb, 192)
+        h.ACK = True
+        h.data = data
+        self.tcp.socket.sendto(bytes(h), self.tcb.dest_address)
+
     def _send_fin(self):
         check_address(self.tcb.source_address)
         check_address(self.tcb.dest_address)
@@ -245,17 +255,7 @@ class Established(State):
             # read file
             data = f.read(1448)
 
-            # make header
-            h = Header(len(data)*8+192)
-            h.seq_num = self.tcb.SND_NXT
-            self.tcb.SND_NXT += len(data)  # or just len(data) + 1?
-            h.ack_num = self.tcb.RCV_NXT
-            h.ACK = True
-            h.data = data
-            h.window = 1448
-
-            # send header
-            self.tcp.socket.sendto(bytes(h), self.tcb.dest_address)
+            self._send_data(data)
 
             # break if last of file
             if len(data) < 1448:

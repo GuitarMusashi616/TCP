@@ -6,7 +6,8 @@ from bitstring import BitArray, BitStream, pack
 class Header:
     def __init__(self, bits=None):
         self._bits = BitArray(160) if bits is None else BitArray(bits)
-        self.offset = 5
+        max_bits = 192 if len(self._bits) > 192 else len(self._bits)
+        self.offset = max_bits // 32
 
     @classmethod
     def from_header(cls, header):
@@ -202,9 +203,9 @@ class Header:
         return h
 
     @classmethod
-    def from_tcb(cls, tcb):
+    def from_tcb(cls, tcb, size=160):
         try:
-            h = Header()
+            h = Header(size)
             h.source_port = tcb.source_address[1]
             h.dest_port = tcb.dest_address[1]
             h.seq_num = tcb.SND_NXT
