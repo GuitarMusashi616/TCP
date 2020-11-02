@@ -211,7 +211,7 @@ class Header:
             return h
 
         except (AttributeError, TypeError) as e:
-            print(f"tcb could not create header from tcb, {e}")
+            print("tcb could not create header from tcb", str(e))
 
 
 
