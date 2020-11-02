@@ -158,6 +158,10 @@ class Header:
     def data(self):
         return self._bits[192:].bytes
 
+    @data.setter
+    def data(self, value):
+        self._bits = self._bits[:192] + BitArray(value)
+
     def __len__(self):
         return len(self._bits)
 
@@ -182,7 +186,7 @@ class Header:
         string += 'Window: ' + str(self.window) + '\n\n'
         string += 'Checksum: ' + str(self.checksum) + '\n\n'
         string += 'Urgent Pointer: ' + str(self.urgent_ptr) + '\n\n'
-        if self.offset > 5:
+        if len(self._bits) > 160:
             string += 'Options: ' + str(self.options) + '\n\n'
             string += 'Data: ' + str(self.data) + '\n'
 

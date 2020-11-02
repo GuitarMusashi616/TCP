@@ -62,6 +62,15 @@ def auto_listen():
     # closed
 
 
+def receive_upload():
+    tcp = TCP(('', 54321))
+    print(tcp.state)
+    # established
+    tcp.receive()
+    print(tcp.state)
+    # closed
+
+
 if __name__ == "__main__":
     auto_listen()
 

@@ -39,6 +39,12 @@ class State:
     def status(self):
         raise NotImplementedError
 
+    def download(self, filename):
+        raise NotImplementedError
+
+    def upload(self, filename):
+        raise NotImplementedError
+
     def _open_socket(self):
         check_address(self.tcb.source_address)
         self.tcp.socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
@@ -220,6 +226,45 @@ class Established(State):
             self.tcb.sync(header)
             self._send_ack()
             self.tcp.state = CloseWait(self.tcp)
+
+    def download(self, filename):
+        f = open(filename, 'wb')
+        while True:
+            header_bytes, addr = self.tcp.socket.recvfrom(1500)
+            header = Header(header_bytes)
+            print(header)
+            if len(header) > 192:
+                f.write(header.data)
+            else:
+                break
+        f.close()
+
+    def upload(self, filename):
+        f = open(filename, 'rb')
+        while True:
+            # read file
+            data = f.read(1448)
+
+            # make header
+            h = Header(len(data)*8+192)
+            h.seq_num = self.tcb.SND_NXT
+            self.tcb.SND_NXT += len(data)  # or just len(data) + 1?
+            h.ack_num = self.tcb.RCV_NXT
+            h.ACK = True
+            h.data = data
+
+            # send header
+            self.tcp.socket.sendto(bytes(h), self.tcb.dest_address)
+
+            # break if last of file
+            if len(data) < 1448:
+                break
+
+            # wait for ack
+            header_bytes, addr = self.tcp.socket.recvfrom(1500)
+            header = Header(header_bytes)
+            print(header)
+        f.close()
 
 
 class FinWait1(State):

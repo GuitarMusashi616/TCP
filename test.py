@@ -204,7 +204,19 @@ def automatic_with_args():
     args = setup_args()
     tcp = TCP(('', args.port), (args.ip, args.server_port))
     print(tcp.state)
+    if args.mode == 'r':
+        tcp.download(args.filename)
+    else:
+        tcp.upload(args.filename)
+    tcp.close()
+    print(tcp.state)
+
+
+def test_upload():
+    tcp = TCP(('', 12345), ('127.0.0.1', 54321))
+    print(tcp.state)
     # established
+    tcp.upload('results_tcp.csv')
     tcp.close()
     print(tcp.state)
     # closed

@@ -50,11 +50,11 @@ class TCP:
     def establish_connection(self):
         pass
 
-    def download_file(self):
-        pass
+    def download(self, filename):
+        self.state.download(filename)
 
-    def upload_file(self):
-        pass
+    def upload(self, filename):
+        self.state.upload(filename)
 
     def close_connection(self):
         pass
