@@ -1,0 +1,14 @@
+0.000 NEW RUN: Server, TEST: Write_file__No_file_extension
+0.207 Received: b'\xd9\x83\x9d\xb7\x00\x00\x00;\x00\x00\x00\x00P\x02\x05\xa8\x00\x00\x00\x00'
+0.208 Disassembled: source: 55683, dest: 40375, seq: 59, window: 1448, SYN
+0.208 SYN accepted; new connection: 127.0.0.1 on port 55683
+0.208 Assembling: source: 40375, dest: 55683, seq: 3493295357, ack: 60, window: 5808, ACK, SYN
+0.208 Sent: b'\x9d\xb7\xd9\x83\xd07t\xfd\x00\x00\x00<P\x12\x16\xb0\x00\x00\x00\x00'
+0.210 Received: b'\xd9\x83\x9d\xb7\x00\x00\x00<\xd07t\xfeP\x10\x16\xb0\x00\x00\x00\x00'
+0.210 Disassembled: source: 55683, dest: 40375, seq: 60, ack: 3493295358, window: 5808, ACK
+0.210 Assembling: source: 40375, dest: 55683, seq: 3493295358, ack: 60, window: 5808, ACK
+0.211 Sent: b'\x9d\xb7\xd9\x83\xd07t\xfe\x00\x00\x00<P\x10\x16\xb0\x00\x00\x00\x00'
+0.211 Received: b'\xd9\x83\x9d\xb7\x00\x00\x00=\xd07t\xfe`\x10\x16\xb0\x00\x00\x00\x00\x00\x00\x00\x00Lorem ipsum '...
+0.211 Error: Data offset is not 5
+0.211 Closed connection
+0.212 Shutting down

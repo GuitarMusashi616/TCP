@@ -1,0 +1,14 @@
+0.000 NEW RUN: Server, TEST: Write_file__Small_multi-packet
+0.214 Received: b'\x1aS\x1b]\x00\x00\x00\x1a\x00\x00\x00\x00P\x02\x05\xa8\x00\x00\x00\x00'
+0.215 Disassembled: source: 6739, dest: 7005, seq: 26, window: 1448, SYN
+0.215 SYN accepted; new connection: 127.0.0.1 on port 6739
+0.216 Assembling: source: 7005, dest: 6739, seq: 3486087880, ack: 27, window: 5808, ACK, SYN
+0.216 Sent: b'\x1b]\x1aS\xcf\xc9z\xc8\x00\x00\x00\x1bP\x12\x16\xb0\x00\x00\x00\x00'
+0.218 Received: b'\x1aS\x1b]\x00\x00\x00\x1b\xcf\xc9z\xc9P\x10\x16\xb0\x00\x00\x00\x00'
+0.218 Disassembled: source: 6739, dest: 7005, seq: 27, ack: 3486087881, window: 5808, ACK
+0.218 Assembling: source: 7005, dest: 6739, seq: 3486087881, ack: 27, window: 5808, ACK
+0.218 Sent: b'\x1b]\x1aS\xcf\xc9z\xc9\x00\x00\x00\x1bP\x10\x16\xb0\x00\x00\x00\x00'
+0.219 Received: b'\x1aS\x1b]\x00\x00\x00\x1c\xcf\xc9z\xc9`\x10\x16\xb0\x00\x00\x00\x00\x00\x00\x00\x00Lorem ipsum '...
+0.219 Error: Data offset is not 5
+0.219 Closed connection
+0.219 Shutting down

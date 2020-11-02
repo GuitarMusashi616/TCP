@@ -1,0 +1,14 @@
+0.000 NEW RUN: Server, TEST: Write_file__Single_packet
+0.220 Received: b'\xcdi\xd1T\x00\x00\x00O\x00\x00\x00\x00P\x02\x05\xa8\x00\x00\x00\x00'
+0.220 Disassembled: source: 52585, dest: 53588, seq: 79, window: 1448, SYN
+0.220 SYN accepted; new connection: 127.0.0.1 on port 52585
+0.220 Assembling: source: 53588, dest: 52585, seq: 3485556417, ack: 80, window: 5808, ACK, SYN
+0.221 Sent: b'\xd1T\xcdi\xcf\xc1^\xc1\x00\x00\x00PP\x12\x16\xb0\x00\x00\x00\x00'
+0.223 Received: b'\xcdi\xd1T\x00\x00\x00P\xcf\xc1^\xc2P\x10\x16\xb0\x00\x00\x00\x00'
+0.223 Disassembled: source: 52585, dest: 53588, seq: 80, ack: 3485556418, window: 5808, ACK
+0.223 Assembling: source: 53588, dest: 52585, seq: 3485556418, ack: 80, window: 5808, ACK
+0.224 Sent: b'\xd1T\xcdi\xcf\xc1^\xc2\x00\x00\x00PP\x10\x16\xb0\x00\x00\x00\x00'
+0.225 Received: b'\xcdi\xd1T\x00\x00\x00Q\xcf\xc1^\xc2`\x10\x16\xb0\x00\x00\x00\x00\x00\x00\x00\x00This file fi'...
+0.225 Error: Data offset is not 5
+0.225 Closed connection
+0.225 Shutting down

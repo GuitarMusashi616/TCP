@@ -1,0 +1,14 @@
+0.000 NEW RUN: Server, TEST: Write_file__Random_drops
+0.207 Received: b'\xe7\x1f\x87M\x00\x00\x00]\x00\x00\x00\x00P\x02\x05\xa8\x00\x00\x00\x00'
+0.208 Disassembled: source: 59167, dest: 34637, seq: 93, window: 1448, SYN
+0.208 SYN accepted; new connection: 127.0.0.1 on port 59167
+0.208 Assembling: source: 34637, dest: 59167, seq: 3502999968, ack: 94, window: 5808, ACK, SYN
+0.209 Sent: b'\x87M\xe7\x1f\xd0\xcb\x89\xa0\x00\x00\x00^P\x12\x16\xb0\x00\x00\x00\x00'
+0.212 Received: b'\xe7\x1f\x87M\x00\x00\x00^\xd0\xcb\x89\xa1P\x10\x16\xb0\x00\x00\x00\x00'
+0.212 Disassembled: source: 59167, dest: 34637, seq: 94, ack: 3502999969, window: 5808, ACK
+0.212 Assembling: source: 34637, dest: 59167, seq: 3502999969, ack: 94, window: 5808, ACK
+0.212 Sent: b'\x87M\xe7\x1f\xd0\xcb\x89\xa1\x00\x00\x00^P\x10\x16\xb0\x00\x00\x00\x00'
+0.213 Received: b'\xe7\x1f\x87M\x00\x00\x00_\xd0\xcb\x89\xa1`\x10\x16\xb0\x00\x00\x00\x00\x00\x00\x00\x00Lorem ipsum '...
+0.214 Error: Data offset is not 5
+0.214 Closed connection
+0.214 Shutting down

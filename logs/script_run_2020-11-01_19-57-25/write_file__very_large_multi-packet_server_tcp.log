@@ -1,0 +1,14 @@
+0.000 NEW RUN: Server, TEST: Write_file__Very_large_multi-packet
+0.208 Received: b'\x18u)\xe9\x00\x00\x00@\x00\x00\x00\x00P\x02\x05\xa8\x00\x00\x00\x00'
+0.209 Disassembled: source: 6261, dest: 10729, seq: 64, window: 1448, SYN
+0.209 SYN accepted; new connection: 127.0.0.1 on port 6261
+0.209 Assembling: source: 10729, dest: 6261, seq: 3541474934, ack: 65, window: 5808, ACK, SYN
+0.210 Sent: b')\xe9\x18u\xd3\x16\x9ev\x00\x00\x00AP\x12\x16\xb0\x00\x00\x00\x00'
+0.212 Received: b'\x18u)\xe9\x00\x00\x00A\xd3\x16\x9ewP\x10\x16\xb0\x00\x00\x00\x00'
+0.212 Disassembled: source: 6261, dest: 10729, seq: 65, ack: 3541474935, window: 5808, ACK
+0.212 Assembling: source: 10729, dest: 6261, seq: 3541474935, ack: 65, window: 5808, ACK
+0.212 Sent: b')\xe9\x18u\xd3\x16\x9ew\x00\x00\x00AP\x10\x16\xb0\x00\x00\x00\x00'
+0.213 Received: b'\x18u)\xe9\x00\x00\x00B\xd3\x16\x9ew`\x10\x16\xb0\x00\x00\x00\x00\x00\x00\x00\x00@\x96o\xec!c\x93Z\xed\x08f\xcd'...
+0.213 Error: Data offset is not 5
+0.213 Closed connection
+0.214 Shutting down

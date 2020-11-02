@@ -1,0 +1,14 @@
+0.000 NEW RUN: Server, TEST: Write_file__Empty
+0.219 Received: b'\xed\x16\x15z\x00\x00\x00?\x00\x00\x00\x00P\x02\x05\xa8\x00\x00\x00\x00'
+0.220 Disassembled: source: 60694, dest: 5498, seq: 63, window: 1448, SYN
+0.220 SYN accepted; new connection: 127.0.0.1 on port 60694
+0.220 Assembling: source: 5498, dest: 60694, seq: 3485024662, ack: 64, window: 5808, ACK, SYN
+0.220 Sent: b'\x15z\xed\x16\xcf\xb9A\x96\x00\x00\x00@P\x12\x16\xb0\x00\x00\x00\x00'
+0.222 Received: b'\xed\x16\x15z\x00\x00\x00@\xcf\xb9A\x97P\x10\x16\xb0\x00\x00\x00\x00'
+0.223 Disassembled: source: 60694, dest: 5498, seq: 64, ack: 3485024663, window: 5808, ACK
+0.223 Assembling: source: 5498, dest: 60694, seq: 3485024663, ack: 64, window: 5808, ACK
+0.223 Sent: b'\x15z\xed\x16\xcf\xb9A\x97\x00\x00\x00@P\x10\x16\xb0\x00\x00\x00\x00'
+0.224 Received: b'\xed\x16\x15z\x00\x00\x00A\xcf\xb9A\x97`\x10\x16\xb0\x00\x00\x00\x00\x00\x00\x00\x00'
+0.224 Error: Data offset is not 5
+0.224 Closed connection
+0.224 Shutting down
