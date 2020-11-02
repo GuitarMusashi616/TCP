@@ -200,5 +200,15 @@ def automatic_states():
     # closed
 
 
+def automatic_with_args():
+    args = setup_args()
+    tcp = TCP(('', args.port), (args.ip, args.server_port))
+    print(tcp.state)
+    # established
+    tcp.close()
+    print(tcp.state)
+    # closed
+
+
 if __name__ == '__main__':
-    automatic_states()
+    automatic_with_args()
