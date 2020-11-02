@@ -1,0 +1,18 @@
+0.000 NEW RUN: Server, TEST: Read_file__Common_drops
+0.206 Received: b'\xe3*>\x1a\x00\x00\x00\x03\x00\x00\x00\x00P\x02\x05\xa8\x00\x00\x00\x00'
+0.207 Disassembled: source: 58154, dest: 15898, seq: 3, window: 1448, SYN
+0.207 SYN accepted; new connection: 127.0.0.1 on port 58154
+0.207 Assembling: source: 15898, dest: 58154, seq: 1881866910, ack: 4, window: 1448, ACK, SYN
+0.207 Failed to send packet
+0.708 Sent: b'>\x1a\xe3*p+\x02\x9e\x00\x00\x00\x04P\x12\x05\xa8\x00\x00\x00\x00'
+0.711 Failed to receive packet
+1.208 Failed to send packet
+1.709 Failed to send packet
+2.209 Sent: b'>\x1a\xe3*p+\x02\x9e\x00\x00\x00\x04P\x12\x05\xa8\x00\x00\x00\x00'
+2.211 Received: b'\xe3*>\x1a\x00\x00\x00\x05p+\x02\x9fP\x01\x05\xa8\x00\x00\x00\x00'
+2.212 Disassembled: source: 58154, dest: 15898, seq: 5, ack: 1881866911, window: 1448, FIN
+2.212 Error: Responses must be acknowledgements
+2.709 Sent: b'>\x1a\xe3*p+\x02\x9e\x00\x00\x00\x04P\x12\x05\xa8\x00\x00\x00\x00'
+3.210 Error: Connection timed out
+3.210 Closed connection
+3.213 Shutting down

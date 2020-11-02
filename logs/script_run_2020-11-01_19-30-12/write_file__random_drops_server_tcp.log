@@ -1,0 +1,11 @@
+0.000 NEW RUN: Server, TEST: Write_file__Random_drops
+0.214 Received: b'}\xd5\xacn\x00\x00\x002\x00\x00\x00\x00P\x02\x05\xa8\x00\x00\x00\x00'
+0.215 Disassembled: source: 32213, dest: 44142, seq: 50, window: 1448, SYN
+0.215 SYN accepted; new connection: 127.0.0.1 on port 32213
+0.215 Assembling: source: 44142, dest: 32213, seq: 1878265748, ack: 51, window: 5808, ACK, SYN
+0.216 Sent: b'\xacn}\xd5o\xf4\x0f\x94\x00\x00\x003P\x12\x16\xb0\x00\x00\x00\x00'
+0.218 Received: b'}\xd5\xacn\x00\x00\x003o\xf4\x0f\x95P\x10\x05\xa8\x00\x00\x00\x00'
+0.218 Disassembled: source: 32213, dest: 44142, seq: 51, ack: 1878265749, window: 1448, ACK
+0.218 Error: Window changed
+0.218 Closed connection
+0.219 Shutting down

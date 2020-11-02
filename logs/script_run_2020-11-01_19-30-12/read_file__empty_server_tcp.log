@@ -1,0 +1,30 @@
+0.000 NEW RUN: Server, TEST: Read_file__Empty
+0.223 Received: b'\x1d\tt-\x00\x00\x00%\x00\x00\x00\x00P\x02\x05\xa8\x00\x00\x00\x00'
+0.224 Disassembled: source: 7433, dest: 29741, seq: 37, window: 1448, SYN
+0.224 SYN accepted; new connection: 127.0.0.1 on port 7433
+0.224 Assembling: source: 29741, dest: 7433, seq: 1826858485, ack: 38, window: 1448, ACK, SYN
+0.225 Sent: b't-\x1d\tl\xe3\xa5\xf5\x00\x00\x00&P\x12\x05\xa8\x00\x00\x00\x00'
+0.226 Received: b'\x1d\tt-\x00\x00\x00&l\xe3\xa5\xf6P\x10\x05\xa8\x00\x00\x00\x00'
+0.227 Disassembled: source: 7433, dest: 29741, seq: 38, ack: 1826858486, window: 1448, ACK
+0.227 Handshake complete
+0.227 Acknowledged seq: 1826858485
+0.227 Finished reading file
+0.227 Assembling: source: 29741, dest: 7433, seq: 1826858486, ack: 39, window: 1448, ACK, FIN
+0.227 Sent: b"t-\x1d\tl\xe3\xa5\xf6\x00\x00\x00'P\x11\x05\xa8\x00\x00\x00\x00"
+0.229 Received: b"\x1d\tt-\x00\x00\x00'l\xe3\xa5\xf6P\x01\x05\xa8\x00\x00\x00\x00"
+0.229 Disassembled: source: 7433, dest: 29741, seq: 39, ack: 1826858486, window: 1448, FIN
+0.229 Error: Responses must be acknowledgements
+0.728 Sent: b"t-\x1d\tl\xe3\xa5\xf6\x00\x00\x00'P\x11\x05\xa8\x00\x00\x00\x00"
+1.228 Sent: b"t-\x1d\tl\xe3\xa5\xf6\x00\x00\x00'P\x11\x05\xa8\x00\x00\x00\x00"
+1.231 Received: b'\x1d\tt-\x00\x00\x00(l\xe3\xa5\xf8P\x10\x05\xa8\x00\x00\x00\x00'
+1.232 Disassembled: source: 7433, dest: 29741, seq: 40, ack: 1826858488, window: 1448, ACK
+1.232 Error: Acknowledgement number too high
+1.233 Received: b'\x1d\tt-\x00\x00\x00)l\xe3\xa5\xf9P\x10\x05\xa8\x00\x00\x00\x00'
+1.234 Disassembled: source: 7433, dest: 29741, seq: 41, ack: 1826858489, window: 1448, ACK
+1.234 Error: Acknowledgement number too high
+1.728 Sent: b"t-\x1d\tl\xe3\xa5\xf6\x00\x00\x00'P\x11\x05\xa8\x00\x00\x00\x00"
+2.229 Sent: b"t-\x1d\tl\xe3\xa5\xf6\x00\x00\x00'P\x11\x05\xa8\x00\x00\x00\x00"
+2.729 Sent: b"t-\x1d\tl\xe3\xa5\xf6\x00\x00\x00'P\x11\x05\xa8\x00\x00\x00\x00"
+3.230 Error: Connection timed out
+3.230 Closed connection
+3.236 Shutting down

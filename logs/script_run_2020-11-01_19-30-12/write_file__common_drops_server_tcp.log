@@ -1,0 +1,16 @@
+0.000 NEW RUN: Server, TEST: Write_file__Common_drops
+0.211 Received: b'\xc5\x12\xf7\xbd\x00\x00\x00\x0f\x00\x00\x00\x00P\x02\x05\xa8\x00\x00\x00\x00'
+0.212 Disassembled: source: 50450, dest: 63421, seq: 15, window: 1448, SYN
+0.212 SYN accepted; new connection: 127.0.0.1 on port 50450
+0.212 Assembling: source: 63421, dest: 50450, seq: 1893917894, ack: 16, window: 5808, ACK, SYN
+0.212 Failed to send packet
+0.713 Failed to send packet
+1.213 Failed to send packet
+1.713 Sent: b'\xf7\xbd\xc5\x12p\xe2\xe4\xc6\x00\x00\x00\x10P\x12\x16\xb0\x00\x00\x00\x00'
+1.717 Failed to receive packet
+1.719 Failed to receive packet
+2.214 Failed to send packet
+2.714 Failed to send packet
+3.214 Error: Connection timed out
+3.215 Closed connection
+3.221 Shutting down
