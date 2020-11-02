@@ -223,4 +223,4 @@ def test_upload():
 
 
 if __name__ == '__main__':
-    automatic_states()
+    automatic_with_args()
