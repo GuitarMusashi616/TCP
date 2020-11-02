@@ -78,18 +78,24 @@ class TCB:
         self.RCV_UP = None
         self.IRS = None
 
+        self.init_sequence_nums()
+
     def init_sequence_nums(self, window=5):
-        start_num = random.randint(0, 2**32-1)
+        start_num = random.randint(0, 100)  # 2**32-1
         self.ISS = start_num
         self.SND_UNA = start_num
         self.SND_WND = window
         self.SND_NXT = start_num
+        self.RCV_NXT = 0
 
-    def sync_tcb(self, header):
+    def initialize(self, header, addr):
+        self.dest_address = addr if self.dest_address is None else self.dest_address
         self.RCV_WND = header.window
-        self.RCV_NXT = header.seq_num + len(header)
         self.RCV_UP = header.urgent_ptr
-        self.IRS = header.seq_num
+        self.sync(header)
+
+    def sync(self, header):
+        self.RCV_NXT = header.seq_num + 1 if not self.RCV_NXT else self.RCV_NXT + 1
 
     @property
     def ISS(self):

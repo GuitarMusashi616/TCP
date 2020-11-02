@@ -57,7 +57,7 @@ class State:
         _, port = self.tcb.source_address
         ip, server_port = self.tcb.dest_address
 
-        h = Header.new(port, server_port, 0, 0)
+        h = Header.from_tcb(self.tcb)
         h.SYN = True
         self.tcp.socket.sendto(bytes(h), self.tcb.dest_address)
 
@@ -69,7 +69,7 @@ class State:
         _, port = self.tcb.source_address
         ip, server_port = self.tcb.dest_address
 
-        h = Header.new(port, server_port, 0, 0)
+        h = Header.from_tcb(self.tcb)
         h.ACK = True
         self.tcp.socket.sendto(bytes(h), self.tcb.dest_address)
 
@@ -81,7 +81,7 @@ class State:
         _, port = self.tcb.source_address
         ip, server_port = self.tcb.dest_address
 
-        h = Header.new(port, server_port, 0, 0)
+        h = Header.from_tcb(self.tcb)
         h.SYN = True
         h.ACK = True
         self.tcp.socket.sendto(bytes(h), self.tcb.dest_address)
@@ -94,7 +94,7 @@ class State:
         _, port = self.tcb.source_address
         ip, server_port = self.tcb.dest_address
 
-        h = Header.new(port, server_port, 0, 0)
+        h = Header.from_tcb(self.tcb)
         h.FIN = True
         self.tcp.socket.sendto(bytes(h), self.tcb.dest_address)
 
@@ -105,7 +105,7 @@ class State:
                 header_bytes, addr = self.tcp.socket.recvfrom(1500)
                 print(f"{self}\n{Header(header_bytes)}")
                 return header_bytes, addr
-            except socket.timeout:
+            except (socket.timeout, ConnectionResetError):
                 attempts -= 1
         sys.exit("No response from server, shutting down...")
 
@@ -155,7 +155,7 @@ class Listen(State):
         header_bytes, addr = self._recvfrom_socket()
         header = Header(header_bytes)
         if header.SYN:
-            self.tcb.dest_address = addr if self.tcb.dest_address is None else self.tcb.dest_address
+            self.tcb.initialize(header, addr)
             self._send_syn_ack()
             self.tcp.state = SynReceived(self.tcp)
 
@@ -180,9 +180,11 @@ class SynSent(State):
         header_bytes, addr = self._recvfrom_socket()
         header = Header(header_bytes)
         if header.SYN and header.ACK:
+            self.tcb.sync(header)
             self._send_ack()
             self.tcp.state = Established(self.tcp)
         elif header.SYN:
+            self.tcb.sync(header)
             self._send_syn_ack()
             self.tcp.state = SynReceived(self.tcp)
 
@@ -195,6 +197,7 @@ class SynReceived(State):
         header_bytes, addr = self._recvfrom_socket()
         header = Header(header_bytes)
         if header.ACK:
+            self.tcb.sync(header)
             self.tcp.state = Established(self.tcp)
 
     def close(self):
@@ -214,6 +217,7 @@ class Established(State):
         header_bytes, addr = self._recvfrom_socket()
         header = Header(header_bytes)
         if header.FIN:
+            self.tcb.sync(header)
             self._send_ack()
             self.tcp.state = CloseWait(self.tcp)
 
@@ -226,9 +230,11 @@ class FinWait1(State):
         header_bytes, addr = self._recvfrom_socket()
         header = Header(header_bytes)
         if header.ACK:
+            self.tcb.sync(header)
             self.tcp.state = FinWait2(self.tcp)
 
         if header.FIN:
+            self.tcb.sync(header)
             self._send_ack()
             self.tcp.state = Closing(self.tcp)
 
@@ -241,6 +247,7 @@ class FinWait2(State):
         header_bytes, addr = self._recvfrom_socket()
         header = Header(header_bytes)
         if header.FIN:
+            self.tcb.sync(header)
             self._send_ack()
             self.tcp.state = TimeWait(self.tcp)
 
@@ -262,6 +269,7 @@ class LastAck(State):
         header_bytes, addr = self._recvfrom_socket()
         header = Header(header_bytes)
         if header.ACK:
+            self.tcb.sync(header)
             self.tcp.state = Closed(self.tcp)
 
 
@@ -273,10 +281,11 @@ class Closing(State):
         header_bytes, addr = self._recvfrom_socket()
         header = Header(header_bytes)
         if header.ACK:
+            self.tcb.sync(header)
             self.tcp.state = TimeWait(self.tcp)
 
 
 class TimeWait(State):
     def startup(self):
-        # sleep(2*MSL)
+        # sleep(2*MSL) 2 minute MSL in specification
         self.tcp.state = Closed(self.tcp)

@@ -92,7 +92,8 @@ def test_args():
 
 def test_tcp_download():
     args = setup_args()
-    h = Header.new_syn(args.port, args.server_port, 0, 0)
+    h = Header.ne(args.port, args.server_port, 0, 0)
+    h.SYN = True
 
     tcp = TCP()
     tcp.open(args.port)

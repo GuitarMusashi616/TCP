@@ -198,9 +198,21 @@ class Header:
         return h
 
     @classmethod
-    def new_syn(cls, source_port, dest_port, seq_num, ack_num):
-        h = Header.new(source_port, dest_port, seq_num, ack_num)
-        h.SYN = True
-        return h
+    def from_tcb(cls, tcb):
+        try:
+            h = Header()
+            h.source_port = tcb.source_address[1]
+            h.dest_port = tcb.dest_address[1]
+            h.seq_num = tcb.SND_NXT
+            h.ack_num = tcb.RCV_NXT
+
+            tcb.SND_NXT += 1
+            # todo: make it increase by num bits
+            return h
+
+        except (AttributeError, TypeError) as e:
+            print(f"tcb could not create header from tcb, {e}")
+
+
 
 
