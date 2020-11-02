@@ -230,7 +230,9 @@ class Established(State):
         while True:
             header_bytes, addr = self._recvfrom_socket()
             header = Header(header_bytes)
-            # print(header)
+            print(len(header))
+            print(header)
+
             if len(header) > 192:
                 f.write(header.data)
             else:
