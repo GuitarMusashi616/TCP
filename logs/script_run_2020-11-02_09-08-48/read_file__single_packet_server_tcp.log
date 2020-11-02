@@ -1,0 +1,30 @@
+0.000 NEW RUN: Server, TEST: Read_file__Single_packet
+0.197 Received: b'e\xab\x88o\x00\x00\x00<\x00\x00\x00\x00P\x02\x05\xa8\x00\x00\x00\x00'
+0.198 Disassembled: source: 26027, dest: 34927, seq: 60, window: 1448, SYN
+0.198 SYN accepted; new connection: 127.0.0.1 on port 26027
+0.198 Assembling: source: 34927, dest: 26027, seq: 543527174, ack: 61, window: 1448, ACK, SYN
+0.198 Sent: b'\x88oe\xab e\x91\x06\x00\x00\x00=P\x12\x05\xa8\x00\x00\x00\x00'
+0.200 Received: b'e\xab\x88o\x00\x00\x00= e\x91\x07P\x10\x05\xa8\x00\x00\x00\x00'
+0.200 Disassembled: source: 26027, dest: 34927, seq: 61, ack: 543527175, window: 1448, ACK
+0.200 Handshake complete
+0.200 Acknowledged seq: 543527174
+0.200 Finished reading file
+0.200 Assembling: source: 34927, dest: 26027, seq: 543527175, ack: 62, window: 1448, data: "This file fits i"...
+0.201 Sent: b'\x88oe\xab e\x91\x07\x00\x00\x00>P\x00\x05\xa8\x00\x00\x00\x00This file fits i'...
+0.202 Received: b'e\xab\x88o\x00\x00\x00> e\x91\x08P\x10\x05\xa8\x00\x00\x00\x00'
+0.202 Disassembled: source: 26027, dest: 34927, seq: 62, ack: 543527176, window: 1448, ACK
+0.203 Assembling: source: 34927, dest: 26027, seq: 543527218, ack: 63, window: 1448, ACK, FIN
+0.203 Sent: b'\x88oe\xab e\x912\x00\x00\x00?P\x11\x05\xa8\x00\x00\x00\x00'
+0.703 Sent: b'\x88oe\xab e\x91\x07\x00\x00\x00>P\x00\x05\xa8\x00\x00\x00\x00This file fits i'...
+0.704 Sent: b'\x88oe\xab e\x912\x00\x00\x00?P\x11\x05\xa8\x00\x00\x00\x00'
+1.204 Sent: b'\x88oe\xab e\x91\x07\x00\x00\x00>P\x00\x05\xa8\x00\x00\x00\x00This file fits i'...
+1.204 Sent: b'\x88oe\xab e\x912\x00\x00\x00?P\x11\x05\xa8\x00\x00\x00\x00'
+1.704 Sent: b'\x88oe\xab e\x91\x07\x00\x00\x00>P\x00\x05\xa8\x00\x00\x00\x00This file fits i'...
+1.705 Sent: b'\x88oe\xab e\x912\x00\x00\x00?P\x11\x05\xa8\x00\x00\x00\x00'
+2.205 Sent: b'\x88oe\xab e\x91\x07\x00\x00\x00>P\x00\x05\xa8\x00\x00\x00\x00This file fits i'...
+2.205 Sent: b'\x88oe\xab e\x912\x00\x00\x00?P\x11\x05\xa8\x00\x00\x00\x00'
+2.705 Sent: b'\x88oe\xab e\x91\x07\x00\x00\x00>P\x00\x05\xa8\x00\x00\x00\x00This file fits i'...
+2.705 Sent: b'\x88oe\xab e\x912\x00\x00\x00?P\x11\x05\xa8\x00\x00\x00\x00'
+3.205 Error: Connection timed out
+3.206 Closed connection
+3.206 Shutting down

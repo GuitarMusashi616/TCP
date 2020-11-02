@@ -1,0 +1,37 @@
+0.000 NEW RUN: Server, TEST: Write_file__Common_drops
+0.213 Received: b'0\xdd\xe4\xea\x00\x00\x00&\x00\x00\x00\x00P\x02\x05\xa8\x00\x00\x00\x00'
+0.213 Disassembled: source: 12509, dest: 58602, seq: 38, window: 1448, SYN
+0.214 SYN accepted; new connection: 127.0.0.1 on port 12509
+0.214 Assembling: source: 58602, dest: 12509, seq: 2890469065, ack: 39, window: 5808, ACK, SYN
+0.214 Sent: b"\xe4\xea0\xdd\xacI\x0e\xc9\x00\x00\x00'P\x12\x16\xb0\x00\x00\x00\x00"
+0.216 Failed to receive packet
+0.218 Failed to receive packet
+0.714 Failed to send packet
+1.215 Failed to send packet
+1.715 Sent: b"\xe4\xea0\xdd\xacI\x0e\xc9\x00\x00\x00'P\x12\x16\xb0\x00\x00\x00\x00"
+1.718 Received: b'0\xdd\xe4\xea\x00\x00\x00)\xacI\x0e\xcbP\x10\x16\xb0\x00\x00\x00\x00'
+1.718 Disassembled: source: 12509, dest: 58602, seq: 41, ack: 2890469067, window: 5808, ACK
+1.718 Assembling: source: 58602, dest: 12509, seq: 2890469066, ack: 39, window: 5808, ACK
+1.719 Failed to send packet
+1.720 Failed to receive packet
+2.219 Failed to send packet
+2.720 Failed to send packet
+3.220 Failed to send packet
+3.721 Sent: b"\xe4\xea0\xdd\xacI\x0e\xca\x00\x00\x00'P\x10\x16\xb0\x00\x00\x00\x00"
+3.723 Received: b'0\xdd\xe4\xea\x00\x00\x00+\xacI\x0e\xccP\x10\x16\xb0\x00\x00\x00\x00'
+3.724 Disassembled: source: 12509, dest: 58602, seq: 43, ack: 2890469068, window: 5808, ACK
+3.724 Assembling: source: 58602, dest: 12509, seq: 2890469066, ack: 39, window: 5808, ACK
+3.724 Sent: b"\xe4\xea0\xdd\xacI\x0e\xca\x00\x00\x00'P\x10\x16\xb0\x00\x00\x00\x00"
+3.725 Received: b'0\xdd\xe4\xea\x00\x00\x00,\xacI\x0e\xccP\x10\x16\xb0\x00\x00\x00\x00ilisi repudiare '...
+3.726 Disassembled: source: 12509, dest: 58602, seq: 44, ack: 2890469068, window: 5808, ACK, data: "ilisi repudiare "...
+3.726 Handshake complete
+3.726 Data accepted; adding to buffer
+3.726 Assembling: source: 58602, dest: 12509, seq: 2890469066, ack: 39, window: 5808, ACK
+3.727 Sent: b"\xe4\xea0\xdd\xacI\x0e\xca\x00\x00\x00'P\x10\x16\xb0\x00\x00\x00\x00"
+4.227 Sent: b"\xe4\xea0\xdd\xacI\x0e\xca\x00\x00\x00'P\x10\x16\xb0\x00\x00\x00\x00"
+4.728 Failed to send packet
+5.228 Failed to send packet
+5.728 Sent: b"\xe4\xea0\xdd\xacI\x0e\xca\x00\x00\x00'P\x10\x16\xb0\x00\x00\x00\x00"
+6.229 Error: Connection timed out
+6.229 Closed connection
+6.230 Shutting down

@@ -1,0 +1,29 @@
+0.000 NEW RUN: Server, TEST: Read_file__Small_multi-packet
+0.204 Received: b'EH\xba\xf0\x00\x00\x00<\x00\x00\x00\x00P\x02\x05\xa8\x00\x00\x00\x00'
+0.205 Disassembled: source: 17736, dest: 47856, seq: 60, window: 1448, SYN
+0.205 SYN accepted; new connection: 127.0.0.1 on port 17736
+0.205 Assembling: source: 47856, dest: 17736, seq: 544560692, ack: 61, window: 1448, ACK, SYN
+0.205 Sent: b'\xba\xf0EH uV4\x00\x00\x00=P\x12\x05\xa8\x00\x00\x00\x00'
+0.207 Received: b'EH\xba\xf0\x00\x00\x00= uV5P\x10\x05\xa8\x00\x00\x00\x00'
+0.207 Disassembled: source: 17736, dest: 47856, seq: 61, ack: 544560693, window: 1448, ACK
+0.208 Handshake complete
+0.208 Acknowledged seq: 544560692
+0.208 Assembling: source: 47856, dest: 17736, seq: 544560693, ack: 62, window: 1448, data: "Lorem ipsum dolo"...
+0.208 Sent: b'\xba\xf0EH uV5\x00\x00\x00>P\x00\x05\xa8\x00\x00\x00\x00Lorem ipsum dolo'...
+0.210 Received: b'EH\xba\xf0\x00\x00\x00> uV6P\x10\x05\xa8\x00\x00\x00\x00'
+0.210 Disassembled: source: 17736, dest: 47856, seq: 62, ack: 544560694, window: 1448, ACK
+0.211 Assembling: source: 47856, dest: 17736, seq: 544562141, ack: 63, window: 1448, data: "m"
+0.211 Sent: b'\xba\xf0EH u[\xdd\x00\x00\x00?P\x00\x05\xa8\x00\x00\x00\x00m'
+0.711 Sent: b'\xba\xf0EH uV5\x00\x00\x00>P\x00\x05\xa8\x00\x00\x00\x00Lorem ipsum dolo'...
+0.711 Sent: b'\xba\xf0EH u[\xdd\x00\x00\x00?P\x00\x05\xa8\x00\x00\x00\x00m'
+1.211 Sent: b'\xba\xf0EH uV5\x00\x00\x00>P\x00\x05\xa8\x00\x00\x00\x00Lorem ipsum dolo'...
+1.212 Sent: b'\xba\xf0EH u[\xdd\x00\x00\x00?P\x00\x05\xa8\x00\x00\x00\x00m'
+1.712 Sent: b'\xba\xf0EH uV5\x00\x00\x00>P\x00\x05\xa8\x00\x00\x00\x00Lorem ipsum dolo'...
+1.712 Sent: b'\xba\xf0EH u[\xdd\x00\x00\x00?P\x00\x05\xa8\x00\x00\x00\x00m'
+2.212 Sent: b'\xba\xf0EH uV5\x00\x00\x00>P\x00\x05\xa8\x00\x00\x00\x00Lorem ipsum dolo'...
+2.212 Sent: b'\xba\xf0EH u[\xdd\x00\x00\x00?P\x00\x05\xa8\x00\x00\x00\x00m'
+2.712 Sent: b'\xba\xf0EH uV5\x00\x00\x00>P\x00\x05\xa8\x00\x00\x00\x00Lorem ipsum dolo'...
+2.713 Sent: b'\xba\xf0EH u[\xdd\x00\x00\x00?P\x00\x05\xa8\x00\x00\x00\x00m'
+3.213 Error: Connection timed out
+3.213 Closed connection
+3.214 Shutting down
