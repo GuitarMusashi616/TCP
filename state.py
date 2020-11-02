@@ -103,7 +103,7 @@ class State:
         while attempts > 0:
             try:
                 header_bytes, addr = self.tcp.socket.recvfrom(1500)
-                print(f"{self}\n{Header(header_bytes)}")
+                print(Header(header_bytes))
                 return header_bytes, addr
             except (socket.timeout, ConnectionResetError):
                 attempts -= 1
