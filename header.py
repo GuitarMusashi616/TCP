@@ -209,6 +209,7 @@ class Header:
             h.dest_port = tcb.dest_address[1]
             h.seq_num = tcb.SND_NXT
             h.ack_num = tcb.RCV_NXT
+            h.window = tcb.SND_WND
 
             tcb.SND_NXT += 1
             # todo: make it increase by num bits

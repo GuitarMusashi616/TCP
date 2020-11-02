@@ -252,6 +252,7 @@ class Established(State):
             h.ack_num = self.tcb.RCV_NXT
             h.ACK = True
             h.data = data
+            h.window = 1448
 
             # send header
             self.tcp.socket.sendto(bytes(h), self.tcb.dest_address)
