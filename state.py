@@ -106,7 +106,7 @@ class State:
         while attempts > 0:
             try:
                 header_bytes, addr = self.tcp.socket.recvfrom(1500)
-                # print(Header(header_bytes))
+                print(Header(header_bytes))
                 return header_bytes, addr
             except (socket.timeout, ConnectionResetError):
                 attempts -= 1
@@ -259,7 +259,7 @@ class Established(State):
             header_bytes, addr = self._recvfrom_socket()
             header = Header(header_bytes)
             self.tcb.sync(header)
-            print(header)
+            # print(header)
             if not header.ACK:
                 break
 

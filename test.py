@@ -202,6 +202,8 @@ def automatic_states():
 
 def automatic_with_args():
     args = setup_args()
+    if args.filename != "/home/A365/tcp/dist/read_files/single.txt":
+        return
     tcp = TCP(('', args.port), (args.ip, args.server_port))
     print(tcp.state)
     if args.mode == 'r':
@@ -211,15 +213,6 @@ def automatic_with_args():
     tcp.receive()
     print(tcp.state)
 
-
-def test_upload():
-    tcp = TCP(('', 12345), ('127.0.0.1', 54321))
-    print(tcp.state)
-    # established
-    tcp.upload('results_tcp.csv')
-    tcp.receive()
-    print(tcp.state)
-    # closed
 
 
 if __name__ == '__main__':
