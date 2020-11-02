@@ -1,0 +1,35 @@
+0.000 NEW RUN: Server, TEST: Read_file__No_file_extension
+0.224 Received: b'(_z\xca\x00\x00\x00X\x00\x00\x00\x00P\x02\x05\xa8\x00\x00\x00\x00'
+0.224 Disassembled: source: 10335, dest: 31434, seq: 88, window: 1448, SYN
+0.224 SYN accepted; new connection: 127.0.0.1 on port 10335
+0.224 Assembling: source: 31434, dest: 10335, seq: 437829114, ack: 89, window: 1448, ACK, SYN
+0.225 Sent: b'z\xca(_\x1a\x18\xbd\xfa\x00\x00\x00YP\x12\x05\xa8\x00\x00\x00\x00'
+0.227 Received: b'(_z\xca\x00\x00\x00Y\x1a\x18\xbd\xfbP\x10\x05\xa8\x00\x00\x00\x00'
+0.227 Disassembled: source: 10335, dest: 31434, seq: 89, ack: 437829115, window: 1448, ACK
+0.227 Handshake complete
+0.227 Acknowledged seq: 437829114
+0.227 Assembling: source: 31434, dest: 10335, seq: 437829115, ack: 90, window: 1448, data: "Lorem ipsum dolo"...
+0.228 Sent: b'z\xca(_\x1a\x18\xbd\xfb\x00\x00\x00ZP\x00\x05\xa8\x00\x00\x00\x00Lorem ipsum dolo'...
+0.229 Received: b'(_z\xca\x00\x00\x00Z\x1a\x18\xc3\xa3P\x10\x05\xa8\x00\x00\x00\x00'
+0.230 Disassembled: source: 10335, dest: 31434, seq: 90, ack: 437830563, window: 1448, ACK
+0.230 Acknowledged seq: 437829115
+0.230 Assembling: source: 31434, dest: 10335, seq: 437830563, ack: 91, window: 1448, data: "mprehensam nam, "...
+0.230 Sent: b'z\xca(_\x1a\x18\xc3\xa3\x00\x00\x00[P\x00\x05\xa8\x00\x00\x00\x00mprehensam nam, '...
+0.232 Received: b'(_z\xca\x00\x00\x00[\x1a\x18\xc9KP\x10\x05\xa8\x00\x00\x00\x00'
+0.232 Disassembled: source: 10335, dest: 31434, seq: 91, ack: 437832011, window: 1448, ACK
+0.232 Acknowledged seq: 437830563
+0.232 Finished reading file
+0.233 Assembling: source: 31434, dest: 10335, seq: 437832011, ack: 92, window: 1448, data: "ilisi repudiare "...
+0.233 Sent: b'z\xca(_\x1a\x18\xc9K\x00\x00\x00\\P\x00\x05\xa8\x00\x00\x00\x00ilisi repudiare '...
+0.234 Received: b'(_z\xca\x00\x00\x00\\\x1a\x18\xca\xa6P\x10\x05\xa8\x00\x00\x00\x00'
+0.235 Disassembled: source: 10335, dest: 31434, seq: 92, ack: 437832358, window: 1448, ACK
+0.235 Acknowledged seq: 437832011
+0.235 Assembling: source: 31434, dest: 10335, seq: 437832358, ack: 93, window: 1448, ACK, FIN
+0.235 Sent: b'z\xca(_\x1a\x18\xca\xa6\x00\x00\x00]P\x11\x05\xa8\x00\x00\x00\x00'
+0.236 Received: b'(_z\xca\x00\x00\x00]\x1a\x18\xca\xa7P\x10\x05\xa8\x00\x00\x00\x00'
+0.237 Disassembled: source: 10335, dest: 31434, seq: 93, ack: 437832359, window: 1448, ACK
+0.237 FIN accepted; sending final packet
+0.237 Assembling: source: 31434, dest: 10335, seq: 437832359, ack: 93, window: 1448, ACK
+0.237 Sent: b'z\xca(_\x1a\x18\xca\xa7\x00\x00\x00]P\x10\x05\xa8\x00\x00\x00\x00'
+0.237 Closed connection
+0.238 Shutting down

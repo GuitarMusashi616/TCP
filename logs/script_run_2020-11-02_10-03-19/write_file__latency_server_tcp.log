@@ -1,0 +1,37 @@
+0.000 NEW RUN: Server, TEST: Write_file__Latency
+0.209 Received: b'\xea{\xf7{\x00\x00\x009\x00\x00\x00\x00P\x02\x05\xa8\x00\x00\x00\x00'
+0.209 Disassembled: source: 60027, dest: 63355, seq: 57, window: 1448, SYN
+0.209 SYN accepted; new connection: 127.0.0.1 on port 60027
+0.210 Assembling: source: 63355, dest: 60027, seq: 274558804, ack: 58, window: 5808, ACK, SYN
+0.210 Sent: b'\xf7{\xea{\x10]oT\x00\x00\x00:P\x12\x16\xb0\x00\x00\x00\x00'
+0.710 Sent: b'\xf7{\xea{\x10]oT\x00\x00\x00:P\x12\x16\xb0\x00\x00\x00\x00'
+1.211 Sent: b'\xf7{\xea{\x10]oT\x00\x00\x00:P\x12\x16\xb0\x00\x00\x00\x00'
+1.214 Received: b'\xea{\xf7{\x00\x00\x00:\x10]oUP\x10\x16\xb0\x00\x00\x00\x00'
+1.215 Disassembled: source: 60027, dest: 63355, seq: 58, ack: 274558805, window: 5808, ACK
+1.215 Assembling: source: 63355, dest: 60027, seq: 274558805, ack: 58, window: 5808, ACK
+1.216 Sent: b'\xf7{\xea{\x10]oU\x00\x00\x00:P\x10\x16\xb0\x00\x00\x00\x00'
+1.217 Received: b'\xea{\xf7{\x00\x00\x00;\x10]oUP\x10\x16\xb0\x00\x00\x00\x00Lorem ipsum dolo'...
+1.217 Disassembled: source: 60027, dest: 63355, seq: 59, ack: 274558805, window: 5808, ACK, data: "Lorem ipsum dolo"...
+1.218 Handshake complete
+1.218 Data accepted; adding to buffer
+1.218 Assembling: source: 63355, dest: 60027, seq: 274558805, ack: 58, window: 5808, ACK
+1.218 Sent: b'\xf7{\xea{\x10]oU\x00\x00\x00:P\x10\x16\xb0\x00\x00\x00\x00'
+1.714 Received: b'\xea{\xf7{\x00\x00\x00<\x10]oVP\x10\x16\xb0\x00\x00\x00\x00'
+1.715 Disassembled: source: 60027, dest: 63355, seq: 60, ack: 274558806, window: 5808, ACK
+1.715 Error: Incorrect acknowledgement flag
+1.716 Received: b'\xea{\xf7{\x00\x00\x00=\x10]oVP\x10\x16\xb0\x00\x00\x00\x00mprehensam nam, '...
+1.717 Disassembled: source: 60027, dest: 63355, seq: 61, ack: 274558806, window: 5808, ACK, data: "mprehensam nam, "...
+1.717 Error: Incorrect acknowledgement flag
+1.719 Sent: b'\xf7{\xea{\x10]oU\x00\x00\x00:P\x10\x16\xb0\x00\x00\x00\x00'
+2.215 Received: b'\xea{\xf7{\x00\x00\x00>\x10]oWP\x10\x16\xb0\x00\x00\x00\x00'
+2.215 Disassembled: source: 60027, dest: 63355, seq: 62, ack: 274558807, window: 5808, ACK
+2.215 Error: Incorrect acknowledgement flag
+2.217 Received: b'\xea{\xf7{\x00\x00\x00?\x10]oWP\x10\x16\xb0\x00\x00\x00\x00ilisi repudiare '...
+2.217 Disassembled: source: 60027, dest: 63355, seq: 63, ack: 274558807, window: 5808, ACK, data: "ilisi repudiare "...
+2.217 Error: Incorrect acknowledgement flag
+2.220 Sent: b'\xf7{\xea{\x10]oU\x00\x00\x00:P\x10\x16\xb0\x00\x00\x00\x00'
+2.721 Sent: b'\xf7{\xea{\x10]oU\x00\x00\x00:P\x10\x16\xb0\x00\x00\x00\x00'
+3.221 Sent: b'\xf7{\xea{\x10]oU\x00\x00\x00:P\x10\x16\xb0\x00\x00\x00\x00'
+3.722 Error: Connection timed out
+3.722 Closed connection
+4.219 Shutting down

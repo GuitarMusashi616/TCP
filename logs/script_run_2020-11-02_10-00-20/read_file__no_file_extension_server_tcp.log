@@ -1,0 +1,35 @@
+0.000 NEW RUN: Server, TEST: Read_file__No_file_extension
+0.227 Received: b'C\x8eL\x17\x00\x00\x00\x17\x00\x00\x00\x00P\x02\x05\xa8\x00\x00\x00\x00'
+0.227 Disassembled: source: 17294, dest: 19479, seq: 23, window: 1448, SYN
+0.227 SYN accepted; new connection: 127.0.0.1 on port 17294
+0.228 Assembling: source: 19479, dest: 17294, seq: 37001830, ack: 24, window: 1448, ACK, SYN
+0.228 Sent: b'L\x17C\x8e\x024\x9af\x00\x00\x00\x18P\x12\x05\xa8\x00\x00\x00\x00'
+0.230 Received: b'C\x8eL\x17\x00\x00\x00\x18\x024\x9agP\x10\x05\xa8\x00\x00\x00\x00'
+0.231 Disassembled: source: 17294, dest: 19479, seq: 24, ack: 37001831, window: 1448, ACK
+0.231 Handshake complete
+0.231 Acknowledged seq: 37001830
+0.231 Assembling: source: 19479, dest: 17294, seq: 37001831, ack: 25, window: 1448, data: "Lorem ipsum dolo"...
+0.232 Sent: b'L\x17C\x8e\x024\x9ag\x00\x00\x00\x19P\x00\x05\xa8\x00\x00\x00\x00Lorem ipsum dolo'...
+0.235 Received: b'C\x8eL\x17\x00\x00\x00\x19\x024\xa0\x0fP\x10\x05\xa8\x00\x00\x00\x00'
+0.235 Disassembled: source: 17294, dest: 19479, seq: 25, ack: 37003279, window: 1448, ACK
+0.235 Acknowledged seq: 37001831
+0.235 Assembling: source: 19479, dest: 17294, seq: 37003279, ack: 26, window: 1448, data: "mprehensam nam, "...
+0.236 Sent: b'L\x17C\x8e\x024\xa0\x0f\x00\x00\x00\x1aP\x00\x05\xa8\x00\x00\x00\x00mprehensam nam, '...
+0.239 Received: b'C\x8eL\x17\x00\x00\x00\x1a\x024\xa5\xb7P\x10\x05\xa8\x00\x00\x00\x00'
+0.239 Disassembled: source: 17294, dest: 19479, seq: 26, ack: 37004727, window: 1448, ACK
+0.239 Acknowledged seq: 37003279
+0.239 Finished reading file
+0.240 Assembling: source: 19479, dest: 17294, seq: 37004727, ack: 27, window: 1448, data: "ilisi repudiare "...
+0.240 Sent: b'L\x17C\x8e\x024\xa5\xb7\x00\x00\x00\x1bP\x00\x05\xa8\x00\x00\x00\x00ilisi repudiare '...
+0.242 Received: b'C\x8eL\x17\x00\x00\x00\x1b\x024\xa7\x12P\x10\x05\xa8\x00\x00\x00\x00'
+0.243 Disassembled: source: 17294, dest: 19479, seq: 27, ack: 37005074, window: 1448, ACK
+0.243 Acknowledged seq: 37004727
+0.243 Assembling: source: 19479, dest: 17294, seq: 37005074, ack: 28, window: 1448, ACK, FIN
+0.244 Sent: b'L\x17C\x8e\x024\xa7\x12\x00\x00\x00\x1cP\x11\x05\xa8\x00\x00\x00\x00'
+0.245 Received: b'C\x8eL\x17\x00\x00\x00\x1c\x024\xa7\x13P\x10\x05\xa8\x00\x00\x00\x00'
+0.245 Disassembled: source: 17294, dest: 19479, seq: 28, ack: 37005075, window: 1448, ACK
+0.245 FIN accepted; sending final packet
+0.246 Assembling: source: 19479, dest: 17294, seq: 37005075, ack: 28, window: 1448, ACK
+0.246 Sent: b'L\x17C\x8e\x024\xa7\x13\x00\x00\x00\x1cP\x10\x05\xa8\x00\x00\x00\x00'
+0.246 Closed connection
+0.246 Shutting down
