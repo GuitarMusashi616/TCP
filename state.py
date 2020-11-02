@@ -186,11 +186,11 @@ class SynSent(State):
         header_bytes, addr = self._recvfrom_socket()
         header = Header(header_bytes)
         if header.SYN and header.ACK:
-            self.tcb.sync(header)
+            self.tcb.initialize(header, addr)
             self._send_ack()
             self.tcp.state = Established(self.tcp)
         elif header.SYN:
-            self.tcb.sync(header)
+            self.tcb.initialize(header, addr)
             self._send_syn_ack()
             self.tcp.state = SynReceived(self.tcp)
 

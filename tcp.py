@@ -91,6 +91,7 @@ class TCB:
     def initialize(self, header, addr):
         self.dest_address = addr if self.dest_address is None else self.dest_address
         self.RCV_WND = header.window
+        self.SND_WND = header.window
         self.RCV_UP = header.urgent_ptr
         self.sync(header)
 

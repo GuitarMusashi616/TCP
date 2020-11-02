@@ -208,7 +208,7 @@ def automatic_with_args():
         tcp.download(args.filename)
     else:
         tcp.upload(args.filename)
-    tcp.close()
+    tcp.receive()
     print(tcp.state)
 
 
@@ -217,7 +217,7 @@ def test_upload():
     print(tcp.state)
     # established
     tcp.upload('results_tcp.csv')
-    tcp.close()
+    tcp.receive()
     print(tcp.state)
     # closed
 
