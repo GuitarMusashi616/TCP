@@ -6,20 +6,18 @@ Test: Bad argument for -sp (read mode), True
 Test: Bad argument for -cp (write mode), True
 Test: Bad argument for -sp (write mode), True
 Test: no argument for -f, True
-Read file: Relaxed, False
-Write file: Relaxed, False
-Read file: Empty, False
+Read file: Relaxed, True
+Write file: Relaxed, True
+Read file: Empty, True
 Read file: Single packet, False
 Read file: Small multi-packet, False
 Read file: Large multi-packet, False
 Read file: No file extension, False
-Write file: Empty, False
+Write file: Empty, True
 Write file: Single packet, False
 Write file: Small multi-packet, False
 Write file: Large multi-packet, False
 Write file: No file extension, False
-Read file: Corruption, False
-Write file: Corruption, False
 Read file: Random drops, False
 Write file: Random drops, False
 Read file: Common drops, False

@@ -1,0 +1,11 @@
+0.000 NEW RUN: Server, TEST: Write_file__Random_drops
+0.204 Received: b'\xaa\xd1\xca\xd3\x00\x00\x00(\x00\x00\x00\x00P\x02\x00\x00\x00\x00\x00\x00'
+0.205 Disassembled: source: 43729, dest: 51923, seq: 40, SYN
+0.205 SYN accepted; new connection: 127.0.0.1 on port 43729
+0.205 Assembling: source: 51923, dest: 43729, seq: 1311294958, ack: 41, window: 5808, ACK, SYN
+0.206 Sent: b'\xca\xd3\xaa\xd1N(\xc5\xee\x00\x00\x00)P\x12\x16\xb0\x00\x00\x00\x00'
+0.207 Received: b'\xaa\xd1\xca\xd3\x00\x00\x00)N(\xc5\xefP\x10\x00\x00\x00\x00\x00\x00'
+0.208 Disassembled: source: 43729, dest: 51923, seq: 41, ack: 1311294959, ACK
+0.208 Error: Window size is zero
+0.208 Closed connection
+0.208 Shutting down

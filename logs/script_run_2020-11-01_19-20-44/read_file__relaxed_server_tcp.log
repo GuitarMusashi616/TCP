@@ -1,0 +1,34 @@
+0.000 NEW RUN: Server, TEST: Read_file__Relaxed
+0.210 Received: b'E\xfb\xc5\xa1\x00\x00\x00(\x00\x00\x00\x00P\x02\x00\x00\x00\x00\x00\x00'
+0.211 Disassembled: source: 17915, dest: 50593, seq: 40, SYN
+0.211 SYN accepted; new connection: 127.0.0.1 on port 17915
+0.211 Assembling: source: 50593, dest: 17915, seq: 1257182631, ack: 41, ACK, SYN
+0.212 Sent: b'\xc5\xa1E\xfbJ\xef\x15\xa7\x00\x00\x00)P\x12\x00\x00\x00\x00\x00\x00'
+0.214 Received: b'E\xfb\xc5\xa1\x00\x00\x00)J\xef\x15\xa8P\x10\x00\x00\x00\x00\x00\x00'
+0.214 Disassembled: source: 17915, dest: 50593, seq: 41, ack: 1257182632, ACK
+0.214 Warning: Window size is zero
+0.214 Handshake complete
+0.214 Acknowledged seq: 1257182631
+0.214 Finished reading file
+0.214 Assembling: source: 50593, dest: 17915, seq: 1257182632, ack: 42, window: 1, ACK, FIN
+0.215 Sent: b'\xc5\xa1E\xfbJ\xef\x15\xa8\x00\x00\x00*P\x11\x00\x01\x00\x00\x00\x00'
+0.217 Received: b'E\xfb\xc5\xa1\x00\x00\x00*J\xef\x15\xa8P\x01\x00\x00\x00\x00\x00\x00'
+0.217 Disassembled: source: 17915, dest: 50593, seq: 42, ack: 1257182632, FIN
+0.217 Error: Responses must be acknowledgements
+0.217 Warning: Window size is zero
+0.715 Sent: b'\xc5\xa1E\xfbJ\xef\x15\xa8\x00\x00\x00*P\x11\x00\x01\x00\x00\x00\x00'
+1.215 Sent: b'\xc5\xa1E\xfbJ\xef\x15\xa8\x00\x00\x00*P\x11\x00\x01\x00\x00\x00\x00'
+1.218 Received: b'E\xfb\xc5\xa1\x00\x00\x00+J\xef\x15\xaaP\x10\x00\x00\x00\x00\x00\x00'
+1.219 Disassembled: source: 17915, dest: 50593, seq: 43, ack: 1257182634, ACK
+1.219 Error: Acknowledgement number too high
+1.219 Warning: Window size is zero
+1.220 Received: b'E\xfb\xc5\xa1\x00\x00\x00,J\xef\x15\xabP\x10\x00\x00\x00\x00\x00\x00'
+1.221 Disassembled: source: 17915, dest: 50593, seq: 44, ack: 1257182635, ACK
+1.221 Error: Acknowledgement number too high
+1.221 Warning: Window size is zero
+1.716 Sent: b'\xc5\xa1E\xfbJ\xef\x15\xa8\x00\x00\x00*P\x11\x00\x01\x00\x00\x00\x00'
+2.216 Sent: b'\xc5\xa1E\xfbJ\xef\x15\xa8\x00\x00\x00*P\x11\x00\x01\x00\x00\x00\x00'
+2.717 Sent: b'\xc5\xa1E\xfbJ\xef\x15\xa8\x00\x00\x00*P\x11\x00\x01\x00\x00\x00\x00'
+3.218 Error: Connection timed out
+3.218 Closed connection
+3.223 Shutting down

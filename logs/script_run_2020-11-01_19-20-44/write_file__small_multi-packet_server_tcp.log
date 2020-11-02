@@ -1,0 +1,11 @@
+0.000 NEW RUN: Server, TEST: Write_file__Small_multi-packet
+0.205 Received: b'\xd6{\xb0@\x00\x00\x00\x14\x00\x00\x00\x00P\x02\x00\x00\x00\x00\x00\x00'
+0.206 Disassembled: source: 54907, dest: 45120, seq: 20, SYN
+0.206 SYN accepted; new connection: 127.0.0.1 on port 54907
+0.206 Assembling: source: 45120, dest: 54907, seq: 1296889526, ack: 21, window: 5808, ACK, SYN
+0.207 Sent: b'\xb0@\xd6{ML\xf6\xb6\x00\x00\x00\x15P\x12\x16\xb0\x00\x00\x00\x00'
+0.209 Received: b'\xd6{\xb0@\x00\x00\x00\x15ML\xf6\xb7P\x10\x00\x00\x00\x00\x00\x00'
+0.209 Disassembled: source: 54907, dest: 45120, seq: 21, ack: 1296889527, ACK
+0.209 Error: Window size is zero
+0.209 Closed connection
+0.210 Shutting down

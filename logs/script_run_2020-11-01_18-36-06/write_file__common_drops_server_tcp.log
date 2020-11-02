@@ -1,0 +1,13 @@
+0.000 NEW RUN: Server, TEST: Write_file__Common_drops
+0.217 Received: b'\xe2\xf6\x8d\x81\x00\x00\x009\x00\x00\x00\x00P\x02\x00\x00\x00\x00\x00\x00'
+0.218 Disassembled: source: 58102, dest: 36225, seq: 57, SYN
+0.218 SYN accepted; new connection: 127.0.0.1 on port 58102
+0.218 Assembling: source: 36225, dest: 58102, seq: 2306593638, ack: 58, window: 5808, ACK, SYN
+0.219 Failed to send packet
+0.719 Failed to send packet
+1.219 Sent: b'\x8d\x81\xe2\xf6\x89{\xd3f\x00\x00\x00:P\x12\x16\xb0\x00\x00\x00\x00'
+1.223 Received: b'\xe2\xf6\x8d\x81\x00\x00\x00:\x89{\xd3gP\x10\x00\x00\x00\x00\x00\x00'
+1.224 Disassembled: source: 58102, dest: 36225, seq: 58, ack: 2306593639, ACK
+1.224 Error: Window size is zero
+1.224 Closed connection
+1.225 Shutting down

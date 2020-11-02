@@ -1,0 +1,11 @@
+0.000 NEW RUN: Server, TEST: Write_file__No_file_extension
+0.215 Received: b':\x1b\x88\xa0\x00\x00\x00Z\x00\x00\x00\x00P\x02\x00\x00\x00\x00\x00\x00'
+0.216 Disassembled: source: 14875, dest: 34976, seq: 90, SYN
+0.216 SYN accepted; new connection: 127.0.0.1 on port 14875
+0.216 Assembling: source: 34976, dest: 14875, seq: 1304099802, ack: 91, window: 5808, ACK, SYN
+0.217 Sent: b'\x88\xa0:\x1bM\xba\xfb\xda\x00\x00\x00[P\x12\x16\xb0\x00\x00\x00\x00'
+0.219 Received: b':\x1b\x88\xa0\x00\x00\x00[M\xba\xfb\xdbP\x10\x00\x00\x00\x00\x00\x00'
+0.220 Disassembled: source: 14875, dest: 34976, seq: 91, ack: 1304099803, ACK
+0.220 Error: Window size is zero
+0.220 Closed connection
+0.220 Shutting down

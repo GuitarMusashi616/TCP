@@ -1,0 +1,11 @@
+0.000 NEW RUN: Server, TEST: Write_file__Very_large_multi-packet
+0.201 Received: b'I\xf2r\xd2\x00\x00\x00V\x00\x00\x00\x00P\x02\x00\x00\x00\x00\x00\x00'
+0.202 Disassembled: source: 18930, dest: 29394, seq: 86, SYN
+0.202 SYN accepted; new connection: 127.0.0.1 on port 18930
+0.202 Assembling: source: 29394, dest: 18930, seq: 2347816728, ack: 87, window: 5808, ACK, SYN
+0.203 Sent: b'r\xd2I\xf2\x8b\xf0\xd7\x18\x00\x00\x00WP\x12\x16\xb0\x00\x00\x00\x00'
+0.205 Received: b'I\xf2r\xd2\x00\x00\x00W\x8b\xf0\xd7\x19P\x10\x00\x00\x00\x00\x00\x00'
+0.205 Disassembled: source: 18930, dest: 29394, seq: 87, ack: 2347816729, ACK
+0.205 Error: Window size is zero
+0.206 Closed connection
+0.206 Shutting down

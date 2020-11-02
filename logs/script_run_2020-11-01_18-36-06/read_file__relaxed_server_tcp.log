@@ -1,0 +1,34 @@
+0.000 NEW RUN: Server, TEST: Read_file__Relaxed
+0.213 Received: b'\xb5\xbe\x97q\x00\x00\x00\x11\x00\x00\x00\x00P\x02\x00\x00\x00\x00\x00\x00'
+0.213 Disassembled: source: 46526, dest: 38769, seq: 17, SYN
+0.213 SYN accepted; new connection: 127.0.0.1 on port 46526
+0.214 Assembling: source: 38769, dest: 46526, seq: 2178796938, ack: 18, ACK, SYN
+0.214 Sent: b'\x97q\xb5\xbe\x81\xdd\xcd\x8a\x00\x00\x00\x12P\x12\x00\x00\x00\x00\x00\x00'
+0.216 Received: b'\xb5\xbe\x97q\x00\x00\x00\x12\x81\xdd\xcd\x8bP\x10\x00\x00\x00\x00\x00\x00'
+0.216 Disassembled: source: 46526, dest: 38769, seq: 18, ack: 2178796939, ACK
+0.216 Warning: Window size is zero
+0.216 Handshake complete
+0.217 Acknowledged seq: 2178796938
+0.217 Finished reading file
+0.217 Assembling: source: 38769, dest: 46526, seq: 2178796939, ack: 19, window: 1, ACK, FIN
+0.217 Received: b'\xb5\xbe\x97q\x00\x00\x00\x13\x81\xdd\xcd\x8bP\x01\x00\x00\x00\x00\x00\x00'
+0.217 Sent: b'\x97q\xb5\xbe\x81\xdd\xcd\x8b\x00\x00\x00\x13P\x11\x00\x01\x00\x00\x00\x00'
+0.218 Disassembled: source: 46526, dest: 38769, seq: 19, ack: 2178796939, FIN
+0.218 Error: Responses must be acknowledgements
+0.218 Warning: Window size is zero
+0.718 Sent: b'\x97q\xb5\xbe\x81\xdd\xcd\x8b\x00\x00\x00\x13P\x11\x00\x01\x00\x00\x00\x00'
+0.720 Received: b'\xb5\xbe\x97q\x00\x00\x00\x14\x81\xdd\xcd\x8dP\x10\x00\x00\x00\x00\x00\x00'
+0.721 Disassembled: source: 46526, dest: 38769, seq: 20, ack: 2178796941, ACK
+0.721 Error: Acknowledgement number too high
+0.721 Warning: Window size is zero
+0.722 Received: b'\xb5\xbe\x97q\x00\x00\x00\x15\x81\xdd\xcd\x8eP\x10\x00\x00\x00\x00\x00\x00'
+0.722 Disassembled: source: 46526, dest: 38769, seq: 21, ack: 2178796942, ACK
+0.723 Error: Acknowledgement number too high
+0.723 Warning: Window size is zero
+1.218 Sent: b'\x97q\xb5\xbe\x81\xdd\xcd\x8b\x00\x00\x00\x13P\x11\x00\x01\x00\x00\x00\x00'
+1.718 Sent: b'\x97q\xb5\xbe\x81\xdd\xcd\x8b\x00\x00\x00\x13P\x11\x00\x01\x00\x00\x00\x00'
+2.219 Sent: b'\x97q\xb5\xbe\x81\xdd\xcd\x8b\x00\x00\x00\x13P\x11\x00\x01\x00\x00\x00\x00'
+2.719 Sent: b'\x97q\xb5\xbe\x81\xdd\xcd\x8b\x00\x00\x00\x13P\x11\x00\x01\x00\x00\x00\x00'
+3.220 Error: Connection timed out
+3.220 Closed connection
+3.225 Shutting down

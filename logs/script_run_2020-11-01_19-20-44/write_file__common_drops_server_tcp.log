@@ -1,0 +1,11 @@
+0.000 NEW RUN: Server, TEST: Write_file__Common_drops
+0.219 Received: b"'^2I\x00\x00\x00\x10\x00\x00\x00\x00P\x02\x00\x00\x00\x00\x00\x00"
+0.220 Disassembled: source: 10078, dest: 12873, seq: 16, SYN
+0.220 SYN accepted; new connection: 127.0.0.1 on port 10078
+0.220 Assembling: source: 12873, dest: 10078, seq: 1324449668, ack: 17, window: 5808, ACK, SYN
+0.221 Sent: b"2I'^N\xf1\x7f\x84\x00\x00\x00\x11P\x12\x16\xb0\x00\x00\x00\x00"
+0.223 Received: b"'^2I\x00\x00\x00\x11N\xf1\x7f\x85P\x10\x00\x00\x00\x00\x00\x00"
+0.223 Disassembled: source: 10078, dest: 12873, seq: 17, ack: 1324449669, ACK
+0.223 Error: Window size is zero
+0.223 Closed connection
+0.223 Shutting down

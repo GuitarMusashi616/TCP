@@ -1,0 +1,22 @@
+0.000 NEW RUN: Server, TEST: Write_file__Relaxed
+0.207 Received: b'\x82\xc1i\x96\x00\x00\x00;\x00\x00\x00\x00P\x02\x00\x00\x00\x00\x00\x00'
+0.208 Disassembled: source: 33473, dest: 27030, seq: 59, SYN
+0.208 SYN accepted; new connection: 127.0.0.1 on port 33473
+0.208 Assembling: source: 27030, dest: 33473, seq: 2180341243, ack: 60, window: 5808, ACK, SYN
+0.209 Sent: b'i\x96\x82\xc1\x81\xf5]\xfb\x00\x00\x00<P\x12\x16\xb0\x00\x00\x00\x00'
+0.211 Received: b'\x82\xc1i\x96\x00\x00\x00<\x81\xf5]\xfcP\x10\x00\x00\x00\x00\x00\x00'
+0.211 Disassembled: source: 33473, dest: 27030, seq: 60, ack: 2180341244, ACK
+0.211 Warning: Window size is zero
+0.211 Assembling: source: 27030, dest: 33473, seq: 2180341244, ack: 60, window: 5808, ACK
+0.212 Sent: b'i\x96\x82\xc1\x81\xf5]\xfc\x00\x00\x00<P\x10\x16\xb0\x00\x00\x00\x00'
+0.212 Received: b'\x82\xc1i\x96\x00\x00\x00=\x81\xf5]\xfcP\x01\x00\x00\x00\x00\x00\x00'
+0.212 Disassembled: source: 33473, dest: 27030, seq: 61, ack: 2180341244, FIN
+0.213 Error: Incorrect acknowledgement flag
+0.213 Warning: Window size is zero
+0.712 Sent: b'i\x96\x82\xc1\x81\xf5]\xfc\x00\x00\x00<P\x10\x16\xb0\x00\x00\x00\x00'
+1.212 Sent: b'i\x96\x82\xc1\x81\xf5]\xfc\x00\x00\x00<P\x10\x16\xb0\x00\x00\x00\x00'
+1.713 Sent: b'i\x96\x82\xc1\x81\xf5]\xfc\x00\x00\x00<P\x10\x16\xb0\x00\x00\x00\x00'
+2.214 Sent: b'i\x96\x82\xc1\x81\xf5]\xfc\x00\x00\x00<P\x10\x16\xb0\x00\x00\x00\x00'
+2.714 Error: Connection timed out
+2.714 Closed connection
+2.715 Shutting down
