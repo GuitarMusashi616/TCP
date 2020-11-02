@@ -60,9 +60,6 @@ class State:
         check_address(self.tcb.dest_address)
         check_socket(self.tcp.socket)
 
-        _, port = self.tcb.source_address
-        ip, server_port = self.tcb.dest_address
-
         h = Header.from_tcb(self.tcb)
         h.SYN = True
         self.tcp.socket.sendto(bytes(h), self.tcb.dest_address)
@@ -72,9 +69,6 @@ class State:
         check_address(self.tcb.dest_address)
         check_socket(self.tcp.socket)
 
-        _, port = self.tcb.source_address
-        ip, server_port = self.tcb.dest_address
-
         h = Header.from_tcb(self.tcb)
         h.ACK = True
         self.tcp.socket.sendto(bytes(h), self.tcb.dest_address)
@@ -83,9 +77,6 @@ class State:
         check_address(self.tcb.source_address)
         check_address(self.tcb.dest_address)
         check_socket(self.tcp.socket)
-
-        _, port = self.tcb.source_address
-        ip, server_port = self.tcb.dest_address
 
         h = Header.from_tcb(self.tcb)
         h.SYN = True
@@ -107,9 +98,6 @@ class State:
         check_address(self.tcb.dest_address)
         check_socket(self.tcp.socket)
 
-        _, port = self.tcb.source_address
-        ip, server_port = self.tcb.dest_address
-
         h = Header.from_tcb(self.tcb)
         h.FIN = True
         self.tcp.socket.sendto(bytes(h), self.tcb.dest_address)
@@ -119,7 +107,7 @@ class State:
         while attempts > 0:
             try:
                 header_bytes, addr = self.tcp.socket.recvfrom(1500)
-                print(Header(header_bytes))
+                # print(Header(header_bytes))
                 return header_bytes, addr
             except (socket.timeout, ConnectionResetError):
                 attempts -= 1
