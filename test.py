@@ -203,8 +203,8 @@ def automatic_states():
 
 def automatic_with_args():
     args = setup_args()
-    if args.filename != "/home/A365/tcp/dist/read_files/single.txt":
-        return
+    # if args.filename != "/home/A365/tcp/dist/read_files/single.txt":
+    #     return
     tcp = TCP(('', args.port), (args.ip, args.server_port))
     print(tcp.state)
     if args.mode == 'r':
