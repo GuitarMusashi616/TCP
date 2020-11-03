@@ -96,6 +96,7 @@ class State:
 
         h = Header.from_tcb(self.tcb)
         h.data = data
+        h.ACK = True
         print_compact(h)
         self.tcp.socket.sendto(bytes(h), self.tcb.dest_address)
         self.tcb.sync_snd(h)
