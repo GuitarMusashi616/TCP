@@ -71,6 +71,16 @@ def receive_upload():
     # closed
 
 
+def test_download():
+    tcp = TCP(('', 54321))
+    print(tcp.state)
+    # established
+    tcp.download('newfile.txt')
+    tcp.receive()
+    print(tcp.state)
+    # closed
+
+
 if __name__ == "__main__":
-    auto_listen()
+    test_download()
 

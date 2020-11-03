@@ -94,7 +94,8 @@ class State:
         check_address(self.tcb.dest_address)
         check_socket(self.tcp.socket)
 
-        h = Header.from_tcb(self.tcb, data)
+        h = Header.from_tcb(self.tcb)
+        h.data = data
         print_compact(h)
         self.tcp.socket.sendto(bytes(h), self.tcb.dest_address)
         self.tcb.sync_snd(h)
@@ -254,15 +255,16 @@ class Established(State):
         f = open(filename, 'rb')
         is_uploading = True
         while is_uploading:
+            # read file
+            data = f.read(self.tcb.SND_WND)
+            self._send_data(data)
+
             # wait for ack
             header, addr = self._recvfrom_socket()
             # print(header)
             if not header.ACK:
                 break
 
-            # read file
-            data = f.read(self.tcb.SND_WND)
-            self._send_data(data)
             # break if last of file
             print(len(data))
             print(self.tcb.SND_WND)

@@ -110,7 +110,6 @@ class TCB:
             return True
         return False
 
-
     # def sync(self, header, increment=1):
     #     self.RCV_NXT = header.seq_num + increment if not self.RCV_NXT else self.RCV_NXT + increment
 

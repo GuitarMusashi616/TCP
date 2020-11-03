@@ -225,7 +225,7 @@ class Header:
         return h
 
     @classmethod
-    def from_tcb(cls, tcb, data=None):
+    def from_tcb(cls, tcb):
         try:
             h = Header()
             h.source_port = tcb.source_address[1]
@@ -233,6 +233,7 @@ class Header:
             h.seq_num = tcb.SND_NXT
             h.ack_num = tcb.RCV_NXT
             h.window = tcb.SND_WND
+
             return h
 
         except (AttributeError, TypeError) as e:
