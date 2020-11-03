@@ -214,6 +214,5 @@ def automatic_with_args():
     print(tcp.state)
 
 
-
 if __name__ == '__main__':
-    automatic_with_args()
+    automatic_states()

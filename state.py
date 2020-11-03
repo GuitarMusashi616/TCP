@@ -266,7 +266,6 @@ class Established(State):
             # read file
             data = f.read(self.tcb.SND_WND)
             self._send_data(data)
-
             # break if last of file
             print(len(data))
             print(self.tcb.SND_WND)
