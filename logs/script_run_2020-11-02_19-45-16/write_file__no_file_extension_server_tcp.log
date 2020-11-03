@@ -1,0 +1,23 @@
+0.000 NEW RUN: Server, TEST: Write_file__No_file_extension
+0.210 Received: b':\x81GA\x00\x00\x00E\x00\x00\x00\x00P\x02\x05\xa8\x00\x00\x00\x00'
+0.211 Disassembled: source: 14977, dest: 18241, seq: 69, window: 1448, SYN
+0.211 SYN accepted; new connection: 127.0.0.1 on port 14977
+0.211 Assembling: source: 18241, dest: 14977, seq: 2747588118, ack: 70, window: 5808, ACK, SYN
+0.212 Sent: b'GA:\x81\xa3\xc4\xde\x16\x00\x00\x00FP\x12\x16\xb0\x00\x00\x00\x00'
+0.214 Received: b':\x81GA\x00\x00\x00F\xa3\xc4\xde\x17P\x10\x16\xb0\x00\x00\x00\x00'
+0.215 Disassembled: source: 14977, dest: 18241, seq: 70, ack: 2747588119, window: 5808, ACK
+0.215 Assembling: source: 18241, dest: 14977, seq: 2747588119, ack: 70, window: 5808, ACK
+0.215 Sent: b'GA:\x81\xa3\xc4\xde\x17\x00\x00\x00FP\x10\x16\xb0\x00\x00\x00\x00'
+0.216 Received: b':\x81GA\x00\x00\x00F\xa3\xc4\xde\x17P\x10\x16\xb0\x00\x00\x00\x00Lorem ipsum dolo'...
+0.216 Disassembled: source: 14977, dest: 18241, seq: 70, ack: 2747588119, window: 5808, ACK, data: "Lorem ipsum dolo"...
+0.216 Handshake complete
+0.216 Data accepted; writing to file
+0.216 Assembling: source: 18241, dest: 14977, seq: 2747588119, ack: 1522, window: 5808, ACK
+0.216 Sent: b'GA:\x81\xa3\xc4\xde\x17\x00\x00\x05\xf2P\x10\x16\xb0\x00\x00\x00\x00'
+0.717 Sent: b'GA:\x81\xa3\xc4\xde\x17\x00\x00\x05\xf2P\x10\x16\xb0\x00\x00\x00\x00'
+1.217 Sent: b'GA:\x81\xa3\xc4\xde\x17\x00\x00\x05\xf2P\x10\x16\xb0\x00\x00\x00\x00'
+1.718 Sent: b'GA:\x81\xa3\xc4\xde\x17\x00\x00\x05\xf2P\x10\x16\xb0\x00\x00\x00\x00'
+2.218 Sent: b'GA:\x81\xa3\xc4\xde\x17\x00\x00\x05\xf2P\x10\x16\xb0\x00\x00\x00\x00'
+2.719 Error: Connection timed out
+2.719 Closed connection
+2.720 Shutting down
