@@ -4,6 +4,7 @@ from header import *
 import socket
 import sys
 
+VERBOSE = True
 
 def check_address(address):
     assert isinstance(address, tuple) and len(address) == 2, "address must consist of (ip, port)"
@@ -62,7 +63,8 @@ class State:
 
         h = Header.from_tcb(self.tcb)
         h.SYN = True
-        # print_compact(h)
+        if VERBOSE:
+            print_compact(h)
         self.tcp.socket.sendto(bytes(h), self.tcb.dest_address)
         self.tcb.sync_snd(h)
 
@@ -73,7 +75,8 @@ class State:
 
         h = Header.from_tcb(self.tcb)
         h.ACK = True
-        # print_compact(h)
+        if VERBOSE:
+            print_compact(h)
         self.tcp.socket.sendto(bytes(h), self.tcb.dest_address)
         self.tcb.sync_snd(h)
 
@@ -85,7 +88,8 @@ class State:
         h = Header.from_tcb(self.tcb)
         h.SYN = True
         h.ACK = True
-        # print_compact(h)
+        if VERBOSE:
+            print_compact(h)
         self.tcp.socket.sendto(bytes(h), self.tcb.dest_address)
         self.tcb.sync_snd(h)
 
@@ -97,7 +101,8 @@ class State:
         h = Header.from_tcb(self.tcb)
         h.data = data
         h.ACK = True
-        # print_compact(h)
+        if VERBOSE:
+            print_compact(h)
         self.tcp.socket.sendto(bytes(h), self.tcb.dest_address)
         self.tcb.sync_snd(h)
 
@@ -108,7 +113,8 @@ class State:
 
         h = Header.from_tcb(self.tcb)
         h.FIN = True
-        # print_compact(h)
+        if VERBOSE:
+            print_compact(h)
         self.tcp.socket.sendto(bytes(h), self.tcb.dest_address)
         self.tcb.sync_snd(h)
 
@@ -119,7 +125,8 @@ class State:
                 header_bytes, addr = self.tcp.socket.recvfrom(1500)
                 header = Header(header_bytes)
                 self.tcb.sync_rcv(header)
-                # print_compact(header)
+                if VERBOSE:
+                    print_compact(header)
                 return header, addr
             except (socket.timeout, ConnectionResetError):
                 attempts -= 1
