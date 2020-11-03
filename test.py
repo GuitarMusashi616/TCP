@@ -228,4 +228,4 @@ def test_download_sequencing():
 
 
 if __name__ == '__main__':
-    test_download_sequencing()
+    automatic_with_args()
