@@ -1,0 +1,25 @@
+0.000 NEW RUN: Server, TEST: Read_file__Latency
+0.217 Received: b'\xde\x83\xd0@\x00\x00\x00\\\x00\x00\x00\x00P\x02\x05\xa8\x00\x00\x00\x00'
+0.218 Disassembled: source: 56963, dest: 53312, seq: 92, window: 1448, SYN
+0.218 SYN accepted; new connection: 127.0.0.1 on port 56963
+0.218 Assembling: source: 53312, dest: 56963, seq: 637789596, ack: 93, window: 1448, ACK, SYN
+0.218 Sent: b'\xd0@\xde\x83&\x03\xe5\x9c\x00\x00\x00]P\x12\x05\xa8\x00\x00\x00\x00'
+0.719 Sent: b'\xd0@\xde\x83&\x03\xe5\x9c\x00\x00\x00]P\x12\x05\xa8\x00\x00\x00\x00'
+1.219 Sent: b'\xd0@\xde\x83&\x03\xe5\x9c\x00\x00\x00]P\x12\x05\xa8\x00\x00\x00\x00'
+1.221 Received: b'\xde\x83\xd0@\x00\x00\x00]&\x03\xe5\x9dP\x10\x05\xa8\x00\x00\x00\x00'
+1.221 Disassembled: source: 56963, dest: 53312, seq: 93, ack: 637789597, window: 1448, ACK
+1.221 Handshake complete
+1.222 Acknowledged seq: 637789596
+1.222 Assembling: source: 53312, dest: 56963, seq: 637789597, ack: 94, window: 1448, data: "Lorem ipsum dolo"...
+1.222 Sent: b'\xd0@\xde\x83&\x03\xe5\x9d\x00\x00\x00^P\x00\x05\xa8\x00\x00\x00\x00Lorem ipsum dolo'...
+1.722 Sent: b'\xd0@\xde\x83&\x03\xe5\x9d\x00\x00\x00^P\x00\x05\xa8\x00\x00\x00\x00Lorem ipsum dolo'...
+1.723 Received: b'\xde\x83\xd0@\x00\x00\x00]&\x03\xe5\x9eP\x01\x05\xa8\x00\x00\x00\x00'
+1.723 Disassembled: source: 56963, dest: 53312, seq: 93, ack: 637789598, window: 1448, FIN
+1.723 Error: Responses must be acknowledgements
+2.223 Sent: b'\xd0@\xde\x83&\x03\xe5\x9d\x00\x00\x00^P\x00\x05\xa8\x00\x00\x00\x00Lorem ipsum dolo'...
+2.723 Sent: b'\xd0@\xde\x83&\x03\xe5\x9d\x00\x00\x00^P\x00\x05\xa8\x00\x00\x00\x00Lorem ipsum dolo'...
+3.224 Sent: b'\xd0@\xde\x83&\x03\xe5\x9d\x00\x00\x00^P\x00\x05\xa8\x00\x00\x00\x00Lorem ipsum dolo'...
+3.725 Sent: b'\xd0@\xde\x83&\x03\xe5\x9d\x00\x00\x00^P\x00\x05\xa8\x00\x00\x00\x00Lorem ipsum dolo'...
+4.226 Error: Connection timed out
+4.227 Closed connection
+4.227 Shutting down

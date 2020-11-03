@@ -1,0 +1,35 @@
+0.000 NEW RUN: Server, TEST: Read_file__Single_packet
+0.210 Received: b'a\r\x96p\x00\x00\x00+\x00\x00\x00\x00P\x02\x05\xa8\x00\x00\x00\x00'
+0.211 Disassembled: source: 24845, dest: 38512, seq: 43, window: 1448, SYN
+0.211 SYN accepted; new connection: 127.0.0.1 on port 24845
+0.211 Assembling: source: 38512, dest: 24845, seq: 406549043, ack: 44, window: 1448, ACK, SYN
+0.212 Sent: b'\x96pa\r\x18;r3\x00\x00\x00,P\x12\x05\xa8\x00\x00\x00\x00'
+0.213 Received: b'a\r\x96p\x00\x00\x00,\x18;r4P\x10\x05\xa8\x00\x00\x00\x00'
+0.214 Disassembled: source: 24845, dest: 38512, seq: 44, ack: 406549044, window: 1448, ACK
+0.214 Handshake complete
+0.214 Acknowledged seq: 406549043
+0.214 Finished reading file
+0.214 Assembling: source: 38512, dest: 24845, seq: 406549044, ack: 45, window: 1448, data: "This file fits i"...
+0.214 Sent: b'\x96pa\r\x18;r4\x00\x00\x00-P\x00\x05\xa8\x00\x00\x00\x00This file fits i'...
+0.216 Received: b'a\r\x96p\x00\x00\x00,\x18;r_P\x10\x05\xa8\x00\x00\x00\x00'
+0.216 Disassembled: source: 24845, dest: 38512, seq: 44, ack: 406549087, window: 1448, ACK
+0.216 Acknowledged seq: 406549044
+0.216 Assembling: source: 38512, dest: 24845, seq: 406549087, ack: 45, window: 1448, ACK, FIN
+0.217 Sent: b'\x96pa\r\x18;r_\x00\x00\x00-P\x11\x05\xa8\x00\x00\x00\x00'
+0.217 Received: b'a\r\x96p\x00\x00\x00,\x18;r_P\x01\x05\xa8\x00\x00\x00\x00'
+0.217 Disassembled: source: 24845, dest: 38512, seq: 44, ack: 406549087, window: 1448, FIN
+0.217 Error: Responses must be acknowledgements
+0.717 Sent: b'\x96pa\r\x18;r_\x00\x00\x00-P\x11\x05\xa8\x00\x00\x00\x00'
+0.719 Received: b'a\r\x96p\x00\x00\x00-\x18;raP\x10\x05\xa8\x00\x00\x00\x00'
+0.720 Disassembled: source: 24845, dest: 38512, seq: 45, ack: 406549089, window: 1448, ACK
+0.720 Error: Acknowledgement number too high
+0.722 Received: b'a\r\x96p\x00\x00\x00-\x18;raP\x10\x05\xa8\x00\x00\x00\x00'
+0.722 Disassembled: source: 24845, dest: 38512, seq: 45, ack: 406549089, window: 1448, ACK
+0.722 Error: Acknowledgement number too high
+1.217 Sent: b'\x96pa\r\x18;r_\x00\x00\x00-P\x11\x05\xa8\x00\x00\x00\x00'
+1.718 Sent: b'\x96pa\r\x18;r_\x00\x00\x00-P\x11\x05\xa8\x00\x00\x00\x00'
+2.218 Sent: b'\x96pa\r\x18;r_\x00\x00\x00-P\x11\x05\xa8\x00\x00\x00\x00'
+2.719 Sent: b'\x96pa\r\x18;r_\x00\x00\x00-P\x11\x05\xa8\x00\x00\x00\x00'
+3.219 Error: Connection timed out
+3.219 Closed connection
+3.225 Shutting down

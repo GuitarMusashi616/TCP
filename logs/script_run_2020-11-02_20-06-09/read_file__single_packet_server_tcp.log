@@ -1,0 +1,35 @@
+0.000 NEW RUN: Server, TEST: Read_file__Single_packet
+0.217 Received: b'7\xf55H\x00\x00\x00X\x00\x00\x00\x00P\x02\x05\xa8\x00\x00\x00\x00'
+0.218 Disassembled: source: 14325, dest: 13640, seq: 88, window: 1448, SYN
+0.218 SYN accepted; new connection: 127.0.0.1 on port 14325
+0.218 Assembling: source: 13640, dest: 14325, seq: 380101883, ack: 89, window: 1448, ACK, SYN
+0.218 Sent: b'5H7\xf5\x16\xa7\xe4\xfb\x00\x00\x00YP\x12\x05\xa8\x00\x00\x00\x00'
+0.220 Received: b'7\xf55H\x00\x00\x00Y\x16\xa7\xe4\xfcP\x10\x05\xa8\x00\x00\x00\x00'
+0.220 Disassembled: source: 14325, dest: 13640, seq: 89, ack: 380101884, window: 1448, ACK
+0.220 Handshake complete
+0.221 Acknowledged seq: 380101883
+0.221 Finished reading file
+0.221 Assembling: source: 13640, dest: 14325, seq: 380101884, ack: 90, window: 1448, data: "This file fits i"...
+0.221 Sent: b'5H7\xf5\x16\xa7\xe4\xfc\x00\x00\x00ZP\x00\x05\xa8\x00\x00\x00\x00This file fits i'...
+0.223 Received: b"7\xf55H\x00\x00\x00Y\x16\xa7\xe5'P\x10\x05\xa8\x00\x00\x00\x00"
+0.223 Disassembled: source: 14325, dest: 13640, seq: 89, ack: 380101927, window: 1448, ACK
+0.223 Acknowledged seq: 380101884
+0.223 Assembling: source: 13640, dest: 14325, seq: 380101927, ack: 90, window: 1448, ACK, FIN
+0.223 Sent: b"5H7\xf5\x16\xa7\xe5'\x00\x00\x00ZP\x11\x05\xa8\x00\x00\x00\x00"
+0.224 Received: b"7\xf55H\x00\x00\x00Y\x16\xa7\xe5'P\x01\x05\xa8\x00\x00\x00\x00"
+0.224 Disassembled: source: 14325, dest: 13640, seq: 89, ack: 380101927, window: 1448, FIN
+0.224 Error: Responses must be acknowledgements
+0.724 Sent: b"5H7\xf5\x16\xa7\xe5'\x00\x00\x00ZP\x11\x05\xa8\x00\x00\x00\x00"
+0.726 Received: b'7\xf55H\x00\x00\x00Z\x16\xa7\xe5)P\x10\x05\xa8\x00\x00\x00\x00'
+0.727 Disassembled: source: 14325, dest: 13640, seq: 90, ack: 380101929, window: 1448, ACK
+0.727 Error: Acknowledgement number too high
+0.728 Received: b'7\xf55H\x00\x00\x00Z\x16\xa7\xe5)P\x10\x05\xa8\x00\x00\x00\x00'
+0.729 Disassembled: source: 14325, dest: 13640, seq: 90, ack: 380101929, window: 1448, ACK
+0.729 Error: Acknowledgement number too high
+1.224 Sent: b"5H7\xf5\x16\xa7\xe5'\x00\x00\x00ZP\x11\x05\xa8\x00\x00\x00\x00"
+1.724 Sent: b"5H7\xf5\x16\xa7\xe5'\x00\x00\x00ZP\x11\x05\xa8\x00\x00\x00\x00"
+2.225 Sent: b"5H7\xf5\x16\xa7\xe5'\x00\x00\x00ZP\x11\x05\xa8\x00\x00\x00\x00"
+2.725 Sent: b"5H7\xf5\x16\xa7\xe5'\x00\x00\x00ZP\x11\x05\xa8\x00\x00\x00\x00"
+3.226 Error: Connection timed out
+3.226 Closed connection
+3.231 Shutting down

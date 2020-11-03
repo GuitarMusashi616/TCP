@@ -1,0 +1,28 @@
+0.000 NEW RUN: Server, TEST: Write_file__Latency
+0.220 Received: b'\xa5\x913}\x00\x00\x00d\x00\x00\x00\x00P\x02\x05\xa8\x00\x00\x00\x00'
+0.221 Disassembled: source: 42385, dest: 13181, seq: 100, window: 1448, SYN
+0.221 SYN accepted; new connection: 127.0.0.1 on port 42385
+0.221 Assembling: source: 13181, dest: 42385, seq: 338526333, ack: 101, window: 5808, ACK, SYN
+0.221 Sent: b'3}\xa5\x91\x14-\x80}\x00\x00\x00eP\x12\x16\xb0\x00\x00\x00\x00'
+0.722 Sent: b'3}\xa5\x91\x14-\x80}\x00\x00\x00eP\x12\x16\xb0\x00\x00\x00\x00'
+1.222 Sent: b'3}\xa5\x91\x14-\x80}\x00\x00\x00eP\x12\x16\xb0\x00\x00\x00\x00'
+1.225 Received: b'\xa5\x913}\x00\x00\x00e\x14-\x80~P\x10\x16\xb0\x00\x00\x00\x00'
+1.226 Disassembled: source: 42385, dest: 13181, seq: 101, ack: 338526334, window: 5808, ACK
+1.226 Assembling: source: 13181, dest: 42385, seq: 338526334, ack: 101, window: 5808, ACK
+1.227 Sent: b'3}\xa5\x91\x14-\x80~\x00\x00\x00eP\x10\x16\xb0\x00\x00\x00\x00'
+1.228 Received: b'\xa5\x913}\x00\x00\x00e\x14-\x80~P\x10\x16\xb0\x00\x00\x00\x00Lorem ipsum dolo'...
+1.229 Disassembled: source: 42385, dest: 13181, seq: 101, ack: 338526334, window: 5808, ACK, data: "Lorem ipsum dolo"...
+1.229 Handshake complete
+1.229 Data accepted; writing to file
+1.229 Assembling: source: 13181, dest: 42385, seq: 338526334, ack: 1553, window: 5808, ACK
+1.230 Sent: b'3}\xa5\x91\x14-\x80~\x00\x00\x06\x11P\x10\x16\xb0\x00\x00\x00\x00'
+1.726 Received: b'\xa5\x913}\x00\x00\r\x10\x14-\x80\x7fP\x01\x16\xb0\x00\x00\x00\x00'
+1.727 Disassembled: source: 42385, dest: 13181, seq: 3344, ack: 338526335, window: 5808, FIN
+1.727 Error: Incorrect acknowledgement flag
+1.730 Sent: b'3}\xa5\x91\x14-\x80~\x00\x00\x06\x11P\x10\x16\xb0\x00\x00\x00\x00'
+2.231 Sent: b'3}\xa5\x91\x14-\x80~\x00\x00\x06\x11P\x10\x16\xb0\x00\x00\x00\x00'
+2.732 Sent: b'3}\xa5\x91\x14-\x80~\x00\x00\x06\x11P\x10\x16\xb0\x00\x00\x00\x00'
+3.232 Sent: b'3}\xa5\x91\x14-\x80~\x00\x00\x06\x11P\x10\x16\xb0\x00\x00\x00\x00'
+3.733 Error: Connection timed out
+3.733 Closed connection
+4.229 Shutting down

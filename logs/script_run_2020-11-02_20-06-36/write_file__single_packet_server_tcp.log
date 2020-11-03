@@ -1,0 +1,26 @@
+0.000 NEW RUN: Server, TEST: Write_file__Single_packet
+0.214 Received: b'P>\xa6\xc6\x00\x00\x00,\x00\x00\x00\x00P\x02\x05\xa8\x00\x00\x00\x00'
+0.215 Disassembled: source: 20542, dest: 42694, seq: 44, window: 1448, SYN
+0.215 SYN accepted; new connection: 127.0.0.1 on port 20542
+0.215 Assembling: source: 42694, dest: 20542, seq: 414065237, ack: 45, window: 5808, ACK, SYN
+0.216 Sent: b'\xa6\xc6P>\x18\xae"U\x00\x00\x00-P\x12\x16\xb0\x00\x00\x00\x00'
+0.219 Received: b'P>\xa6\xc6\x00\x00\x00-\x18\xae"VP\x10\x16\xb0\x00\x00\x00\x00'
+0.219 Disassembled: source: 20542, dest: 42694, seq: 45, ack: 414065238, window: 5808, ACK
+0.219 Assembling: source: 42694, dest: 20542, seq: 414065238, ack: 45, window: 5808, ACK
+0.220 Sent: b'\xa6\xc6P>\x18\xae"V\x00\x00\x00-P\x10\x16\xb0\x00\x00\x00\x00'
+0.221 Received: b'P>\xa6\xc6\x00\x00\x00-\x18\xae"VP\x10\x16\xb0\x00\x00\x00\x00This file fits i'...
+0.222 Disassembled: source: 20542, dest: 42694, seq: 45, ack: 414065238, window: 5808, ACK, data: "This file fits i"...
+0.222 Handshake complete
+0.222 Data accepted; writing to file
+0.222 Assembling: source: 42694, dest: 20542, seq: 414065238, ack: 88, window: 5808, ACK
+0.222 Sent: b'\xa6\xc6P>\x18\xae"V\x00\x00\x00XP\x10\x16\xb0\x00\x00\x00\x00'
+0.224 Received: b'P>\xa6\xc6\x00\x00\x00X\x18\xae"VP\x01\x16\xb0\x00\x00\x00\x00'
+0.224 Disassembled: source: 20542, dest: 42694, seq: 88, ack: 414065238, window: 5808, FIN
+0.224 Error: Incorrect acknowledgement flag
+0.722 Sent: b'\xa6\xc6P>\x18\xae"V\x00\x00\x00XP\x10\x16\xb0\x00\x00\x00\x00'
+1.223 Sent: b'\xa6\xc6P>\x18\xae"V\x00\x00\x00XP\x10\x16\xb0\x00\x00\x00\x00'
+1.723 Sent: b'\xa6\xc6P>\x18\xae"V\x00\x00\x00XP\x10\x16\xb0\x00\x00\x00\x00'
+2.224 Sent: b'\xa6\xc6P>\x18\xae"V\x00\x00\x00XP\x10\x16\xb0\x00\x00\x00\x00'
+2.724 Error: Connection timed out
+2.725 Closed connection
+2.727 Shutting down

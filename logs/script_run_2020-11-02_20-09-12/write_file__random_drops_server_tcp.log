@@ -1,0 +1,36 @@
+0.000 NEW RUN: Server, TEST: Write_file__Random_drops
+0.213 Received: b'\xbdw\xc5\x06\x00\x00\x00\x16\x00\x00\x00\x00P\x02\x05\xa8\x00\x00\x00\x00'
+0.213 Disassembled: source: 48503, dest: 50438, seq: 22, window: 1448, SYN
+0.214 SYN accepted; new connection: 127.0.0.1 on port 48503
+0.214 Assembling: source: 50438, dest: 48503, seq: 604601501, ack: 23, window: 5808, ACK, SYN
+0.214 Sent: b'\xc5\x06\xbdw$\t|\x9d\x00\x00\x00\x17P\x12\x16\xb0\x00\x00\x00\x00'
+0.215 Received: b'\xbdw\xc5\x06\x00\x00\x00\x17$\t|\x9eP\x10\x16\xb0\x00\x00\x00\x00'
+0.216 Disassembled: source: 48503, dest: 50438, seq: 23, ack: 604601502, window: 5808, ACK
+0.216 Assembling: source: 50438, dest: 48503, seq: 604601502, ack: 23, window: 5808, ACK
+0.216 Failed to send packet
+0.217 Received: b'\xbdw\xc5\x06\x00\x00\x00\x17$\t|\x9eP\x10\x16\xb0\x00\x00\x00\x00Lorem ipsum dolo'...
+0.217 Disassembled: source: 48503, dest: 50438, seq: 23, ack: 604601502, window: 5808, ACK, data: "Lorem ipsum dolo"...
+0.217 Handshake complete
+0.217 Data accepted; writing to file
+0.217 Assembling: source: 50438, dest: 48503, seq: 604601502, ack: 1475, window: 5808, ACK
+0.217 Sent: b'\xc5\x06\xbdw$\t|\x9e\x00\x00\x05\xc3P\x10\x16\xb0\x00\x00\x00\x00'
+0.219 Received: b'\xbdw\xc5\x06\x00\x00\x16\xc7$\t|\x9eP\x10\x16\xb0\x00\x00\x00\x00 sadipscing ei q'...
+0.219 Disassembled: source: 48503, dest: 50438, seq: 5831, ack: 604601502, window: 5808, ACK, data: " sadipscing ei q"...
+0.219 Error: Incorrect acknowledgement flag
+0.718 Sent: b'\xc5\x06\xbdw$\t|\x9e\x00\x00\x05\xc3P\x10\x16\xb0\x00\x00\x00\x00'
+0.720 Received: b'\xbdw\xc5\x06\x00\x00-w$\t|\x9eP\x10\x16\xb0\x00\x00\x00\x00 Duo ea augue fa'...
+0.720 Disassembled: source: 48503, dest: 50438, seq: 11639, ack: 604601502, window: 5808, ACK, data: " Duo ea augue fa"...
+0.721 Error: Sequence number too high
+1.218 Sent: b'\xc5\x06\xbdw$\t|\x9e\x00\x00\x05\xc3P\x10\x16\xb0\x00\x00\x00\x00'
+1.221 Received: b"\xbdw\xc5\x06\x00\x00D'$\t|\x9eP\x10\x16\xb0\x00\x00\x00\x00uta debitis pert"...
+1.221 Disassembled: source: 48503, dest: 50438, seq: 17447, ack: 604601502, window: 5808, ACK, data: "uta debitis pert"...
+1.221 Error: Sequence number too high
+1.718 Sent: b'\xc5\x06\xbdw$\t|\x9e\x00\x00\x05\xc3P\x10\x16\xb0\x00\x00\x00\x00'
+1.721 Failed to receive packet
+2.219 Sent: b'\xc5\x06\xbdw$\t|\x9e\x00\x00\x05\xc3P\x10\x16\xb0\x00\x00\x00\x00'
+2.222 Received: b'\xbdw\xc5\x06\x00\x00q\x87$\t|\x9eP\x10\x16\xb0\x00\x00\x00\x00orteat dissentiu'...
+2.222 Disassembled: source: 48503, dest: 50438, seq: 29063, ack: 604601502, window: 5808, ACK, data: "orteat dissentiu"...
+2.222 Error: Sequence number too high
+2.719 Error: Connection timed out
+2.720 Closed connection
+2.723 Shutting down

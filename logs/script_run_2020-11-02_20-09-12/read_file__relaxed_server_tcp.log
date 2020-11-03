@@ -1,0 +1,30 @@
+0.000 NEW RUN: Server, TEST: Read_file__Relaxed
+0.219 Received: b'\xb8\xdc\xca\x9d\x00\x00\x00/\x00\x00\x00\x00P\x02\x05\xa8\x00\x00\x00\x00'
+0.220 Disassembled: source: 47324, dest: 51869, seq: 47, window: 1448, SYN
+0.220 SYN accepted; new connection: 127.0.0.1 on port 47324
+0.220 Assembling: source: 51869, dest: 47324, seq: 565207842, ack: 48, window: 1448, ACK, SYN
+0.221 Sent: b'\xca\x9d\xb8\xdc!\xb0c"\x00\x00\x000P\x12\x05\xa8\x00\x00\x00\x00'
+0.222 Received: b'\xb8\xdc\xca\x9d\x00\x00\x000!\xb0c#P\x10\x05\xa8\x00\x00\x00\x00'
+0.222 Disassembled: source: 47324, dest: 51869, seq: 48, ack: 565207843, window: 1448, ACK
+0.222 Handshake complete
+0.223 Acknowledged seq: 565207842
+0.223 Finished reading file
+0.223 Assembling: source: 51869, dest: 47324, seq: 565207843, ack: 49, window: 1448, ACK, FIN
+0.223 Sent: b'\xca\x9d\xb8\xdc!\xb0c#\x00\x00\x001P\x11\x05\xa8\x00\x00\x00\x00'
+0.225 Received: b'\xb8\xdc\xca\x9d\x00\x00\x000!\xb0c$P\x01\x05\xa8\x00\x00\x00\x00'
+0.225 Disassembled: source: 47324, dest: 51869, seq: 48, ack: 565207844, window: 1448, FIN
+0.225 Error: Responses must be acknowledgements
+0.723 Sent: b'\xca\x9d\xb8\xdc!\xb0c#\x00\x00\x001P\x11\x05\xa8\x00\x00\x00\x00'
+1.224 Sent: b'\xca\x9d\xb8\xdc!\xb0c#\x00\x00\x001P\x11\x05\xa8\x00\x00\x00\x00'
+1.226 Received: b'\xb8\xdc\xca\x9d\x00\x00\x001!\xb0c&P\x10\x05\xa8\x00\x00\x00\x00'
+1.227 Disassembled: source: 47324, dest: 51869, seq: 49, ack: 565207846, window: 1448, ACK
+1.227 Error: Acknowledgement number too high
+1.228 Received: b'\xb8\xdc\xca\x9d\x00\x00\x001!\xb0c&P\x10\x05\xa8\x00\x00\x00\x00'
+1.229 Disassembled: source: 47324, dest: 51869, seq: 49, ack: 565207846, window: 1448, ACK
+1.229 Error: Acknowledgement number too high
+1.724 Sent: b'\xca\x9d\xb8\xdc!\xb0c#\x00\x00\x001P\x11\x05\xa8\x00\x00\x00\x00'
+2.225 Sent: b'\xca\x9d\xb8\xdc!\xb0c#\x00\x00\x001P\x11\x05\xa8\x00\x00\x00\x00'
+2.725 Sent: b'\xca\x9d\xb8\xdc!\xb0c#\x00\x00\x001P\x11\x05\xa8\x00\x00\x00\x00'
+3.226 Error: Connection timed out
+3.226 Closed connection
+3.231 Shutting down

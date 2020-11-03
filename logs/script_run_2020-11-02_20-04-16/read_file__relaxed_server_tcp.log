@@ -1,0 +1,30 @@
+0.000 NEW RUN: Server, TEST: Read_file__Relaxed
+0.206 Received: b'\x8cE\x984\x00\x00\x00:\x00\x00\x00\x00P\x02\x05\xa8\x00\x00\x00\x00'
+0.206 Disassembled: source: 35909, dest: 38964, seq: 58, window: 1448, SYN
+0.206 SYN accepted; new connection: 127.0.0.1 on port 35909
+0.206 Assembling: source: 38964, dest: 35909, seq: 268340454, ack: 59, window: 1448, ACK, SYN
+0.207 Sent: b'\x984\x8cE\x0f\xfe\x8c\xe6\x00\x00\x00;P\x12\x05\xa8\x00\x00\x00\x00'
+0.209 Received: b'\x8cE\x984\x00\x00\x00;\x0f\xfe\x8c\xe7P\x10\x05\xa8\x00\x00\x00\x00'
+0.209 Disassembled: source: 35909, dest: 38964, seq: 59, ack: 268340455, window: 1448, ACK
+0.209 Handshake complete
+0.209 Acknowledged seq: 268340454
+0.209 Finished reading file
+0.209 Assembling: source: 38964, dest: 35909, seq: 268340455, ack: 60, window: 1448, ACK, FIN
+0.209 Sent: b'\x984\x8cE\x0f\xfe\x8c\xe7\x00\x00\x00<P\x11\x05\xa8\x00\x00\x00\x00'
+0.211 Received: b'\x8cE\x984\x00\x00\x00;\x0f\xfe\x8c\xe8P\x01\x05\xa8\x00\x00\x00\x00'
+0.212 Disassembled: source: 35909, dest: 38964, seq: 59, ack: 268340456, window: 1448, FIN
+0.212 Error: Responses must be acknowledgements
+0.710 Sent: b'\x984\x8cE\x0f\xfe\x8c\xe7\x00\x00\x00<P\x11\x05\xa8\x00\x00\x00\x00'
+1.210 Sent: b'\x984\x8cE\x0f\xfe\x8c\xe7\x00\x00\x00<P\x11\x05\xa8\x00\x00\x00\x00'
+1.213 Received: b'\x8cE\x984\x00\x00\x00<\x0f\xfe\x8c\xeaP\x10\x05\xa8\x00\x00\x00\x00'
+1.214 Disassembled: source: 35909, dest: 38964, seq: 60, ack: 268340458, window: 1448, ACK
+1.214 Error: Acknowledgement number too high
+1.216 Received: b'\x8cE\x984\x00\x00\x00<\x0f\xfe\x8c\xeaP\x10\x05\xa8\x00\x00\x00\x00'
+1.216 Disassembled: source: 35909, dest: 38964, seq: 60, ack: 268340458, window: 1448, ACK
+1.216 Error: Acknowledgement number too high
+1.710 Sent: b'\x984\x8cE\x0f\xfe\x8c\xe7\x00\x00\x00<P\x11\x05\xa8\x00\x00\x00\x00'
+2.211 Sent: b'\x984\x8cE\x0f\xfe\x8c\xe7\x00\x00\x00<P\x11\x05\xa8\x00\x00\x00\x00'
+2.711 Sent: b'\x984\x8cE\x0f\xfe\x8c\xe7\x00\x00\x00<P\x11\x05\xa8\x00\x00\x00\x00'
+3.212 Error: Connection timed out
+3.212 Closed connection
+3.218 Shutting down

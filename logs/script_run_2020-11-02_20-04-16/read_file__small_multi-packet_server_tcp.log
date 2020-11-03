@@ -1,0 +1,45 @@
+0.000 NEW RUN: Server, TEST: Read_file__Small_multi-packet
+0.215 Received: b"\x87\xaa\x90\r\x00\x00\x00'\x00\x00\x00\x00P\x02\x05\xa8\x00\x00\x00\x00"
+0.216 Disassembled: source: 34730, dest: 36877, seq: 39, window: 1448, SYN
+0.216 SYN accepted; new connection: 127.0.0.1 on port 34730
+0.216 Assembling: source: 36877, dest: 34730, seq: 275049611, ack: 40, window: 1448, ACK, SYN
+0.216 Sent: b'\x90\r\x87\xaa\x10d\xec\x8b\x00\x00\x00(P\x12\x05\xa8\x00\x00\x00\x00'
+0.218 Received: b'\x87\xaa\x90\r\x00\x00\x00(\x10d\xec\x8cP\x10\x05\xa8\x00\x00\x00\x00'
+0.218 Disassembled: source: 34730, dest: 36877, seq: 40, ack: 275049612, window: 1448, ACK
+0.218 Handshake complete
+0.218 Acknowledged seq: 275049611
+0.218 Assembling: source: 36877, dest: 34730, seq: 275049612, ack: 41, window: 1448, data: "Lorem ipsum dolo"...
+0.218 Sent: b'\x90\r\x87\xaa\x10d\xec\x8c\x00\x00\x00)P\x00\x05\xa8\x00\x00\x00\x00Lorem ipsum dolo'...
+0.220 Received: b'\x87\xaa\x90\r\x00\x00\x00(\x10d\xf24P\x10\x05\xa8\x00\x00\x00\x00'
+0.220 Disassembled: source: 34730, dest: 36877, seq: 40, ack: 275051060, window: 1448, ACK
+0.221 Acknowledged seq: 275049612
+0.221 Assembling: source: 36877, dest: 34730, seq: 275051060, ack: 41, window: 1448, data: "mprehensam nam, "...
+0.221 Sent: b'\x90\r\x87\xaa\x10d\xf24\x00\x00\x00)P\x00\x05\xa8\x00\x00\x00\x00mprehensam nam, '...
+0.223 Received: b'\x87\xaa\x90\r\x00\x00\x00(\x10d\xf7\xdcP\x10\x05\xa8\x00\x00\x00\x00'
+0.223 Disassembled: source: 34730, dest: 36877, seq: 40, ack: 275052508, window: 1448, ACK
+0.223 Acknowledged seq: 275051060
+0.223 Finished reading file
+0.223 Assembling: source: 36877, dest: 34730, seq: 275052508, ack: 41, window: 1448, data: "ilisi repudiare "...
+0.224 Sent: b'\x90\r\x87\xaa\x10d\xf7\xdc\x00\x00\x00)P\x00\x05\xa8\x00\x00\x00\x00ilisi repudiare '...
+0.225 Received: b'\x87\xaa\x90\r\x00\x00\x00(\x10d\xf97P\x10\x05\xa8\x00\x00\x00\x00'
+0.226 Disassembled: source: 34730, dest: 36877, seq: 40, ack: 275052855, window: 1448, ACK
+0.226 Acknowledged seq: 275052508
+0.226 Assembling: source: 36877, dest: 34730, seq: 275052855, ack: 41, window: 1448, ACK, FIN
+0.226 Sent: b'\x90\r\x87\xaa\x10d\xf97\x00\x00\x00)P\x11\x05\xa8\x00\x00\x00\x00'
+0.227 Received: b'\x87\xaa\x90\r\x00\x00\x00(\x10d\xf97P\x01\x05\xa8\x00\x00\x00\x00'
+0.227 Disassembled: source: 34730, dest: 36877, seq: 40, ack: 275052855, window: 1448, FIN
+0.227 Error: Responses must be acknowledgements
+0.726 Sent: b'\x90\r\x87\xaa\x10d\xf97\x00\x00\x00)P\x11\x05\xa8\x00\x00\x00\x00'
+0.729 Received: b'\x87\xaa\x90\r\x00\x00\x00)\x10d\xf99P\x10\x05\xa8\x00\x00\x00\x00'
+0.729 Disassembled: source: 34730, dest: 36877, seq: 41, ack: 275052857, window: 1448, ACK
+0.729 Error: Acknowledgement number too high
+0.730 Received: b'\x87\xaa\x90\r\x00\x00\x00)\x10d\xf99P\x10\x05\xa8\x00\x00\x00\x00'
+0.731 Disassembled: source: 34730, dest: 36877, seq: 41, ack: 275052857, window: 1448, ACK
+0.731 Error: Acknowledgement number too high
+1.227 Sent: b'\x90\r\x87\xaa\x10d\xf97\x00\x00\x00)P\x11\x05\xa8\x00\x00\x00\x00'
+1.727 Sent: b'\x90\r\x87\xaa\x10d\xf97\x00\x00\x00)P\x11\x05\xa8\x00\x00\x00\x00'
+2.228 Sent: b'\x90\r\x87\xaa\x10d\xf97\x00\x00\x00)P\x11\x05\xa8\x00\x00\x00\x00'
+2.728 Sent: b'\x90\r\x87\xaa\x10d\xf97\x00\x00\x00)P\x11\x05\xa8\x00\x00\x00\x00'
+3.229 Error: Connection timed out
+3.229 Closed connection
+3.234 Shutting down

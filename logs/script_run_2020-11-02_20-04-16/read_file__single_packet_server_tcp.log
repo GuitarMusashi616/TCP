@@ -1,0 +1,35 @@
+0.000 NEW RUN: Server, TEST: Read_file__Single_packet
+0.209 Received: b'b\xfaK)\x00\x00\x00P\x00\x00\x00\x00P\x02\x05\xa8\x00\x00\x00\x00'
+0.209 Disassembled: source: 25338, dest: 19241, seq: 80, window: 1448, SYN
+0.210 SYN accepted; new connection: 127.0.0.1 on port 25338
+0.210 Assembling: source: 19241, dest: 25338, seq: 273493307, ack: 81, window: 1448, ACK, SYN
+0.210 Sent: b'K)b\xfa\x10M-;\x00\x00\x00QP\x12\x05\xa8\x00\x00\x00\x00'
+0.213 Received: b'b\xfaK)\x00\x00\x00Q\x10M-<P\x10\x05\xa8\x00\x00\x00\x00'
+0.213 Disassembled: source: 25338, dest: 19241, seq: 81, ack: 273493308, window: 1448, ACK
+0.213 Handshake complete
+0.213 Acknowledged seq: 273493307
+0.213 Finished reading file
+0.213 Assembling: source: 19241, dest: 25338, seq: 273493308, ack: 82, window: 1448, data: "This file fits i"...
+0.214 Sent: b'K)b\xfa\x10M-<\x00\x00\x00RP\x00\x05\xa8\x00\x00\x00\x00This file fits i'...
+0.216 Received: b'b\xfaK)\x00\x00\x00Q\x10M-gP\x10\x05\xa8\x00\x00\x00\x00'
+0.216 Disassembled: source: 25338, dest: 19241, seq: 81, ack: 273493351, window: 1448, ACK
+0.216 Acknowledged seq: 273493308
+0.217 Assembling: source: 19241, dest: 25338, seq: 273493351, ack: 82, window: 1448, ACK, FIN
+0.217 Sent: b'K)b\xfa\x10M-g\x00\x00\x00RP\x11\x05\xa8\x00\x00\x00\x00'
+0.218 Received: b'b\xfaK)\x00\x00\x00Q\x10M-gP\x01\x05\xa8\x00\x00\x00\x00'
+0.218 Disassembled: source: 25338, dest: 19241, seq: 81, ack: 273493351, window: 1448, FIN
+0.218 Error: Responses must be acknowledgements
+0.717 Sent: b'K)b\xfa\x10M-g\x00\x00\x00RP\x11\x05\xa8\x00\x00\x00\x00'
+0.719 Received: b'b\xfaK)\x00\x00\x00R\x10M-iP\x10\x05\xa8\x00\x00\x00\x00'
+0.720 Disassembled: source: 25338, dest: 19241, seq: 82, ack: 273493353, window: 1448, ACK
+0.720 Error: Acknowledgement number too high
+0.721 Received: b'b\xfaK)\x00\x00\x00R\x10M-iP\x10\x05\xa8\x00\x00\x00\x00'
+0.722 Disassembled: source: 25338, dest: 19241, seq: 82, ack: 273493353, window: 1448, ACK
+0.722 Error: Acknowledgement number too high
+1.217 Sent: b'K)b\xfa\x10M-g\x00\x00\x00RP\x11\x05\xa8\x00\x00\x00\x00'
+1.718 Sent: b'K)b\xfa\x10M-g\x00\x00\x00RP\x11\x05\xa8\x00\x00\x00\x00'
+2.218 Sent: b'K)b\xfa\x10M-g\x00\x00\x00RP\x11\x05\xa8\x00\x00\x00\x00'
+2.719 Sent: b'K)b\xfa\x10M-g\x00\x00\x00RP\x11\x05\xa8\x00\x00\x00\x00'
+3.219 Error: Connection timed out
+3.219 Closed connection
+3.224 Shutting down

@@ -1,0 +1,26 @@
+0.000 NEW RUN: Server, TEST: Read_file__Common_drops
+0.220 Received: b'6"\xc2#\x00\x00\x00<\x00\x00\x00\x00P\x02\x05\xa8\x00\x00\x00\x00'
+0.221 Disassembled: source: 13858, dest: 49699, seq: 60, window: 1448, SYN
+0.221 SYN accepted; new connection: 127.0.0.1 on port 13858
+0.221 Assembling: source: 49699, dest: 13858, seq: 318846267, ack: 61, window: 1448, ACK, SYN
+0.222 Failed to send packet
+0.722 Sent: b'\xc2#6"\x13\x015;\x00\x00\x00=P\x12\x05\xa8\x00\x00\x00\x00'
+0.725 Received: b'6"\xc2#\x00\x00\x00=\x13\x015<P\x10\x05\xa8\x00\x00\x00\x00'
+0.725 Disassembled: source: 13858, dest: 49699, seq: 61, ack: 318846268, window: 1448, ACK
+0.725 Handshake complete
+0.725 Acknowledged seq: 318846267
+0.726 Assembling: source: 49699, dest: 13858, seq: 318846268, ack: 62, window: 1448, data: "Lorem ipsum dolo"...
+0.726 Sent: b'\xc2#6"\x13\x015<\x00\x00\x00>P\x00\x05\xa8\x00\x00\x00\x00Lorem ipsum dolo'...
+0.729 Failed to receive packet
+1.226 Failed to send packet
+1.727 Failed to send packet
+2.227 Failed to send packet
+2.727 Sent: b'\xc2#6"\x13\x015<\x00\x00\x00>P\x00\x05\xa8\x00\x00\x00\x00Lorem ipsum dolo'...
+2.730 Received: b'6"\xc2#\x00\x00\x00=\x13\x01@\x8cP\x10\x05\xa8\x00\x00\x00\x00'
+2.731 Disassembled: source: 13858, dest: 49699, seq: 61, ack: 318849164, window: 1448, ACK
+2.731 Error: Acknowledgement number too high
+3.228 Sent: b'\xc2#6"\x13\x015<\x00\x00\x00>P\x00\x05\xa8\x00\x00\x00\x00Lorem ipsum dolo'...
+3.231 Failed to receive packet
+3.728 Error: Connection timed out
+3.728 Closed connection
+3.731 Shutting down

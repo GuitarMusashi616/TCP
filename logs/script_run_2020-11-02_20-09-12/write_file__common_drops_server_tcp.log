@@ -1,0 +1,19 @@
+0.000 NEW RUN: Server, TEST: Write_file__Common_drops
+0.218 Received: b'^.\xc6\xd0\x00\x00\x002\x00\x00\x00\x00P\x02\x05\xa8\x00\x00\x00\x00'
+0.219 Disassembled: source: 24110, dest: 50896, seq: 50, window: 1448, SYN
+0.219 SYN accepted; new connection: 127.0.0.1 on port 24110
+0.219 Assembling: source: 50896, dest: 24110, seq: 625726011, ack: 51, window: 5808, ACK, SYN
+0.219 Sent: b'\xc6\xd0^.%K\xd2;\x00\x00\x003P\x12\x16\xb0\x00\x00\x00\x00'
+0.221 Failed to receive packet
+0.222 Failed to receive packet
+0.720 Failed to send packet
+1.220 Sent: b'\xc6\xd0^.%K\xd2;\x00\x00\x003P\x12\x16\xb0\x00\x00\x00\x00'
+1.222 Received: b'^.\xc6\xd0\x00\x00\x0c\xde%K\xd2=P\x01\x16\xb0\x00\x00\x00\x00'
+1.223 Disassembled: source: 24110, dest: 50896, seq: 3294, ack: 625726013, window: 5808, FIN
+1.223 Error: Incorrect acknowledgement flag
+1.721 Failed to send packet
+2.221 Failed to send packet
+2.721 Sent: b'\xc6\xd0^.%K\xd2;\x00\x00\x003P\x12\x16\xb0\x00\x00\x00\x00'
+3.222 Error: Connection timed out
+3.222 Closed connection
+3.225 Shutting down

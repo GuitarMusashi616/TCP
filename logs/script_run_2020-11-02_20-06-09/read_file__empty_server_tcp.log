@@ -1,0 +1,30 @@
+0.000 NEW RUN: Server, TEST: Read_file__Empty
+0.244 Received: b'\xdf\xe7\xd6\n\x00\x00\x00$\x00\x00\x00\x00P\x02\x05\xa8\x00\x00\x00\x00'
+0.245 Disassembled: source: 57319, dest: 54794, seq: 36, window: 1448, SYN
+0.245 SYN accepted; new connection: 127.0.0.1 on port 57319
+0.245 Assembling: source: 54794, dest: 57319, seq: 378056583, ack: 37, window: 1448, ACK, SYN
+0.246 Sent: b'\xd6\n\xdf\xe7\x16\x88\xaf\x87\x00\x00\x00%P\x12\x05\xa8\x00\x00\x00\x00'
+0.248 Received: b'\xdf\xe7\xd6\n\x00\x00\x00%\x16\x88\xaf\x88P\x10\x05\xa8\x00\x00\x00\x00'
+0.248 Disassembled: source: 57319, dest: 54794, seq: 37, ack: 378056584, window: 1448, ACK
+0.248 Handshake complete
+0.248 Acknowledged seq: 378056583
+0.248 Finished reading file
+0.249 Assembling: source: 54794, dest: 57319, seq: 378056584, ack: 38, window: 1448, ACK, FIN
+0.249 Sent: b'\xd6\n\xdf\xe7\x16\x88\xaf\x88\x00\x00\x00&P\x11\x05\xa8\x00\x00\x00\x00'
+0.251 Received: b'\xdf\xe7\xd6\n\x00\x00\x00%\x16\x88\xaf\x89P\x01\x05\xa8\x00\x00\x00\x00'
+0.251 Disassembled: source: 57319, dest: 54794, seq: 37, ack: 378056585, window: 1448, FIN
+0.251 Error: Responses must be acknowledgements
+0.749 Sent: b'\xd6\n\xdf\xe7\x16\x88\xaf\x88\x00\x00\x00&P\x11\x05\xa8\x00\x00\x00\x00'
+1.250 Sent: b'\xd6\n\xdf\xe7\x16\x88\xaf\x88\x00\x00\x00&P\x11\x05\xa8\x00\x00\x00\x00'
+1.252 Received: b'\xdf\xe7\xd6\n\x00\x00\x00&\x16\x88\xaf\x8bP\x10\x05\xa8\x00\x00\x00\x00'
+1.253 Disassembled: source: 57319, dest: 54794, seq: 38, ack: 378056587, window: 1448, ACK
+1.253 Error: Acknowledgement number too high
+1.254 Received: b'\xdf\xe7\xd6\n\x00\x00\x00&\x16\x88\xaf\x8bP\x10\x05\xa8\x00\x00\x00\x00'
+1.255 Disassembled: source: 57319, dest: 54794, seq: 38, ack: 378056587, window: 1448, ACK
+1.255 Error: Acknowledgement number too high
+1.750 Sent: b'\xd6\n\xdf\xe7\x16\x88\xaf\x88\x00\x00\x00&P\x11\x05\xa8\x00\x00\x00\x00'
+2.250 Sent: b'\xd6\n\xdf\xe7\x16\x88\xaf\x88\x00\x00\x00&P\x11\x05\xa8\x00\x00\x00\x00'
+2.751 Sent: b'\xd6\n\xdf\xe7\x16\x88\xaf\x88\x00\x00\x00&P\x11\x05\xa8\x00\x00\x00\x00'
+3.251 Error: Connection timed out
+3.251 Closed connection
+3.257 Shutting down

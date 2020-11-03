@@ -1,0 +1,30 @@
+0.000 NEW RUN: Server, TEST: Read_file__Relaxed
+0.213 Received: b'4\xd2/\xe2\x00\x00\x00\x03\x00\x00\x00\x00P\x02\x05\xa8\x00\x00\x00\x00'
+0.214 Disassembled: source: 13522, dest: 12258, seq: 3, window: 1448, SYN
+0.214 SYN accepted; new connection: 127.0.0.1 on port 13522
+0.214 Assembling: source: 12258, dest: 13522, seq: 401410120, ack: 4, window: 1448, ACK, SYN
+0.214 Sent: b'/\xe24\xd2\x17\xed\x08H\x00\x00\x00\x04P\x12\x05\xa8\x00\x00\x00\x00'
+0.216 Received: b'4\xd2/\xe2\x00\x00\x00\x04\x17\xed\x08IP\x10\x05\xa8\x00\x00\x00\x00'
+0.216 Disassembled: source: 13522, dest: 12258, seq: 4, ack: 401410121, window: 1448, ACK
+0.217 Handshake complete
+0.217 Acknowledged seq: 401410120
+0.217 Finished reading file
+0.217 Assembling: source: 12258, dest: 13522, seq: 401410121, ack: 5, window: 1448, ACK, FIN
+0.217 Sent: b'/\xe24\xd2\x17\xed\x08I\x00\x00\x00\x05P\x11\x05\xa8\x00\x00\x00\x00'
+0.219 Received: b'4\xd2/\xe2\x00\x00\x00\x04\x17\xed\x08JP\x01\x05\xa8\x00\x00\x00\x00'
+0.220 Disassembled: source: 13522, dest: 12258, seq: 4, ack: 401410122, window: 1448, FIN
+0.220 Error: Responses must be acknowledgements
+0.718 Sent: b'/\xe24\xd2\x17\xed\x08I\x00\x00\x00\x05P\x11\x05\xa8\x00\x00\x00\x00'
+1.218 Sent: b'/\xe24\xd2\x17\xed\x08I\x00\x00\x00\x05P\x11\x05\xa8\x00\x00\x00\x00'
+1.221 Received: b'4\xd2/\xe2\x00\x00\x00\x05\x17\xed\x08LP\x10\x05\xa8\x00\x00\x00\x00'
+1.221 Disassembled: source: 13522, dest: 12258, seq: 5, ack: 401410124, window: 1448, ACK
+1.221 Error: Acknowledgement number too high
+1.223 Received: b'4\xd2/\xe2\x00\x00\x00\x05\x17\xed\x08LP\x10\x05\xa8\x00\x00\x00\x00'
+1.224 Disassembled: source: 13522, dest: 12258, seq: 5, ack: 401410124, window: 1448, ACK
+1.224 Error: Acknowledgement number too high
+1.718 Sent: b'/\xe24\xd2\x17\xed\x08I\x00\x00\x00\x05P\x11\x05\xa8\x00\x00\x00\x00'
+2.219 Sent: b'/\xe24\xd2\x17\xed\x08I\x00\x00\x00\x05P\x11\x05\xa8\x00\x00\x00\x00'
+2.719 Sent: b'/\xe24\xd2\x17\xed\x08I\x00\x00\x00\x05P\x11\x05\xa8\x00\x00\x00\x00'
+3.220 Error: Connection timed out
+3.220 Closed connection
+3.225 Shutting down

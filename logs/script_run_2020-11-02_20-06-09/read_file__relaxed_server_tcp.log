@@ -1,0 +1,30 @@
+0.000 NEW RUN: Server, TEST: Read_file__Relaxed
+0.209 Received: b'\x88\xb5\xe2\x98\x00\x00\x00Y\x00\x00\x00\x00P\x02\x05\xa8\x00\x00\x00\x00'
+0.210 Disassembled: source: 34997, dest: 58008, seq: 89, window: 1448, SYN
+0.210 SYN accepted; new connection: 127.0.0.1 on port 34997
+0.210 Assembling: source: 58008, dest: 34997, seq: 374926813, ack: 90, window: 1448, ACK, SYN
+0.211 Sent: b'\xe2\x98\x88\xb5\x16X\xed\xdd\x00\x00\x00ZP\x12\x05\xa8\x00\x00\x00\x00'
+0.213 Received: b'\x88\xb5\xe2\x98\x00\x00\x00Z\x16X\xed\xdeP\x10\x05\xa8\x00\x00\x00\x00'
+0.213 Disassembled: source: 34997, dest: 58008, seq: 90, ack: 374926814, window: 1448, ACK
+0.213 Handshake complete
+0.213 Acknowledged seq: 374926813
+0.213 Finished reading file
+0.213 Assembling: source: 58008, dest: 34997, seq: 374926814, ack: 91, window: 1448, ACK, FIN
+0.214 Sent: b'\xe2\x98\x88\xb5\x16X\xed\xde\x00\x00\x00[P\x11\x05\xa8\x00\x00\x00\x00'
+0.216 Received: b'\x88\xb5\xe2\x98\x00\x00\x00Z\x16X\xed\xdfP\x01\x05\xa8\x00\x00\x00\x00'
+0.216 Disassembled: source: 34997, dest: 58008, seq: 90, ack: 374926815, window: 1448, FIN
+0.216 Error: Responses must be acknowledgements
+0.714 Sent: b'\xe2\x98\x88\xb5\x16X\xed\xde\x00\x00\x00[P\x11\x05\xa8\x00\x00\x00\x00'
+1.214 Sent: b'\xe2\x98\x88\xb5\x16X\xed\xde\x00\x00\x00[P\x11\x05\xa8\x00\x00\x00\x00'
+1.217 Received: b'\x88\xb5\xe2\x98\x00\x00\x00[\x16X\xed\xe1P\x10\x05\xa8\x00\x00\x00\x00'
+1.218 Disassembled: source: 34997, dest: 58008, seq: 91, ack: 374926817, window: 1448, ACK
+1.218 Error: Acknowledgement number too high
+1.220 Received: b'\x88\xb5\xe2\x98\x00\x00\x00[\x16X\xed\xe1P\x10\x05\xa8\x00\x00\x00\x00'
+1.220 Disassembled: source: 34997, dest: 58008, seq: 91, ack: 374926817, window: 1448, ACK
+1.221 Error: Acknowledgement number too high
+1.715 Sent: b'\xe2\x98\x88\xb5\x16X\xed\xde\x00\x00\x00[P\x11\x05\xa8\x00\x00\x00\x00'
+2.215 Sent: b'\xe2\x98\x88\xb5\x16X\xed\xde\x00\x00\x00[P\x11\x05\xa8\x00\x00\x00\x00'
+2.716 Sent: b'\xe2\x98\x88\xb5\x16X\xed\xde\x00\x00\x00[P\x11\x05\xa8\x00\x00\x00\x00'
+3.216 Error: Connection timed out
+3.216 Closed connection
+3.222 Shutting down

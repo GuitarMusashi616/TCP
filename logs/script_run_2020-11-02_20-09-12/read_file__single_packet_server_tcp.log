@@ -1,0 +1,35 @@
+0.000 NEW RUN: Server, TEST: Read_file__Single_packet
+0.230 Received: b'\x9f\xaf{\xdb\x00\x00\x00M\x00\x00\x00\x00P\x02\x05\xa8\x00\x00\x00\x00'
+0.230 Disassembled: source: 40879, dest: 31707, seq: 77, window: 1448, SYN
+0.231 SYN accepted; new connection: 127.0.0.1 on port 40879
+0.231 Assembling: source: 31707, dest: 40879, seq: 570366318, ack: 78, window: 1448, ACK, SYN
+0.231 Sent: b'{\xdb\x9f\xaf!\xff\x19n\x00\x00\x00NP\x12\x05\xa8\x00\x00\x00\x00'
+0.232 Received: b'\x9f\xaf{\xdb\x00\x00\x00N!\xff\x19oP\x10\x05\xa8\x00\x00\x00\x00'
+0.233 Disassembled: source: 40879, dest: 31707, seq: 78, ack: 570366319, window: 1448, ACK
+0.233 Handshake complete
+0.233 Acknowledged seq: 570366318
+0.233 Finished reading file
+0.233 Assembling: source: 31707, dest: 40879, seq: 570366319, ack: 79, window: 1448, data: "This file fits i"...
+0.233 Sent: b'{\xdb\x9f\xaf!\xff\x19o\x00\x00\x00OP\x00\x05\xa8\x00\x00\x00\x00This file fits i'...
+0.234 Received: b'\x9f\xaf{\xdb\x00\x00\x00N!\xff\x19\x9aP\x10\x05\xa8\x00\x00\x00\x00'
+0.235 Disassembled: source: 40879, dest: 31707, seq: 78, ack: 570366362, window: 1448, ACK
+0.235 Acknowledged seq: 570366319
+0.235 Assembling: source: 31707, dest: 40879, seq: 570366362, ack: 79, window: 1448, ACK, FIN
+0.235 Received: b'\x9f\xaf{\xdb\x00\x00\x00N!\xff\x19\x9aP\x01\x05\xa8\x00\x00\x00\x00'
+0.236 Sent: b'{\xdb\x9f\xaf!\xff\x19\x9a\x00\x00\x00OP\x11\x05\xa8\x00\x00\x00\x00'
+0.236 Disassembled: source: 40879, dest: 31707, seq: 78, ack: 570366362, window: 1448, FIN
+0.236 Error: Responses must be acknowledgements
+0.736 Sent: b'{\xdb\x9f\xaf!\xff\x19\x9a\x00\x00\x00OP\x11\x05\xa8\x00\x00\x00\x00'
+0.738 Received: b'\x9f\xaf{\xdb\x00\x00\x00O!\xff\x19\x9cP\x10\x05\xa8\x00\x00\x00\x00'
+0.738 Disassembled: source: 40879, dest: 31707, seq: 79, ack: 570366364, window: 1448, ACK
+0.738 Error: Acknowledgement number too high
+0.739 Received: b'\x9f\xaf{\xdb\x00\x00\x00O!\xff\x19\x9cP\x10\x05\xa8\x00\x00\x00\x00'
+0.740 Disassembled: source: 40879, dest: 31707, seq: 79, ack: 570366364, window: 1448, ACK
+0.740 Error: Acknowledgement number too high
+1.236 Sent: b'{\xdb\x9f\xaf!\xff\x19\x9a\x00\x00\x00OP\x11\x05\xa8\x00\x00\x00\x00'
+1.737 Sent: b'{\xdb\x9f\xaf!\xff\x19\x9a\x00\x00\x00OP\x11\x05\xa8\x00\x00\x00\x00'
+2.237 Sent: b'{\xdb\x9f\xaf!\xff\x19\x9a\x00\x00\x00OP\x11\x05\xa8\x00\x00\x00\x00'
+2.738 Sent: b'{\xdb\x9f\xaf!\xff\x19\x9a\x00\x00\x00OP\x11\x05\xa8\x00\x00\x00\x00'
+3.238 Error: Connection timed out
+3.239 Closed connection
+3.242 Shutting down

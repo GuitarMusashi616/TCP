@@ -1,0 +1,30 @@
+0.000 NEW RUN: Server, TEST: Read_file__Empty
+0.229 Received: b'\xbet\xf1\xa0\x00\x00\x00=\x00\x00\x00\x00P\x02\x05\xa8\x00\x00\x00\x00'
+0.229 Disassembled: source: 48756, dest: 61856, seq: 61, window: 1448, SYN
+0.230 SYN accepted; new connection: 127.0.0.1 on port 48756
+0.230 Assembling: source: 61856, dest: 48756, seq: 271450659, ack: 62, window: 1448, ACK, SYN
+0.230 Sent: b'\xf1\xa0\xbet\x10.\x02#\x00\x00\x00>P\x12\x05\xa8\x00\x00\x00\x00'
+0.232 Received: b'\xbet\xf1\xa0\x00\x00\x00>\x10.\x02$P\x10\x05\xa8\x00\x00\x00\x00'
+0.232 Disassembled: source: 48756, dest: 61856, seq: 62, ack: 271450660, window: 1448, ACK
+0.232 Handshake complete
+0.232 Acknowledged seq: 271450659
+0.232 Finished reading file
+0.232 Assembling: source: 61856, dest: 48756, seq: 271450660, ack: 63, window: 1448, ACK, FIN
+0.232 Sent: b'\xf1\xa0\xbet\x10.\x02$\x00\x00\x00?P\x11\x05\xa8\x00\x00\x00\x00'
+0.234 Received: b'\xbet\xf1\xa0\x00\x00\x00>\x10.\x02%P\x01\x05\xa8\x00\x00\x00\x00'
+0.234 Disassembled: source: 48756, dest: 61856, seq: 62, ack: 271450661, window: 1448, FIN
+0.234 Error: Responses must be acknowledgements
+0.733 Sent: b'\xf1\xa0\xbet\x10.\x02$\x00\x00\x00?P\x11\x05\xa8\x00\x00\x00\x00'
+1.233 Sent: b'\xf1\xa0\xbet\x10.\x02$\x00\x00\x00?P\x11\x05\xa8\x00\x00\x00\x00'
+1.236 Received: b"\xbet\xf1\xa0\x00\x00\x00?\x10.\x02'P\x10\x05\xa8\x00\x00\x00\x00"
+1.237 Disassembled: source: 48756, dest: 61856, seq: 63, ack: 271450663, window: 1448, ACK
+1.237 Error: Acknowledgement number too high
+1.239 Received: b"\xbet\xf1\xa0\x00\x00\x00?\x10.\x02'P\x10\x05\xa8\x00\x00\x00\x00"
+1.239 Disassembled: source: 48756, dest: 61856, seq: 63, ack: 271450663, window: 1448, ACK
+1.239 Error: Acknowledgement number too high
+1.734 Sent: b'\xf1\xa0\xbet\x10.\x02$\x00\x00\x00?P\x11\x05\xa8\x00\x00\x00\x00'
+2.234 Sent: b'\xf1\xa0\xbet\x10.\x02$\x00\x00\x00?P\x11\x05\xa8\x00\x00\x00\x00'
+2.735 Sent: b'\xf1\xa0\xbet\x10.\x02$\x00\x00\x00?P\x11\x05\xa8\x00\x00\x00\x00'
+3.235 Error: Connection timed out
+3.235 Closed connection
+3.241 Shutting down

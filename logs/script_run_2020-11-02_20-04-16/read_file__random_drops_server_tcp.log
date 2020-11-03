@@ -1,0 +1,35 @@
+0.000 NEW RUN: Server, TEST: Read_file__Random_drops
+0.231 Received: b'\xc4\xe0\xe0\x7f\x00\x00\x00S\x00\x00\x00\x00P\x02\x05\xa8\x00\x00\x00\x00'
+0.231 Disassembled: source: 50400, dest: 57471, seq: 83, window: 1448, SYN
+0.232 SYN accepted; new connection: 127.0.0.1 on port 50400
+0.232 Assembling: source: 57471, dest: 50400, seq: 295705756, ack: 84, window: 1448, ACK, SYN
+0.232 Sent: b'\xe0\x7f\xc4\xe0\x11\xa0\x1c\x9c\x00\x00\x00TP\x12\x05\xa8\x00\x00\x00\x00'
+0.236 Received: b'\xc4\xe0\xe0\x7f\x00\x00\x00T\x11\xa0\x1c\x9dP\x10\x05\xa8\x00\x00\x00\x00'
+0.236 Disassembled: source: 50400, dest: 57471, seq: 84, ack: 295705757, window: 1448, ACK
+0.236 Handshake complete
+0.236 Acknowledged seq: 295705756
+0.236 Assembling: source: 57471, dest: 50400, seq: 295705757, ack: 85, window: 1448, data: "Lorem ipsum dolo"...
+0.237 Sent: b'\xe0\x7f\xc4\xe0\x11\xa0\x1c\x9d\x00\x00\x00UP\x00\x05\xa8\x00\x00\x00\x00Lorem ipsum dolo'...
+0.239 Received: b'\xc4\xe0\xe0\x7f\x00\x00\x00T\x11\xa0"EP\x10\x05\xa8\x00\x00\x00\x00'
+0.240 Disassembled: source: 50400, dest: 57471, seq: 84, ack: 295707205, window: 1448, ACK
+0.240 Acknowledged seq: 295705757
+0.240 Assembling: source: 57471, dest: 50400, seq: 295707205, ack: 85, window: 1448, data: "mprehensam nam, "...
+0.240 Sent: b'\xe0\x7f\xc4\xe0\x11\xa0"E\x00\x00\x00UP\x00\x05\xa8\x00\x00\x00\x00mprehensam nam, '...
+0.243 Failed to receive packet
+0.741 Failed to send packet
+1.241 Sent: b'\xe0\x7f\xc4\xe0\x11\xa0"E\x00\x00\x00UP\x00\x05\xa8\x00\x00\x00\x00mprehensam nam, '...
+1.244 Received: b'\xc4\xe0\xe0\x7f\x00\x00\x00T\x11\xa0-\x95P\x10\x05\xa8\x00\x00\x00\x00'
+1.245 Disassembled: source: 50400, dest: 57471, seq: 84, ack: 295710101, window: 1448, ACK
+1.245 Error: Acknowledgement number too high
+1.742 Sent: b'\xe0\x7f\xc4\xe0\x11\xa0"E\x00\x00\x00UP\x00\x05\xa8\x00\x00\x00\x00mprehensam nam, '...
+1.745 Received: b'\xc4\xe0\xe0\x7f\x00\x00\x00T\x11\xa03=P\x10\x05\xa8\x00\x00\x00\x00'
+1.745 Disassembled: source: 50400, dest: 57471, seq: 84, ack: 295711549, window: 1448, ACK
+1.746 Error: Acknowledgement number too high
+2.242 Sent: b'\xe0\x7f\xc4\xe0\x11\xa0"E\x00\x00\x00UP\x00\x05\xa8\x00\x00\x00\x00mprehensam nam, '...
+2.245 Received: b'\xc4\xe0\xe0\x7f\x00\x00\x00T\x11\xa08\xe5P\x10\x05\xa8\x00\x00\x00\x00'
+2.246 Disassembled: source: 50400, dest: 57471, seq: 84, ack: 295712997, window: 1448, ACK
+2.246 Error: Acknowledgement number too high
+2.742 Failed to send packet
+3.243 Error: Connection timed out
+3.243 Closed connection
+3.247 Shutting down

@@ -1,0 +1,30 @@
+0.000 NEW RUN: Server, TEST: Read_file__Empty
+0.218 Received: b'0\xcbe\x10\x00\x00\x00^\x00\x00\x00\x00P\x02\x05\xa8\x00\x00\x00\x00'
+0.218 Disassembled: source: 12491, dest: 25872, seq: 94, window: 1448, SYN
+0.218 SYN accepted; new connection: 127.0.0.1 on port 12491
+0.219 Assembling: source: 25872, dest: 12491, seq: 568293536, ack: 95, window: 1448, ACK, SYN
+0.219 Sent: b'e\x100\xcb!\xdfx\xa0\x00\x00\x00_P\x12\x05\xa8\x00\x00\x00\x00'
+0.221 Received: b'0\xcbe\x10\x00\x00\x00_!\xdfx\xa1P\x10\x05\xa8\x00\x00\x00\x00'
+0.221 Disassembled: source: 12491, dest: 25872, seq: 95, ack: 568293537, window: 1448, ACK
+0.221 Handshake complete
+0.221 Acknowledged seq: 568293536
+0.221 Finished reading file
+0.222 Assembling: source: 25872, dest: 12491, seq: 568293537, ack: 96, window: 1448, ACK, FIN
+0.222 Sent: b'e\x100\xcb!\xdfx\xa1\x00\x00\x00`P\x11\x05\xa8\x00\x00\x00\x00'
+0.224 Received: b'0\xcbe\x10\x00\x00\x00_!\xdfx\xa2P\x01\x05\xa8\x00\x00\x00\x00'
+0.224 Disassembled: source: 12491, dest: 25872, seq: 95, ack: 568293538, window: 1448, FIN
+0.224 Error: Responses must be acknowledgements
+0.722 Sent: b'e\x100\xcb!\xdfx\xa1\x00\x00\x00`P\x11\x05\xa8\x00\x00\x00\x00'
+1.223 Sent: b'e\x100\xcb!\xdfx\xa1\x00\x00\x00`P\x11\x05\xa8\x00\x00\x00\x00'
+1.225 Received: b'0\xcbe\x10\x00\x00\x00`!\xdfx\xa4P\x10\x05\xa8\x00\x00\x00\x00'
+1.226 Disassembled: source: 12491, dest: 25872, seq: 96, ack: 568293540, window: 1448, ACK
+1.226 Error: Acknowledgement number too high
+1.227 Received: b'0\xcbe\x10\x00\x00\x00`!\xdfx\xa4P\x10\x05\xa8\x00\x00\x00\x00'
+1.228 Disassembled: source: 12491, dest: 25872, seq: 96, ack: 568293540, window: 1448, ACK
+1.228 Error: Acknowledgement number too high
+1.723 Sent: b'e\x100\xcb!\xdfx\xa1\x00\x00\x00`P\x11\x05\xa8\x00\x00\x00\x00'
+2.224 Sent: b'e\x100\xcb!\xdfx\xa1\x00\x00\x00`P\x11\x05\xa8\x00\x00\x00\x00'
+2.724 Sent: b'e\x100\xcb!\xdfx\xa1\x00\x00\x00`P\x11\x05\xa8\x00\x00\x00\x00'
+3.225 Error: Connection timed out
+3.225 Closed connection
+3.230 Shutting down
