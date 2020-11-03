@@ -3,6 +3,22 @@ import math
 from bitstring import BitArray, BitStream, pack
 
 
+def print_compact(header):
+    if header.ACK and header.SYN:
+        print('syn-ack')
+    elif header.ACK:
+        print('ack')
+    elif header.SYN:
+        print('syn')
+    elif header.FIN:
+        print('fin')
+    print('id: ' + str(header.source_port))
+    print('seq_num: ' + str(header.seq_num))
+    print('ack_num: ' + str(header.ack_num))
+    print('data: ' + str(len(header.data)))
+    print()
+
+
 class Header:
     def __init__(self, bits=None):
         self._bits = BitArray(160) if bits is None else BitArray(bits)
