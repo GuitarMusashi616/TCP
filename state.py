@@ -64,6 +64,7 @@ class State:
         h.SYN = True
         print_compact(h)
         self.tcp.socket.sendto(bytes(h), self.tcb.dest_address)
+        self.tcb.sync_snd(h)
 
     def _send_ack(self):
         check_address(self.tcb.source_address)
@@ -74,6 +75,7 @@ class State:
         h.ACK = True
         print_compact(h)
         self.tcp.socket.sendto(bytes(h), self.tcb.dest_address)
+        self.tcb.sync_snd(h)
 
     def _send_syn_ack(self):
         check_address(self.tcb.source_address)
@@ -85,6 +87,7 @@ class State:
         h.ACK = True
         print_compact(h)
         self.tcp.socket.sendto(bytes(h), self.tcb.dest_address)
+        self.tcb.sync_snd(h)
 
     def _send_data(self, data):
         check_address(self.tcb.source_address)
@@ -94,6 +97,7 @@ class State:
         h = Header.from_tcb(self.tcb, data)
         print_compact(h)
         self.tcp.socket.sendto(bytes(h), self.tcb.dest_address)
+        self.tcb.sync_snd(h)
 
     def _send_fin(self):
         check_address(self.tcb.source_address)
@@ -104,14 +108,17 @@ class State:
         h.FIN = True
         print_compact(h)
         self.tcp.socket.sendto(bytes(h), self.tcb.dest_address)
+        self.tcb.sync_snd(h)
 
     def _recvfrom_socket(self):
         attempts = 3
         while attempts > 0:
             try:
                 header_bytes, addr = self.tcp.socket.recvfrom(1500)
-                print_compact(Header(header_bytes))
-                return header_bytes, addr
+                header = Header(header_bytes)
+                self.tcb.sync_rcv(header)
+                print_compact(header)
+                return header, addr
             except (socket.timeout, ConnectionResetError):
                 attempts -= 1
         sys.exit("No response from server, shutting down...")
@@ -159,8 +166,7 @@ class Listen(State):
         self.receive()
 
     def receive(self):
-        header_bytes, addr = self._recvfrom_socket()
-        header = Header(header_bytes)
+        header, addr = self._recvfrom_socket()
         if header.SYN:
             self.tcb.initialize(header, addr)
             self._send_syn_ack()
@@ -184,8 +190,7 @@ class SynSent(State):
         self.tcp.state = Closed(self.tcp)
 
     def receive(self):
-        header_bytes, addr = self._recvfrom_socket()
-        header = Header(header_bytes)
+        header, addr = self._recvfrom_socket()
         if header.SYN and header.ACK:
             self.tcb.initialize(header, addr)
             self._send_ack()
@@ -201,10 +206,8 @@ class SynReceived(State):
         self.receive()
 
     def receive(self):
-        header_bytes, addr = self._recvfrom_socket()
-        header = Header(header_bytes)
+        header, addr = self._recvfrom_socket()
         if header.ACK:
-            self.tcb.sync(header)
             self.tcp.state = Established(self.tcp)
 
     def close(self):
@@ -221,10 +224,8 @@ class Established(State):
         self.tcp.state = FinWait1(self.tcp)
 
     def receive(self):
-        header_bytes, addr = self._recvfrom_socket()
-        header = Header(header_bytes)
+        header, addr = self._recvfrom_socket()
         if header.FIN:
-            self.tcb.sync(header)
             self._send_ack()
             self.tcp.state = CloseWait(self.tcp)
 
@@ -232,8 +233,7 @@ class Established(State):
         f = open(filename, 'wb')
         is_downloading = True
         while is_downloading:
-            header_bytes, addr = self._recvfrom_socket()
-            header = Header(header_bytes)
+            header, addr = self._recvfrom_socket()
             # print(len(header))
             # print(len(header.data))
             # print(header.window)
@@ -243,7 +243,6 @@ class Established(State):
 
             if header.data:
                 f.write(header.data)
-                self.tcb.sync(header, len(header.data))
                 self._send_ack()
                 if len(header.data) < header.window:
                     is_downloading = False
@@ -256,9 +255,7 @@ class Established(State):
         is_uploading = True
         while is_uploading:
             # wait for ack
-            header_bytes, addr = self._recvfrom_socket()
-            header = Header(header_bytes)
-            self.tcb.sync(header)
+            header, addr = self._recvfrom_socket()
             # print(header)
             if not header.ACK:
                 break
@@ -279,14 +276,11 @@ class FinWait1(State):
         self.receive()
 
     def receive(self):
-        header_bytes, addr = self._recvfrom_socket()
-        header = Header(header_bytes)
+        header, addr = self._recvfrom_socket()
         if header.ACK:
-            self.tcb.sync(header)
             self.tcp.state = FinWait2(self.tcp)
 
         if header.FIN:
-            self.tcb.sync(header)
             self._send_ack()
             self.tcp.state = Closing(self.tcp)
 
@@ -296,10 +290,8 @@ class FinWait2(State):
         self.receive()
 
     def receive(self):
-        header_bytes, addr = self._recvfrom_socket()
-        header = Header(header_bytes)
+        header, addr = self._recvfrom_socket()
         if header.FIN:
-            self.tcb.sync(header)
             self._send_ack()
             self.tcp.state = TimeWait(self.tcp)
 
@@ -318,10 +310,8 @@ class LastAck(State):
         self.receive()
 
     def receive(self):
-        header_bytes, addr = self._recvfrom_socket()
-        header = Header(header_bytes)
+        header, addr = self._recvfrom_socket()
         if header.ACK:
-            self.tcb.sync(header)
             self.tcp.state = Closed(self.tcp)
 
 
@@ -330,10 +320,8 @@ class Closing(State):
         self.receive()
 
     def receive(self):
-        header_bytes, addr = self._recvfrom_socket()
-        header = Header(header_bytes)
+        header, addr = self._recvfrom_socket()
         if header.ACK:
-            self.tcb.sync(header)
             self.tcp.state = TimeWait(self.tcp)
 
 

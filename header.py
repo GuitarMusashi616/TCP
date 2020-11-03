@@ -179,6 +179,13 @@ class Header:
     def data(self, value):
         self._bits = self._bits[:160] + BitArray(value)
 
+    @property
+    def seq_increment(self):
+        increment = len(self.data)
+        if self.FIN or self.SYN:
+            increment = 1
+        return increment
+
     def __len__(self):
         return len(self._bits)
 
@@ -186,7 +193,6 @@ class Header:
         return self._bits.bytes
 
     def __repr__(self):
-
         string = 'Source Port: ' + str(self.source_port) + '\n\n'
         string += 'Destination Port: ' + str(self.dest_port) + '\n\n'
         string += 'Sequence Number: ' + str(self.seq_num) + '\n\n'
@@ -204,7 +210,7 @@ class Header:
         string += 'Checksum: ' + str(self.checksum) + '\n\n'
         string += 'Urgent Pointer: ' + str(self.urgent_ptr) + '\n\n'
         if len(self._bits) > 160:
-#             string += 'Options: ' + str(self.options) + '\n\n'
+            # string += 'Options: ' + str(self.options) + '\n\n'
             string += 'Data: ' + str(self.data) + '\n'
 
         return string
@@ -227,12 +233,6 @@ class Header:
             h.seq_num = tcb.SND_NXT
             h.ack_num = tcb.RCV_NXT
             h.window = tcb.SND_WND
-            if data:
-                h.data = data
-                tcb.SND_NXT += len(data)
-            else:
-                tcb.SND_NXT += 1
-            # todo: make it increase by num bits
             return h
 
         except (AttributeError, TypeError) as e:
