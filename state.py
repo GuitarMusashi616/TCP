@@ -62,7 +62,7 @@ class State:
 
         h = Header.from_tcb(self.tcb)
         h.SYN = True
-        # print_compact(h)
+        print_compact(h)
         self.tcp.socket.sendto(bytes(h), self.tcb.dest_address)
         self.tcb.sync_snd(h)
 
@@ -73,7 +73,7 @@ class State:
 
         h = Header.from_tcb(self.tcb)
         h.ACK = True
-        # print_compact(h)
+        print_compact(h)
         self.tcp.socket.sendto(bytes(h), self.tcb.dest_address)
         self.tcb.sync_snd(h)
 
@@ -85,7 +85,7 @@ class State:
         h = Header.from_tcb(self.tcb)
         h.SYN = True
         h.ACK = True
-        # print_compact(h)
+        print_compact(h)
         self.tcp.socket.sendto(bytes(h), self.tcb.dest_address)
         self.tcb.sync_snd(h)
 
@@ -97,7 +97,7 @@ class State:
         h = Header.from_tcb(self.tcb)
         h.data = data
         h.ACK = True
-        # print_compact(h)
+        print_compact(h)
         self.tcp.socket.sendto(bytes(h), self.tcb.dest_address)
         self.tcb.sync_snd(h)
 
@@ -108,7 +108,7 @@ class State:
 
         h = Header.from_tcb(self.tcb)
         h.FIN = True
-        # print_compact(h)
+        print_compact(h)
         self.tcp.socket.sendto(bytes(h), self.tcb.dest_address)
         self.tcb.sync_snd(h)
 
@@ -119,7 +119,7 @@ class State:
                 header_bytes, addr = self.tcp.socket.recvfrom(1500)
                 header = Header(header_bytes)
                 self.tcb.sync_rcv(header)
-                # print_compact(header)
+                print_compact(header)
                 return header, addr
             except (socket.timeout, ConnectionResetError):
                 attempts -= 1
@@ -263,8 +263,6 @@ class Established(State):
             # wait for ack
             header, addr = self._recvfrom_socket()
             # print(header)
-            if not header.ACK:
-                break
 
             # break if last of file
             if len(data) < self.tcb.SND_WND:
