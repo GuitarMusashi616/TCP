@@ -1,0 +1,15 @@
+0.000 NEW RUN: Server, TEST: Read_file__Common_drops
+0.224 Received: b'5\t\xa1\xf2\x00\x00\x00M\x00\x00\x00\x00P\x02\x05\xa8\x00\x00\x00\x00'
+0.225 Disassembled: source: 13577, dest: 41458, seq: 77, window: 1448, SYN
+0.225 SYN accepted; new connection: 127.0.0.1 on port 13577
+0.225 Assembling: source: 41458, dest: 13577, seq: 1771072760, ack: 78, window: 1448, ACK, SYN
+0.225 Sent: b'\xa1\xf25\ti\x90l\xf8\x00\x00\x00NP\x12\x05\xa8\x00\x00\x00\x00'
+0.227 Failed to receive packet
+0.726 Sent: b'\xa1\xf25\ti\x90l\xf8\x00\x00\x00NP\x12\x05\xa8\x00\x00\x00\x00'
+1.226 Failed to send packet
+1.727 Failed to send packet
+2.227 Failed to send packet
+2.728 Sent: b'\xa1\xf25\ti\x90l\xf8\x00\x00\x00NP\x12\x05\xa8\x00\x00\x00\x00'
+3.228 Error: Connection timed out
+3.228 Closed connection
+3.230 Shutting down

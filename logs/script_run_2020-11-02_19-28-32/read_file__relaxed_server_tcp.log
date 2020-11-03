@@ -1,0 +1,27 @@
+0.000 NEW RUN: Server, TEST: Read_file__Relaxed
+0.218 Received: b'(\xe8<\xbc\x00\x00\x00$\x00\x00\x00\x00P\x02\x05\xa8\x00\x00\x00\x00'
+0.219 Disassembled: source: 10472, dest: 15548, seq: 36, window: 1448, SYN
+0.219 SYN accepted; new connection: 127.0.0.1 on port 10472
+0.219 Assembling: source: 15548, dest: 10472, seq: 1725107384, ack: 37, window: 1448, ACK, SYN
+0.220 Sent: b'<\xbc(\xe8f\xd3\x0c\xb8\x00\x00\x00%P\x12\x05\xa8\x00\x00\x00\x00'
+0.222 Received: b'(\xe8<\xbc\x00\x00\x00%f\xd3\x0c\xb9P\x10\x05\xa8\x00\x00\x00\x00'
+0.222 Disassembled: source: 10472, dest: 15548, seq: 37, ack: 1725107385, window: 1448, ACK
+0.222 Handshake complete
+0.222 Acknowledged seq: 1725107384
+0.222 Finished reading file
+0.223 Assembling: source: 15548, dest: 10472, seq: 1725107385, ack: 38, window: 1448, ACK, FIN
+0.223 Sent: b'<\xbc(\xe8f\xd3\x0c\xb9\x00\x00\x00&P\x11\x05\xa8\x00\x00\x00\x00'
+0.723 Sent: b'<\xbc(\xe8f\xd3\x0c\xb9\x00\x00\x00&P\x11\x05\xa8\x00\x00\x00\x00'
+0.727 Received: b'(\xe8<\xbc\x00\x00\x00%f\xd3\x0c\xbbP\x10\x05\xa8\x00\x00\x00\x00'
+0.727 Disassembled: source: 10472, dest: 15548, seq: 37, ack: 1725107387, window: 1448, ACK
+0.727 Error: Acknowledgement number too high
+0.729 Received: b'(\xe8<\xbc\x00\x00\x00%f\xd3\x0c\xbbP\x01\x05\xa8\x00\x00\x00\x00'
+0.729 Disassembled: source: 10472, dest: 15548, seq: 37, ack: 1725107387, window: 1448, FIN
+0.729 Error: Acknowledgement number too high
+1.224 Sent: b'<\xbc(\xe8f\xd3\x0c\xb9\x00\x00\x00&P\x11\x05\xa8\x00\x00\x00\x00'
+1.724 Sent: b'<\xbc(\xe8f\xd3\x0c\xb9\x00\x00\x00&P\x11\x05\xa8\x00\x00\x00\x00'
+2.225 Sent: b'<\xbc(\xe8f\xd3\x0c\xb9\x00\x00\x00&P\x11\x05\xa8\x00\x00\x00\x00'
+2.725 Sent: b'<\xbc(\xe8f\xd3\x0c\xb9\x00\x00\x00&P\x11\x05\xa8\x00\x00\x00\x00'
+3.226 Error: Connection timed out
+3.226 Closed connection
+3.231 Shutting down

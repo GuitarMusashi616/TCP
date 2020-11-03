@@ -1,0 +1,18 @@
+0.000 NEW RUN: Server, TEST: Write_file__Common_drops
+0.214 Received: b'\x8c\x80Kr\x00\x00\x00\x15\x00\x00\x00\x00P\x02\x05\xa8\x00\x00\x00\x00'
+0.214 Disassembled: source: 35968, dest: 19314, seq: 21, window: 1448, SYN
+0.214 SYN accepted; new connection: 127.0.0.1 on port 35968
+0.215 Assembling: source: 19314, dest: 35968, seq: 1774124164, ack: 22, window: 5808, ACK, SYN
+0.215 Sent: b'Kr\x8c\x80i\xbe\xfc\x84\x00\x00\x00\x16P\x12\x16\xb0\x00\x00\x00\x00'
+0.217 Received: b'\x8c\x80Kr\x00\x00\x00\x16i\xbe\xfc\x85P\x10\x16\xb0\x00\x00\x00\x00'
+0.218 Disassembled: source: 35968, dest: 19314, seq: 22, ack: 1774124165, window: 5808, ACK
+0.218 Assembling: source: 19314, dest: 35968, seq: 1774124165, ack: 22, window: 5808, ACK
+0.218 Failed to send packet
+0.219 Failed to receive packet
+0.718 Sent: b'Kr\x8c\x80i\xbe\xfc\x85\x00\x00\x00\x16P\x10\x16\xb0\x00\x00\x00\x00'
+1.219 Sent: b'Kr\x8c\x80i\xbe\xfc\x85\x00\x00\x00\x16P\x10\x16\xb0\x00\x00\x00\x00'
+1.719 Sent: b'Kr\x8c\x80i\xbe\xfc\x85\x00\x00\x00\x16P\x10\x16\xb0\x00\x00\x00\x00'
+2.220 Failed to send packet
+2.720 Error: Connection timed out
+2.720 Closed connection
+2.721 Shutting down

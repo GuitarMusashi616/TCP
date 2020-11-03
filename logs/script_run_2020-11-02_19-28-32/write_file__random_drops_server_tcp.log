@@ -1,0 +1,30 @@
+0.000 NEW RUN: Server, TEST: Write_file__Random_drops
+0.208 Received: b'\xc8;\xd2Y\x00\x00\x00c\x00\x00\x00\x00P\x02\x05\xa8\x00\x00\x00\x00'
+0.209 Disassembled: source: 51259, dest: 53849, seq: 99, window: 1448, SYN
+0.209 SYN accepted; new connection: 127.0.0.1 on port 51259
+0.209 Assembling: source: 53849, dest: 51259, seq: 1759502690, ack: 100, window: 5808, ACK, SYN
+0.209 Sent: b'\xd2Y\xc8;h\xdf\xe1b\x00\x00\x00dP\x12\x16\xb0\x00\x00\x00\x00'
+0.212 Received: b'\xc8;\xd2Y\x00\x00\x00dh\xdf\xe1cP\x10\x16\xb0\x00\x00\x00\x00'
+0.212 Disassembled: source: 51259, dest: 53849, seq: 100, ack: 1759502691, window: 5808, ACK
+0.212 Assembling: source: 53849, dest: 51259, seq: 1759502691, ack: 100, window: 5808, ACK
+0.213 Failed to send packet
+0.214 Received: b'\xc8;\xd2Y\x00\x00\x00dh\xdf\xe1cP\x00\x16\xb0\x00\x00\x00\x00Lorem ipsum dolo'...
+0.214 Disassembled: source: 51259, dest: 53849, seq: 100, ack: 1759502691, window: 5808, data: "Lorem ipsum dolo"...
+0.214 Error: Incorrect acknowledgement flag
+0.713 Sent: b'\xd2Y\xc8;h\xdf\xe1c\x00\x00\x00dP\x10\x16\xb0\x00\x00\x00\x00'
+0.716 Received: b'\xc8;\xd2Y\x00\x00\x17\x14h\xdf\xe1cP\x00\x16\xb0\x00\x00\x00\x00 sadipscing ei q'...
+0.717 Disassembled: source: 51259, dest: 53849, seq: 5908, ack: 1759502691, window: 5808, data: " sadipscing ei q"...
+0.717 Error: Incorrect acknowledgement flag
+1.213 Sent: b'\xd2Y\xc8;h\xdf\xe1c\x00\x00\x00dP\x10\x16\xb0\x00\x00\x00\x00'
+1.217 Received: b'\xc8;\xd2Y\x00\x00-\xc4h\xdf\xe1cP\x00\x16\xb0\x00\x00\x00\x00 Duo ea augue fa'...
+1.217 Disassembled: source: 51259, dest: 53849, seq: 11716, ack: 1759502691, window: 5808, data: " Duo ea augue fa"...
+1.218 Error: Sequence number too high
+1.714 Sent: b'\xd2Y\xc8;h\xdf\xe1c\x00\x00\x00dP\x10\x16\xb0\x00\x00\x00\x00'
+1.717 Received: b'\xc8;\xd2Y\x00\x00Dth\xdf\xe1cP\x00\x16\xb0\x00\x00\x00\x00uta debitis pert'...
+1.718 Disassembled: source: 51259, dest: 53849, seq: 17524, ack: 1759502691, window: 5808, data: "uta debitis pert"...
+1.718 Error: Sequence number too high
+2.214 Sent: b'\xd2Y\xc8;h\xdf\xe1c\x00\x00\x00dP\x10\x16\xb0\x00\x00\x00\x00'
+2.218 Failed to receive packet
+2.715 Error: Connection timed out
+2.715 Closed connection
+2.718 Shutting down

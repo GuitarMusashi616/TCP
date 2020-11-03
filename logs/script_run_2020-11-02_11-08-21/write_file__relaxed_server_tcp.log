@@ -1,0 +1,17 @@
+0.000 NEW RUN: Server, TEST: Write_file__Relaxed
+0.212 Received: b'\x8bMOJ\x00\x00\x00V\x00\x00\x00\x00P\x02\x05\xa8\x00\x00\x00\x00'
+0.212 Disassembled: source: 35661, dest: 20298, seq: 86, window: 1448, SYN
+0.213 SYN accepted; new connection: 127.0.0.1 on port 35661
+0.213 Assembling: source: 20298, dest: 35661, seq: 514715823, ack: 87, window: 5808, ACK, SYN
+0.213 Sent: b'OJ\x8bM\x1e\xad\xf0\xaf\x00\x00\x00WP\x12\x16\xb0\x00\x00\x00\x00'
+0.215 Received: b'\x8bMOJ\x00\x00\x00W\x1e\xad\xf0\xb0P\x10\x16\xb0\x00\x00\x00\x00'
+0.215 Disassembled: source: 35661, dest: 20298, seq: 87, ack: 514715824, window: 5808, ACK
+0.215 Assembling: source: 20298, dest: 35661, seq: 514715824, ack: 87, window: 5808, ACK
+0.215 Sent: b'OJ\x8bM\x1e\xad\xf0\xb0\x00\x00\x00WP\x10\x16\xb0\x00\x00\x00\x00'
+0.716 Sent: b'OJ\x8bM\x1e\xad\xf0\xb0\x00\x00\x00WP\x10\x16\xb0\x00\x00\x00\x00'
+1.216 Sent: b'OJ\x8bM\x1e\xad\xf0\xb0\x00\x00\x00WP\x10\x16\xb0\x00\x00\x00\x00'
+1.717 Sent: b'OJ\x8bM\x1e\xad\xf0\xb0\x00\x00\x00WP\x10\x16\xb0\x00\x00\x00\x00'
+2.217 Sent: b'OJ\x8bM\x1e\xad\xf0\xb0\x00\x00\x00WP\x10\x16\xb0\x00\x00\x00\x00'
+2.718 Error: Connection timed out
+2.718 Closed connection
+2.719 Shutting down

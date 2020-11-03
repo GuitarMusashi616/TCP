@@ -1,0 +1,20 @@
+0.000 NEW RUN: Server, TEST: Write_file__No_file_extension
+0.207 Received: b'\xc9\xc3\xb7<\x00\x00\x00>\x00\x00\x00\x00P\x02\x05\xa8\x00\x00\x00\x00'
+0.208 Disassembled: source: 51651, dest: 46908, seq: 62, window: 1448, SYN
+0.208 SYN accepted; new connection: 127.0.0.1 on port 51651
+0.209 Assembling: source: 46908, dest: 51651, seq: 1746378196, ack: 63, window: 5808, ACK, SYN
+0.209 Sent: b'\xb7<\xc9\xc3h\x17\x9d\xd4\x00\x00\x00?P\x12\x16\xb0\x00\x00\x00\x00'
+0.211 Received: b'\xc9\xc3\xb7<\x00\x00\x00?h\x17\x9d\xd5P\x10\x16\xb0\x00\x00\x00\x00'
+0.211 Disassembled: source: 51651, dest: 46908, seq: 63, ack: 1746378197, window: 5808, ACK
+0.211 Assembling: source: 46908, dest: 51651, seq: 1746378197, ack: 63, window: 5808, ACK
+0.211 Sent: b'\xb7<\xc9\xc3h\x17\x9d\xd5\x00\x00\x00?P\x10\x16\xb0\x00\x00\x00\x00'
+0.212 Received: b'\xc9\xc3\xb7<\x00\x00\x00?h\x17\x9d\xd5P\x00\x16\xb0\x00\x00\x00\x00Lorem ipsum dolo'...
+0.212 Disassembled: source: 51651, dest: 46908, seq: 63, ack: 1746378197, window: 5808, data: "Lorem ipsum dolo"...
+0.212 Error: Incorrect acknowledgement flag
+0.712 Sent: b'\xb7<\xc9\xc3h\x17\x9d\xd5\x00\x00\x00?P\x10\x16\xb0\x00\x00\x00\x00'
+1.212 Sent: b'\xb7<\xc9\xc3h\x17\x9d\xd5\x00\x00\x00?P\x10\x16\xb0\x00\x00\x00\x00'
+1.713 Sent: b'\xb7<\xc9\xc3h\x17\x9d\xd5\x00\x00\x00?P\x10\x16\xb0\x00\x00\x00\x00'
+2.213 Sent: b'\xb7<\xc9\xc3h\x17\x9d\xd5\x00\x00\x00?P\x10\x16\xb0\x00\x00\x00\x00'
+2.713 Error: Connection timed out
+2.714 Closed connection
+2.715 Shutting down
