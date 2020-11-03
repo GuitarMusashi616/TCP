@@ -62,7 +62,7 @@ class State:
 
         h = Header.from_tcb(self.tcb)
         h.SYN = True
-        print_compact(h)
+        # print_compact(h)
         self.tcp.socket.sendto(bytes(h), self.tcb.dest_address)
         self.tcb.sync_snd(h)
 
@@ -73,7 +73,7 @@ class State:
 
         h = Header.from_tcb(self.tcb)
         h.ACK = True
-        print_compact(h)
+        # print_compact(h)
         self.tcp.socket.sendto(bytes(h), self.tcb.dest_address)
         self.tcb.sync_snd(h)
 
@@ -85,7 +85,7 @@ class State:
         h = Header.from_tcb(self.tcb)
         h.SYN = True
         h.ACK = True
-        print_compact(h)
+        # print_compact(h)
         self.tcp.socket.sendto(bytes(h), self.tcb.dest_address)
         self.tcb.sync_snd(h)
 
@@ -97,7 +97,7 @@ class State:
         h = Header.from_tcb(self.tcb)
         h.data = data
         h.ACK = True
-        print_compact(h)
+        # print_compact(h)
         self.tcp.socket.sendto(bytes(h), self.tcb.dest_address)
         self.tcb.sync_snd(h)
 
@@ -108,7 +108,7 @@ class State:
 
         h = Header.from_tcb(self.tcb)
         h.FIN = True
-        print_compact(h)
+        # print_compact(h)
         self.tcp.socket.sendto(bytes(h), self.tcb.dest_address)
         self.tcb.sync_snd(h)
 
