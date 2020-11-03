@@ -119,7 +119,7 @@ class State:
                 header_bytes, addr = self.tcp.socket.recvfrom(1500)
                 header = Header(header_bytes)
                 self.tcb.sync_rcv(header)
-                print_compact(header)
+                # print_compact(header)
                 return header, addr
             except (socket.timeout, ConnectionResetError):
                 attempts -= 1
