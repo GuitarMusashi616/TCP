@@ -42,7 +42,7 @@ testFile = args.f
 file = b''
 openedFile = open(testFile, 'rb')
 
-if testfile != "/home/A365/tcp/dist/read_files/single.txt":
+if testFile != "/home/A365/tcp/dist/read_files/single.txt":
     sys.exit('Wrong Test')
 
 
