@@ -40,7 +40,7 @@ address = args.a
 mode = args.m
 testFile = args.f
 file = b''
-openedFile = open(testFile, 'rb')
+openedFile = open(testFile, 'rb') if args.m == 'w' else None
 
 # if testFile != "/home/A365/tcp/dist/read_files/single.txt":
 #     sys.exit('Wrong Test')
