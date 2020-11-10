@@ -6,7 +6,7 @@ import sys
 import time
 
 MSL = 2
-VERBOSE = False
+VERBOSE = True
 
 
 def check_address(address):
