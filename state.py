@@ -3,8 +3,11 @@ from types import FunctionType
 from header import *
 import socket
 import sys
+import time
 
+MSL = 2
 VERBOSE = True
+
 
 def check_address(address):
     assert isinstance(address, tuple) and len(address) == 2, "address must consist of (ip, port)"
@@ -333,5 +336,5 @@ class Closing(State):
 
 class TimeWait(State):
     def startup(self):
-        # sleep(2*MSL) 2 minute MSL in specification
+        time.sleep(2*MSL)  # 2 minute MSL in specification
         self.tcp.state = Closed(self.tcp)
