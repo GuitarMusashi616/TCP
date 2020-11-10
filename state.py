@@ -277,12 +277,11 @@ class Established(State):
             header, addr = self._recvfrom_socket()
             if header.ACK and self.tcb.is_next_seq(header):
                 self.tcb.sync_rcv(header)
+                # break if last of file
+                if len(data) < self.tcb.SND_WND:
+                    break
                 data = f.read(self.tcb.SND_WND)
                 # print(header)
-
-            # break if last of file
-            if len(data) < self.tcb.SND_WND:
-                break
         f.close()
 
 
