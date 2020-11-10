@@ -211,7 +211,7 @@ def automatic_with_args():
         tcp.download(args.filename)
     else:
         tcp.upload(args.filename)
-    tcp.close()
+    tcp.receive()
     print(tcp.state)
 
 
@@ -228,4 +228,5 @@ def test_download_sequencing():
 
 
 if __name__ == '__main__':
+    # print(Header(b'Z\xa7\xefq}\xe5\x01\xeb\x00\x00\x00aP\x10\x16\xb0\x00\x00\x00\x00'))
     automatic_with_args()
