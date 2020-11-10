@@ -117,19 +117,27 @@ class TCB:
         else:
             return True
 
-    # def sync(self, header, increment=1):
-    #     self.RCV_NXT = header.seq_num + increment if not self.RCV_NXT else self.RCV_NXT + increment
+    @property
+    def RCV_NXT(self):
+        return self._RCV_NXT
+
+    @RCV_NXT.setter
+    def RCV_NXT(self, value):
+        if isinstance(value, int):
+            self._RCV_NXT = value % 2**32
+        else:
+            self._RCV_NXT = value
 
     @property
-    def ISS(self):
-        return self._ISS
+    def SND_NXT(self):
+        return self._SND_NXT
 
-    @ISS.setter
-    def ISS(self, value):
+    @SND_NXT.setter
+    def SND_NXT(self, value):
         if isinstance(value, int):
-            self._ISS = value % 2**32
+            self._SND_NXT = value % 2**32
         else:
-            self._ISS = value
+            self._SND_NXT = value
 
 
 
