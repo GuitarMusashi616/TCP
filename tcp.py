@@ -93,6 +93,7 @@ class TCB:
         self.RCV_WND = header.window
         self.SND_WND = header.window
         self.RCV_UP = header.urgent_ptr
+        self.sync_rcv(header)
 
     def sync_snd(self, header):
         # call right after sending
@@ -109,6 +110,12 @@ class TCB:
         if header.seq_num == self.RCV_NXT:
             return True
         return False
+
+    def is_next_seq(self, header):
+        if self.RCV_NXT:
+            return header.seq_num == self.RCV_NXT
+        else:
+            return True
 
     # def sync(self, header, increment=1):
     #     self.RCV_NXT = header.seq_num + increment if not self.RCV_NXT else self.RCV_NXT + increment

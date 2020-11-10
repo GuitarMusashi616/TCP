@@ -127,7 +127,6 @@ class State:
             try:
                 header_bytes, addr = self.tcp.socket.recvfrom(1500)
                 header = Header(header_bytes)
-                self.tcb.sync_rcv(header)
                 if VERBOSE:
                     print_compact(header)
                 return header, addr
@@ -179,7 +178,7 @@ class Listen(State):
 
     def receive(self):
         header, addr = self._recvfrom_socket()
-        if header.SYN:
+        if header.SYN and self.tcb.is_next_seq(header):
             self.tcb.initialize(header, addr)
             self._send_syn_ack()
             self.tcp.state = SynReceived(self.tcp)
@@ -203,14 +202,15 @@ class SynSent(State):
 
     def receive(self):
         header, addr = self._recvfrom_socket()
-        if header.SYN and header.ACK:
-            self.tcb.initialize(header, addr)
-            self._send_ack()
-            self.tcp.state = Established(self.tcp)
-        elif header.SYN:
-            self.tcb.initialize(header, addr)
-            self._send_syn_ack()
-            self.tcp.state = SynReceived(self.tcp)
+        if self.tcb.is_next_seq(header):
+            if header.SYN and header.ACK:
+                self.tcb.initialize(header, addr)
+                self._send_ack()
+                self.tcp.state = Established(self.tcp)
+            elif header.SYN:
+                self.tcb.initialize(header, addr)
+                self._send_syn_ack()
+                self.tcp.state = SynReceived(self.tcp)
 
 
 class SynReceived(State):
@@ -219,7 +219,8 @@ class SynReceived(State):
 
     def receive(self):
         header, addr = self._recvfrom_socket()
-        if header.ACK:
+        if header.ACK and self.tcb.is_next_seq(header):
+            self.tcb.sync_rcv(header)
             self.tcp.state = Established(self.tcp)
 
     def close(self):
@@ -237,7 +238,8 @@ class Established(State):
 
     def receive(self):
         header, addr = self._recvfrom_socket()
-        if header.FIN:
+        if header.FIN and self.tcb.is_next_seq(header):
+            self.tcb.sync_rcv(header)
             self._send_ack()
             self.tcp.state = CloseWait(self.tcp)
 
@@ -286,12 +288,15 @@ class FinWait1(State):
 
     def receive(self):
         header, addr = self._recvfrom_socket()
-        if header.ACK:
-            self.tcp.state = FinWait2(self.tcp)
+        if self.tcb.is_next_seq(header):
+            if header.ACK:
+                self.tcb.sync_rcv(header)
+                self.tcp.state = FinWait2(self.tcp)
 
-        if header.FIN:
-            self._send_ack()
-            self.tcp.state = Closing(self.tcp)
+            if header.FIN:
+                self.tcb.sync_rcv(header)
+                self._send_ack()
+                self.tcp.state = Closing(self.tcp)
 
 
 class FinWait2(State):
@@ -300,7 +305,8 @@ class FinWait2(State):
 
     def receive(self):
         header, addr = self._recvfrom_socket()
-        if header.FIN:
+        if header.FIN and self.tcb.is_next_seq(header):
+            self.tcb.sync_rcv(header)
             self._send_ack()
             self.tcp.state = TimeWait(self.tcp)
 
@@ -320,7 +326,8 @@ class LastAck(State):
 
     def receive(self):
         header, addr = self._recvfrom_socket()
-        if header.ACK:
+        if header.ACK and self.tcb.is_next_seq(header):
+            self.tcb.sync_rcv(header)
             self.tcp.state = Closed(self.tcp)
 
 
@@ -330,7 +337,8 @@ class Closing(State):
 
     def receive(self):
         header, addr = self._recvfrom_socket()
-        if header.ACK:
+        if header.ACK and self.tcb.is_next_seq(header):
+            self.tcb.sync_rcv(header)
             self.tcp.state = TimeWait(self.tcp)
 
 
