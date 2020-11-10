@@ -248,6 +248,7 @@ class Established(State):
         is_downloading = True
         while is_downloading:
             header, addr = self._recvfrom_socket()
+            self.tcb.sync_rcv(header)
             # print(len(header))
             # print(len(header.data))
             # print(header.window)
@@ -274,6 +275,7 @@ class Established(State):
 
             # wait for ack
             header, addr = self._recvfrom_socket()
+            self.tcb.sync_rcv(header)
             # print(header)
 
             # break if last of file
