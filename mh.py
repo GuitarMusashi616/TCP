@@ -146,19 +146,19 @@ def printPacket(packet):
     source_Port, destPort, seqNum, ackNum, urg, ack, psh, rst, syn, fin, \
     window, checksum, urgPointer, data = unload_packet(packet)
 
-    print("Source Port = ", source_Port)
-    print("Dest Port = ", destPort)
-    print("seqNum = ", seqNum)
-    print("ackNum = ", ackNum)
-    print("urg = ", urg)
-    print("ack = ", ack)
-    print("psh = ", psh)
-    print("syn = ", syn)
-    print("fin = ", fin)
-    print("window = ", window)
-    print("checksum = ", checksum)
-    print("urgPointer = ", urgPointer)
-    print("data = ", data)
+    # print("Source Port = ", source_Port)
+    # print("Dest Port = ", destPort)
+    # print("seqNum = ", seqNum)
+    # print("ackNum = ", ackNum)
+    # print("urg = ", urg)
+    # print("ack = ", ack)
+    # print("psh = ", psh)
+    # print("syn = ", syn)
+    # print("fin = ", fin)
+    # print("window = ", window)
+    # print("checksum = ", checksum)
+    # print("urgPointer = ", urgPointer)
+    # print("data = ", data)
 
 
 # handles transitions
