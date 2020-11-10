@@ -42,8 +42,8 @@ testFile = args.f
 file = b''
 openedFile = open(testFile, 'rb')
 
-if testFile != "/home/A365/tcp/dist/read_files/single.txt":
-    sys.exit('Wrong Test')
+# if testFile != "/home/A365/tcp/dist/read_files/single.txt":
+#     sys.exit('Wrong Test')
 
 
 # checks port
@@ -183,8 +183,7 @@ def manage(state, packet):
         print("-------------------------------------------------------------")
         client_Socket.sendto(packet, (address, server_Port))
 
-        try:
-            receivedPacket, serverAddress = client_Socket.recvfrom(1500)
+        try:            receivedPacket, serverAddress = client_Socket.recvfrom(1500)
         except:
             print("Failed to receive ACK to SYN-SENT")
             state = "CLOSED"
