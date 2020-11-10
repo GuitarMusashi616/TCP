@@ -1,0 +1,26 @@
+0.000 NEW RUN: Server, TEST: Write_file__Small_multi-packet
+0.219 Received: b'6 \xc4\xa7\x00\x00\x00\x10\x00\x00\x00\x00P\x02\x05\xa8\x00\x00\x00\x00'
+0.220 Disassembled: source: 13856, dest: 50343, seq: 16, window: 1448, SYN
+0.220 SYN accepted; new connection: 127.0.0.1 on port 13856
+0.220 Assembling: source: 50343, dest: 13856, seq: 2113217514, ack: 17, window: 5808, ACK, SYN
+0.221 Sent: b'\xc4\xa76 }\xf5#\xea\x00\x00\x00\x11P\x12\x16\xb0\x00\x00\x00\x00'
+0.222 Received: b'6 \xc4\xa7\x00\x00\x00\x11}\xf5#\xebP\x10\x16\xb0\x00\x00\x00\x00'
+0.222 Disassembled: source: 13856, dest: 50343, seq: 17, ack: 2113217515, window: 5808, ACK
+0.223 Assembling: source: 50343, dest: 13856, seq: 2113217515, ack: 17, window: 5808, ACK
+0.223 Sent: b'\xc4\xa76 }\xf5#\xeb\x00\x00\x00\x11P\x10\x16\xb0\x00\x00\x00\x00'
+0.223 Received: b'6 \xc4\xa7\x00\x00\x00\x11}\xf5#\xebP\x10\x16\xb0\x00\x00\x00\x00Lorem ipsum dolo'...
+0.224 Disassembled: source: 13856, dest: 50343, seq: 17, ack: 2113217515, window: 5808, ACK, data: "Lorem ipsum dolo"...
+0.224 Handshake complete
+0.224 Data accepted; writing to file
+0.224 Assembling: source: 50343, dest: 13856, seq: 2113217515, ack: 1469, window: 5808, ACK
+0.224 Sent: b'\xc4\xa76 }\xf5#\xeb\x00\x00\x05\xbdP\x10\x16\xb0\x00\x00\x00\x00'
+0.225 Received: b'6 \xc4\xa7\x00\x00\x0c\xbc}\xf5#\xebP\x01\x16\xb0\x00\x00\x00\x00'
+0.225 Disassembled: source: 13856, dest: 50343, seq: 3260, ack: 2113217515, window: 5808, FIN
+0.225 Error: Incorrect acknowledgement flag
+0.724 Sent: b'\xc4\xa76 }\xf5#\xeb\x00\x00\x05\xbdP\x10\x16\xb0\x00\x00\x00\x00'
+1.225 Sent: b'\xc4\xa76 }\xf5#\xeb\x00\x00\x05\xbdP\x10\x16\xb0\x00\x00\x00\x00'
+1.725 Sent: b'\xc4\xa76 }\xf5#\xeb\x00\x00\x05\xbdP\x10\x16\xb0\x00\x00\x00\x00'
+2.225 Sent: b'\xc4\xa76 }\xf5#\xeb\x00\x00\x05\xbdP\x10\x16\xb0\x00\x00\x00\x00'
+2.726 Error: Connection timed out
+2.726 Closed connection
+2.727 Shutting down

@@ -1,0 +1,24 @@
+0.000 NEW RUN: Server, TEST: Write_file__Relaxed
+0.226 Received: b'\xc4Q\xd2\x9c\x00\x00\x00=\x00\x00\x00\x00P\x02\x05\xa8\x00\x00\x00\x00'
+0.227 Disassembled: source: 50257, dest: 53916, seq: 61, window: 1448, SYN
+0.227 SYN accepted; new connection: 127.0.0.1 on port 50257
+0.228 Assembling: source: 53916, dest: 50257, seq: 2103556411, ack: 62, window: 5808, ACK, SYN
+0.228 Sent: b'\xd2\x9c\xc4Q}a\xb9;\x00\x00\x00>P\x12\x16\xb0\x00\x00\x00\x00'
+0.229 Received: b'\xc4Q\xd2\x9c\x00\x00\x00>}a\xb9<P\x10\x16\xb0\x00\x00\x00\x00'
+0.229 Disassembled: source: 50257, dest: 53916, seq: 62, ack: 2103556412, window: 5808, ACK
+0.230 Assembling: source: 53916, dest: 50257, seq: 2103556412, ack: 62, window: 5808, ACK
+0.230 Sent: b'\xd2\x9c\xc4Q}a\xb9<\x00\x00\x00>P\x10\x16\xb0\x00\x00\x00\x00'
+0.230 Received: b'\xc4Q\xd2\x9c\x00\x00\x00>}a\xb9<P\x10\x16\xb0\x00\x00\x00\x00'
+0.230 Disassembled: source: 50257, dest: 53916, seq: 62, ack: 2103556412, window: 5808, ACK
+0.231 Assembling: source: 53916, dest: 50257, seq: 2103556412, ack: 62, window: 5808, ACK
+0.231 Sent: b'\xd2\x9c\xc4Q}a\xb9<\x00\x00\x00>P\x10\x16\xb0\x00\x00\x00\x00'
+0.231 Received: b'\xc4Q\xd2\x9c\x00\x00\x00>}a\xb9<P\x01\x16\xb0\x00\x00\x00\x00'
+0.231 Disassembled: source: 50257, dest: 53916, seq: 62, ack: 2103556412, window: 5808, FIN
+0.232 Error: Incorrect acknowledgement flag
+0.731 Sent: b'\xd2\x9c\xc4Q}a\xb9<\x00\x00\x00>P\x10\x16\xb0\x00\x00\x00\x00'
+1.232 Sent: b'\xd2\x9c\xc4Q}a\xb9<\x00\x00\x00>P\x10\x16\xb0\x00\x00\x00\x00'
+1.732 Sent: b'\xd2\x9c\xc4Q}a\xb9<\x00\x00\x00>P\x10\x16\xb0\x00\x00\x00\x00'
+2.233 Sent: b'\xd2\x9c\xc4Q}a\xb9<\x00\x00\x00>P\x10\x16\xb0\x00\x00\x00\x00'
+2.733 Error: Connection timed out
+2.733 Closed connection
+2.734 Shutting down

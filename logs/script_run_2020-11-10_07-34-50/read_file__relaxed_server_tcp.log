@@ -1,0 +1,24 @@
+0.000 NEW RUN: Server, TEST: Read_file__Relaxed
+0.217 Received: b'\xd6\xf6\x97S\x00\x00\x00;\x00\x00\x00\x00P\x02\x05\xa8\x00\x00\x00\x00'
+0.217 Disassembled: source: 55030, dest: 38739, seq: 59, window: 1448, SYN
+0.218 SYN accepted; new connection: 127.0.0.1 on port 55030
+0.218 Assembling: source: 38739, dest: 55030, seq: 2102506839, ack: 60, window: 1448, ACK, SYN
+0.218 Sent: b'\x97S\xd6\xf6}Q\xb5W\x00\x00\x00<P\x12\x05\xa8\x00\x00\x00\x00'
+0.220 Received: b'\xd6\xf6\x97S\x00\x00\x00<}Q\xb5XP\x10\x05\xa8\x00\x00\x00\x00'
+0.220 Disassembled: source: 55030, dest: 38739, seq: 60, ack: 2102506840, window: 1448, ACK
+0.220 Handshake complete
+0.220 Acknowledged seq: 2102506839
+0.221 Finished reading file
+0.221 Assembling: source: 38739, dest: 55030, seq: 2102506840, ack: 61, window: 1448, ACK, FIN
+0.221 Sent: b'\x97S\xd6\xf6}Q\xb5X\x00\x00\x00=P\x11\x05\xa8\x00\x00\x00\x00'
+0.223 Received: b'\xd6\xf6\x97S\x00\x00\x00<}Q\xb5YP\x01\x05\xa8\x00\x00\x00\x00'
+0.223 Disassembled: source: 55030, dest: 38739, seq: 60, ack: 2102506841, window: 1448, FIN
+0.223 Error: Responses must be acknowledgements
+0.721 Sent: b'\x97S\xd6\xf6}Q\xb5X\x00\x00\x00=P\x11\x05\xa8\x00\x00\x00\x00'
+1.222 Sent: b'\x97S\xd6\xf6}Q\xb5X\x00\x00\x00=P\x11\x05\xa8\x00\x00\x00\x00'
+1.722 Sent: b'\x97S\xd6\xf6}Q\xb5X\x00\x00\x00=P\x11\x05\xa8\x00\x00\x00\x00'
+2.223 Sent: b'\x97S\xd6\xf6}Q\xb5X\x00\x00\x00=P\x11\x05\xa8\x00\x00\x00\x00'
+2.723 Sent: b'\x97S\xd6\xf6}Q\xb5X\x00\x00\x00=P\x11\x05\xa8\x00\x00\x00\x00'
+3.224 Error: Connection timed out
+3.224 Closed connection
+3.231 Shutting down

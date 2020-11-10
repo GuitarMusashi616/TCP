@@ -1,0 +1,24 @@
+0.000 NEW RUN: Server, TEST: Write_file__Common_drops
+0.208 Received: b'&M\x87\xf4\x00\x00\x00d\x00\x00\x00\x00P\x02\x05\xa8\x00\x00\x00\x00'
+0.208 Disassembled: source: 9805, dest: 34804, seq: 100, window: 1448, SYN
+0.209 SYN accepted; new connection: 127.0.0.1 on port 9805
+0.209 Assembling: source: 34804, dest: 9805, seq: 2153006050, ack: 101, window: 5808, ACK, SYN
+0.209 Failed to send packet
+0.710 Sent: b'\x87\xf4&M\x80TC\xe2\x00\x00\x00eP\x12\x16\xb0\x00\x00\x00\x00'
+0.713 Failed to receive packet
+0.715 Received: b'&M\x87\xf4\x00\x00\x00e\x80TC\xe3P\x10\x16\xb0\x00\x00\x00\x00Lorem ipsum dolo'...
+0.716 Disassembled: source: 9805, dest: 34804, seq: 101, ack: 2153006051, window: 5808, ACK, data: "Lorem ipsum dolo"...
+0.716 Handshake complete
+0.716 Data accepted; writing to file
+0.716 Assembling: source: 34804, dest: 9805, seq: 2153006051, ack: 1553, window: 5808, ACK
+0.717 Sent: b'\x87\xf4&M\x80TC\xe3\x00\x00\x06\x11P\x10\x16\xb0\x00\x00\x00\x00'
+0.720 Received: b'&M\x87\xf4\x00\x00\r\x10\x80TC\xe3P\x01\x16\xb0\x00\x00\x00\x00'
+0.720 Disassembled: source: 9805, dest: 34804, seq: 3344, ack: 2153006051, window: 5808, FIN
+0.720 Error: Incorrect acknowledgement flag
+1.217 Failed to send packet
+1.718 Sent: b'\x87\xf4&M\x80TC\xe3\x00\x00\x06\x11P\x10\x16\xb0\x00\x00\x00\x00'
+2.218 Sent: b'\x87\xf4&M\x80TC\xe3\x00\x00\x06\x11P\x10\x16\xb0\x00\x00\x00\x00'
+2.719 Sent: b'\x87\xf4&M\x80TC\xe3\x00\x00\x06\x11P\x10\x16\xb0\x00\x00\x00\x00'
+3.219 Error: Connection timed out
+3.219 Closed connection
+3.223 Shutting down

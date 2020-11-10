@@ -1,0 +1,81 @@
+0.000 NEW RUN: Server, TEST: Read_file__Random_drops
+0.201 Received: b'C\x1f\x8dS\x00\x00\x00>\x00\x00\x00\x00P\x02\x05\xa8\x00\x00\x00\x00'
+0.202 Disassembled: source: 17183, dest: 36179, seq: 62, window: 1448, SYN
+0.202 SYN accepted; new connection: 127.0.0.1 on port 17183
+0.202 Assembling: source: 36179, dest: 17183, seq: 1963351864, ack: 63, window: 1448, ACK, SYN
+0.202 Sent: b'\x8dSC\x1fu\x06_8\x00\x00\x00?P\x12\x05\xa8\x00\x00\x00\x00'
+0.204 Received: b'C\x1f\x8dS\x00\x00\x00?u\x06_9P\x10\x05\xa8\x00\x00\x00\x00'
+0.204 Disassembled: source: 17183, dest: 36179, seq: 63, ack: 1963351865, window: 1448, ACK
+0.204 Handshake complete
+0.204 Acknowledged seq: 1963351864
+0.205 Assembling: source: 36179, dest: 17183, seq: 1963351865, ack: 64, window: 1448, data: "Lorem ipsum dolo"...
+0.205 Failed to send packet
+0.705 Sent: b'\x8dSC\x1fu\x06_9\x00\x00\x00@P\x00\x05\xa8\x00\x00\x00\x00Lorem ipsum dolo'...
+0.708 Received: b'C\x1f\x8dS\x00\x00\x00?u\x06d\xe1P\x10\x05\xa8\x00\x00\x00\x00'
+0.709 Disassembled: source: 17183, dest: 36179, seq: 63, ack: 1963353313, window: 1448, ACK
+0.709 Acknowledged seq: 1963351865
+0.709 Assembling: source: 36179, dest: 17183, seq: 1963353313, ack: 64, window: 1448, data: "mprehensam nam, "...
+0.710 Sent: b'\x8dSC\x1fu\x06d\xe1\x00\x00\x00@P\x00\x05\xa8\x00\x00\x00\x00mprehensam nam, '...
+0.713 Received: b'C\x1f\x8dS\x00\x00\x00?u\x06j\x89P\x10\x05\xa8\x00\x00\x00\x00'
+0.713 Disassembled: source: 17183, dest: 36179, seq: 63, ack: 1963354761, window: 1448, ACK
+0.714 Acknowledged seq: 1963353313
+0.714 Assembling: source: 36179, dest: 17183, seq: 1963354761, ack: 64, window: 1448, data: "ilisi repudiare "...
+0.714 Sent: b'\x8dSC\x1fu\x06j\x89\x00\x00\x00@P\x00\x05\xa8\x00\x00\x00\x00ilisi repudiare '...
+0.717 Received: b'C\x1f\x8dS\x00\x00\x00?u\x06p1P\x10\x05\xa8\x00\x00\x00\x00'
+0.718 Disassembled: source: 17183, dest: 36179, seq: 63, ack: 1963356209, window: 1448, ACK
+0.718 Acknowledged seq: 1963354761
+0.718 Assembling: source: 36179, dest: 17183, seq: 1963356209, ack: 64, window: 1448, data: "ta.
+
+Et essent s"...
+0.719 Sent: b'\x8dSC\x1fu\x06p1\x00\x00\x00@P\x00\x05\xa8\x00\x00\x00\x00ta.\n\nEt essent s'...
+0.721 Received: b'C\x1f\x8dS\x00\x00\x00?u\x06u\xd9P\x10\x05\xa8\x00\x00\x00\x00'
+0.722 Disassembled: source: 17183, dest: 36179, seq: 63, ack: 1963357657, window: 1448, ACK
+0.722 Acknowledged seq: 1963356209
+0.722 Assembling: source: 36179, dest: 17183, seq: 1963357657, ack: 64, window: 1448, data: " Nihil tractatos"...
+0.723 Sent: b'\x8dSC\x1fu\x06u\xd9\x00\x00\x00@P\x00\x05\xa8\x00\x00\x00\x00 Nihil tractatos'...
+0.725 Received: b'C\x1f\x8dS\x00\x00\x00?u\x06{\x81P\x10\x05\xa8\x00\x00\x00\x00'
+0.725 Disassembled: source: 17183, dest: 36179, seq: 63, ack: 1963359105, window: 1448, ACK
+0.725 Acknowledged seq: 1963357657
+0.726 Assembling: source: 36179, dest: 17183, seq: 1963359105, ack: 64, window: 1448, data: "fert iuvaret sap"...
+0.726 Sent: b'\x8dSC\x1fu\x06{\x81\x00\x00\x00@P\x00\x05\xa8\x00\x00\x00\x00fert iuvaret sap'...
+0.728 Received: b'C\x1f\x8dS\x00\x00\x00?u\x06\x81)P\x10\x05\xa8\x00\x00\x00\x00'
+0.728 Disassembled: source: 17183, dest: 36179, seq: 63, ack: 1963360553, window: 1448, ACK
+0.729 Acknowledged seq: 1963359105
+0.729 Assembling: source: 36179, dest: 17183, seq: 1963360553, ack: 64, window: 1448, data: "ram adipiscing, "...
+0.729 Sent: b'\x8dSC\x1fu\x06\x81)\x00\x00\x00@P\x00\x05\xa8\x00\x00\x00\x00ram adipiscing, '...
+0.731 Received: b'C\x1f\x8dS\x00\x00\x00?u\x06\x86\xd1P\x10\x05\xa8\x00\x00\x00\x00'
+0.732 Disassembled: source: 17183, dest: 36179, seq: 63, ack: 1963362001, window: 1448, ACK
+0.732 Acknowledged seq: 1963360553
+0.732 Assembling: source: 36179, dest: 17183, seq: 1963362001, ack: 64, window: 1448, data: "m veritus vivend"...
+0.733 Sent: b'\x8dSC\x1fu\x06\x86\xd1\x00\x00\x00@P\x00\x05\xa8\x00\x00\x00\x00m veritus vivend'...
+0.735 Received: b'C\x1f\x8dS\x00\x00\x00?u\x06\x8cyP\x10\x05\xa8\x00\x00\x00\x00'
+0.735 Disassembled: source: 17183, dest: 36179, seq: 63, ack: 1963363449, window: 1448, ACK
+0.736 Acknowledged seq: 1963362001
+0.736 Assembling: source: 36179, dest: 17183, seq: 1963363449, ack: 64, window: 1448, data: " delenit, ignota"...
+0.736 Sent: b'\x8dSC\x1fu\x06\x8cy\x00\x00\x00@P\x00\x05\xa8\x00\x00\x00\x00 delenit, ignota'...
+0.739 Received: b'C\x1f\x8dS\x00\x00\x00?u\x06\x92!P\x10\x05\xa8\x00\x00\x00\x00'
+0.739 Disassembled: source: 17183, dest: 36179, seq: 63, ack: 1963364897, window: 1448, ACK
+0.739 Acknowledged seq: 1963363449
+0.740 Assembling: source: 36179, dest: 17183, seq: 1963364897, ack: 64, window: 1448, data: "se explicari des"...
+0.740 Sent: b'\x8dSC\x1fu\x06\x92!\x00\x00\x00@P\x00\x05\xa8\x00\x00\x00\x00se explicari des'...
+0.742 Failed to receive packet
+1.240 Sent: b'\x8dSC\x1fu\x06\x92!\x00\x00\x00@P\x00\x05\xa8\x00\x00\x00\x00se explicari des'...
+1.243 Received: b'C\x1f\x8dS\x00\x00\x00?u\x06\x9dqP\x10\x05\xa8\x00\x00\x00\x00'
+1.243 Disassembled: source: 17183, dest: 36179, seq: 63, ack: 1963367793, window: 1448, ACK
+1.243 Error: Acknowledgement number too high
+1.741 Failed to send packet
+2.241 Sent: b'\x8dSC\x1fu\x06\x92!\x00\x00\x00@P\x00\x05\xa8\x00\x00\x00\x00se explicari des'...
+2.244 Received: b'C\x1f\x8dS\x00\x00\x00?u\x06\xa3\x19P\x10\x05\xa8\x00\x00\x00\x00'
+2.245 Disassembled: source: 17183, dest: 36179, seq: 63, ack: 1963369241, window: 1448, ACK
+2.245 Error: Acknowledgement number too high
+2.742 Sent: b'\x8dSC\x1fu\x06\x92!\x00\x00\x00@P\x00\x05\xa8\x00\x00\x00\x00se explicari des'...
+2.745 Received: b'C\x1f\x8dS\x00\x00\x00?u\x06\xa8\xc1P\x10\x05\xa8\x00\x00\x00\x00'
+2.745 Disassembled: source: 17183, dest: 36179, seq: 63, ack: 1963370689, window: 1448, ACK
+2.746 Error: Acknowledgement number too high
+3.242 Sent: b'\x8dSC\x1fu\x06\x92!\x00\x00\x00@P\x00\x05\xa8\x00\x00\x00\x00se explicari des'...
+3.246 Received: b'C\x1f\x8dS\x00\x00\x00?u\x06\xaeiP\x10\x05\xa8\x00\x00\x00\x00'
+3.246 Disassembled: source: 17183, dest: 36179, seq: 63, ack: 1963372137, window: 1448, ACK
+3.246 Error: Acknowledgement number too high
+3.742 Error: Connection timed out
+3.743 Closed connection
+3.747 Shutting down
