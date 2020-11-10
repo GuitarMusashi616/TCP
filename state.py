@@ -268,15 +268,17 @@ class Established(State):
     def upload(self, filename):
         f = open(filename, 'rb')
         is_uploading = True
+        data = f.read(self.tcb.SND_WND)
         while is_uploading:
             # read file
-            data = f.read(self.tcb.SND_WND)
             self._send_data(data)
 
             # wait for ack
             header, addr = self._recvfrom_socket()
-            self.tcb.sync_rcv(header)
-            # print(header)
+            if header.ACK and self.tcb.is_next_seq(header):
+                self.tcb.sync_rcv(header)
+                data = f.read(self.tcb.SND_WND)
+                # print(header)
 
             # break if last of file
             if len(data) < self.tcb.SND_WND:
