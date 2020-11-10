@@ -1,0 +1,31 @@
+0.000 NEW RUN: Server, TEST: Write_file__Latency
+0.211 Received: b'\xa3\xe3J\x86\x00\x00\x00&\x00\x00\x00\x00P\x02\x05\xa8\x00\x00\x00\x00'
+0.212 Disassembled: source: 41955, dest: 19078, seq: 38, window: 1448, SYN
+0.212 SYN accepted; new connection: 127.0.0.1 on port 41955
+0.212 Assembling: source: 19078, dest: 41955, seq: 2961402188, ack: 39, window: 5808, ACK, SYN
+0.213 Sent: b"J\x86\xa3\xe3\xb0\x83iL\x00\x00\x00'P\x12\x16\xb0\x00\x00\x00\x00"
+0.713 Sent: b"J\x86\xa3\xe3\xb0\x83iL\x00\x00\x00'P\x12\x16\xb0\x00\x00\x00\x00"
+1.214 Sent: b"J\x86\xa3\xe3\xb0\x83iL\x00\x00\x00'P\x12\x16\xb0\x00\x00\x00\x00"
+1.217 Received: b"\xa3\xe3J\x86\x00\x00\x00'\xb0\x83iMP\x10\x16\xb0\x00\x00\x00\x00"
+1.217 Disassembled: source: 41955, dest: 19078, seq: 39, ack: 2961402189, window: 5808, ACK
+1.218 Assembling: source: 19078, dest: 41955, seq: 2961402189, ack: 39, window: 5808, ACK
+1.218 Sent: b"J\x86\xa3\xe3\xb0\x83iM\x00\x00\x00'P\x10\x16\xb0\x00\x00\x00\x00"
+1.219 Received: b"\xa3\xe3J\x86\x00\x00\x00'\xb0\x83iMP\x10\x16\xb0\x00\x00\x00\x00Lorem ipsum dolo"...
+1.220 Disassembled: source: 41955, dest: 19078, seq: 39, ack: 2961402189, window: 5808, ACK, data: "Lorem ipsum dolo"...
+1.220 Handshake complete
+1.220 Data accepted; writing to file
+1.220 Assembling: source: 19078, dest: 41955, seq: 2961402189, ack: 1491, window: 5808, ACK
+1.221 Sent: b'J\x86\xa3\xe3\xb0\x83iM\x00\x00\x05\xd3P\x10\x16\xb0\x00\x00\x00\x00'
+1.716 Received: b'\xa3\xe3J\x86\x00\x00\x0c\xd2\xb0\x83iMP\x10\x16\xb0\x00\x00\x00\x00Lorem ipsum dolo'...
+1.717 Disassembled: source: 41955, dest: 19078, seq: 3282, ack: 2961402189, window: 5808, ACK, data: "Lorem ipsum dolo"...
+1.717 Error: Incorrect acknowledgement flag
+1.721 Sent: b'J\x86\xa3\xe3\xb0\x83iM\x00\x00\x05\xd3P\x10\x16\xb0\x00\x00\x00\x00'
+2.217 Received: b'\xa3\xe3J\x86\x00\x00\x0c\xd2\xb0\x83iMP\x10\x16\xb0\x00\x00\x00\x00Lorem ipsum dolo'...
+2.218 Disassembled: source: 41955, dest: 19078, seq: 3282, ack: 2961402189, window: 5808, ACK, data: "Lorem ipsum dolo"...
+2.218 Error: Incorrect acknowledgement flag
+2.222 Sent: b'J\x86\xa3\xe3\xb0\x83iM\x00\x00\x05\xd3P\x10\x16\xb0\x00\x00\x00\x00'
+2.723 Sent: b'J\x86\xa3\xe3\xb0\x83iM\x00\x00\x05\xd3P\x10\x16\xb0\x00\x00\x00\x00'
+3.228 Sent: b'J\x86\xa3\xe3\xb0\x83iM\x00\x00\x05\xd3P\x10\x16\xb0\x00\x00\x00\x00'
+3.728 Error: Connection timed out
+3.728 Closed connection
+4.220 Shutting down
