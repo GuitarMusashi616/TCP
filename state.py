@@ -282,9 +282,9 @@ class Established(State):
             if header.ACK and self.tcb.is_next_seq(header) and self.tcb.is_next_ack(header):
                 self.tcb.sync_rcv(header)
                 # break if last of file
-                if len(data) < self.tcb.SND_WND:
+                if len(data) < 1448:
                     break
-                data = f.read(self.tcb.SND_WND)
+                data = f.read(1448)
                 is_repeat_send = False
                 # print(header)
             elif header.ACK:
