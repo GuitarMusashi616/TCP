@@ -318,7 +318,7 @@ class Established(State):
                 is_first_send = False
                 # break if last of file
                 if len(data) < 1448:
-                    break
+                    is_uploading = False
                 data = f.read(1448)
                 is_repeat_send = False
                 # print(header)
