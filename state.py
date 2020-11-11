@@ -7,6 +7,7 @@ import time
 
 MSL = 0
 VERBOSE = False
+PRINT_ERRORS = False
 ATTEMPTS_UNTIL_EXIT = 3
 
 
@@ -260,8 +261,6 @@ class Established(State):
                         is_downloading = False
                 else:
                     is_downloading = False
-            else:
-                print('not expected next packet')
 
             self._send_ack()
 

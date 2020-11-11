@@ -127,7 +127,8 @@ class TCB:
             if header.seq_num == self.RCV_NXT:
                 return True
             else:
-                print(str(header.seq_num) + ' is not next seq number, should be ' + str(self.RCV_NXT))
+                if PRINT_ERRORS:
+                    print(str(header.seq_num) + ' is not next seq number, should be ' + str(self.RCV_NXT))
                 return False
         else:
             return True
@@ -137,7 +138,8 @@ class TCB:
             if header.ack_num == self.SND_UNA:
                 return True
             else:
-                print(str(header.ack_num) + ' is not next ack number, should be ' + str(self.SND_UNA))
+                if PRINT_ERRORS:
+                    print(str(header.ack_num) + ' is not next ack number, should be ' + str(self.SND_UNA))
                 return False
         else:
             return True
