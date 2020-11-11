@@ -7,7 +7,7 @@ import time
 
 MSL = 0
 VERBOSE = True
-ATTEMPTS_UNTIL_EXIT = 3
+ATTEMPTS_UNTIL_EXIT = 1000
 
 
 def check_address(address):
@@ -260,15 +260,10 @@ class Established(State):
                         is_downloading = False
                 else:
                     is_downloading = False
+            else:
+                print('not expected next packet')
 
             self._send_ack()
-            # print(len(header))
-            # print(len(header.data))
-            # print(header.window)
-            # print(header_bytes)
-            # print()
-            # print(header)
-
 
         f.close()
 

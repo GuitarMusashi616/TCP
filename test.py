@@ -9,7 +9,7 @@ from time import sleep
 import math
 import sys
 from socket import timeout
-
+from server import test_download
 
 # ssh 137.229.181.232 -l amwilliams24
 # 31181318
@@ -122,27 +122,27 @@ def test_multithread_download():
         print()
 
 
-def test_download():
-    args = setup_args()
-    h = Header()
-    h.SYN = True
-    h.source_port = args.port
-    h.dest_port = args.server_port
-    h.seq_num = 0
-    h.ack_num = 0
-
-    s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-    s.bind(('', args.port))
-    sleep(1)
-    s.sendto(bytes(h), (args.ip, args.server_port))
-    try:
-        s.settimeout(3)
-        header, addr = s.recvfrom(1500)
-        print(addr)
-        print(header)
-        print(Header(header))
-    except (timeout, ValueError, TypeError) as e:
-        print(e)
+# def test_download():
+#     args = setup_args()
+#     h = Header()
+#     h.SYN = True
+#     h.source_port = args.port
+#     h.dest_port = args.server_port
+#     h.seq_num = 0
+#     h.ack_num = 0
+#
+#     s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+#     s.bind(('', args.port))
+#     sleep(1)
+#     s.sendto(bytes(h), (args.ip, args.server_port))
+#     try:
+#         s.settimeout(3)
+#         header, addr = s.recvfrom(1500)
+#         print(addr)
+#         print(header)
+#         print(Header(header))
+#     except (timeout, ValueError, TypeError) as e:
+#         print(e)
 
 
 def test_states():
@@ -241,4 +241,4 @@ def test_upload_sequencing():
 
 if __name__ == '__main__':
     # print(Header(b'Z\xa7\xefq}\xe5\x01\xeb\x00\x00\x00aP\x10\x16\xb0\x00\x00\x00\x00'))
-    test_download_sequencing()
+    test_download()
