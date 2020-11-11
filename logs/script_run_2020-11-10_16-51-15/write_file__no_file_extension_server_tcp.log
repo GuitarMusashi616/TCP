@@ -1,0 +1,29 @@
+0.000 NEW RUN: Server, TEST: Write_file__No_file_extension
+0.233 Received: b'pgCj\x00\x00\x00\x0e\x00\x00\x00\x00P\x02\x05\xa8\x00\x00\x00\x00'
+0.233 Disassembled: source: 28775, dest: 17258, seq: 14, window: 1448, SYN
+0.234 SYN accepted; new connection: 127.0.0.1 on port 28775
+0.234 Assembling: source: 17258, dest: 28775, seq: 3095962491, ack: 15, window: 5808, ACK, SYN
+0.234 Sent: b'Cjpg\xb8\x88\xa3{\x00\x00\x00\x0fP\x12\x16\xb0\x00\x00\x00\x00'
+0.237 Received: b'pgCj\x00\x00\x00\x0f\xb8\x88\xa3|P\x10\x16\xb0\x00\x00\x00\x00'
+0.237 Disassembled: source: 28775, dest: 17258, seq: 15, ack: 3095962492, window: 5808, ACK
+0.237 Assembling: source: 17258, dest: 28775, seq: 3095962492, ack: 15, window: 5808, ACK
+0.237 Sent: b'Cjpg\xb8\x88\xa3|\x00\x00\x00\x0fP\x10\x16\xb0\x00\x00\x00\x00'
+0.238 Received: b'pgCj\x00\x00\x00\x0f\xb8\x88\xa3|P\x10\x16\xb0\x00\x00\x00\x00Lorem ipsum dolo'...
+0.238 Disassembled: source: 28775, dest: 17258, seq: 15, ack: 3095962492, window: 5808, ACK, data: "Lorem ipsum dolo"...
+0.238 Handshake complete
+0.238 Data accepted; writing to file
+0.239 Assembling: source: 17258, dest: 28775, seq: 3095962492, ack: 1467, window: 5808, ACK
+0.239 Sent: b'Cjpg\xb8\x88\xa3|\x00\x00\x05\xbbP\x10\x16\xb0\x00\x00\x00\x00'
+0.240 Received: b'pgCj\x00\x00\x00\x0f\xb8\x88\xa3|P\x10\x16\xb0\x00\x00\x00\x00Lorem ipsum dolo'...
+0.241 Disassembled: source: 28775, dest: 17258, seq: 15, ack: 3095962492, window: 5808, ACK, data: "Lorem ipsum dolo"...
+0.241 Old data; ignoring
+0.243 Received: b'pgCj\x00\x00\x00\x0f\xb8\x88\xa3|P\x10\x16\xb0\x00\x00\x00\x00Lorem ipsum dolo'...
+0.243 Disassembled: source: 28775, dest: 17258, seq: 15, ack: 3095962492, window: 5808, ACK, data: "Lorem ipsum dolo"...
+0.243 Old data; ignoring
+0.739 Sent: b'Cjpg\xb8\x88\xa3|\x00\x00\x05\xbbP\x10\x16\xb0\x00\x00\x00\x00'
+1.240 Sent: b'Cjpg\xb8\x88\xa3|\x00\x00\x05\xbbP\x10\x16\xb0\x00\x00\x00\x00'
+1.740 Sent: b'Cjpg\xb8\x88\xa3|\x00\x00\x05\xbbP\x10\x16\xb0\x00\x00\x00\x00'
+2.241 Sent: b'Cjpg\xb8\x88\xa3|\x00\x00\x05\xbbP\x10\x16\xb0\x00\x00\x00\x00'
+2.741 Error: Connection timed out
+2.741 Closed connection
+2.746 Shutting down

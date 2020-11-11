@@ -1,0 +1,21 @@
+0.000 NEW RUN: Server, TEST: Write_file__Relaxed
+0.222 Received: b'Lc\x860\x00\x00\x00#\x00\x00\x00\x00P\x02\x05\xa8\x00\x00\x00\x00'
+0.223 Disassembled: source: 19555, dest: 34352, seq: 35, window: 1448, SYN
+0.223 SYN accepted; new connection: 127.0.0.1 on port 19555
+0.223 Assembling: source: 34352, dest: 19555, seq: 3088361307, ack: 36, window: 5808, ACK, SYN
+0.224 Sent: b'\x860Lc\xb8\x14\xa7[\x00\x00\x00$P\x12\x16\xb0\x00\x00\x00\x00'
+0.226 Received: b'Lc\x860\x00\x00\x00$\xb8\x14\xa7\\P\x10\x16\xb0\x00\x00\x00\x00'
+0.226 Disassembled: source: 19555, dest: 34352, seq: 36, ack: 3088361308, window: 5808, ACK
+0.226 Assembling: source: 34352, dest: 19555, seq: 3088361308, ack: 36, window: 5808, ACK
+0.226 Sent: b'\x860Lc\xb8\x14\xa7\\\x00\x00\x00$P\x10\x16\xb0\x00\x00\x00\x00'
+0.227 Received: b'Lc\x860\x00\x00\x00$\xb8\x14\xa7\\P\x10\x16\xb0\x00\x00\x00\x00'
+0.227 Disassembled: source: 19555, dest: 34352, seq: 36, ack: 3088361308, window: 5808, ACK
+0.227 Assembling: source: 34352, dest: 19555, seq: 3088361308, ack: 36, window: 5808, ACK
+0.228 Sent: b'\x860Lc\xb8\x14\xa7\\\x00\x00\x00$P\x10\x16\xb0\x00\x00\x00\x00'
+0.728 Sent: b'\x860Lc\xb8\x14\xa7\\\x00\x00\x00$P\x10\x16\xb0\x00\x00\x00\x00'
+1.228 Sent: b'\x860Lc\xb8\x14\xa7\\\x00\x00\x00$P\x10\x16\xb0\x00\x00\x00\x00'
+1.729 Sent: b'\x860Lc\xb8\x14\xa7\\\x00\x00\x00$P\x10\x16\xb0\x00\x00\x00\x00'
+2.229 Sent: b'\x860Lc\xb8\x14\xa7\\\x00\x00\x00$P\x10\x16\xb0\x00\x00\x00\x00'
+2.730 Error: Connection timed out
+2.730 Closed connection
+2.731 Shutting down
