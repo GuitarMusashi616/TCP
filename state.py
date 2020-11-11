@@ -105,7 +105,7 @@ class State:
 
         h = Header.from_tcb(self.tcb)
         h.data = data
-        h.ACK = True if is_ack and not is_repeat_send else False
+        h.ACK = is_ack
         if VERBOSE:
             print_compact(h)
         self.tcp.socket.sendto(bytes(h), self.tcb.dest_address)
@@ -304,18 +304,18 @@ class Established(State):
         f = open(filename, 'rb')
 
         is_repeat_send = False
-        ack_every_other = True
+        is_first_send = True
         is_uploading = True
 
         data = f.read(1448)
         while is_uploading:
             # read file
-            self._send_data(data, is_repeat_send, ack_every_other)
+            self._send_data(data, is_repeat_send, is_first_send)
+            is_first_send = False
             # wait for ack
             header, addr = self._recvfrom_socket()
             if header.ACK and self.tcb.is_next_seq(header) and self.tcb.is_next_ack(header):
                 self.tcb.sync_rcv(header)
-                ack_every_other = False if ack_every_other else True
                 # break if last of file
                 if len(data) < 1448:
                     break
