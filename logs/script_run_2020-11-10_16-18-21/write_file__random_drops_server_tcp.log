@@ -1,0 +1,37 @@
+0.000 NEW RUN: Server, TEST: Write_file__Random_drops
+0.203 Received: b'\xd2\x9dQw\x00\x00\x00O\x00\x00\x00\x00P\x02\x05\xa8\x00\x00\x00\x00'
+0.204 Disassembled: source: 53917, dest: 20855, seq: 79, window: 1448, SYN
+0.204 SYN accepted; new connection: 127.0.0.1 on port 53917
+0.204 Assembling: source: 20855, dest: 53917, seq: 1164525602, ack: 80, window: 5808, ACK, SYN
+0.205 Sent: b'Qw\xd2\x9dEi@"\x00\x00\x00PP\x12\x16\xb0\x00\x00\x00\x00'
+0.208 Received: b'\xd2\x9dQw\x00\x00\x00PEi@#P\x10\x16\xb0\x00\x00\x00\x00'
+0.208 Disassembled: source: 53917, dest: 20855, seq: 80, ack: 1164525603, window: 5808, ACK
+0.208 Assembling: source: 20855, dest: 53917, seq: 1164525603, ack: 80, window: 5808, ACK
+0.209 Sent: b'Qw\xd2\x9dEi@#\x00\x00\x00PP\x10\x16\xb0\x00\x00\x00\x00'
+0.209 Received: b'\xd2\x9dQw\x00\x00\x00PEi@#P\x10\x16\xb0\x00\x00\x00\x00Lorem ipsum dolo'...
+0.210 Disassembled: source: 53917, dest: 20855, seq: 80, ack: 1164525603, window: 5808, ACK, data: "Lorem ipsum dolo"...
+0.210 Handshake complete
+0.210 Data accepted; writing to file
+0.210 Assembling: source: 20855, dest: 53917, seq: 1164525603, ack: 1532, window: 5808, ACK
+0.210 Sent: b'Qw\xd2\x9dEi@#\x00\x00\x05\xfcP\x10\x16\xb0\x00\x00\x00\x00'
+0.211 Received: b'\xd2\x9dQw\x00\x00\x00PEi@#P\x10\x16\xb0\x00\x00\x00\x00Lorem ipsum dolo'...
+0.211 Disassembled: source: 53917, dest: 20855, seq: 80, ack: 1164525603, window: 5808, ACK, data: "Lorem ipsum dolo"...
+0.211 Old data; ignoring
+0.212 Received: b'\xd2\x9dQw\x00\x00\x00PEi@#P\x10\x16\xb0\x00\x00\x00\x00Lorem ipsum dolo'...
+0.212 Disassembled: source: 53917, dest: 20855, seq: 80, ack: 1164525603, window: 5808, ACK, data: "Lorem ipsum dolo"...
+0.212 Old data; ignoring
+0.711 Sent: b'Qw\xd2\x9dEi@#\x00\x00\x05\xfcP\x10\x16\xb0\x00\x00\x00\x00'
+0.714 Received: b'\xd2\x9dQw\x00\x00\x00PEi@#P\x10\x16\xb0\x00\x00\x00\x00Lorem ipsum dolo'...
+0.714 Disassembled: source: 53917, dest: 20855, seq: 80, ack: 1164525603, window: 5808, ACK, data: "Lorem ipsum dolo"...
+0.714 Old data; ignoring
+1.211 Sent: b'Qw\xd2\x9dEi@#\x00\x00\x05\xfcP\x10\x16\xb0\x00\x00\x00\x00'
+1.214 Failed to receive packet
+1.711 Sent: b'Qw\xd2\x9dEi@#\x00\x00\x05\xfcP\x10\x16\xb0\x00\x00\x00\x00'
+1.714 Received: b'\xd2\x9dQw\x00\x00\x00PEi@#P\x10\x16\xb0\x00\x00\x00\x00Lorem ipsum dolo'...
+1.715 Disassembled: source: 53917, dest: 20855, seq: 80, ack: 1164525603, window: 5808, ACK, data: "Lorem ipsum dolo"...
+1.715 Old data; ignoring
+2.212 Sent: b'Qw\xd2\x9dEi@#\x00\x00\x05\xfcP\x10\x16\xb0\x00\x00\x00\x00'
+2.215 Failed to receive packet
+2.712 Error: Connection timed out
+2.713 Closed connection
+2.715 Shutting down

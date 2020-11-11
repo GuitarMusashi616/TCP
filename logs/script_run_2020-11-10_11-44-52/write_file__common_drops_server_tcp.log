@@ -1,0 +1,18 @@
+0.000 NEW RUN: Server, TEST: Write_file__Common_drops
+0.072 Received: b'\\\xb8\xbd\xa3\x08\x84\xb3\x8f\x00\x00\x00\x00P\x02\x00\x00&p\x00\x00'
+0.073 Disassembled: source: 23736, dest: 48547, seq: 142914447, SYN
+0.074 SYN accepted; new connection: 127.0.0.1 on port 23736
+0.074 Assembling: source: 48547, dest: 23736, seq: 2710295493, ack: 142914448, window: 5808, ACK, SYN
+0.075 Sent: b'\xbd\xa3\\\xb8\xa1\x8b\xd3\xc5\x08\x84\xb3\x90P\x12\x16\xb0\x00\x00\x00\x00'
+0.085 Failed to receive packet
+0.575 Sent: b'\xbd\xa3\\\xb8\xa1\x8b\xd3\xc5\x08\x84\xb3\x90P\x12\x16\xb0\x00\x00\x00\x00'
+0.585 Failed to receive packet
+1.075 Sent: b'\xbd\xa3\\\xb8\xa1\x8b\xd3\xc5\x08\x84\xb3\x90P\x12\x16\xb0\x00\x00\x00\x00'
+1.085 Failed to receive packet
+1.576 Failed to send packet
+2.076 Sent: b'\xbd\xa3\\\xb8\xa1\x8b\xd3\xc5\x08\x84\xb3\x90P\x12\x16\xb0\x00\x00\x00\x00'
+2.086 Failed to receive packet
+2.577 Failed to send packet
+3.077 Error: Connection timed out
+3.077 Closed connection
+3.086 Shutting down

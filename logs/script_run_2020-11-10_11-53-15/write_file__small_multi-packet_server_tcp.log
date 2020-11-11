@@ -1,0 +1,32 @@
+0.000 NEW RUN: Server, TEST: Write_file__Small_multi-packet
+0.074 Received: b'+\xa6\x1aH\x03\x15\x14Y\x00\x00\x00\x00P\x02\x00\x00\xad^\x00\x00'
+0.075 Disassembled: source: 11174, dest: 6728, seq: 51713113, SYN
+0.076 SYN accepted; new connection: 127.0.0.1 on port 11174
+0.076 Assembling: source: 6728, dest: 11174, seq: 3203340605, ack: 51713114, window: 5808, ACK, SYN
+0.077 Sent: b'\x1aH+\xa6\xbe\xef\x19=\x03\x15\x14ZP\x12\x16\xb0\x00\x00\x00\x00'
+0.082 Received: b'+\xa6\x1aH\x03\x15\x14Z\xbe\xef\x19>P\x10\x16\xb0\x9b\x1f\x00\x00Lorem ipsum dolo'...
+0.082 Disassembled: source: 11174, dest: 6728, seq: 51713114, ack: 3203340606, window: 5808, ACK, data: "Lorem ipsum dolo"...
+0.082 Handshake complete
+0.083 Data accepted; writing to file
+0.083 Assembling: source: 6728, dest: 11174, seq: 3203340606, ack: 51714562, window: 5808, ACK
+0.083 Sent: b'\x1aH+\xa6\xbe\xef\x19>\x03\x15\x1a\x02P\x10\x16\xb0\x00\x00\x00\x00'
+0.088 Received: b'+\xa6\x1aH\x03\x15\x1a\x02\xbe\xef\x19>P\x10\x16\xb0\xb0\xe1\x00\x00mprehensam nam, '...
+0.089 Disassembled: source: 11174, dest: 6728, seq: 51714562, ack: 3203340606, window: 5808, ACK, data: "mprehensam nam, "...
+0.089 Error: Incorrect acknowledgement flag
+0.584 Sent: b'\x1aH+\xa6\xbe\xef\x19>\x03\x15\x1a\x02P\x10\x16\xb0\x00\x00\x00\x00'
+0.593 Received: b'+\xa6\x1aH\x03\x15\x1a\x02\xbe\xef\x19?P\x10\x16\xb0\x12*\x00\x00ilisi repudiare '...
+0.593 Disassembled: source: 11174, dest: 6728, seq: 51714562, ack: 3203340607, window: 5808, ACK, data: "ilisi repudiare "...
+0.594 Error: Incorrect acknowledgement flag
+1.084 Sent: b'\x1aH+\xa6\xbe\xef\x19>\x03\x15\x1a\x02P\x10\x16\xb0\x00\x00\x00\x00'
+1.093 Received: b'+\xa6\x1aH\x03\x15\x1a\x02\xbe\xef\x19@P\x11\x16\xb0\xa1\xf5\x00\x00'
+1.093 Disassembled: source: 11174, dest: 6728, seq: 51714562, ack: 3203340608, window: 5808, ACK, FIN
+1.094 FIN accepted; closing
+1.094 Assembling: source: 6728, dest: 11174, seq: 3203340606, ack: 51714562, window: 5808, ACK, FIN
+1.094 Sent: b'\x1aH+\xa6\xbe\xef\x19>\x03\x15\x1a\x02P\x11\x16\xb0\x00\x00\x00\x00'
+1.595 Sent: b'\x1aH+\xa6\xbe\xef\x19>\x03\x15\x1a\x02P\x11\x16\xb0\x00\x00\x00\x00'
+2.095 Sent: b'\x1aH+\xa6\xbe\xef\x19>\x03\x15\x1a\x02P\x11\x16\xb0\x00\x00\x00\x00'
+2.596 Sent: b'\x1aH+\xa6\xbe\xef\x19>\x03\x15\x1a\x02P\x11\x16\xb0\x00\x00\x00\x00'
+3.096 Sent: b'\x1aH+\xa6\xbe\xef\x19>\x03\x15\x1a\x02P\x11\x16\xb0\x00\x00\x00\x00'
+3.596 Error: Connection timed out
+3.597 Closed connection
+3.597 Shutting down

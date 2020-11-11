@@ -1,0 +1,32 @@
+0.000 NEW RUN: Server, TEST: Write_file__Large_multi-packet
+0.220 Received: b'9\x17\x90\xf6\x00\x00\x007\x00\x00\x00\x00P\x02\x05\xa8\x00\x00\x00\x00'
+0.221 Disassembled: source: 14615, dest: 37110, seq: 55, window: 1448, SYN
+0.221 SYN accepted; new connection: 127.0.0.1 on port 14615
+0.221 Assembling: source: 37110, dest: 14615, seq: 354563841, ack: 56, window: 5808, ACK, SYN
+0.221 Sent: b'\x90\xf69\x17\x15"7\x01\x00\x00\x008P\x12\x16\xb0\x00\x00\x00\x00'
+0.223 Received: b'9\x17\x90\xf6\x00\x00\x008\x15"7\x02P\x10\x16\xb0\x00\x00\x00\x00'
+0.223 Disassembled: source: 14615, dest: 37110, seq: 56, ack: 354563842, window: 5808, ACK
+0.224 Assembling: source: 37110, dest: 14615, seq: 354563842, ack: 56, window: 5808, ACK
+0.224 Sent: b'\x90\xf69\x17\x15"7\x02\x00\x00\x008P\x10\x16\xb0\x00\x00\x00\x00'
+0.225 Received: b'9\x17\x90\xf6\x00\x00\x008\x15"7\x02P\x10\x16\xb0\x00\x00\x00\x00Lorem ipsum dolo'...
+0.225 Disassembled: source: 14615, dest: 37110, seq: 56, ack: 354563842, window: 5808, ACK, data: "Lorem ipsum dolo"...
+0.225 Handshake complete
+0.225 Data accepted; writing to file
+0.225 Assembling: source: 37110, dest: 14615, seq: 354563842, ack: 1508, window: 5808, ACK
+0.225 Sent: b'\x90\xf69\x17\x15"7\x02\x00\x00\x05\xe4P\x10\x16\xb0\x00\x00\x00\x00'
+0.226 Received: b'9\x17\x90\xf6\x00\x00\x16\xe8\x15"7\x02P\x10\x16\xb0\x00\x00\x00\x00 sadipscing ei q'...
+0.226 Disassembled: source: 14615, dest: 37110, seq: 5864, ack: 354563842, window: 5808, ACK, data: " sadipscing ei q"...
+0.227 Error: Incorrect acknowledgement flag
+0.228 Received: b'9\x17\x90\xf6\x00\x00-\x98\x15"7\x02P\x10\x16\xb0\x00\x00\x00\x00 Duo ea augue fa'...
+0.228 Disassembled: source: 14615, dest: 37110, seq: 11672, ack: 354563842, window: 5808, ACK, data: " Duo ea augue fa"...
+0.228 Error: Sequence number too high
+0.725 Sent: b'\x90\xf69\x17\x15"7\x02\x00\x00\x05\xe4P\x10\x16\xb0\x00\x00\x00\x00'
+0.728 Received: b'9\x17\x90\xf6\x00\x00DH\x15"7\x02P\x10\x16\xb0\x00\x00\x00\x00uta debitis pert'...
+0.729 Disassembled: source: 14615, dest: 37110, seq: 17480, ack: 354563842, window: 5808, ACK, data: "uta debitis pert"...
+0.729 Error: Sequence number too high
+1.226 Sent: b'\x90\xf69\x17\x15"7\x02\x00\x00\x05\xe4P\x10\x16\xb0\x00\x00\x00\x00'
+1.726 Sent: b'\x90\xf69\x17\x15"7\x02\x00\x00\x05\xe4P\x10\x16\xb0\x00\x00\x00\x00'
+2.227 Sent: b'\x90\xf69\x17\x15"7\x02\x00\x00\x05\xe4P\x10\x16\xb0\x00\x00\x00\x00'
+2.727 Error: Connection timed out
+2.727 Closed connection
+2.731 Shutting down

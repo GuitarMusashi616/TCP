@@ -1,0 +1,24 @@
+0.000 NEW RUN: Server, TEST: Write_file__Single_packet
+0.074 Received: b'"\x7f\xe1o\x05\xf4C1\x00\x00\x00\x00P\x02\x00\x00\x9d\x15\x00\x00'
+0.075 Disassembled: source: 8831, dest: 57711, seq: 99894065, SYN
+0.075 SYN accepted; new connection: 127.0.0.1 on port 8831
+0.076 Assembling: source: 57711, dest: 8831, seq: 2699228421, ack: 99894066, window: 5808, ACK, SYN
+0.076 Sent: b'\xe1o"\x7f\xa0\xe2\xf5\x05\x05\xf4C2P\x12\x16\xb0\x00\x00\x00\x00'
+0.081 Received: b'"\x7f\xe1o\x05\xf4C2\xa0\xe2\xf5\x06P\x10\x16\xb0\xfaR\x00\x00This file fits i'...
+0.082 Disassembled: source: 8831, dest: 57711, seq: 99894066, ack: 2699228422, window: 5808, ACK, data: "This file fits i"...
+0.082 Handshake complete
+0.082 Data accepted; writing to file
+0.082 Assembling: source: 57711, dest: 8831, seq: 2699228422, ack: 99894109, window: 5808, ACK
+0.082 Sent: b'\xe1o"\x7f\xa0\xe2\xf5\x06\x05\xf4C]P\x10\x16\xb0\x00\x00\x00\x00'
+0.088 Received: b'"\x7f\xe1o\x05\xf4C]\xa0\xe2\xf5\x06P\x11\x16\xb0I\xe8\x00\x00'
+0.088 Disassembled: source: 8831, dest: 57711, seq: 99894109, ack: 2699228422, window: 5808, ACK, FIN
+0.088 FIN accepted; closing
+0.089 Assembling: source: 57711, dest: 8831, seq: 2699228422, ack: 99894109, window: 5808, ACK, FIN
+0.089 Sent: b'\xe1o"\x7f\xa0\xe2\xf5\x06\x05\xf4C]P\x11\x16\xb0\x00\x00\x00\x00'
+0.590 Sent: b'\xe1o"\x7f\xa0\xe2\xf5\x06\x05\xf4C]P\x11\x16\xb0\x00\x00\x00\x00'
+1.090 Sent: b'\xe1o"\x7f\xa0\xe2\xf5\x06\x05\xf4C]P\x11\x16\xb0\x00\x00\x00\x00'
+1.590 Sent: b'\xe1o"\x7f\xa0\xe2\xf5\x06\x05\xf4C]P\x11\x16\xb0\x00\x00\x00\x00'
+2.091 Sent: b'\xe1o"\x7f\xa0\xe2\xf5\x06\x05\xf4C]P\x11\x16\xb0\x00\x00\x00\x00'
+2.591 Error: Connection timed out
+2.592 Closed connection
+2.592 Shutting down

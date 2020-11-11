@@ -1,0 +1,21 @@
+0.000 NEW RUN: Server, TEST: Write_file__Relaxed
+0.205 Received: b"&\xbcD\xed\x00\x00\x00'\x00\x00\x00\x00P\x02\x05\xa8\x00\x00\x00\x00"
+0.206 Disassembled: source: 9916, dest: 17645, seq: 39, window: 1448, SYN
+0.206 SYN accepted; new connection: 127.0.0.1 on port 9916
+0.206 Assembling: source: 17645, dest: 9916, seq: 1114889507, ack: 40, window: 5808, ACK, SYN
+0.207 Sent: b'D\xed&\xbcBs\xdd#\x00\x00\x00(P\x12\x16\xb0\x00\x00\x00\x00'
+0.208 Received: b'&\xbcD\xed\x00\x00\x00(Bs\xdd$P\x10\x16\xb0\x00\x00\x00\x00'
+0.209 Disassembled: source: 9916, dest: 17645, seq: 40, ack: 1114889508, window: 5808, ACK
+0.209 Assembling: source: 17645, dest: 9916, seq: 1114889508, ack: 40, window: 5808, ACK
+0.209 Sent: b'D\xed&\xbcBs\xdd$\x00\x00\x00(P\x10\x16\xb0\x00\x00\x00\x00'
+0.209 Received: b'&\xbcD\xed\x00\x00\x00(Bs\xdd$P\x10\x16\xb0\x00\x00\x00\x00'
+0.210 Disassembled: source: 9916, dest: 17645, seq: 40, ack: 1114889508, window: 5808, ACK
+0.210 Assembling: source: 17645, dest: 9916, seq: 1114889508, ack: 40, window: 5808, ACK
+0.210 Sent: b'D\xed&\xbcBs\xdd$\x00\x00\x00(P\x10\x16\xb0\x00\x00\x00\x00'
+0.711 Sent: b'D\xed&\xbcBs\xdd$\x00\x00\x00(P\x10\x16\xb0\x00\x00\x00\x00'
+1.211 Sent: b'D\xed&\xbcBs\xdd$\x00\x00\x00(P\x10\x16\xb0\x00\x00\x00\x00'
+1.711 Sent: b'D\xed&\xbcBs\xdd$\x00\x00\x00(P\x10\x16\xb0\x00\x00\x00\x00'
+2.212 Sent: b'D\xed&\xbcBs\xdd$\x00\x00\x00(P\x10\x16\xb0\x00\x00\x00\x00'
+2.713 Error: Connection timed out
+2.713 Closed connection
+2.715 Shutting down

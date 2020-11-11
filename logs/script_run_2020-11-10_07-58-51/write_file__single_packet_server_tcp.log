@@ -1,0 +1,23 @@
+0.000 NEW RUN: Server, TEST: Write_file__Single_packet
+0.225 Received: b'\xfaC\xfb\xde\x00\x00\x00%\x00\x00\x00\x00P\x02\x05\xa8\x00\x00\x00\x00'
+0.225 Disassembled: source: 64067, dest: 64478, seq: 37, window: 1448, SYN
+0.225 SYN accepted; new connection: 127.0.0.1 on port 64067
+0.226 Assembling: source: 64478, dest: 64067, seq: 3549097615, ack: 38, window: 5808, ACK, SYN
+0.226 Sent: b'\xfb\xde\xfaC\xd3\x8a\xee\x8f\x00\x00\x00&P\x12\x16\xb0\x00\x00\x00\x00'
+0.227 Received: b'\xfaC\xfb\xde\x00\x00\x00&\xd3\x8a\xee\x90P\x10\x16\xb0\x00\x00\x00\x00'
+0.228 Disassembled: source: 64067, dest: 64478, seq: 38, ack: 3549097616, window: 5808, ACK
+0.228 Assembling: source: 64478, dest: 64067, seq: 3549097616, ack: 38, window: 5808, ACK
+0.228 Sent: b'\xfb\xde\xfaC\xd3\x8a\xee\x90\x00\x00\x00&P\x10\x16\xb0\x00\x00\x00\x00'
+0.228 Received: b'\xfaC\xfb\xde\x00\x00\x00&\xd3\x8a\xee\x90P\x10\x16\xb0\x00\x00\x00\x00This file fits i'...
+0.229 Disassembled: source: 64067, dest: 64478, seq: 38, ack: 3549097616, window: 5808, ACK, data: "This file fits i"...
+0.229 Handshake complete
+0.229 Data accepted; writing to file
+0.229 Assembling: source: 64478, dest: 64067, seq: 3549097616, ack: 81, window: 5808, ACK
+0.229 Sent: b'\xfb\xde\xfaC\xd3\x8a\xee\x90\x00\x00\x00QP\x10\x16\xb0\x00\x00\x00\x00'
+0.730 Sent: b'\xfb\xde\xfaC\xd3\x8a\xee\x90\x00\x00\x00QP\x10\x16\xb0\x00\x00\x00\x00'
+1.230 Sent: b'\xfb\xde\xfaC\xd3\x8a\xee\x90\x00\x00\x00QP\x10\x16\xb0\x00\x00\x00\x00'
+1.730 Sent: b'\xfb\xde\xfaC\xd3\x8a\xee\x90\x00\x00\x00QP\x10\x16\xb0\x00\x00\x00\x00'
+2.231 Sent: b'\xfb\xde\xfaC\xd3\x8a\xee\x90\x00\x00\x00QP\x10\x16\xb0\x00\x00\x00\x00'
+2.731 Error: Connection timed out
+2.732 Closed connection
+2.732 Shutting down

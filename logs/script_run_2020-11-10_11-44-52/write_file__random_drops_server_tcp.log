@@ -1,0 +1,34 @@
+0.000 NEW RUN: Server, TEST: Write_file__Random_drops
+0.079 Received: b'A\x94\xc6:\x0fal\xce\x00\x00\x00\x00P\x02\x00\x00\xd3\xff\x00\x00'
+0.080 Disassembled: source: 16788, dest: 50746, seq: 258043086, SYN
+0.080 SYN accepted; new connection: 127.0.0.1 on port 16788
+0.080 Assembling: source: 50746, dest: 16788, seq: 2706367222, ack: 258043087, window: 5808, ACK, SYN
+0.081 Sent: b'\xc6:A\x94\xa1O\xe2\xf6\x0fal\xcfP\x12\x16\xb0\x00\x00\x00\x00'
+0.090 Received: b'A\x94\xc6:\x0fal\xcf\xa1O\xe2\xf7P\x10\x16\xb0m\xd9\x00\x00Lorem ipsum dolo'...
+0.091 Disassembled: source: 16788, dest: 50746, seq: 258043087, ack: 2706367223, window: 5808, ACK, data: "Lorem ipsum dolo"...
+0.091 Handshake complete
+0.091 Data accepted; writing to file
+0.091 Assembling: source: 50746, dest: 16788, seq: 2706367223, ack: 258044535, window: 5808, ACK
+0.092 Sent: b'\xc6:A\x94\xa1O\xe2\xf7\x0farwP\x10\x16\xb0\x00\x00\x00\x00'
+0.098 Failed to receive packet
+0.592 Sent: b'\xc6:A\x94\xa1O\xe2\xf7\x0farwP\x10\x16\xb0\x00\x00\x00\x00'
+0.602 Received: b'A\x94\xc6:\x0farw\xa1O\xe2\xf8P\x10\x16\xb05L\x00\x00ilisi repudiare '...
+0.603 Disassembled: source: 16788, dest: 50746, seq: 258044535, ack: 2706367224, window: 5808, ACK, data: "ilisi repudiare "...
+0.603 Error: Incorrect acknowledgement flag
+1.093 Sent: b'\xc6:A\x94\xa1O\xe2\xf7\x0farwP\x10\x16\xb0\x00\x00\x00\x00'
+1.104 Received: b'A\x94\xc6:\x0farw\xa1O\xe2\xf9P\x10\x16\xb0\x86\xcf\x00\x00ta.\n\nEt essent s'...
+1.104 Disassembled: source: 16788, dest: 50746, seq: 258044535, ack: 2706367225, window: 5808, ACK, data: "ta.
+
+Et essent s"...
+1.105 Error: Incorrect acknowledgement flag
+1.593 Sent: b'\xc6:A\x94\xa1O\xe2\xf7\x0farwP\x10\x16\xb0\x00\x00\x00\x00'
+1.603 Received: b'A\x94\xc6:\x0farw\xa1O\xe2\xfaP\x10\x16\xb0\xdb\xac\x00\x00 Nihil tractatos'...
+1.604 Disassembled: source: 16788, dest: 50746, seq: 258044535, ack: 2706367226, window: 5808, ACK, data: " Nihil tractatos"...
+1.604 Error: Incorrect acknowledgement flag
+2.094 Sent: b'\xc6:A\x94\xa1O\xe2\xf7\x0farwP\x10\x16\xb0\x00\x00\x00\x00'
+2.104 Received: b'A\x94\xc6:\x0farw\xa1O\xe2\xfbP\x10\x16\xb0\xef1\x00\x00fert iuvaret sap'...
+2.104 Disassembled: source: 16788, dest: 50746, seq: 258044535, ack: 2706367227, window: 5808, ACK, data: "fert iuvaret sap"...
+2.105 Error: Incorrect acknowledgement flag
+2.594 Error: Connection timed out
+2.594 Closed connection
+2.605 Shutting down

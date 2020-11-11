@@ -1,0 +1,14 @@
+0.000 NEW RUN: Server, TEST: Read_file__Relaxed
+0.077 Received: b'g:\x8cd\x06ll\xbe\x00\x00\x00\x00P\x02\x00\x00\xb6\xca\x00\x00'
+0.078 Disassembled: source: 26426, dest: 35940, seq: 107769022, SYN
+0.079 SYN accepted; new connection: 127.0.0.1 on port 26426
+0.079 Assembling: source: 35940, dest: 26426, seq: 3199427142, ack: 107769023, ACK, SYN
+0.079 Sent: b'\x8cdg:\xbe\xb3bF\x06ll\xbfP\x12\x00\x00\x00\x00\x00\x00'
+0.580 Sent: b'\x8cdg:\xbe\xb3bF\x06ll\xbfP\x12\x00\x00\x00\x00\x00\x00'
+1.080 Sent: b'\x8cdg:\xbe\xb3bF\x06ll\xbfP\x12\x00\x00\x00\x00\x00\x00'
+1.581 Sent: b'\x8cdg:\xbe\xb3bF\x06ll\xbfP\x12\x00\x00\x00\x00\x00\x00'
+2.081 Sent: b'\x8cdg:\xbe\xb3bF\x06ll\xbfP\x12\x00\x00\x00\x00\x00\x00'
+2.582 Sent: b'\x8cdg:\xbe\xb3bF\x06ll\xbfP\x12\x00\x00\x00\x00\x00\x00'
+3.082 Error: Connection timed out
+3.083 Closed connection
+3.084 Shutting down

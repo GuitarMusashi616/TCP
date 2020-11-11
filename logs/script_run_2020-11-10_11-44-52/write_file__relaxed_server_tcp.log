@@ -1,0 +1,22 @@
+0.000 NEW RUN: Server, TEST: Write_file__Relaxed
+0.082 Received: b"'\x90\x86(\t+\x8d\x0b\x00\x00\x00\x00P\x02\x00\x00\x93\xf0\x00\x00"
+0.083 Disassembled: source: 10128, dest: 34344, seq: 153849099, SYN
+0.083 SYN accepted; new connection: 127.0.0.1 on port 10128
+0.084 Assembling: source: 34344, dest: 10128, seq: 2696224188, ack: 153849100, window: 5808, ACK, SYN
+0.084 Sent: b"\x86('\x90\xa0\xb5\x1d\xbc\t+\x8d\x0cP\x12\x16\xb0\x00\x00\x00\x00"
+0.093 Received: b"'\x90\x86(\t+\x8d\x0c\xa0\xb5\x1d\xbdP\x10\x16\xb0i!\x00\x00"
+0.094 Disassembled: source: 10128, dest: 34344, seq: 153849100, ack: 2696224189, window: 5808, ACK
+0.094 Assembling: source: 34344, dest: 10128, seq: 2696224189, ack: 153849100, window: 5808, ACK
+0.095 Sent: b"\x86('\x90\xa0\xb5\x1d\xbd\t+\x8d\x0cP\x10\x16\xb0\x00\x00\x00\x00"
+0.100 Received: b'\'\x90\x86(\t+\x8d\x0c\xa0\xb5\x1d\xbdP\x11\x16\xb0i"\x00\x00'
+0.101 Disassembled: source: 10128, dest: 34344, seq: 153849100, ack: 2696224189, window: 5808, ACK, FIN
+0.101 FIN accepted; closing
+0.101 Assembling: source: 34344, dest: 10128, seq: 2696224189, ack: 153849100, window: 5808, ACK, FIN
+0.102 Sent: b"\x86('\x90\xa0\xb5\x1d\xbd\t+\x8d\x0cP\x11\x16\xb0\x00\x00\x00\x00"
+0.602 Sent: b"\x86('\x90\xa0\xb5\x1d\xbd\t+\x8d\x0cP\x11\x16\xb0\x00\x00\x00\x00"
+1.103 Sent: b"\x86('\x90\xa0\xb5\x1d\xbd\t+\x8d\x0cP\x11\x16\xb0\x00\x00\x00\x00"
+1.603 Sent: b"\x86('\x90\xa0\xb5\x1d\xbd\t+\x8d\x0cP\x11\x16\xb0\x00\x00\x00\x00"
+2.104 Sent: b"\x86('\x90\xa0\xb5\x1d\xbd\t+\x8d\x0cP\x11\x16\xb0\x00\x00\x00\x00"
+2.604 Error: Connection timed out
+2.604 Closed connection
+2.606 Shutting down
