@@ -17,11 +17,13 @@ def main():
     print(tcp.state)
     if args.mode == 'r':
         tcp.download(args.filename)
+        tcp.receive()
     else:
         tcp.upload(args.filename)
+        tcp.close()
 
-    while not isinstance(tcp.state, Closed):
-        tcp.receive()
+    # while not isinstance(tcp.state, Closed):
+    #     tcp.receive()
 
 
 if __name__ == '__main__':

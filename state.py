@@ -311,11 +311,11 @@ class Established(State):
         while is_uploading:
             # read file
             self._send_data(data, is_repeat_send, is_first_send)
-            is_first_send = False
             # wait for ack
             header, addr = self._recvfrom_socket()
             if header.ACK and self.tcb.is_next_seq(header) and self.tcb.is_next_ack(header):
                 self.tcb.sync_rcv(header)
+                is_first_send = False
                 # break if last of file
                 if len(data) < 1448:
                     break
