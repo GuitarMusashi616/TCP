@@ -81,6 +81,39 @@ def test_download():
     # closed
 
 
+def test_repeat_protocol():
+    tcp = TCP(('', 54321))
+    print(tcp.state)
+
+    header, addr = tcp.state._recvfrom_socket()
+    tcp.tcb.sync_rcv(header)
+    print(f'1st data: {header.data[:20]}')
+
+    h = Header()
+    h.ACK = True
+    h.ack_num = header.seq_num
+    h.seq_num = tcp.tcb.SND_NXT
+
+    tcp.socket.sendto(bytes(h), addr)
+    tcp.tcb.sync_snd(h)
+
+    header2, addr2 = tcp.state._recvfrom_socket()
+    tcp.tcb.sync_rcv(header2)
+    print(f'2nd data: {header2.data[:20]}')
+
+    i = Header()
+    i.ACK = True
+    i.ack_num = header.seq_num + 507
+    i.seq_num = tcp.tcb.SND_NXT
+
+    tcp.socket.sendto(bytes(i), addr2)
+    tcp.tcb.sync_snd(i)
+
+    header3, addr3 = tcp.state._recvfrom_socket()
+    tcp.tcb.sync_rcv(header3)
+    print(f'3rd data: {header3.data[:20]}')
+
+
 if __name__ == "__main__":
-    test_download()
+    test_repeat_protocol()
 

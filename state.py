@@ -7,7 +7,7 @@ import time
 
 MSL = 2
 VERBOSE = True
-
+ATTEMPTS_UNTIL_EXIT = 1000
 
 def check_address(address):
     assert isinstance(address, tuple) and len(address) == 2, "address must consist of (ip, port)"
@@ -108,7 +108,7 @@ class State:
             print_compact(h)
         self.tcp.socket.sendto(bytes(h), self.tcb.dest_address)
         if not is_repeat_send:
-            self.tcb.sync_snd(h)
+            self.tcb.sync_una(h)
 
     def _send_fin(self):
         check_address(self.tcb.source_address)
@@ -123,7 +123,7 @@ class State:
         self.tcb.sync_snd(h)
 
     def _recvfrom_socket(self):
-        attempts = 3
+        attempts = ATTEMPTS_UNTIL_EXIT
         while attempts > 0:
             try:
                 header_bytes, addr = self.tcp.socket.recvfrom(1500)
@@ -277,8 +277,9 @@ class Established(State):
 
             # wait for ack
             header, addr = self._recvfrom_socket()
-            if header.ACK and self.tcb.is_next_seq(header):
+            if header.ACK and self.tcb.is_next_seq(header) and self.tcb.is_next_ack(header):
                 self.tcb.sync_rcv(header)
+                self.sync_snd_from_una()
                 # break if last of file
                 if len(data) < self.tcb.SND_WND:
                     break

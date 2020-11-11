@@ -95,8 +95,18 @@ class TCB:
         self.RCV_UP = header.urgent_ptr
         self.sync_rcv(header)
 
-    def sync_snd(self, header):
+    def sync_una(self, header):
         # call right after sending
+        if not self.SND_UNA:
+            self.SND_UNA = header.seq_num
+        self.SND_UNA += header.seq_increment
+
+    def sync_snd_from_una(self):
+        # call right after receiving ack
+        self.SND_NXT = self.SND_UNA
+
+    def sync_snd(self, header):
+        # call right after receiving ack
         if not self.SND_NXT:
             self.SND_NXT = header.seq_num
         self.SND_NXT += header.seq_increment
@@ -114,6 +124,12 @@ class TCB:
     def is_next_seq(self, header):
         if self.RCV_NXT:
             return header.seq_num == self.RCV_NXT
+        else:
+            return True
+
+    def is_next_ack(self, header):
+        if self.SND_NXT:
+            return header.ack_num == self.SND_UNA
         else:
             return True
 
@@ -138,6 +154,17 @@ class TCB:
             self._SND_NXT = value % 2**32
         else:
             self._SND_NXT = value
+
+    @property
+    def SND_UNA(self):
+        return self._SND_UNA
+
+    @SND_UNA.setter
+    def SND_UNA(self, value):
+        if isinstance(value, int):
+            self._SND_UNA = value % 2 ** 32
+        else:
+            self._SND_UNA = value
 
 
 
