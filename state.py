@@ -6,8 +6,8 @@ import sys
 import time
 
 MSL = 0
-VERBOSE = True
-ATTEMPTS_UNTIL_EXIT = 1000
+VERBOSE = False
+ATTEMPTS_UNTIL_EXIT = 3
 
 
 def check_address(address):
