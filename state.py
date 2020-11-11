@@ -272,7 +272,7 @@ class Established(State):
         f = open(filename, 'rb')
         is_uploading = True
         is_repeat_send = False
-        data = f.read(self.tcb.SND_WND)
+        data = f.read(1448)
         while is_uploading:
             # read file
             self._send_data(data, is_repeat_send)
