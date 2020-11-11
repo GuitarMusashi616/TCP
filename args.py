@@ -3,13 +3,14 @@
 # Computer Networks
 # 11 November 2020
 
+# args.py - handles the arguments passed to the program with argparse, exits if args are incorrect
 
 import argparse
 import sys
 
 
 def setup_args():
-    """Utilizes argparser to setup and return arguments"""
+    """Utilizes argparse to setup and return arguments"""
     parser = argparse.ArgumentParser(description='send files reliably over UDP')
 
     parser.add_argument('-a',
@@ -57,6 +58,7 @@ def setup_args():
 
 
 def check_port(string: str) -> int:
+    """Used in setup_args to exit on incorrect ports"""
     try:
         value = int(string)
         assert 5000 <= value <= 65535, "ports must be within the range [5000, 65535]"
@@ -68,6 +70,7 @@ def check_port(string: str) -> int:
 
 
 def check_ip(string: str) -> str:
+    """Used in setup_args to exit if ip is incorrect"""
     if string == 'localhost':
         return string
     try:

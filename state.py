@@ -3,6 +3,8 @@
 # Computer Networks
 # 11 November 2020
 
+# state.py - File used to specify the state of the TCP and what the current state of the TCP can/ will do.
+
 
 from typing import Iterable
 from types import FunctionType

@@ -3,6 +3,8 @@
 # Computer Networks
 # 11 November 2020
 
+# header.py - Defines a header class, uses properties to set the correct bits in the header (uses bitstring BitArray)
+
 
 from bitstring import BitArray, BitStream, pack
 
@@ -26,7 +28,6 @@ def print_compact(header):
 class Header:
     def __init__(self, bits=None):
         self._bits = BitArray(160) if bits is None else BitArray(bits)
-        # max_bits = 192 if len(self._bits) > 192 else len(self._bits)
         self.offset = 5
 
     @classmethod

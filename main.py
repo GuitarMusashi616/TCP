@@ -3,6 +3,8 @@
 # Computer Networks
 # 11 November 2020
 
+# main.py - File intended to be run by Dr. Butler's test server
+
 from args import setup_args
 from tcp import TCP
 from state import Closed

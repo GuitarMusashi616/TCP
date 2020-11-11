@@ -3,7 +3,7 @@
 # Computer Networks
 # 11 November 2020
 
-# tcp.py - file used to define TCP class, has a state, socket, and tcb.
+# tcp.py - File used to define TCP class, has a state, socket, and tcb.
 
 
 from state import *
