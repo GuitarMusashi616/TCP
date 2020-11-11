@@ -211,8 +211,10 @@ def automatic_with_args():
         tcp.download(args.filename)
     else:
         tcp.upload(args.filename)
-    tcp.receive()
-    print(tcp.state)
+
+    while not isinstance(tcp.state, Closed):
+        tcp.receive()
+        print(tcp.state)
 
 
 def test_download_sequencing():
@@ -222,9 +224,8 @@ def test_download_sequencing():
 
     tcp.upload('text.txt')
 
-    while not isinstance(tcp.state, Closed):
-        tcp.receive()
-        print(tcp.state)
+    tcp.receive()
+    print(tcp.state)
     # closed
 
 
