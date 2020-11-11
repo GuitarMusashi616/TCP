@@ -124,13 +124,21 @@ class TCB:
 
     def is_next_seq(self, header):
         if self.RCV_NXT:
-            return header.seq_num == self.RCV_NXT
+            if header.seq_num == self.RCV_NXT:
+                return True
+            else:
+                print(str(header.seq_num) + ' is not next seq number, should be ' + str(self.RCV_NXT))
+                return False
         else:
             return True
 
     def is_next_ack(self, header):
         if self.SND_NXT:
-            return header.ack_num == self.SND_UNA
+            if header.ack_num == self.SND_UNA:
+                return True
+            else:
+                print(str(header.ack_num) + ' is not next ack number, should be ' + str(self.SND_UNA))
+                return False
         else:
             return True
 
