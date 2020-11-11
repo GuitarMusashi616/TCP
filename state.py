@@ -97,13 +97,14 @@ class State:
         self.tcp.socket.sendto(bytes(h), self.tcb.dest_address)
         self.tcb.sync_una(h)
 
-    def _send_data(self, data, is_repeat_send):
+    def _send_data(self, data, is_repeat_send, is_first_send):
         check_address(self.tcb.source_address)
         check_address(self.tcb.dest_address)
         check_socket(self.tcp.socket)
 
         h = Header.from_tcb(self.tcb)
         h.data = data
+        h.ACK = False if not is_first_send and not is_repeat_send else True
         if VERBOSE:
             print_compact(h)
         self.tcp.socket.sendto(bytes(h), self.tcb.dest_address)
@@ -272,9 +273,11 @@ class Established(State):
         is_uploading = True
         is_repeat_send = False
         data = f.read(1448)
+        is_first_send = True
         while is_uploading:
             # read file
-            self._send_data(data, is_repeat_send)
+            self._send_data(data, is_repeat_send, is_first_send)
+            is_first_send = False
 
             # wait for ack
             header, addr = self._recvfrom_socket()
