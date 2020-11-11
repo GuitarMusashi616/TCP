@@ -76,8 +76,8 @@ def test_download():
     print(tcp.state)
     # established
     tcp.download('newfile.txt')
-    tcp.close()
-    print(tcp.state)
+    # tcp.receive()
+    # print(tcp.state)
     # closed
 
 
@@ -110,6 +110,30 @@ def test_repeat_protocol():
     tcp.tcb.sync_una(i)
 
 
+def test_upload_repeat():
+    tcp = TCP(('', 54321))
+    print(tcp.state)
+    f = open('text.txt', 'rb')
+
+    h = Header()
+    h.data = f.read(50)
+    h.ACK = True
+    h.ack_num = tcp.tcb.RCV_NXT
+    h.seq_num = tcp.tcb.SND_NXT
+
+    tcp.socket.sendto(bytes(h), ('127.0.0.1', 12345))
+
+    header, addr = tcp.state._recvfrom_socket()
+    tcp.tcb.sync_rcv(header)
+
+    tcp.socket.sendto(bytes(h), ('127.0.0.1', 12345))
+
+    header, addr = tcp.state._recvfrom_socket()
+    tcp.tcb.sync_rcv(header)
+
+    tcp.socket.sendto(bytes(h), ('127.0.0.1', 12345))
+    f.close()
+
 if __name__ == "__main__":
-    test_download()
+    test_upload_repeat()
 

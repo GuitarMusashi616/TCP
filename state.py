@@ -6,7 +6,7 @@ import sys
 import time
 
 MSL = 1
-VERBOSE = False
+VERBOSE = True
 ATTEMPTS_UNTIL_EXIT = 3
 
 
@@ -97,14 +97,14 @@ class State:
         self.tcp.socket.sendto(bytes(h), self.tcb.dest_address)
         self.tcb.sync_una(h)
 
-    def _send_data(self, data, is_repeat_send, is_first_send):
+    def _send_data(self, data, is_repeat_send=False, is_ack=True):
         check_address(self.tcb.source_address)
         check_address(self.tcb.dest_address)
         check_socket(self.tcp.socket)
 
         h = Header.from_tcb(self.tcb)
         h.data = data
-        h.ACK = False if not is_first_send and not is_repeat_send else True
+        h.ACK = is_ack
         if VERBOSE:
             print_compact(h)
         self.tcp.socket.sendto(bytes(h), self.tcb.dest_address)
@@ -251,7 +251,17 @@ class Established(State):
         is_downloading = True
         while is_downloading:
             header, addr = self._recvfrom_socket()
-            self.tcb.sync_rcv(header)
+            # what if receive the old packet again
+            if self.tcb.is_next_seq(header):
+                self.tcb.sync_rcv(header)
+                if header.data:
+                    f.write(header.data)
+                    if len(header.data) < header.window:
+                        is_downloading = False
+                else:
+                    is_downloading = False
+
+            self._send_ack()
             # print(len(header))
             # print(len(header.data))
             # print(header.window)
@@ -259,13 +269,7 @@ class Established(State):
             # print()
             # print(header)
 
-            if header.data:
-                f.write(header.data)
-                self._send_ack()
-                if len(header.data) < header.window:
-                    is_downloading = False
-            else:
-                is_downloading = False
+
         f.close()
 
     def upload(self, filename):
@@ -273,11 +277,11 @@ class Established(State):
         is_uploading = True
         is_repeat_send = False
         data = f.read(1448)
-        is_first_send = True
+        ack_every_other = True
         while is_uploading:
             # read file
-            self._send_data(data, is_repeat_send, is_first_send)
-            is_first_send = False
+            self._send_data(data, is_repeat_send, ack_every_other)
+            ack_every_other = False if ack_every_other else True
 
             # wait for ack
             header, addr = self._recvfrom_socket()

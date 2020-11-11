@@ -216,7 +216,6 @@ def automatic_with_args():
         tcp.receive()
 
 
-
 def test_download_sequencing():
     tcp = TCP(('', 12345), ('127.0.0.1', 54321))
     print(tcp.state)
@@ -224,11 +223,23 @@ def test_download_sequencing():
 
     tcp.upload('text.txt')
 
-    tcp.receive()
+    # tcp.close()
+    # print(tcp.state)
+    # closed
+
+
+def test_upload_sequencing():
+    tcp = TCP(('', 12345), ('127.0.0.1', 54321))
     print(tcp.state)
+    # established
+
+    tcp.download('newfile.txt')
+
+    # tcp.receive()
+    # print(tcp.state)
     # closed
 
 
 if __name__ == '__main__':
     # print(Header(b'Z\xa7\xefq}\xe5\x01\xeb\x00\x00\x00aP\x10\x16\xb0\x00\x00\x00\x00'))
-    automatic_with_args()
+    test_upload_sequencing()
