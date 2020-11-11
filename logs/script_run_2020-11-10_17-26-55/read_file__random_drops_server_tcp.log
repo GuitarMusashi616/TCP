@@ -1,0 +1,53 @@
+0.000 NEW RUN: Server, TEST: Read_file__Random_drops
+0.206 Received: b'\xe4\xac[x\x00\x00\x00\x08\x00\x00\x00\x00P\x02\x05\xa8\x00\x00\x00\x00'
+0.207 Disassembled: source: 58540, dest: 23416, seq: 8, window: 1448, SYN
+0.207 SYN accepted; new connection: 127.0.0.1 on port 58540
+0.207 Assembling: source: 23416, dest: 58540, seq: 1723541437, ack: 9, window: 1448, ACK, SYN
+0.208 Sent: b"[x\xe4\xacf\xbb'\xbd\x00\x00\x00\tP\x12\x05\xa8\x00\x00\x00\x00"
+0.209 Received: b"\xe4\xac[x\x00\x00\x00\tf\xbb'\xbeP\x10\x05\xa8\x00\x00\x00\x00"
+0.210 Disassembled: source: 58540, dest: 23416, seq: 9, ack: 1723541438, window: 1448, ACK
+0.210 Handshake complete
+0.210 Acknowledged seq: 1723541437
+0.210 Assembling: source: 23416, dest: 58540, seq: 1723541438, ack: 10, window: 1448, data: "Lorem ipsum dolo"...
+0.210 Sent: b"[x\xe4\xacf\xbb'\xbe\x00\x00\x00\nP\x00\x05\xa8\x00\x00\x00\x00Lorem ipsum dolo"...
+0.212 Received: b'\xe4\xac[x\x00\x00\x00\tf\xbb-fP\x10\x05\xa8\x00\x00\x00\x00'
+0.212 Disassembled: source: 58540, dest: 23416, seq: 9, ack: 1723542886, window: 1448, ACK
+0.213 Acknowledged seq: 1723541438
+0.213 Assembling: source: 23416, dest: 58540, seq: 1723542886, ack: 10, window: 1448, data: "mprehensam nam, "...
+0.213 Sent: b'[x\xe4\xacf\xbb-f\x00\x00\x00\nP\x00\x05\xa8\x00\x00\x00\x00mprehensam nam, '...
+0.215 Received: b'\xe4\xac[x\x00\x00\x00\tf\xbb3\x0eP\x10\x05\xa8\x00\x00\x00\x00'
+0.215 Disassembled: source: 58540, dest: 23416, seq: 9, ack: 1723544334, window: 1448, ACK
+0.215 Acknowledged seq: 1723542886
+0.215 Assembling: source: 23416, dest: 58540, seq: 1723544334, ack: 10, window: 1448, data: "ilisi repudiare "...
+0.216 Sent: b'[x\xe4\xacf\xbb3\x0e\x00\x00\x00\nP\x00\x05\xa8\x00\x00\x00\x00ilisi repudiare '...
+0.218 Received: b'\xe4\xac[x\x00\x00\x00\tf\xbb8\xb6P\x10\x05\xa8\x00\x00\x00\x00'
+0.218 Disassembled: source: 58540, dest: 23416, seq: 9, ack: 1723545782, window: 1448, ACK
+0.218 Acknowledged seq: 1723544334
+0.218 Assembling: source: 23416, dest: 58540, seq: 1723545782, ack: 10, window: 1448, data: "ta.
+
+Et essent s"...
+0.219 Sent: b'[x\xe4\xacf\xbb8\xb6\x00\x00\x00\nP\x00\x05\xa8\x00\x00\x00\x00ta.\n\nEt essent s'...
+0.220 Received: b'\xe4\xac[x\x00\x00\x00\tf\xbb>^P\x10\x05\xa8\x00\x00\x00\x00'
+0.221 Disassembled: source: 58540, dest: 23416, seq: 9, ack: 1723547230, window: 1448, ACK
+0.221 Acknowledged seq: 1723545782
+0.221 Assembling: source: 23416, dest: 58540, seq: 1723547230, ack: 10, window: 1448, data: " Nihil tractatos"...
+0.221 Failed to send packet
+0.722 Sent: b'[x\xe4\xacf\xbb>^\x00\x00\x00\nP\x00\x05\xa8\x00\x00\x00\x00 Nihil tractatos'...
+0.724 Failed to receive packet
+1.222 Sent: b'[x\xe4\xacf\xbb>^\x00\x00\x00\nP\x00\x05\xa8\x00\x00\x00\x00 Nihil tractatos'...
+1.225 Failed to receive packet
+1.722 Sent: b'[x\xe4\xacf\xbb>^\x00\x00\x00\nP\x00\x05\xa8\x00\x00\x00\x00 Nihil tractatos'...
+1.725 Received: b'\xe4\xac[x\x00\x00\x00\tf\xbbOVP\x10\x05\xa8\x00\x00\x00\x00'
+1.726 Disassembled: source: 58540, dest: 23416, seq: 9, ack: 1723551574, window: 1448, ACK
+1.726 Error: Acknowledgement number too high
+2.223 Sent: b'[x\xe4\xacf\xbb>^\x00\x00\x00\nP\x00\x05\xa8\x00\x00\x00\x00 Nihil tractatos'...
+2.226 Received: b'\xe4\xac[x\x00\x00\x00\tf\xbbT\xfeP\x10\x05\xa8\x00\x00\x00\x00'
+2.226 Disassembled: source: 58540, dest: 23416, seq: 9, ack: 1723553022, window: 1448, ACK
+2.226 Error: Acknowledgement number too high
+2.723 Sent: b'[x\xe4\xacf\xbb>^\x00\x00\x00\nP\x00\x05\xa8\x00\x00\x00\x00 Nihil tractatos'...
+2.726 Received: b'\xe4\xac[x\x00\x00\x00\tf\xbbZ\xa6P\x10\x05\xa8\x00\x00\x00\x00'
+2.727 Disassembled: source: 58540, dest: 23416, seq: 9, ack: 1723554470, window: 1448, ACK
+2.727 Error: Acknowledgement number too high
+3.224 Error: Connection timed out
+3.224 Closed connection
+3.227 Shutting down

@@ -1,0 +1,35 @@
+0.000 NEW RUN: Server, TEST: Write_file__Large_multi-packet
+0.215 Received: b'\xb0PS~\x00\x00\x00_\x00\x00\x00\x00P\x02\x05\xa8\x00\x00\x00\x00'
+0.215 Disassembled: source: 45136, dest: 21374, seq: 95, window: 1448, SYN
+0.216 SYN accepted; new connection: 127.0.0.1 on port 45136
+0.216 Assembling: source: 21374, dest: 45136, seq: 792996915, ack: 96, window: 5808, ACK, SYN
+0.216 Sent: b'S~\xb0P/D,3\x00\x00\x00`P\x12\x16\xb0\x00\x00\x00\x00'
+0.218 Received: b'\xb0PS~\x00\x00\x00`/D,4P\x10\x16\xb0\x00\x00\x00\x00'
+0.218 Disassembled: source: 45136, dest: 21374, seq: 96, ack: 792996916, window: 5808, ACK
+0.219 Assembling: source: 21374, dest: 45136, seq: 792996916, ack: 96, window: 5808, ACK
+0.219 Sent: b'S~\xb0P/D,4\x00\x00\x00`P\x10\x16\xb0\x00\x00\x00\x00'
+0.219 Received: b'\xb0PS~\x00\x00\x00`/D,4P\x10\x16\xb0\x00\x00\x00\x00Lorem ipsum dolo'...
+0.220 Disassembled: source: 45136, dest: 21374, seq: 96, ack: 792996916, window: 5808, ACK, data: "Lorem ipsum dolo"...
+0.220 Handshake complete
+0.220 Data accepted; writing to file
+0.220 Assembling: source: 21374, dest: 45136, seq: 792996916, ack: 1548, window: 5808, ACK
+0.220 Sent: b'S~\xb0P/D,4\x00\x00\x06\x0cP\x10\x16\xb0\x00\x00\x00\x00'
+0.221 Received: b'\xb0PS~\x00\x00\x00`/D,4P\x10\x16\xb0\x00\x00\x00\x00Lorem ipsum dolo'...
+0.222 Disassembled: source: 45136, dest: 21374, seq: 96, ack: 792996916, window: 5808, ACK, data: "Lorem ipsum dolo"...
+0.222 Old data; ignoring
+0.224 Received: b'\xb0PS~\x00\x00\x00`/D,4P\x10\x16\xb0\x00\x00\x00\x00Lorem ipsum dolo'...
+0.224 Disassembled: source: 45136, dest: 21374, seq: 96, ack: 792996916, window: 5808, ACK, data: "Lorem ipsum dolo"...
+0.224 Old data; ignoring
+0.721 Sent: b'S~\xb0P/D,4\x00\x00\x06\x0cP\x10\x16\xb0\x00\x00\x00\x00'
+0.725 Received: b'\xb0PS~\x00\x00\x00`/D,4P\x10\x16\xb0\x00\x00\x00\x00Lorem ipsum dolo'...
+0.725 Disassembled: source: 45136, dest: 21374, seq: 96, ack: 792996916, window: 5808, ACK, data: "Lorem ipsum dolo"...
+0.725 Old data; ignoring
+1.221 Sent: b'S~\xb0P/D,4\x00\x00\x06\x0cP\x10\x16\xb0\x00\x00\x00\x00'
+1.225 Received: b'\xb0PS~\x00\x00\x00`/D,4P\x10\x16\xb0\x00\x00\x00\x00Lorem ipsum dolo'...
+1.226 Disassembled: source: 45136, dest: 21374, seq: 96, ack: 792996916, window: 5808, ACK, data: "Lorem ipsum dolo"...
+1.226 Old data; ignoring
+1.722 Sent: b'S~\xb0P/D,4\x00\x00\x06\x0cP\x10\x16\xb0\x00\x00\x00\x00'
+2.222 Sent: b'S~\xb0P/D,4\x00\x00\x06\x0cP\x10\x16\xb0\x00\x00\x00\x00'
+2.723 Error: Connection timed out
+2.723 Closed connection
+2.727 Shutting down

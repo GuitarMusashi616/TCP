@@ -1,0 +1,11 @@
+0.000 NEW RUN: Server, TEST: Write_file__Small_multi-packet
+0.217 Received: b'`\xd1\xdf\x1f\x00\x00\x00-\x00\x00\x00\x00P\x02\x05\xa8\x00\x00\x00\x00'
+0.218 Disassembled: source: 24785, dest: 57119, seq: 45, window: 1448, SYN
+0.218 SYN accepted; new connection: 127.0.0.1 on port 24785
+0.218 Assembling: source: 57119, dest: 24785, seq: 1020257587, ack: 46, window: 5808, ACK, SYN
+0.218 Sent: b'\xdf\x1f`\xd1<\xcf\xe53\x00\x00\x00.P\x12\x16\xb0\x00\x00\x00\x00'
+0.221 Received: b'`\xd1\xdf\x1f\x00\x00\x00.<\xcf\xe54P\x10\x05\xa8\x00\x00\x00\x00'
+0.221 Disassembled: source: 24785, dest: 57119, seq: 46, ack: 1020257588, window: 1448, ACK
+0.221 Error: Window changed
+0.221 Closed connection
+0.222 Shutting down

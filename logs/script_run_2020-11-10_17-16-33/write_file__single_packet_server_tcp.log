@@ -1,0 +1,11 @@
+0.000 NEW RUN: Server, TEST: Write_file__Single_packet
+0.219 Received: b'\x9b\x94\x8cY\x00\x00\x00M\x00\x00\x00\x00P\x02\x05\xa8\x00\x00\x00\x00'
+0.219 Disassembled: source: 39828, dest: 35929, seq: 77, window: 1448, SYN
+0.219 SYN accepted; new connection: 127.0.0.1 on port 39828
+0.219 Assembling: source: 35929, dest: 39828, seq: 1010696807, ack: 78, window: 5808, ACK, SYN
+0.220 Sent: b'\x8cY\x9b\x94<>\x02g\x00\x00\x00NP\x12\x16\xb0\x00\x00\x00\x00'
+0.222 Received: b'\x9b\x94\x8cY\x00\x00\x00N<>\x02hP\x10\x05\xa8\x00\x00\x00\x00'
+0.222 Disassembled: source: 39828, dest: 35929, seq: 78, ack: 1010696808, window: 1448, ACK
+0.222 Error: Window changed
+0.222 Closed connection
+0.222 Shutting down

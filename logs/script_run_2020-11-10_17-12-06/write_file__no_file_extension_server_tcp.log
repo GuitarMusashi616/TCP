@@ -1,0 +1,35 @@
+0.000 NEW RUN: Server, TEST: Write_file__No_file_extension
+0.226 Received: b'\xf5\x8e\x9c\xfb\x00\x00\x00S\x00\x00\x00\x00P\x02\x05\xa8\x00\x00\x00\x00'
+0.227 Disassembled: source: 62862, dest: 40187, seq: 83, window: 1448, SYN
+0.227 SYN accepted; new connection: 127.0.0.1 on port 62862
+0.227 Assembling: source: 40187, dest: 62862, seq: 794590762, ack: 84, window: 5808, ACK, SYN
+0.227 Sent: b'\x9c\xfb\xf5\x8e/\\~*\x00\x00\x00TP\x12\x16\xb0\x00\x00\x00\x00'
+0.231 Received: b'\xf5\x8e\x9c\xfb\x00\x00\x00T/\\~+P\x10\x16\xb0\x00\x00\x00\x00'
+0.231 Disassembled: source: 62862, dest: 40187, seq: 84, ack: 794590763, window: 5808, ACK
+0.231 Assembling: source: 40187, dest: 62862, seq: 794590763, ack: 84, window: 5808, ACK
+0.232 Sent: b'\x9c\xfb\xf5\x8e/\\~+\x00\x00\x00TP\x10\x16\xb0\x00\x00\x00\x00'
+0.233 Received: b'\xf5\x8e\x9c\xfb\x00\x00\x00T/\\~+P\x10\x16\xb0\x00\x00\x00\x00Lorem ipsum dolo'...
+0.234 Disassembled: source: 62862, dest: 40187, seq: 84, ack: 794590763, window: 5808, ACK, data: "Lorem ipsum dolo"...
+0.234 Handshake complete
+0.234 Data accepted; writing to file
+0.234 Assembling: source: 40187, dest: 62862, seq: 794590763, ack: 1536, window: 5808, ACK
+0.234 Sent: b'\x9c\xfb\xf5\x8e/\\~+\x00\x00\x06\x00P\x10\x16\xb0\x00\x00\x00\x00'
+0.237 Received: b'\xf5\x8e\x9c\xfb\x00\x00\x00T/\\~+P\x10\x16\xb0\x00\x00\x00\x00Lorem ipsum dolo'...
+0.237 Disassembled: source: 62862, dest: 40187, seq: 84, ack: 794590763, window: 5808, ACK, data: "Lorem ipsum dolo"...
+0.237 Old data; ignoring
+0.240 Received: b'\xf5\x8e\x9c\xfb\x00\x00\x00T/\\~+P\x10\x16\xb0\x00\x00\x00\x00Lorem ipsum dolo'...
+0.240 Disassembled: source: 62862, dest: 40187, seq: 84, ack: 794590763, window: 5808, ACK, data: "Lorem ipsum dolo"...
+0.240 Old data; ignoring
+0.735 Sent: b'\x9c\xfb\xf5\x8e/\\~+\x00\x00\x06\x00P\x10\x16\xb0\x00\x00\x00\x00'
+0.739 Received: b'\xf5\x8e\x9c\xfb\x00\x00\x00T/\\~+P\x10\x16\xb0\x00\x00\x00\x00Lorem ipsum dolo'...
+0.739 Disassembled: source: 62862, dest: 40187, seq: 84, ack: 794590763, window: 5808, ACK, data: "Lorem ipsum dolo"...
+0.739 Old data; ignoring
+1.235 Sent: b'\x9c\xfb\xf5\x8e/\\~+\x00\x00\x06\x00P\x10\x16\xb0\x00\x00\x00\x00'
+1.239 Received: b'\xf5\x8e\x9c\xfb\x00\x00\x00T/\\~+P\x10\x16\xb0\x00\x00\x00\x00Lorem ipsum dolo'...
+1.240 Disassembled: source: 62862, dest: 40187, seq: 84, ack: 794590763, window: 5808, ACK, data: "Lorem ipsum dolo"...
+1.240 Old data; ignoring
+1.736 Sent: b'\x9c\xfb\xf5\x8e/\\~+\x00\x00\x06\x00P\x10\x16\xb0\x00\x00\x00\x00'
+2.236 Sent: b'\x9c\xfb\xf5\x8e/\\~+\x00\x00\x06\x00P\x10\x16\xb0\x00\x00\x00\x00'
+2.736 Error: Connection timed out
+2.737 Closed connection
+2.741 Shutting down

@@ -1,0 +1,23 @@
+0.000 NEW RUN: Server, TEST: Write_file__Relaxed
+0.212 Received: b'\xce\x05uv\x00\x00\x00S\x00\x00\x00\x00P\x02\x05\xa8\x00\x00\x00\x00'
+0.213 Disassembled: source: 52741, dest: 30070, seq: 83, window: 1448, SYN
+0.213 SYN accepted; new connection: 127.0.0.1 on port 52741
+0.213 Assembling: source: 30070, dest: 52741, seq: 1161822280, ack: 84, window: 5808, ACK, SYN
+0.213 Sent: b'uv\xce\x05E@\x00H\x00\x00\x00TP\x12\x16\xb0\x00\x00\x00\x00'
+0.215 Received: b'\xce\x05uv\x00\x00\x00TE@\x00IP\x10\x05\xa8\x00\x00\x00\x00'
+0.215 Disassembled: source: 52741, dest: 30070, seq: 84, ack: 1161822281, window: 1448, ACK
+0.215 Warning: Window changed
+0.215 Assembling: source: 30070, dest: 52741, seq: 1161822281, ack: 84, window: 5808, ACK
+0.215 Sent: b'uv\xce\x05E@\x00I\x00\x00\x00TP\x10\x16\xb0\x00\x00\x00\x00'
+0.216 Received: b'\xce\x05uv\x00\x00\x00TE@\x00IP\x10\x05\xa8\x00\x00\x00\x00'
+0.216 Disassembled: source: 52741, dest: 30070, seq: 84, ack: 1161822281, window: 1448, ACK
+0.216 Warning: Window changed
+0.216 Assembling: source: 30070, dest: 52741, seq: 1161822281, ack: 84, window: 5808, ACK
+0.216 Sent: b'uv\xce\x05E@\x00I\x00\x00\x00TP\x10\x16\xb0\x00\x00\x00\x00'
+0.717 Sent: b'uv\xce\x05E@\x00I\x00\x00\x00TP\x10\x16\xb0\x00\x00\x00\x00'
+1.217 Sent: b'uv\xce\x05E@\x00I\x00\x00\x00TP\x10\x16\xb0\x00\x00\x00\x00'
+1.718 Sent: b'uv\xce\x05E@\x00I\x00\x00\x00TP\x10\x16\xb0\x00\x00\x00\x00'
+2.218 Sent: b'uv\xce\x05E@\x00I\x00\x00\x00TP\x10\x16\xb0\x00\x00\x00\x00'
+2.718 Error: Connection timed out
+2.719 Closed connection
+2.719 Shutting down

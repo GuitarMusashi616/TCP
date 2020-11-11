@@ -1,0 +1,11 @@
+0.000 NEW RUN: Server, TEST: Write_file__No_file_extension
+0.217 Received: b'\xeb6\xad\xcb\x00\x00\x00\x12\x00\x00\x00\x00P\x02\x05\xa8\x00\x00\x00\x00'
+0.217 Disassembled: source: 60214, dest: 44491, seq: 18, window: 1448, SYN
+0.218 SYN accepted; new connection: 127.0.0.1 on port 60214
+0.218 Assembling: source: 44491, dest: 60214, seq: 1226123554, ack: 19, window: 5808, ACK, SYN
+0.218 Sent: b'\xad\xcb\xeb6I\x15)"\x00\x00\x00\x13P\x12\x16\xb0\x00\x00\x00\x00'
+0.219 Received: b'\xeb6\xad\xcb\x00\x00\x00\x13I\x15)#P\x10\x05\xa8\x00\x00\x00\x00'
+0.220 Disassembled: source: 60214, dest: 44491, seq: 19, ack: 1226123555, window: 1448, ACK
+0.220 Error: Window changed
+0.220 Closed connection
+0.220 Shutting down

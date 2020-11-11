@@ -1,0 +1,21 @@
+0.000 NEW RUN: Server, TEST: Read_file__Relaxed
+0.209 Received: b'\x95\x16\x81L\x00\x00\x00E\x00\x00\x00\x00P\x02\x05\xa8\x00\x00\x00\x00'
+0.210 Disassembled: source: 38166, dest: 33100, seq: 69, window: 1448, SYN
+0.210 SYN accepted; new connection: 127.0.0.1 on port 38166
+0.210 Assembling: source: 33100, dest: 38166, seq: 738870058, ack: 70, window: 1448, ACK, SYN
+0.211 Sent: b'\x81L\x95\x16,\nC*\x00\x00\x00FP\x12\x05\xa8\x00\x00\x00\x00'
+0.212 Received: b'\x95\x16\x81L\x00\x00\x00F,\nC+P\x10\x05\xa8\x00\x00\x00\x00'
+0.213 Disassembled: source: 38166, dest: 33100, seq: 70, ack: 738870059, window: 1448, ACK
+0.213 Handshake complete
+0.213 Acknowledged seq: 738870058
+0.213 Finished reading file
+0.213 Assembling: source: 33100, dest: 38166, seq: 738870059, ack: 71, window: 1448, ACK, FIN
+0.213 Sent: b'\x81L\x95\x16,\nC+\x00\x00\x00GP\x11\x05\xa8\x00\x00\x00\x00'
+0.714 Sent: b'\x81L\x95\x16,\nC+\x00\x00\x00GP\x11\x05\xa8\x00\x00\x00\x00'
+1.214 Sent: b'\x81L\x95\x16,\nC+\x00\x00\x00GP\x11\x05\xa8\x00\x00\x00\x00'
+1.714 Sent: b'\x81L\x95\x16,\nC+\x00\x00\x00GP\x11\x05\xa8\x00\x00\x00\x00'
+2.215 Sent: b'\x81L\x95\x16,\nC+\x00\x00\x00GP\x11\x05\xa8\x00\x00\x00\x00'
+2.715 Sent: b'\x81L\x95\x16,\nC+\x00\x00\x00GP\x11\x05\xa8\x00\x00\x00\x00'
+3.216 Error: Connection timed out
+3.216 Closed connection
+3.217 Shutting down

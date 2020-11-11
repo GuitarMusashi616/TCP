@@ -1,0 +1,26 @@
+0.000 NEW RUN: Server, TEST: Write_file__No_file_extension
+0.200 Received: b'\x17\xd7\xb2\x8e\x00\x00\x00\x17\x00\x00\x00\x00P\x02\x05\xa8\x00\x00\x00\x00'
+0.200 Disassembled: source: 6103, dest: 45710, seq: 23, window: 1448, SYN
+0.200 SYN accepted; new connection: 127.0.0.1 on port 6103
+0.201 Assembling: source: 45710, dest: 6103, seq: 1711986030, ack: 24, window: 5808, ACK, SYN
+0.201 Sent: b'\xb2\x8e\x17\xd7f\n\xd5n\x00\x00\x00\x18P\x12\x16\xb0\x00\x00\x00\x00'
+0.203 Received: b'\x17\xd7\xb2\x8e\x00\x00\x00\x18f\n\xd5oP\x10\x16\xb0\x00\x00\x00\x00'
+0.203 Disassembled: source: 6103, dest: 45710, seq: 24, ack: 1711986031, window: 5808, ACK
+0.203 Assembling: source: 45710, dest: 6103, seq: 1711986031, ack: 24, window: 5808, ACK
+0.204 Sent: b'\xb2\x8e\x17\xd7f\n\xd5o\x00\x00\x00\x18P\x10\x16\xb0\x00\x00\x00\x00'
+0.204 Received: b'\x17\xd7\xb2\x8e\x00\x00\x00\x18f\n\xd5oP\x10\x16\xb0\x00\x00\x00\x00Lorem ipsum dolo'...
+0.204 Disassembled: source: 6103, dest: 45710, seq: 24, ack: 1711986031, window: 5808, ACK, data: "Lorem ipsum dolo"...
+0.205 Handshake complete
+0.205 Data accepted; writing to file
+0.205 Assembling: source: 45710, dest: 6103, seq: 1711986031, ack: 1472, window: 5808, ACK
+0.205 Sent: b'\xb2\x8e\x17\xd7f\n\xd5o\x00\x00\x05\xc0P\x10\x16\xb0\x00\x00\x00\x00'
+0.206 Received: b'\x17\xd7\xb2\x8e\x00\x00\x00\x18f\n\xd5oP\x10\x16\xb0\x00\x00\x00\x00Lorem ipsum dolo'...
+0.206 Disassembled: source: 6103, dest: 45710, seq: 24, ack: 1711986031, window: 5808, ACK, data: "Lorem ipsum dolo"...
+0.206 Old data; ignoring
+0.706 Sent: b'\xb2\x8e\x17\xd7f\n\xd5o\x00\x00\x05\xc0P\x10\x16\xb0\x00\x00\x00\x00'
+1.206 Sent: b'\xb2\x8e\x17\xd7f\n\xd5o\x00\x00\x05\xc0P\x10\x16\xb0\x00\x00\x00\x00'
+1.706 Sent: b'\xb2\x8e\x17\xd7f\n\xd5o\x00\x00\x05\xc0P\x10\x16\xb0\x00\x00\x00\x00'
+2.207 Sent: b'\xb2\x8e\x17\xd7f\n\xd5o\x00\x00\x05\xc0P\x10\x16\xb0\x00\x00\x00\x00'
+2.707 Error: Connection timed out
+2.707 Closed connection
+2.709 Shutting down

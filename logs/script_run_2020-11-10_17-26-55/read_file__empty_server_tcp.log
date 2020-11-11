@@ -1,0 +1,21 @@
+0.000 NEW RUN: Server, TEST: Read_file__Empty
+0.206 Received: b'\xd4\xe4\xa2e\x00\x00\x007\x00\x00\x00\x00P\x02\x05\xa8\x00\x00\x00\x00'
+0.207 Disassembled: source: 54500, dest: 41573, seq: 55, window: 1448, SYN
+0.207 SYN accepted; new connection: 127.0.0.1 on port 54500
+0.207 Assembling: source: 41573, dest: 54500, seq: 1651300863, ack: 56, window: 1448, ACK, SYN
+0.207 Sent: b'\xa2e\xd4\xe4bl\xd9\xff\x00\x00\x008P\x12\x05\xa8\x00\x00\x00\x00'
+0.208 Received: b'\xd4\xe4\xa2e\x00\x00\x008bl\xda\x00P\x10\x05\xa8\x00\x00\x00\x00'
+0.209 Disassembled: source: 54500, dest: 41573, seq: 56, ack: 1651300864, window: 1448, ACK
+0.209 Handshake complete
+0.209 Acknowledged seq: 1651300863
+0.209 Finished reading file
+0.209 Assembling: source: 41573, dest: 54500, seq: 1651300864, ack: 57, window: 1448, ACK, FIN
+0.209 Sent: b'\xa2e\xd4\xe4bl\xda\x00\x00\x00\x009P\x11\x05\xa8\x00\x00\x00\x00'
+0.710 Sent: b'\xa2e\xd4\xe4bl\xda\x00\x00\x00\x009P\x11\x05\xa8\x00\x00\x00\x00'
+1.210 Sent: b'\xa2e\xd4\xe4bl\xda\x00\x00\x00\x009P\x11\x05\xa8\x00\x00\x00\x00'
+1.711 Sent: b'\xa2e\xd4\xe4bl\xda\x00\x00\x00\x009P\x11\x05\xa8\x00\x00\x00\x00'
+2.211 Sent: b'\xa2e\xd4\xe4bl\xda\x00\x00\x00\x009P\x11\x05\xa8\x00\x00\x00\x00'
+2.711 Sent: b'\xa2e\xd4\xe4bl\xda\x00\x00\x00\x009P\x11\x05\xa8\x00\x00\x00\x00'
+3.212 Error: Connection timed out
+3.212 Closed connection
+3.213 Shutting down
