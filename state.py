@@ -53,7 +53,7 @@ class State:
         check_address(self.tcb.source_address)
         self.tcp.socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
         self.tcp.socket.bind(self.tcb.source_address)
-        self.tcp.socket.settimeout(3)
+        self.tcp.socket.settimeout(TIMEOUT_SECS)
 
     def _close_socket(self):
         self.tcp.socket.close()
