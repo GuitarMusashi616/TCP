@@ -6,7 +6,7 @@ import sys
 import time
 
 MSL = 1
-VERBOSE = False
+VERBOSE = True
 ATTEMPTS_UNTIL_EXIT = 3
 
 
