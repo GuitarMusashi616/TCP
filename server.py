@@ -87,7 +87,6 @@ def test_repeat_protocol():
 
     header, addr = tcp.state._recvfrom_socket()
     tcp.tcb.sync_rcv(header)
-    print(f'1st data: {header.data[:20]}')
 
     h = Header()
     h.ACK = True
@@ -99,7 +98,6 @@ def test_repeat_protocol():
 
     header2, addr2 = tcp.state._recvfrom_socket()
     tcp.tcb.sync_rcv(header2)
-    print(f'2nd data: {header2.data[:20]}')
 
     i = Header()
     i.ACK = True
