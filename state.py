@@ -104,7 +104,6 @@ class State:
 
         h = Header.from_tcb(self.tcb)
         h.data = data
-        h.ACK = True
         if VERBOSE:
             print_compact(h)
         self.tcp.socket.sendto(bytes(h), self.tcb.dest_address)
