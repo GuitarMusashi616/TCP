@@ -175,5 +175,3 @@ class TCB:
         else:
             self._SND_UNA = value
 
-
-
