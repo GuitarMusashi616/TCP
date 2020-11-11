@@ -1,0 +1,26 @@
+0.000 NEW RUN: Server, TEST: Read_file__Common_drops
+0.222 Received: b'\xc2\xb0\xabV\x00\x00\x00E\x00\x00\x00\x00P\x02\x05\xa8\x00\x00\x00\x00'
+0.223 Disassembled: source: 49840, dest: 43862, seq: 69, window: 1448, SYN
+0.223 SYN accepted; new connection: 127.0.0.1 on port 49840
+0.223 Assembling: source: 43862, dest: 49840, seq: 2005180257, ack: 70, window: 1448, ACK, SYN
+0.224 Sent: b'\xabV\xc2\xb0w\x84\x9fa\x00\x00\x00FP\x12\x05\xa8\x00\x00\x00\x00'
+0.225 Received: b'\xc2\xb0\xabV\x00\x00\x00Fw\x84\x9fbP\x10\x05\xa8\x00\x00\x00\x00'
+0.226 Disassembled: source: 49840, dest: 43862, seq: 70, ack: 2005180258, window: 1448, ACK
+0.226 Handshake complete
+0.226 Acknowledged seq: 2005180257
+0.226 Assembling: source: 43862, dest: 49840, seq: 2005180258, ack: 71, window: 1448, data: "Lorem ipsum dolo"...
+0.226 Sent: b'\xabV\xc2\xb0w\x84\x9fb\x00\x00\x00GP\x00\x05\xa8\x00\x00\x00\x00Lorem ipsum dolo'...
+0.228 Received: b'\xc2\xb0\xabV\x00\x00\x00Fw\x84\xa5\nP\x10\x05\xa8\x00\x00\x00\x00'
+0.228 Disassembled: source: 49840, dest: 43862, seq: 70, ack: 2005181706, window: 1448, ACK
+0.228 Acknowledged seq: 2005180258
+0.229 Assembling: source: 43862, dest: 49840, seq: 2005181706, ack: 71, window: 1448, data: "mprehensam nam, "...
+0.229 Failed to send packet
+0.729 Failed to send packet
+1.230 Failed to send packet
+1.730 Sent: b'\xabV\xc2\xb0w\x84\xa5\n\x00\x00\x00GP\x00\x05\xa8\x00\x00\x00\x00mprehensam nam, '...
+1.733 Failed to receive packet
+2.230 Failed to send packet
+2.731 Failed to send packet
+3.231 Error: Connection timed out
+3.231 Closed connection
+3.234 Shutting down
