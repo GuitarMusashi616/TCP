@@ -24,7 +24,9 @@ def check_socket(socket):
 
 
 class State:
+    """Abstract class for all TCP states"""
     def __init__(self, tcp):
+        """Each state instance has a reference to both its associated tcp and tcb instance"""
         self.tcp = tcp
         self.tcb = tcp.tcb
 
@@ -103,7 +105,7 @@ class State:
 
         h = Header.from_tcb(self.tcb)
         h.data = data
-        h.ACK = is_ack
+        h.ACK = True if is_ack and not is_repeat_send else False
         if VERBOSE:
             print_compact(h)
         self.tcp.socket.sendto(bytes(h), self.tcb.dest_address)
@@ -137,6 +139,7 @@ class State:
 
     @classmethod
     def methods(cls) -> Iterable[str]:
+        """Returns the name of the state and its implemented methods"""
         return [x for x, y in cls.__dict__.items() if type(y) == FunctionType]
 
     def __str__(self):
@@ -308,11 +311,11 @@ class Established(State):
         while is_uploading:
             # read file
             self._send_data(data, is_repeat_send, ack_every_other)
-            ack_every_other = False if ack_every_other else True
             # wait for ack
             header, addr = self._recvfrom_socket()
             if header.ACK and self.tcb.is_next_seq(header) and self.tcb.is_next_ack(header):
                 self.tcb.sync_rcv(header)
+                ack_every_other = False if ack_every_other else True
                 # break if last of file
                 if len(data) < 1448:
                     break
