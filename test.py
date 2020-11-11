@@ -203,8 +203,7 @@ def automatic_states():
 
 def automatic_with_args():
     args = setup_args()
-    # if args.filename != "/home/A365/tcp/dist/read_files/single.txt":
-    #     return
+
     tcp = TCP(('', args.port), (args.ip, args.server_port))
     print(tcp.state)
     if args.mode == 'r':
@@ -242,4 +241,4 @@ def test_upload_sequencing():
 
 if __name__ == '__main__':
     # print(Header(b'Z\xa7\xefq}\xe5\x01\xeb\x00\x00\x00aP\x10\x16\xb0\x00\x00\x00\x00'))
-    automatic_with_args()
+    test_download_sequencing()

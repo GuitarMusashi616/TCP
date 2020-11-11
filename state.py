@@ -5,8 +5,8 @@ import socket
 import sys
 import time
 
-MSL = 1
-VERBOSE = False
+MSL = 0
+VERBOSE = True
 ATTEMPTS_UNTIL_EXIT = 3
 
 
@@ -274,15 +274,15 @@ class Established(State):
 
     def upload(self, filename):
         f = open(filename, 'rb')
-        is_uploading = True
+
         is_repeat_send = False
-        data = f.read(1448)
         ack_every_other = True
+        is_uploading = True
+
+        data = f.read(1448)
         while is_uploading:
             # read file
             self._send_data(data, is_repeat_send, ack_every_other)
-            ack_every_other = False if ack_every_other else True
-
             # wait for ack
             header, addr = self._recvfrom_socket()
             if header.ACK and self.tcb.is_next_seq(header) and self.tcb.is_next_ack(header):
@@ -291,6 +291,7 @@ class Established(State):
                 if len(data) < 1448:
                     break
                 data = f.read(1448)
+                ack_every_other = False if ack_every_other else True
                 is_repeat_send = False
                 # print(header)
             elif header.ACK:
