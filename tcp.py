@@ -1,6 +1,12 @@
-import socket
+# Austin Williams
+# Shawn Butler
+# Computer Networks
+# 11 November 2020
+
+# tcp.py - file used to define TCP class, has a state, socket, and tcb.
+
+
 from state import *
-from socket import timeout
 import random
 
 
@@ -41,23 +47,11 @@ class TCP:
     def close(self):
         self.state.close()
 
-    def abort(self):
-        pass
-
-    def status(self):
-        pass
-
-    def establish_connection(self):
-        pass
-
     def download(self, filename):
         self.state.download(filename)
 
     def upload(self, filename):
         self.state.upload(filename)
-
-    def close_connection(self):
-        pass
 
 
 class TCB:
@@ -69,20 +63,20 @@ class TCB:
         self.SND_NXT = None
         self.SND_WND = None
         self.SND_UP = None
-        self.SND_WL1 = None
-        self.SND_WL2 = None
-        self.ISS = None
+        # self.SND_WL1 = None
+        # self.SND_WL2 = None
+        # self.ISS = None
 
         self.RCV_NXT = None
         self.RCV_WND = None
         self.RCV_UP = None
-        self.IRS = None
+        # self.IRS = None
 
         self.init_sequence_nums()
 
     def init_sequence_nums(self, window=1448):
         start_num = random.randint(0, 100)  # 2**32-1
-        self.ISS = start_num
+        # self.ISS = start_num
         self.SND_UNA = start_num
         self.SND_WND = window
         self.SND_NXT = start_num

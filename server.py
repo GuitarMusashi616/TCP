@@ -1,6 +1,17 @@
-from main import *
-from header import *
+# Austin Williams
+# Shawn Butler
+# Computer Networks
+# 11 November 2020
+
+# server.py - File used to run a local test server. Meant to be run at the same time as test.py
+
 from tcp import *
+
+
+def setup_socket(port):
+    s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+    s.bind(('', port))
+    return s
 
 
 def simple():
@@ -10,7 +21,7 @@ def simple():
         print(msg, addr)
         print(len(msg))
         print(Header(msg))
-        s.send(addr, 'received'.encode())
+        s.sendto('received'.encode(), addr)
 
 
 def respond():
@@ -76,7 +87,7 @@ def test_download():
     print(tcp.state)
     # established
     tcp.download('newfile.txt')
-    tcp.receive()
+    tcp.close()
     print(tcp.state)
     # closed
 
@@ -107,30 +118,6 @@ def test_repeat_protocol():
     tcp.socket.sendto(bytes(i), addr2)
     tcp.tcb.sync_una(i)
 
-
-# def test_upload_repeat():
-#     tcp = TCP(('', 54321))
-#     print(tcp.state)
-#     f = open('text.txt', 'rb')
-#
-#     h = Header()
-#     h.data = f.read(50)
-#     h.ACK = True
-#     h.ack_num = tcp.tcb.RCV_NXT
-#     h.seq_num = tcp.tcb.SND_NXT
-#
-#     tcp.socket.sendto(bytes(h), ('127.0.0.1', 12345))
-#
-#     header, addr = tcp.state._recvfrom_socket()
-#     tcp.tcb.sync_rcv(header)
-#
-#     tcp.socket.sendto(bytes(h), ('127.0.0.1', 12345))
-#
-#     header, addr = tcp.state._recvfrom_socket()
-#     tcp.tcb.sync_rcv(header)
-#
-#     tcp.socket.sendto(bytes(h), ('127.0.0.1', 12345))
-#     f.close()
 
 def test_upload_repeat():
     tcp = TCP(('', 12345), ('127.0.0.1', 54321))
@@ -165,7 +152,6 @@ def test_upload_repeat():
     f.close()
 
 
-
 if __name__ == "__main__":
-    test_upload_repeat()
+    test_download()
 

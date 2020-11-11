@@ -1,15 +1,18 @@
-from main import *
-from header import *
-from state import *
-from multithreaded import *
+# Austin Williams
+# Shawn Butler
+# Computer Networks
+# 11 November 2020
+
+# test.py - File used exclusively for unit testing
+
 from tcp import *
 from args import *
-from threading import Thread, Event
+from threading import Thread
 from time import sleep
 import math
 import sys
 from socket import timeout
-from server import test_download
+from server import setup_socket
 
 # ssh 137.229.181.232 -l amwilliams24
 # 31181318
@@ -18,7 +21,7 @@ from server import test_download
 
 
 def test_setup():
-    s = setup_socket()
+    s = setup_socket(12345)
 
 
 def test_headers():
@@ -33,12 +36,8 @@ def test_random():
     print(header.destination_port)
 
 
-def simple_handshake():
-    pass
-
-
 def test_closed_state():
-    tcp = TCP()
+    tcp = TCP(('', 12345))
     state = Closed(tcp)
     state2 = State(tcp)
     print(state.methods())
@@ -55,10 +54,8 @@ def simple_setup():
 
 
 def test_tcp_methods():
-    tcp = TCP()
-    tcp.open(12345)
     s = setup_socket(54321)
-    t1 = Thread(target=tcp.listen, args=())
+    t1 = Thread(target=TCP.__init__, args=(('', 12345)))
     t2 = Thread(target=s.send, args=(b'hello', ('localhost', 12345)))
 
     t1.start()
@@ -66,14 +63,13 @@ def test_tcp_methods():
 
 
 def test_tcp_address():
-    tcp = TCP()
-    tcp.open(12345)
+    tcp = TCP(('', 12345))
     print(tcp.address)
 
 
 def test_listening_state():
-    tcp = TCP()
-    tcp.state = Listen(tcp.state)
+    tcp = TCP(('', 12345))
+    assert isinstance(tcp, Listen)
 
 
 def print_args():
@@ -92,15 +88,14 @@ def test_args():
 
 def test_tcp_download():
     args = setup_args()
-    h = Header.ne(args.port, args.server_port, 0, 0)
+    h = Header.new(args.port, args.server_port, 0, 0)
     h.SYN = True
 
-    tcp = TCP()
-    tcp.open(args.port)
+    tcp = TCP(('', args.port))
     tcp.send(bytes(h), (args.ip, args.server_port))
 
-    header_bytes, addr = tcp.listen()
-    print(header_bytes)
+    header, addr = tcp.receive()
+    print(header)
     print(addr)
 
 
@@ -116,33 +111,33 @@ def test_multithread_download():
     s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
     s.bind(('', args.port))
     inbox = []
-    send(s, args, bytes(h), inbox)
+    s.sendto(bytes(h), args.dest_address)
     for s in inbox:
         print(s)
         print()
 
 
-# def test_download():
-#     args = setup_args()
-#     h = Header()
-#     h.SYN = True
-#     h.source_port = args.port
-#     h.dest_port = args.server_port
-#     h.seq_num = 0
-#     h.ack_num = 0
-#
-#     s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-#     s.bind(('', args.port))
-#     sleep(1)
-#     s.sendto(bytes(h), (args.ip, args.server_port))
-#     try:
-#         s.settimeout(3)
-#         header, addr = s.recvfrom(1500)
-#         print(addr)
-#         print(header)
-#         print(Header(header))
-#     except (timeout, ValueError, TypeError) as e:
-#         print(e)
+def test_download():
+    args = setup_args()
+    h = Header()
+    h.SYN = True
+    h.source_port = args.port
+    h.dest_port = args.server_port
+    h.seq_num = 0
+    h.ack_num = 0
+
+    s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+    s.bind(('', args.port))
+    sleep(1)
+    s.sendto(bytes(h), (args.ip, args.server_port))
+    try:
+        s.settimeout(3)
+        header, addr = s.recvfrom(1500)
+        print(addr)
+        print(header)
+        print(Header(header))
+    except (timeout, ValueError, TypeError) as e:
+        print(e)
 
 
 def test_states():
@@ -164,9 +159,9 @@ def test_states():
 def test_respond_server():
     tcp = TCP(('', 12345), ('127.0.0.1', 54321))
     tcp.open()
-    syn = Header.new(tcp.source_address[1], tcp.dest_address[1], 0, 0)
+    syn = Header.new(tcp.tcb.source_address[1], tcp.tcb.dest_address[1], 0, 0)
     syn.SYN = True
-    tcp.socket.sendto(bytes(syn), tcp.dest_address)
+    tcp.socket.sendto(bytes(syn), tcp.tcb.dest_address)
 
 
 def test_states_receiving():
@@ -222,10 +217,6 @@ def test_download_sequencing():
 
     tcp.upload('text.txt')
 
-    # tcp.close()
-    # print(tcp.state)
-    # closed
-
 
 def test_upload_sequencing():
     tcp = TCP(('', 12345), ('127.0.0.1', 54321))
@@ -233,10 +224,6 @@ def test_upload_sequencing():
     # established
 
     tcp.download('newfile.txt')
-
-    # tcp.receive()
-    # print(tcp.state)
-    # closed
 
 
 if __name__ == '__main__':

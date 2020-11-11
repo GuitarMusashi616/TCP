@@ -1,15 +1,26 @@
-import argparse
-import socket
+# Austin Williams
+# Shawn Butler
+# Computer Networks
+# 11 November 2020
+
 from args import setup_args
+from tcp import TCP
+from state import Closed
 
 
-def setup_socket(port):
-    s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-    s.bind(('', port))
-    return s
+def main():
+    args = setup_args()
+
+    tcp = TCP(('', args.port), (args.ip, args.server_port))
+    print(tcp.state)
+    if args.mode == 'r':
+        tcp.download(args.filename)
+    else:
+        tcp.upload(args.filename)
+
+    while not isinstance(tcp.state, Closed):
+        tcp.receive()
 
 
 if __name__ == '__main__':
-    # setup the args and the socket
-    args = setup_args()
-    s = setup_socket(12345)
+    main()

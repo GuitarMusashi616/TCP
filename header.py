@@ -1,5 +1,9 @@
-import numpy as np
-import math
+# Austin Williams
+# Shawn Butler
+# Computer Networks
+# 11 November 2020
+
+
 from bitstring import BitArray, BitStream, pack
 
 

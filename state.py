@@ -1,14 +1,16 @@
+# Austin Williams
+# Shawn Butler
+# Computer Networks
+# 11 November 2020
+
+
 from typing import Iterable
 from types import FunctionType
 from header import *
+from config import *
 import socket
 import sys
 import time
-
-MSL = 0
-VERBOSE = False
-PRINT_ERRORS = False
-ATTEMPTS_UNTIL_EXIT = 3
 
 
 def check_address(address):
@@ -37,12 +39,6 @@ class State:
         raise NotImplementedError
 
     def close(self):
-        raise NotImplementedError
-
-    def abort(self):
-        raise NotImplementedError
-
-    def status(self):
         raise NotImplementedError
 
     def download(self, filename):
@@ -160,19 +156,19 @@ class Closed(State):
             self.tcp.state = SynSent(self.tcp)
 
     def send(self):
-        print("Current state does not support this method")
+        print("Current state " + str(type(self)) + " does not support this method")
 
     def receive(self):
-        print("Current state does not support this method")
+        print("Current state " + str(type(self)) + " does not support this method")
 
     def close(self):
-        print("Current state does not support this method")
+        print("Current state " + str(type(self)) + " does not support this method")
 
-    def abort(self):
-        print("Current state does not support this method")
+    def download(self, filename):
+        print("Current state " + str(type(self)) + " does not support this method")
 
-    def status(self):
-        print("Current state does not support this method")
+    def upload(self, filename):
+        print("Current state " + str(type(self)) + " does not support this method")
 
 
 class Listen(State):
@@ -193,6 +189,15 @@ class Listen(State):
     def close(self):
         self._close_socket()
         self.tcp.state = Closed(self.tcp)
+
+    def open(self):
+        print("Current state " + str(type(self)) + " does not support this method")
+
+    def download(self, filename):
+        print("Current state " + str(type(self)) + " does not support this method")
+
+    def upload(self, filename):
+        print("Current state " + str(type(self)) + " does not support this method")
 
 
 class SynSent(State):
@@ -216,6 +221,18 @@ class SynSent(State):
                 self._send_syn_ack()
                 self.tcp.state = SynReceived(self.tcp)
 
+    def open(self):
+        print("Current state " + str(type(self)) + " does not support this method")
+
+    def send(self):
+        print("Current state " + str(type(self)) + " does not support this method")
+
+    def download(self, filename):
+        print("Current state " + str(type(self)) + " does not support this method")
+
+    def upload(self, filename):
+        print("Current state " + str(type(self)) + " does not support this method")
+
 
 class SynReceived(State):
     def startup(self):
@@ -230,6 +247,18 @@ class SynReceived(State):
     def close(self):
         self._send_fin()
         self.tcp.state = FinWait1(self.tcp)
+
+    def open(self):
+        print("Current state " + str(type(self)) + " does not support this method")
+
+    def send(self):
+        print("Current state " + str(type(self)) + " does not support this method")
+
+    def download(self, filename):
+        print("Current state " + str(type(self)) + " does not support this method")
+
+    def upload(self, filename):
+        print("Current state " + str(type(self)) + " does not support this method")
 
 
 class Established(State):
@@ -292,6 +321,12 @@ class Established(State):
                 is_repeat_send = True
         f.close()
 
+    def open(self):
+        print("Current state " + str(type(self)) + " does not support this method")
+
+    def send(self):
+        print("Current state " + str(type(self)) + " does not support this method")
+
 
 class FinWait1(State):
     def startup(self):
@@ -309,6 +344,21 @@ class FinWait1(State):
                 self._send_ack()
                 self.tcp.state = Closing(self.tcp)
 
+    def open(self):
+        print("Current state " + str(type(self)) + " does not support this method")
+
+    def close(self):
+        print("Current state " + str(type(self)) + " does not support this method")
+
+    def send(self):
+        print("Current state " + str(type(self)) + " does not support this method")
+
+    def download(self, filename):
+        print("Current state " + str(type(self)) + " does not support this method")
+
+    def upload(self, filename):
+        print("Current state " + str(type(self)) + " does not support this method")
+
 
 class FinWait2(State):
     def startup(self):
@@ -321,6 +371,21 @@ class FinWait2(State):
             self._send_ack()
             self.tcp.state = TimeWait(self.tcp)
 
+    def open(self):
+        print("Current state " + str(type(self)) + " does not support this method")
+
+    def close(self):
+        print("Current state " + str(type(self)) + " does not support this method")
+
+    def send(self):
+        print("Current state " + str(type(self)) + " does not support this method")
+
+    def download(self, filename):
+        print("Current state " + str(type(self)) + " does not support this method")
+
+    def upload(self, filename):
+        print("Current state " + str(type(self)) + " does not support this method")
+
 
 class CloseWait(State):
     def startup(self):
@@ -329,6 +394,21 @@ class CloseWait(State):
     def close(self):
         self._send_fin()
         self.tcp.state = LastAck(self.tcp)
+
+    def open(self):
+        print("Current state " + str(type(self)) + " does not support this method")
+
+    def receive(self):
+        print("Current state " + str(type(self)) + " does not support this method")
+
+    def send(self):
+        print("Current state " + str(type(self)) + " does not support this method")
+
+    def download(self, filename):
+        print("Current state " + str(type(self)) + " does not support this method")
+
+    def upload(self, filename):
+        print("Current state " + str(type(self)) + " does not support this method")
 
 
 class LastAck(State):
@@ -341,6 +421,21 @@ class LastAck(State):
             self.tcb.sync_rcv(header)
             self.tcp.state = Closed(self.tcp)
 
+    def open(self):
+        print("Current state " + str(type(self)) + " does not support this method")
+
+    def close(self):
+        print("Current state " + str(type(self)) + " does not support this method")
+
+    def send(self):
+        print("Current state " + str(type(self)) + " does not support this method")
+
+    def download(self, filename):
+        print("Current state " + str(type(self)) + " does not support this method")
+
+    def upload(self, filename):
+        print("Current state " + str(type(self)) + " does not support this method")
+
 
 class Closing(State):
     def startup(self):
@@ -352,8 +447,41 @@ class Closing(State):
             self.tcb.sync_rcv(header)
             self.tcp.state = TimeWait(self.tcp)
 
+    def open(self):
+        print("Current state " + str(type(self)) + " does not support this method")
+
+    def close(self):
+        print("Current state " + str(type(self)) + " does not support this method")
+
+    def send(self):
+        print("Current state " + str(type(self)) + " does not support this method")
+
+    def download(self, filename):
+        print("Current state " + str(type(self)) + " does not support this method")
+
+    def upload(self, filename):
+        print("Current state " + str(type(self)) + " does not support this method")
+
 
 class TimeWait(State):
     def startup(self):
         time.sleep(2*MSL)  # 2 minute MSL in specification
         self.tcp.state = Closed(self.tcp)
+
+    def open(self):
+        print("Current state " + str(type(self)) + " does not support this method")
+
+    def close(self):
+        print("Current state " + str(type(self)) + " does not support this method")
+
+    def send(self):
+        print("Current state " + str(type(self)) + " does not support this method")
+
+    def receive(self):
+        print("Current state " + str(type(self)) + " does not support this method")
+
+    def download(self, filename):
+        print("Current state " + str(type(self)) + " does not support this method")
+
+    def upload(self, filename):
+        print("Current state " + str(type(self)) + " does not support this method")
