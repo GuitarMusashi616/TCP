@@ -1,0 +1,30 @@
+0.000 NEW RUN: Server, TEST: Read_file__Common_drops
+0.208 Received: b'`6\x98\xf2\x00\x00\x00%\x00\x00\x00\x00P\x02\x05\xa8\x00\x00\x00\x00'
+0.208 Disassembled: source: 24630, dest: 39154, seq: 37, window: 1448, SYN
+0.209 SYN accepted; new connection: 127.0.0.1 on port 24630
+0.209 Assembling: source: 39154, dest: 24630, seq: 2099959468, ack: 38, window: 1448, ACK, SYN
+0.209 Failed to send packet
+0.710 Sent: b'\x98\xf2`6}*\xd6\xac\x00\x00\x00&P\x12\x05\xa8\x00\x00\x00\x00'
+0.712 Received: b'`6\x98\xf2\x00\x00\x00&}*\xd6\xadP\x10\x05\xa8\x00\x00\x00\x00'
+0.713 Disassembled: source: 24630, dest: 39154, seq: 38, ack: 2099959469, window: 1448, ACK
+0.713 Handshake complete
+0.713 Acknowledged seq: 2099959468
+0.713 Assembling: source: 39154, dest: 24630, seq: 2099959469, ack: 39, window: 1448, data: "Lorem ipsum dolo"...
+0.714 Failed to send packet
+1.214 Failed to send packet
+1.715 Sent: b"\x98\xf2`6}*\xd6\xad\x00\x00\x00'P\x00\x05\xa8\x00\x00\x00\x00Lorem ipsum dolo"...
+1.718 Received: b'`6\x98\xf2\x00\x00\x00&}*\xdcUP\x10\x05\xa8\x00\x00\x00\x00'
+1.718 Disassembled: source: 24630, dest: 39154, seq: 38, ack: 2099960917, window: 1448, ACK
+1.718 Acknowledged seq: 2099959469
+1.719 Assembling: source: 39154, dest: 24630, seq: 2099960917, ack: 39, window: 1448, data: "mprehensam nam, "...
+1.719 Failed to send packet
+2.219 Failed to send packet
+2.720 Failed to send packet
+3.220 Failed to send packet
+3.721 Sent: b"\x98\xf2`6}*\xdcU\x00\x00\x00'P\x00\x05\xa8\x00\x00\x00\x00mprehensam nam, "...
+3.724 Failed to receive packet
+4.221 Sent: b"\x98\xf2`6}*\xdcU\x00\x00\x00'P\x00\x05\xa8\x00\x00\x00\x00mprehensam nam, "...
+4.224 Failed to receive packet
+4.722 Error: Connection timed out
+4.722 Closed connection
+4.724 Shutting down

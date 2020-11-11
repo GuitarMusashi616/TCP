@@ -1,0 +1,26 @@
+0.000 NEW RUN: Server, TEST: Write_file__Common_drops
+0.217 Received: b'\xa5\xb9\xc9=\x00\x00\x00@\x00\x00\x00\x00P\x02\x05\xa8\x00\x00\x00\x00'
+0.218 Disassembled: source: 42425, dest: 51517, seq: 64, window: 1448, SYN
+0.218 SYN accepted; new connection: 127.0.0.1 on port 42425
+0.218 Assembling: source: 51517, dest: 42425, seq: 2113535467, ack: 65, window: 5808, ACK, SYN
+0.218 Failed to send packet
+0.718 Sent: b'\xc9=\xa5\xb9}\xf9\xfd\xeb\x00\x00\x00AP\x12\x16\xb0\x00\x00\x00\x00'
+0.721 Failed to receive packet
+0.722 Received: b'\xa5\xb9\xc9=\x00\x00\x00A}\xf9\xfd\xecP\x10\x16\xb0\x00\x00\x00\x00Lorem ipsum dolo'...
+0.723 Disassembled: source: 42425, dest: 51517, seq: 65, ack: 2113535468, window: 5808, ACK, data: "Lorem ipsum dolo"...
+0.723 Handshake complete
+0.723 Data accepted; writing to file
+0.723 Assembling: source: 51517, dest: 42425, seq: 2113535468, ack: 1513, window: 5808, ACK
+0.724 Sent: b'\xc9=\xa5\xb9}\xf9\xfd\xec\x00\x00\x05\xe9P\x10\x16\xb0\x00\x00\x00\x00'
+0.726 Failed to receive packet
+1.224 Sent: b'\xc9=\xa5\xb9}\xf9\xfd\xec\x00\x00\x05\xe9P\x10\x16\xb0\x00\x00\x00\x00'
+1.226 Received: b'\xa5\xb9\xc9=\x00\x00\x05\xe9}\xf9\xfd\xecP\x10\x16\xb0\x00\x00\x00\x00mprehensam nam, '...
+1.227 Disassembled: source: 42425, dest: 51517, seq: 1513, ack: 2113535468, window: 5808, ACK, data: "mprehensam nam, "...
+1.227 Error: Incorrect acknowledgement flag
+1.724 Failed to send packet
+2.225 Sent: b'\xc9=\xa5\xb9}\xf9\xfd\xec\x00\x00\x05\xe9P\x10\x16\xb0\x00\x00\x00\x00'
+2.228 Failed to receive packet
+2.725 Failed to send packet
+3.226 Error: Connection timed out
+3.226 Closed connection
+3.229 Shutting down
