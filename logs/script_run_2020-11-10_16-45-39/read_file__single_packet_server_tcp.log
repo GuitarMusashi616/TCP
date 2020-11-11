@@ -1,0 +1,25 @@
+0.000 NEW RUN: Server, TEST: Read_file__Single_packet
+0.217 Received: b'\xd2/r\xfa\x00\x00\x00*\x00\x00\x00\x00P\x02\x05\xa8\x00\x00\x00\x00'
+0.217 Disassembled: source: 53807, dest: 29434, seq: 42, window: 1448, SYN
+0.217 SYN accepted; new connection: 127.0.0.1 on port 53807
+0.218 Assembling: source: 29434, dest: 53807, seq: 2754414758, ack: 43, window: 1448, ACK, SYN
+0.218 Sent: b'r\xfa\xd2/\xa4-\x08\xa6\x00\x00\x00+P\x12\x05\xa8\x00\x00\x00\x00'
+0.220 Received: b'\xd2/r\xfa\x00\x00\x00+\xa4-\x08\xa7P\x10\x05\xa8\x00\x00\x00\x00'
+0.220 Disassembled: source: 53807, dest: 29434, seq: 43, ack: 2754414759, window: 1448, ACK
+0.220 Handshake complete
+0.220 Acknowledged seq: 2754414758
+0.220 Finished reading file
+0.220 Assembling: source: 29434, dest: 53807, seq: 2754414759, ack: 44, window: 1448, data: "This file fits i"...
+0.220 Sent: b'r\xfa\xd2/\xa4-\x08\xa7\x00\x00\x00,P\x00\x05\xa8\x00\x00\x00\x00This file fits i'...
+0.222 Received: b'\xd2/r\xfa\x00\x00\x00+\xa4-\x08\xd2P\x10\x05\xa8\x00\x00\x00\x00'
+0.222 Disassembled: source: 53807, dest: 29434, seq: 43, ack: 2754414802, window: 1448, ACK
+0.222 Acknowledged seq: 2754414759
+0.222 Assembling: source: 29434, dest: 53807, seq: 2754414802, ack: 44, window: 1448, ACK, FIN
+0.223 Sent: b'r\xfa\xd2/\xa4-\x08\xd2\x00\x00\x00,P\x11\x05\xa8\x00\x00\x00\x00'
+0.224 Received: b'\xd2/r\xfa\x00\x00\x00+\xa4-\x08\xd3P\x10\x05\xa8\x00\x00\x00\x00'
+0.224 Disassembled: source: 53807, dest: 29434, seq: 43, ack: 2754414803, window: 1448, ACK
+0.224 FIN accepted; sending final packet
+0.225 Assembling: source: 29434, dest: 53807, seq: 2754414803, ack: 44, window: 1448, ACK
+0.225 Sent: b'r\xfa\xd2/\xa4-\x08\xd3\x00\x00\x00,P\x10\x05\xa8\x00\x00\x00\x00'
+0.225 Closed connection
+0.225 Shutting down

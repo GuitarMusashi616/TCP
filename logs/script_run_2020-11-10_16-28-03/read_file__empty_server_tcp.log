@@ -1,0 +1,21 @@
+0.000 NEW RUN: Server, TEST: Read_file__Empty
+0.214 Received: b'Y\xb9\xb7\xe8\x00\x00\x00)\x00\x00\x00\x00P\x02\x05\xa8\x00\x00\x00\x00'
+0.214 Disassembled: source: 22969, dest: 47080, seq: 41, window: 1448, SYN
+0.215 SYN accepted; new connection: 127.0.0.1 on port 22969
+0.215 Assembling: source: 47080, dest: 22969, seq: 1696800857, ack: 42, window: 1448, ACK, SYN
+0.215 Sent: b'\xb7\xe8Y\xb9e# Y\x00\x00\x00*P\x12\x05\xa8\x00\x00\x00\x00'
+0.218 Received: b'Y\xb9\xb7\xe8\x00\x00\x00*e# ZP\x10\x05\xa8\x00\x00\x00\x00'
+0.218 Disassembled: source: 22969, dest: 47080, seq: 42, ack: 1696800858, window: 1448, ACK
+0.218 Handshake complete
+0.218 Acknowledged seq: 1696800857
+0.218 Finished reading file
+0.218 Assembling: source: 47080, dest: 22969, seq: 1696800858, ack: 43, window: 1448, ACK, FIN
+0.219 Sent: b'\xb7\xe8Y\xb9e# Z\x00\x00\x00+P\x11\x05\xa8\x00\x00\x00\x00'
+0.719 Sent: b'\xb7\xe8Y\xb9e# Z\x00\x00\x00+P\x11\x05\xa8\x00\x00\x00\x00'
+1.219 Sent: b'\xb7\xe8Y\xb9e# Z\x00\x00\x00+P\x11\x05\xa8\x00\x00\x00\x00'
+1.720 Sent: b'\xb7\xe8Y\xb9e# Z\x00\x00\x00+P\x11\x05\xa8\x00\x00\x00\x00'
+2.220 Sent: b'\xb7\xe8Y\xb9e# Z\x00\x00\x00+P\x11\x05\xa8\x00\x00\x00\x00'
+2.721 Sent: b'\xb7\xe8Y\xb9e# Z\x00\x00\x00+P\x11\x05\xa8\x00\x00\x00\x00'
+3.221 Error: Connection timed out
+3.222 Closed connection
+3.223 Shutting down

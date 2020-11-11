@@ -1,0 +1,29 @@
+0.000 NEW RUN: Server, TEST: Write_file__Small_multi-packet
+0.206 Received: b'N%\xf2U\x00\x00\x003\x00\x00\x00\x00P\x02\x05\xa8\x00\x00\x00\x00'
+0.206 Disassembled: source: 20005, dest: 62037, seq: 51, window: 1448, SYN
+0.206 SYN accepted; new connection: 127.0.0.1 on port 20005
+0.206 Assembling: source: 62037, dest: 20005, seq: 1701857427, ack: 52, window: 5808, ACK, SYN
+0.207 Sent: b'\xf2UN%epH\x93\x00\x00\x004P\x12\x16\xb0\x00\x00\x00\x00'
+0.209 Received: b'N%\xf2U\x00\x00\x004epH\x94P\x10\x16\xb0\x00\x00\x00\x00'
+0.209 Disassembled: source: 20005, dest: 62037, seq: 52, ack: 1701857428, window: 5808, ACK
+0.209 Assembling: source: 62037, dest: 20005, seq: 1701857428, ack: 52, window: 5808, ACK
+0.209 Sent: b'\xf2UN%epH\x94\x00\x00\x004P\x10\x16\xb0\x00\x00\x00\x00'
+0.210 Received: b'N%\xf2U\x00\x00\x004epH\x94P\x10\x16\xb0\x00\x00\x00\x00Lorem ipsum dolo'...
+0.210 Disassembled: source: 20005, dest: 62037, seq: 52, ack: 1701857428, window: 5808, ACK, data: "Lorem ipsum dolo"...
+0.211 Handshake complete
+0.211 Data accepted; writing to file
+0.211 Assembling: source: 62037, dest: 20005, seq: 1701857428, ack: 1504, window: 5808, ACK
+0.211 Sent: b'\xf2UN%epH\x94\x00\x00\x05\xe0P\x10\x16\xb0\x00\x00\x00\x00'
+0.212 Received: b'N%\xf2U\x00\x00\x004epH\x94P\x10\x16\xb0\x00\x00\x00\x00Lorem ipsum dolo'...
+0.212 Disassembled: source: 20005, dest: 62037, seq: 52, ack: 1701857428, window: 5808, ACK, data: "Lorem ipsum dolo"...
+0.212 Old data; ignoring
+0.214 Received: b'N%\xf2U\x00\x00\x004epH\x94P\x10\x16\xb0\x00\x00\x00\x00Lorem ipsum dolo'...
+0.215 Disassembled: source: 20005, dest: 62037, seq: 52, ack: 1701857428, window: 5808, ACK, data: "Lorem ipsum dolo"...
+0.215 Old data; ignoring
+0.711 Sent: b'\xf2UN%epH\x94\x00\x00\x05\xe0P\x10\x16\xb0\x00\x00\x00\x00'
+1.212 Sent: b'\xf2UN%epH\x94\x00\x00\x05\xe0P\x10\x16\xb0\x00\x00\x00\x00'
+1.712 Sent: b'\xf2UN%epH\x94\x00\x00\x05\xe0P\x10\x16\xb0\x00\x00\x00\x00'
+2.213 Sent: b'\xf2UN%epH\x94\x00\x00\x05\xe0P\x10\x16\xb0\x00\x00\x00\x00'
+2.713 Error: Connection timed out
+2.713 Closed connection
+2.717 Shutting down
