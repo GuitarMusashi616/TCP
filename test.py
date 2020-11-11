@@ -222,11 +222,11 @@ def test_download_sequencing():
 
     tcp.upload('text.txt')
 
-    # tcp.close()
-    # print(tcp.state)
+    tcp.receive()
+    print(tcp.state)
     # closed
 
 
 if __name__ == '__main__':
     # print(Header(b'Z\xa7\xefq}\xe5\x01\xeb\x00\x00\x00aP\x10\x16\xb0\x00\x00\x00\x00'))
-    automatic_with_args()
+    test_download_sequencing()

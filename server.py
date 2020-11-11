@@ -76,7 +76,7 @@ def test_download():
     print(tcp.state)
     # established
     tcp.download('newfile.txt')
-    tcp.receive()
+    tcp.close()
     print(tcp.state)
     # closed
 
@@ -109,11 +109,7 @@ def test_repeat_protocol():
     tcp.socket.sendto(bytes(i), addr2)
     tcp.tcb.sync_una(i)
 
-    header3, addr3 = tcp.state._recvfrom_socket()
-    tcp.tcb.sync_rcv(header3)
-    print(f'3rd data: {header3.data[:20]}')
-
 
 if __name__ == "__main__":
-    test_repeat_protocol()
+    test_download()
 

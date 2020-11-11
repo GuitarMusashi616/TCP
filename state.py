@@ -205,9 +205,10 @@ class SynSent(State):
         header, addr = self._recvfrom_socket()
         if self.tcb.is_next_seq(header):
             if header.SYN and header.ACK:
-                self.tcb.initialize(header, addr)
-                self._send_ack()
-                self.tcp.state = Established(self.tcp)
+                if self.tcb.is_next_ack(header):
+                    self.tcb.initialize(header, addr)
+                    self._send_ack()
+                    self.tcp.state = Established(self.tcp)
             elif header.SYN:
                 self.tcb.initialize(header, addr)
                 self._send_syn_ack()
@@ -220,7 +221,7 @@ class SynReceived(State):
 
     def receive(self):
         header, addr = self._recvfrom_socket()
-        if header.ACK and self.tcb.is_next_seq(header):
+        if header.ACK and self.tcb.is_next_seq(header) and self.tcb.is_next_ack(header):
             self.tcb.sync_rcv(header)
             self.tcp.state = Established(self.tcp)
 
@@ -297,7 +298,7 @@ class FinWait1(State):
     def receive(self):
         header, addr = self._recvfrom_socket()
         if self.tcb.is_next_seq(header):
-            if header.ACK:
+            if header.ACK and self.tcb.is_next_ack(header):
                 self.tcb.sync_rcv(header)
                 self.tcp.state = FinWait2(self.tcp)
 
@@ -334,7 +335,7 @@ class LastAck(State):
 
     def receive(self):
         header, addr = self._recvfrom_socket()
-        if header.ACK and self.tcb.is_next_seq(header):
+        if header.ACK and self.tcb.is_next_seq(header) and self.tcb.is_next_ack(header):
             self.tcb.sync_rcv(header)
             self.tcp.state = Closed(self.tcp)
 
@@ -345,7 +346,7 @@ class Closing(State):
 
     def receive(self):
         header, addr = self._recvfrom_socket()
-        if header.ACK and self.tcb.is_next_seq(header):
+        if header.ACK and self.tcb.is_next_seq(header) and self.tcb.is_next_ack(header):
             self.tcb.sync_rcv(header)
             self.tcp.state = TimeWait(self.tcp)
 
