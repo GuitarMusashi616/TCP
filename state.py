@@ -6,8 +6,9 @@ import sys
 import time
 
 MSL = 1
-VERBOSE = True
+VERBOSE = False
 ATTEMPTS_UNTIL_EXIT = 3
+
 
 def check_address(address):
     assert isinstance(address, tuple) and len(address) == 2, "address must consist of (ip, port)"

@@ -214,7 +214,7 @@ def automatic_with_args():
 
     while not isinstance(tcp.state, Closed):
         tcp.receive()
-        print(tcp.state)
+
 
 
 def test_download_sequencing():
