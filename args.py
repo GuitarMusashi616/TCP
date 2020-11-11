@@ -31,6 +31,7 @@ def setup_args():
                         action='store',
                         dest='filename',
                         help='specify name of file to download / upload',
+                        type=check_file,
                         required=True)
 
     parser.add_argument('-cp',
@@ -82,6 +83,14 @@ def check_ip(string: str) -> str:
         sys.exit('IP must contain integers separated by "." when not localhost')
     except AssertionError as e:
         sys.exit(e)
+    return string
+
+
+def check_file(string: str) -> str:
+    """Used in setup_args to exit if filename is a directory"""
+    assert isinstance(string, str), "Filename must be a string of characters"
+    if string[-1] == '/':
+        sys.exit('Filename must specify a file, not a directory')
     return string
 
 

@@ -6,6 +6,6 @@
 # config.py - Configurations used to run the program
 
 MSL = 0
-VERBOSE = True
+VERBOSE = False
 PRINT_ERRORS = True
 ATTEMPTS_UNTIL_EXIT = 3
