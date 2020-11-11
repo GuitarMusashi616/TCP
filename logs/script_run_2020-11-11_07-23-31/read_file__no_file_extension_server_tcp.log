@@ -1,0 +1,35 @@
+0.000 NEW RUN: Server, TEST: Read_file__No_file_extension
+0.076 Received: b'Hd+s\x00\x00\x00\x1f\x00\x00\x00\x00P\x02\x05\xa8\x00\x00\x00\x00'
+0.077 Disassembled: source: 18532, dest: 11123, seq: 31, window: 1448, SYN
+0.077 SYN accepted; new connection: 127.0.0.1 on port 18532
+0.078 Assembling: source: 11123, dest: 18532, seq: 1445140326, ack: 32, window: 1448, ACK, SYN
+0.078 Sent: b'+sHdV#\x17f\x00\x00\x00 P\x12\x05\xa8\x00\x00\x00\x00'
+0.080 Received: b'Hd+s\x00\x00\x00 V#\x17gP\x10\x05\xa8\x00\x00\x00\x00'
+0.080 Disassembled: source: 18532, dest: 11123, seq: 32, ack: 1445140327, window: 1448, ACK
+0.081 Handshake complete
+0.081 Acknowledged seq: 1445140326
+0.081 Assembling: source: 11123, dest: 18532, seq: 1445140327, ack: 33, window: 1448, data: "Lorem ipsum dolo"...
+0.081 Sent: b'+sHdV#\x17g\x00\x00\x00!P\x00\x05\xa8\x00\x00\x00\x00Lorem ipsum dolo'...
+0.083 Received: b'Hd+s\x00\x00\x00 V#\x1d\x0fP\x10\x05\xa8\x00\x00\x00\x00'
+0.084 Disassembled: source: 18532, dest: 11123, seq: 32, ack: 1445141775, window: 1448, ACK
+0.084 Acknowledged seq: 1445140327
+0.084 Assembling: source: 11123, dest: 18532, seq: 1445141775, ack: 33, window: 1448, data: "mprehensam nam, "...
+0.084 Sent: b'+sHdV#\x1d\x0f\x00\x00\x00!P\x00\x05\xa8\x00\x00\x00\x00mprehensam nam, '...
+0.086 Received: b'Hd+s\x00\x00\x00 V#"\xb7P\x10\x05\xa8\x00\x00\x00\x00'
+0.087 Disassembled: source: 18532, dest: 11123, seq: 32, ack: 1445143223, window: 1448, ACK
+0.087 Acknowledged seq: 1445141775
+0.087 Finished reading file
+0.087 Assembling: source: 11123, dest: 18532, seq: 1445143223, ack: 33, window: 1448, data: "ilisi repudiare "...
+0.088 Sent: b'+sHdV#"\xb7\x00\x00\x00!P\x00\x05\xa8\x00\x00\x00\x00ilisi repudiare '...
+0.089 Received: b'Hd+s\x00\x00\x00 V#$\x12P\x10\x05\xa8\x00\x00\x00\x00'
+0.090 Disassembled: source: 18532, dest: 11123, seq: 32, ack: 1445143570, window: 1448, ACK
+0.090 Acknowledged seq: 1445143223
+0.090 Assembling: source: 11123, dest: 18532, seq: 1445143570, ack: 33, window: 1448, ACK, FIN
+0.091 Sent: b'+sHdV#$\x12\x00\x00\x00!P\x11\x05\xa8\x00\x00\x00\x00'
+0.092 Received: b'Hd+s\x00\x00\x00 V#$\x13P\x10\x05\xa8\x00\x00\x00\x00'
+0.093 Disassembled: source: 18532, dest: 11123, seq: 32, ack: 1445143571, window: 1448, ACK
+0.093 FIN accepted; sending final packet
+0.093 Assembling: source: 11123, dest: 18532, seq: 1445143571, ack: 33, window: 1448, ACK
+0.093 Sent: b'+sHdV#$\x13\x00\x00\x00!P\x10\x05\xa8\x00\x00\x00\x00'
+0.094 Closed connection
+0.094 Shutting down

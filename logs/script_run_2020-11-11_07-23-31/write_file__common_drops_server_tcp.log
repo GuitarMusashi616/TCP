@@ -1,0 +1,23 @@
+0.000 NEW RUN: Server, TEST: Write_file__Common_drops
+0.072 Received: b'Ws\xda\xc6\x00\x00\x00T\x00\x00\x00\x00P\x02\x05\xa8\x00\x00\x00\x00'
+0.073 Disassembled: source: 22387, dest: 56006, seq: 84, window: 1448, SYN
+0.074 SYN accepted; new connection: 127.0.0.1 on port 22387
+0.074 Assembling: source: 56006, dest: 22387, seq: 1551378858, ack: 85, window: 5808, ACK, SYN
+0.075 Sent: b'\xda\xc6Ws\\x)\xaa\x00\x00\x00UP\x12\x16\xb0\x00\x00\x00\x00'
+0.076 Received: b'Ws\xda\xc6\x00\x00\x00U\\x)\xabP\x10\x16\xb0\x00\x00\x00\x00'
+0.077 Disassembled: source: 22387, dest: 56006, seq: 85, ack: 1551378859, window: 5808, ACK
+0.077 Assembling: source: 56006, dest: 22387, seq: 1551378859, ack: 85, window: 5808, ACK
+0.077 Failed to receive packet
+0.078 Sent: b'\xda\xc6Ws\\x)\xab\x00\x00\x00UP\x10\x16\xb0\x00\x00\x00\x00'
+0.079 Received: b'Ws\xda\xc6\x00\x00\x00U\\x)\xabP\x00\x16\xb0\x00\x00\x00\x00Lorem ipsum dolo'...
+0.080 Disassembled: source: 22387, dest: 56006, seq: 85, ack: 1551378859, window: 5808, data: "Lorem ipsum dolo"...
+0.080 Error: Incorrect acknowledgement flag
+0.578 Failed to send packet
+1.078 Sent: b'\xda\xc6Ws\\x)\xab\x00\x00\x00UP\x10\x16\xb0\x00\x00\x00\x00'
+1.081 Failed to receive packet
+1.579 Failed to send packet
+2.079 Sent: b'\xda\xc6Ws\\x)\xab\x00\x00\x00UP\x10\x16\xb0\x00\x00\x00\x00'
+2.082 Failed to receive packet
+2.580 Error: Connection timed out
+2.580 Closed connection
+2.582 Shutting down

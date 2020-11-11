@@ -1,0 +1,45 @@
+0.000 NEW RUN: Server, TEST: Read_file__Latency
+0.078 Received: b"3'X0\x00\x00\x00\x10\x00\x00\x00\x00P\x02\x05\xa8\x00\x00\x00\x00"
+0.079 Disassembled: source: 13095, dest: 22576, seq: 16, window: 1448, SYN
+0.079 SYN accepted; new connection: 127.0.0.1 on port 13095
+0.079 Assembling: source: 22576, dest: 13095, seq: 1562792867, ack: 17, window: 1448, ACK, SYN
+0.080 Sent: b"X03']&S\xa3\x00\x00\x00\x11P\x12\x05\xa8\x00\x00\x00\x00"
+0.581 Sent: b"X03']&S\xa3\x00\x00\x00\x11P\x12\x05\xa8\x00\x00\x00\x00"
+1.081 Sent: b"X03']&S\xa3\x00\x00\x00\x11P\x12\x05\xa8\x00\x00\x00\x00"
+1.085 Received: b"3'X0\x00\x00\x00\x11]&S\xa4P\x10\x05\xa8\x00\x00\x00\x00"
+1.085 Disassembled: source: 13095, dest: 22576, seq: 17, ack: 1562792868, window: 1448, ACK
+1.086 Handshake complete
+1.086 Acknowledged seq: 1562792867
+1.086 Assembling: source: 22576, dest: 13095, seq: 1562792868, ack: 18, window: 1448, data: "Lorem ipsum dolo"...
+1.086 Sent: b"X03']&S\xa4\x00\x00\x00\x12P\x00\x05\xa8\x00\x00\x00\x00Lorem ipsum dolo"...
+1.585 Received: b"3'X0\x00\x00\x00\x11]&S\xa4P\x10\x05\xa8\x00\x00\x00\x00"
+1.585 Disassembled: source: 13095, dest: 22576, seq: 17, ack: 1562792868, window: 1448, ACK
+1.586 Assembling: source: 22576, dest: 13095, seq: 1562794316, ack: 18, window: 1448, data: "m"
+1.586 Sent: b"X03']&YL\x00\x00\x00\x12P\x00\x05\xa8\x00\x00\x00\x00m"
+2.085 Received: b"3'X0\x00\x00\x00\x11]&S\xa4P\x10\x05\xa8\x00\x00\x00\x00"
+2.086 Disassembled: source: 13095, dest: 22576, seq: 17, ack: 1562792868, window: 1448, ACK
+2.086 Sent: b"X03']&S\xa4\x00\x00\x00\x12P\x00\x05\xa8\x00\x00\x00\x00Lorem ipsum dolo"...
+2.087 Sent: b"X03']&YL\x00\x00\x00\x12P\x00\x05\xa8\x00\x00\x00\x00m"
+2.091 Received: b"3'X0\x00\x00\x00\x11]&YLP\x10\x05\xa8\x00\x00\x00\x00"
+2.091 Disassembled: source: 13095, dest: 22576, seq: 17, ack: 1562794316, window: 1448, ACK
+2.092 Acknowledged seq: 1562792868
+2.092 Assembling: source: 22576, dest: 13095, seq: 1562794317, ack: 18, window: 1448, data: "prehensam nam, a"...
+2.092 Sent: b"X03']&YM\x00\x00\x00\x12P\x00\x05\xa8\x00\x00\x00\x00prehensam nam, a"...
+2.590 Received: b"3'X0\x00\x00\x00\x11]&YMP\x10\x05\xa8\x00\x00\x00\x00"
+2.591 Disassembled: source: 13095, dest: 22576, seq: 17, ack: 1562794317, window: 1448, ACK
+2.591 Acknowledged seq: 1562794316
+2.591 Assembling: source: 22576, dest: 13095, seq: 1562795764, ack: 18, window: 1448, data: "i"
+2.592 Sent: b"X03']&^\xf4\x00\x00\x00\x12P\x00\x05\xa8\x00\x00\x00\x00i"
+3.092 Sent: b"X03']&YM\x00\x00\x00\x12P\x00\x05\xa8\x00\x00\x00\x00prehensam nam, a"...
+3.093 Sent: b"X03']&^\xf4\x00\x00\x00\x12P\x00\x05\xa8\x00\x00\x00\x00i"
+3.593 Sent: b"X03']&YM\x00\x00\x00\x12P\x00\x05\xa8\x00\x00\x00\x00prehensam nam, a"...
+3.594 Sent: b"X03']&^\xf4\x00\x00\x00\x12P\x00\x05\xa8\x00\x00\x00\x00i"
+4.094 Sent: b"X03']&YM\x00\x00\x00\x12P\x00\x05\xa8\x00\x00\x00\x00prehensam nam, a"...
+4.094 Sent: b"X03']&^\xf4\x00\x00\x00\x12P\x00\x05\xa8\x00\x00\x00\x00i"
+4.594 Sent: b"X03']&YM\x00\x00\x00\x12P\x00\x05\xa8\x00\x00\x00\x00prehensam nam, a"...
+4.595 Sent: b"X03']&^\xf4\x00\x00\x00\x12P\x00\x05\xa8\x00\x00\x00\x00i"
+5.095 Sent: b"X03']&YM\x00\x00\x00\x12P\x00\x05\xa8\x00\x00\x00\x00prehensam nam, a"...
+5.096 Sent: b"X03']&^\xf4\x00\x00\x00\x12P\x00\x05\xa8\x00\x00\x00\x00i"
+5.595 Error: Connection timed out
+5.596 Closed connection
+6.095 Shutting down
