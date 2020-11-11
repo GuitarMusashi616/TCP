@@ -95,7 +95,7 @@ def test_repeat_protocol():
     h.seq_num = tcp.tcb.SND_NXT
 
     tcp.socket.sendto(bytes(h), addr)
-    tcp.tcb.sync_snd(h)
+    tcp.tcb.sync_una(h)
 
     header2, addr2 = tcp.state._recvfrom_socket()
     tcp.tcb.sync_rcv(header2)
@@ -107,7 +107,7 @@ def test_repeat_protocol():
     i.seq_num = tcp.tcb.SND_NXT
 
     tcp.socket.sendto(bytes(i), addr2)
-    tcp.tcb.sync_snd(i)
+    tcp.tcb.sync_una(i)
 
     header3, addr3 = tcp.state._recvfrom_socket()
     tcp.tcb.sync_rcv(header3)

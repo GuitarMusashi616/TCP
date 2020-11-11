@@ -115,6 +115,7 @@ class TCB:
         if not self.RCV_NXT:
             self.RCV_NXT = header.seq_num
         self.RCV_NXT += header.seq_increment
+        self.sync_snd_from_una()
 
     def check_rcv(self, header):
         if header.seq_num == self.RCV_NXT:

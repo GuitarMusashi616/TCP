@@ -69,7 +69,7 @@ class State:
         if VERBOSE:
             print_compact(h)
         self.tcp.socket.sendto(bytes(h), self.tcb.dest_address)
-        self.tcb.sync_snd(h)
+        self.tcb.sync_una(h)
 
     def _send_ack(self):
         check_address(self.tcb.source_address)
@@ -81,7 +81,7 @@ class State:
         if VERBOSE:
             print_compact(h)
         self.tcp.socket.sendto(bytes(h), self.tcb.dest_address)
-        self.tcb.sync_snd(h)
+        self.tcb.sync_una(h)
 
     def _send_syn_ack(self):
         check_address(self.tcb.source_address)
@@ -94,7 +94,7 @@ class State:
         if VERBOSE:
             print_compact(h)
         self.tcp.socket.sendto(bytes(h), self.tcb.dest_address)
-        self.tcb.sync_snd(h)
+        self.tcb.sync_una(h)
 
     def _send_data(self, data, is_repeat_send):
         check_address(self.tcb.source_address)
@@ -120,7 +120,7 @@ class State:
         if VERBOSE:
             print_compact(h)
         self.tcp.socket.sendto(bytes(h), self.tcb.dest_address)
-        self.tcb.sync_snd(h)
+        self.tcb.sync_una(h)
 
     def _recvfrom_socket(self):
         attempts = ATTEMPTS_UNTIL_EXIT
@@ -279,7 +279,6 @@ class Established(State):
             header, addr = self._recvfrom_socket()
             if header.ACK and self.tcb.is_next_seq(header) and self.tcb.is_next_ack(header):
                 self.tcb.sync_rcv(header)
-                self.sync_snd_from_una()
                 # break if last of file
                 if len(data) < self.tcb.SND_WND:
                     break
