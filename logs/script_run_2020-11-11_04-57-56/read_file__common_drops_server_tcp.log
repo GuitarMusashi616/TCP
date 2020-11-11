@@ -1,0 +1,39 @@
+0.000 NEW RUN: Server, TEST: Read_file__Common_drops
+0.215 Received: b'\xbb\xce6\xd2\x00\x00\x00,\x00\x00\x00\x00P\x02\x05\xa8\x00\x00\x00\x00'
+0.215 Disassembled: source: 48078, dest: 14034, seq: 44, window: 1448, SYN
+0.216 SYN accepted; new connection: 127.0.0.1 on port 48078
+0.216 Assembling: source: 14034, dest: 48078, seq: 118199525, ack: 45, window: 1448, ACK, SYN
+0.216 Failed to send packet
+0.717 Sent: b'6\xd2\xbb\xce\x07\x0b\x94\xe5\x00\x00\x00-P\x12\x05\xa8\x00\x00\x00\x00'
+0.720 Received: b'\xbb\xce6\xd2\x00\x00\x00-\x07\x0b\x94\xe6P\x10\x05\xa8\x00\x00\x00\x00'
+0.720 Disassembled: source: 48078, dest: 14034, seq: 45, ack: 118199526, window: 1448, ACK
+0.721 Handshake complete
+0.721 Acknowledged seq: 118199525
+0.721 Assembling: source: 14034, dest: 48078, seq: 118199526, ack: 46, window: 1448, data: "Lorem ipsum dolo"...
+0.721 Sent: b'6\xd2\xbb\xce\x07\x0b\x94\xe6\x00\x00\x00.P\x00\x05\xa8\x00\x00\x00\x00Lorem ipsum dolo'...
+0.724 Received: b'\xbb\xce6\xd2\x00\x00\x00-\x07\x0b\x9a\x8eP\x10\x05\xa8\x00\x00\x00\x00'
+0.725 Disassembled: source: 48078, dest: 14034, seq: 45, ack: 118200974, window: 1448, ACK
+0.725 Acknowledged seq: 118199526
+0.725 Assembling: source: 14034, dest: 48078, seq: 118200974, ack: 46, window: 1448, data: "mprehensam nam, "...
+0.726 Sent: b'6\xd2\xbb\xce\x07\x0b\x9a\x8e\x00\x00\x00.P\x00\x05\xa8\x00\x00\x00\x00mprehensam nam, '...
+0.729 Received: b'\xbb\xce6\xd2\x00\x00\x00-\x07\x0b\xa06P\x10\x05\xa8\x00\x00\x00\x00'
+0.729 Disassembled: source: 48078, dest: 14034, seq: 45, ack: 118202422, window: 1448, ACK
+0.730 Acknowledged seq: 118200974
+0.730 Finished reading file
+0.730 Assembling: source: 14034, dest: 48078, seq: 118202422, ack: 46, window: 1448, data: "ilisi repudiare "...
+0.730 Sent: b'6\xd2\xbb\xce\x07\x0b\xa06\x00\x00\x00.P\x00\x05\xa8\x00\x00\x00\x00ilisi repudiare '...
+0.732 Received: b'\xbb\xce6\xd2\x00\x00\x00-\x07\x0b\xa1\x91P\x10\x05\xa8\x00\x00\x00\x00'
+0.733 Disassembled: source: 48078, dest: 14034, seq: 45, ack: 118202769, window: 1448, ACK
+0.733 Acknowledged seq: 118202422
+0.733 Assembling: source: 14034, dest: 48078, seq: 118202769, ack: 46, window: 1448, ACK, FIN
+0.734 Sent: b'6\xd2\xbb\xce\x07\x0b\xa1\x91\x00\x00\x00.P\x11\x05\xa8\x00\x00\x00\x00'
+0.735 Failed to receive packet
+0.736 Failed to receive packet
+1.234 Sent: b'6\xd2\xbb\xce\x07\x0b\xa1\x91\x00\x00\x00.P\x11\x05\xa8\x00\x00\x00\x00'
+1.734 Sent: b'6\xd2\xbb\xce\x07\x0b\xa1\x91\x00\x00\x00.P\x11\x05\xa8\x00\x00\x00\x00'
+2.235 Failed to send packet
+2.735 Failed to send packet
+3.236 Failed to send packet
+3.736 Error: Connection timed out
+3.736 Closed connection
+3.740 Shutting down

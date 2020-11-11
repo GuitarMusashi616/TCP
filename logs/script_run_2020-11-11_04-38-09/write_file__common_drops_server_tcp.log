@@ -1,0 +1,36 @@
+0.000 NEW RUN: Server, TEST: Write_file__Common_drops
+0.215 Received: b'\xb9\xd8\xb9f\x00\x00\x00[\x00\x00\x00\x00P\x02\x05\xa8\x00\x00\x00\x00'
+0.216 Disassembled: source: 47576, dest: 47462, seq: 91, window: 1448, SYN
+0.216 SYN accepted; new connection: 127.0.0.1 on port 47576
+0.217 Assembling: source: 47462, dest: 47576, seq: 2545147670, ack: 92, window: 5808, ACK, SYN
+0.217 Sent: b'\xb9f\xb9\xd8\x97\xb3\xdf\x16\x00\x00\x00\\P\x12\x16\xb0\x00\x00\x00\x00'
+0.219 Failed to receive packet
+0.220 Received: b'\xb9\xd8\xb9f\x00\x00\x00\\\x97\xb3\xdf\x17P\x10\x16\xb0\x00\x00\x00\x00Lorem ipsum dolo'...
+0.220 Disassembled: source: 47576, dest: 47462, seq: 92, ack: 2545147671, window: 5808, ACK, data: "Lorem ipsum dolo"...
+0.220 Handshake complete
+0.220 Data accepted; writing to file
+0.221 Assembling: source: 47462, dest: 47576, seq: 2545147671, ack: 1540, window: 5808, ACK
+0.221 Sent: b'\xb9f\xb9\xd8\x97\xb3\xdf\x17\x00\x00\x06\x04P\x10\x16\xb0\x00\x00\x00\x00'
+0.223 Received: b'\xb9\xd8\xb9f\x00\x00\x06\x04\x97\xb3\xdf\x17P\x00\x16\xb0\x00\x00\x00\x00mprehensam nam, '...
+0.223 Disassembled: source: 47576, dest: 47462, seq: 1540, ack: 2545147671, window: 5808, data: "mprehensam nam, "...
+0.223 Data accepted; writing to file
+0.223 Assembling: source: 47462, dest: 47576, seq: 2545147671, ack: 2988, window: 5808, ACK
+0.224 Failed to send packet
+0.724 Sent: b'\xb9f\xb9\xd8\x97\xb3\xdf\x17\x00\x00\x0b\xacP\x10\x16\xb0\x00\x00\x00\x00'
+0.727 Received: b'\xb9\xd8\xb9f\x00\x00\x0b\xac\x97\xb3\xdf\x17P\x10\x16\xb0\x00\x00\x00\x00ilisi repudiare '...
+0.728 Disassembled: source: 47576, dest: 47462, seq: 2988, ack: 2545147671, window: 5808, ACK, data: "ilisi repudiare "...
+0.728 Error: Incorrect acknowledgement flag
+1.224 Failed to send packet
+1.725 Sent: b'\xb9f\xb9\xd8\x97\xb3\xdf\x17\x00\x00\x0b\xacP\x10\x16\xb0\x00\x00\x00\x00'
+1.728 Received: b'\xb9\xd8\xb9f\x00\x00\x0b\xac\x97\xb3\xdf\x17P\x00\x16\xb0\x00\x00\x00\x00ilisi repudiare '...
+1.728 Disassembled: source: 47576, dest: 47462, seq: 2988, ack: 2545147671, window: 5808, data: "ilisi repudiare "...
+1.729 Data accepted; writing to file
+1.729 Assembling: source: 47462, dest: 47576, seq: 2545147671, ack: 3335, window: 5808, ACK
+1.729 Failed to send packet
+2.230 Sent: b'\xb9f\xb9\xd8\x97\xb3\xdf\x17\x00\x00\r\x07P\x10\x16\xb0\x00\x00\x00\x00'
+2.730 Failed to send packet
+3.230 Sent: b'\xb9f\xb9\xd8\x97\xb3\xdf\x17\x00\x00\r\x07P\x10\x16\xb0\x00\x00\x00\x00'
+3.731 Sent: b'\xb9f\xb9\xd8\x97\xb3\xdf\x17\x00\x00\r\x07P\x10\x16\xb0\x00\x00\x00\x00'
+4.231 Error: Connection timed out
+4.231 Closed connection
+4.232 Shutting down

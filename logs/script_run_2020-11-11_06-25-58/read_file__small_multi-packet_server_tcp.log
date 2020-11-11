@@ -1,0 +1,35 @@
+0.000 NEW RUN: Server, TEST: Read_file__Small_multi-packet
+0.074 Received: b'?\xa0/\xbb\x00\x00\x00\x11\x00\x00\x00\x00P\x02\x05\xa8\x00\x00\x00\x00'
+0.075 Disassembled: source: 16288, dest: 12219, seq: 17, window: 1448, SYN
+0.075 SYN accepted; new connection: 127.0.0.1 on port 16288
+0.076 Assembling: source: 12219, dest: 16288, seq: 1591270637, ack: 18, window: 1448, ACK, SYN
+0.076 Sent: b'/\xbb?\xa0^\xd8\xdc\xed\x00\x00\x00\x12P\x12\x05\xa8\x00\x00\x00\x00'
+0.078 Received: b'?\xa0/\xbb\x00\x00\x00\x12^\xd8\xdc\xeeP\x10\x05\xa8\x00\x00\x00\x00'
+0.078 Disassembled: source: 16288, dest: 12219, seq: 18, ack: 1591270638, window: 1448, ACK
+0.079 Handshake complete
+0.079 Acknowledged seq: 1591270637
+0.079 Assembling: source: 12219, dest: 16288, seq: 1591270638, ack: 19, window: 1448, data: "Lorem ipsum dolo"...
+0.079 Sent: b'/\xbb?\xa0^\xd8\xdc\xee\x00\x00\x00\x13P\x00\x05\xa8\x00\x00\x00\x00Lorem ipsum dolo'...
+0.081 Received: b'?\xa0/\xbb\x00\x00\x00\x12^\xd8\xe2\x96P\x10\x05\xa8\x00\x00\x00\x00'
+0.082 Disassembled: source: 16288, dest: 12219, seq: 18, ack: 1591272086, window: 1448, ACK
+0.082 Acknowledged seq: 1591270638
+0.082 Assembling: source: 12219, dest: 16288, seq: 1591272086, ack: 19, window: 1448, data: "mprehensam nam, "...
+0.083 Sent: b'/\xbb?\xa0^\xd8\xe2\x96\x00\x00\x00\x13P\x00\x05\xa8\x00\x00\x00\x00mprehensam nam, '...
+0.084 Received: b'?\xa0/\xbb\x00\x00\x00\x12^\xd8\xe8>P\x10\x05\xa8\x00\x00\x00\x00'
+0.085 Disassembled: source: 16288, dest: 12219, seq: 18, ack: 1591273534, window: 1448, ACK
+0.085 Acknowledged seq: 1591272086
+0.085 Finished reading file
+0.085 Assembling: source: 12219, dest: 16288, seq: 1591273534, ack: 19, window: 1448, data: "ilisi repudiare "...
+0.086 Sent: b'/\xbb?\xa0^\xd8\xe8>\x00\x00\x00\x13P\x00\x05\xa8\x00\x00\x00\x00ilisi repudiare '...
+0.088 Received: b'?\xa0/\xbb\x00\x00\x00\x12^\xd8\xe9\x99P\x10\x05\xa8\x00\x00\x00\x00'
+0.088 Disassembled: source: 16288, dest: 12219, seq: 18, ack: 1591273881, window: 1448, ACK
+0.088 Acknowledged seq: 1591273534
+0.089 Assembling: source: 12219, dest: 16288, seq: 1591273881, ack: 19, window: 1448, ACK, FIN
+0.089 Sent: b'/\xbb?\xa0^\xd8\xe9\x99\x00\x00\x00\x13P\x11\x05\xa8\x00\x00\x00\x00'
+0.091 Received: b'?\xa0/\xbb\x00\x00\x00\x12^\xd8\xe9\x9aP\x10\x05\xa8\x00\x00\x00\x00'
+0.091 Disassembled: source: 16288, dest: 12219, seq: 18, ack: 1591273882, window: 1448, ACK
+0.091 FIN accepted; sending final packet
+0.091 Assembling: source: 12219, dest: 16288, seq: 1591273882, ack: 19, window: 1448, ACK
+0.092 Sent: b'/\xbb?\xa0^\xd8\xe9\x9a\x00\x00\x00\x13P\x10\x05\xa8\x00\x00\x00\x00'
+0.092 Closed connection
+0.093 Shutting down

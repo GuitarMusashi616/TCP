@@ -1,0 +1,35 @@
+0.000 NEW RUN: Server, TEST: Read_file__Small_multi-packet
+0.077 Received: b'na\x89\xec\x00\x00\x00D\x00\x00\x00\x00P\x02\x05\xa8\x00\x00\x00\x00'
+0.078 Disassembled: source: 28257, dest: 35308, seq: 68, window: 1448, SYN
+0.078 SYN accepted; new connection: 127.0.0.1 on port 28257
+0.078 Assembling: source: 35308, dest: 28257, seq: 1538024423, ack: 69, window: 1448, ACK, SYN
+0.079 Sent: b'\x89\xecna[\xacc\xe7\x00\x00\x00EP\x12\x05\xa8\x00\x00\x00\x00'
+0.083 Received: b'na\x89\xec\x00\x00\x00E[\xacc\xe8P\x10\x05\xa8\x00\x00\x00\x00'
+0.083 Disassembled: source: 28257, dest: 35308, seq: 69, ack: 1538024424, window: 1448, ACK
+0.083 Handshake complete
+0.084 Acknowledged seq: 1538024423
+0.084 Assembling: source: 35308, dest: 28257, seq: 1538024424, ack: 70, window: 1448, data: "Lorem ipsum dolo"...
+0.084 Sent: b'\x89\xecna[\xacc\xe8\x00\x00\x00FP\x00\x05\xa8\x00\x00\x00\x00Lorem ipsum dolo'...
+0.088 Received: b'na\x89\xec\x00\x00\x00E[\xaci\x90P\x10\x05\xa8\x00\x00\x00\x00'
+0.088 Disassembled: source: 28257, dest: 35308, seq: 69, ack: 1538025872, window: 1448, ACK
+0.088 Acknowledged seq: 1538024424
+0.089 Assembling: source: 35308, dest: 28257, seq: 1538025872, ack: 70, window: 1448, data: "mprehensam nam, "...
+0.089 Sent: b'\x89\xecna[\xaci\x90\x00\x00\x00FP\x00\x05\xa8\x00\x00\x00\x00mprehensam nam, '...
+0.091 Received: b'na\x89\xec\x00\x00\x00E[\xaco8P\x10\x05\xa8\x00\x00\x00\x00'
+0.092 Disassembled: source: 28257, dest: 35308, seq: 69, ack: 1538027320, window: 1448, ACK
+0.092 Acknowledged seq: 1538025872
+0.092 Finished reading file
+0.093 Assembling: source: 35308, dest: 28257, seq: 1538027320, ack: 70, window: 1448, data: "ilisi repudiare "...
+0.093 Sent: b'\x89\xecna[\xaco8\x00\x00\x00FP\x00\x05\xa8\x00\x00\x00\x00ilisi repudiare '...
+0.095 Received: b'na\x89\xec\x00\x00\x00E[\xacp\x93P\x10\x05\xa8\x00\x00\x00\x00'
+0.096 Disassembled: source: 28257, dest: 35308, seq: 69, ack: 1538027667, window: 1448, ACK
+0.096 Acknowledged seq: 1538027320
+0.096 Assembling: source: 35308, dest: 28257, seq: 1538027667, ack: 70, window: 1448, ACK, FIN
+0.097 Sent: b'\x89\xecna[\xacp\x93\x00\x00\x00FP\x11\x05\xa8\x00\x00\x00\x00'
+0.099 Received: b'na\x89\xec\x00\x00\x00E[\xacp\x94P\x10\x05\xa8\x00\x00\x00\x00'
+0.099 Disassembled: source: 28257, dest: 35308, seq: 69, ack: 1538027668, window: 1448, ACK
+0.099 FIN accepted; sending final packet
+0.100 Assembling: source: 35308, dest: 28257, seq: 1538027668, ack: 70, window: 1448, ACK
+0.100 Sent: b'\x89\xecna[\xacp\x94\x00\x00\x00FP\x10\x05\xa8\x00\x00\x00\x00'
+0.100 Closed connection
+0.101 Shutting down

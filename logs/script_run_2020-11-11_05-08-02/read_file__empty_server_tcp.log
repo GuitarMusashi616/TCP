@@ -1,0 +1,20 @@
+0.000 NEW RUN: Server, TEST: Read_file__Empty
+0.206 Received: b'\xedh\x94!\x00\x00\x00A\x00\x00\x00\x00P\x02\x05\xa8\x00\x00\x00\x00'
+0.206 Disassembled: source: 60776, dest: 37921, seq: 65, window: 1448, SYN
+0.207 SYN accepted; new connection: 127.0.0.1 on port 60776
+0.207 Assembling: source: 37921, dest: 60776, seq: 516054110, ack: 66, window: 1448, ACK, SYN
+0.207 Sent: b'\x94!\xedh\x1e\xc2\\^\x00\x00\x00BP\x12\x05\xa8\x00\x00\x00\x00'
+0.209 Received: b'\xedh\x94!\x00\x00\x00B\x1e\xc2\\_P\x10\x05\xa8\x00\x00\x00\x00'
+0.209 Disassembled: source: 60776, dest: 37921, seq: 66, ack: 516054111, window: 1448, ACK
+0.209 Handshake complete
+0.209 Acknowledged seq: 516054110
+0.210 Finished reading file
+0.210 Assembling: source: 37921, dest: 60776, seq: 516054111, ack: 67, window: 1448, ACK, FIN
+0.210 Sent: b'\x94!\xedh\x1e\xc2\\_\x00\x00\x00CP\x11\x05\xa8\x00\x00\x00\x00'
+0.212 Received: b'\xedh\x94!\x00\x00\x00B\x1e\xc2\\`P\x10\x05\xa8\x00\x00\x00\x00'
+0.212 Disassembled: source: 60776, dest: 37921, seq: 66, ack: 516054112, window: 1448, ACK
+0.212 FIN accepted; sending final packet
+0.212 Assembling: source: 37921, dest: 60776, seq: 516054112, ack: 67, window: 1448, ACK
+0.213 Sent: b'\x94!\xedh\x1e\xc2\\`\x00\x00\x00CP\x10\x05\xa8\x00\x00\x00\x00'
+0.213 Closed connection
+0.213 Shutting down
