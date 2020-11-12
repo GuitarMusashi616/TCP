@@ -7,6 +7,7 @@
 
 
 from state import *
+from config import *
 import random
 
 
@@ -74,7 +75,7 @@ class TCB:
 
         self.init_sequence_nums()
 
-    def init_sequence_nums(self, window=1448):
+    def init_sequence_nums(self, window=MAX_DATA_SIZE):
         start_num = random.randint(0, 100)  # 2**32-1
         # self.ISS = start_num
         self.SND_UNA = start_num
@@ -84,8 +85,8 @@ class TCB:
 
     def initialize(self, header, addr):
         self.dest_address = addr if self.dest_address is None else self.dest_address
-        self.RCV_WND = header.window
-        self.SND_WND = header.window
+        self.RCV_WND = MAX_DATA_SIZE*3
+        self.SND_WND = MAX_DATA_SIZE
         self.RCV_UP = header.urgent_ptr
         self.sync_rcv(header)
 
@@ -136,6 +137,10 @@ class TCB:
                     print(str(header.ack_num) + ' is not next ack number, should be ' + str(self.SND_UNA))
                 return False
         else:
+            return True
+
+    def is_within_rcv_window(self, header):
+        if self.RCV_NXT < header.seq_num <= self.RCV_NXT + self.RCV_WND:
             return True
 
     @property

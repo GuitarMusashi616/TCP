@@ -7,12 +7,14 @@
 
 from tcp import *
 from args import *
+from config import *
 from threading import Thread
 from time import sleep
 import math
 import sys
 from socket import timeout
 from server import setup_socket
+
 
 # ssh 137.229.181.232 -l amwilliams24
 # 31181318
@@ -225,7 +227,90 @@ def test_upload_sequencing():
 
     tcp.download('newfile.txt')
 
+def test_upload_repeat():
+    tcp = TCP(('', 12345), ('127.0.0.1', 54321))
+    print(tcp.state)
+    f = open('text.txt', 'rb')
+
+    h = Header()
+    h.ACK = True
+    h.ack_num = tcp.tcb.RCV_NXT
+    h.seq_num = tcp.tcb.SND_NXT
+    h.data = f.read(tcp.tcb.SND_WND)
+
+    print_compact(h)
+    tcp.socket.sendto(bytes(h), tcp.tcb.dest_address)
+
+    header, addr = tcp.state._recvfrom_socket()
+    tcp.tcb.sync_rcv(header)
+
+    print_compact(h)
+    tcp.socket.sendto(bytes(h), tcp.tcb.dest_address)
+    tcp.tcb.sync_una(h)
+
+    h = Header()
+    h.ACK = True
+    h.ack_num = tcp.tcb.RCV_NXT
+    h.seq_num = tcp.tcb.SND_NXT
+    h.data = f.read(tcp.tcb.SND_WND)
+
+    print_compact(h)
+    tcp.socket.sendto(bytes(h), tcp.tcb.dest_address)
+
+    f.close()
+
+
+def test_buffer():
+    tcp = TCP(('', 12345), ('127.0.0.1', 54321))
+    print(tcp.state)
+    f = open('text.txt', 'rb')
+    payload = [f.read(MAX_DATA_SIZE), f.read(MAX_DATA_SIZE), f.read(MAX_DATA_SIZE)]
+
+    h = Header()
+    h.ACK = True
+    h.ack_num = tcp.tcb.RCV_NXT
+    h.seq_num = tcp.tcb.SND_NXT + MAX_DATA_SIZE * 2
+    h.data = payload[2]
+
+    print_compact(h)
+    tcp.socket.sendto(bytes(h), tcp.tcb.dest_address)
+
+    header, addr = tcp.state._recvfrom_socket()
+    tcp.tcb.sync_rcv(header)
+    
+    h = Header()
+    h.ACK = True
+    h.ack_num = tcp.tcb.RCV_NXT
+    h.seq_num = tcp.tcb.SND_NXT + MAX_DATA_SIZE*2
+    h.data = payload[2]
+
+    print_compact(h)
+    tcp.socket.sendto(bytes(h), tcp.tcb.dest_address)
+
+    header, addr = tcp.state._recvfrom_socket()
+    tcp.tcb.sync_rcv(header)
+
+    h = Header()
+    h.ACK = True
+    h.ack_num = tcp.tcb.RCV_NXT
+    h.seq_num = tcp.tcb.SND_NXT + MAX_DATA_SIZE
+    h.data = payload[1]
+
+    print_compact(h)
+    tcp.socket.sendto(bytes(h), tcp.tcb.dest_address)
+
+    h = Header()
+    h.ACK = True
+    h.ack_num = tcp.tcb.RCV_NXT
+    h.seq_num = tcp.tcb.SND_NXT
+    h.data = payload[0]
+
+    print_compact(h)
+    tcp.socket.sendto(bytes(h), tcp.tcb.dest_address)
+
+    f.close()
+
 
 if __name__ == '__main__':
-    automatic_with_args()
+    test_buffer()
     # test_download()

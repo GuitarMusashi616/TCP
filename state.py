@@ -23,6 +23,14 @@ def check_socket(socket):
     assert socket, "tcp socket must be open when sending syn"
 
 
+def is_in_buffer(header, buffer):
+    assert isinstance(header, Header)
+    for segment in buffer:
+        if header.seq_num == segment.seq_num:
+            return True
+    return False
+
+
 class State:
     """Abstract class for all TCP states"""
     def __init__(self, tcp):
@@ -283,18 +291,24 @@ class Established(State):
 
     def download(self, filename):
         f = open(filename, 'wb')
+        buffer = []
         is_downloading = True
         while is_downloading:
             header, addr = self._recvfrom_socket()
-            # what if receive the old packet again
             if self.tcb.is_next_seq(header):
-                self.tcb.sync_rcv(header)
-                if header.data:
-                    f.write(header.data)
-                    if len(header.data) < header.window:
+                buffer.append(header)
+                buffer.sort()
+                while buffer:
+                    segment = buffer.pop(0)
+                    self.tcb.sync_rcv(segment)
+                    if segment.data:
+                        f.write(segment.data)
+                        if len(segment.data) < MAX_DATA_SIZE:
+                            is_downloading = False
+                    else:
                         is_downloading = False
-                else:
-                    is_downloading = False
+            elif self.tcb.is_within_rcv_window(header) and not is_in_buffer(header, buffer):
+                buffer.append(header)
 
             self._send_ack()
 
@@ -307,7 +321,7 @@ class Established(State):
         is_first_send = True
         is_uploading = True
 
-        data = f.read(1448)
+        data = f.read(MAX_DATA_SIZE)
         while is_uploading:
             # read file
             self._send_data(data, is_repeat_send, is_first_send)
@@ -317,9 +331,9 @@ class Established(State):
                 self.tcb.sync_rcv(header)
                 is_first_send = False
                 # break if last of file
-                if len(data) < 1448:
+                if len(data) < MAX_DATA_SIZE:
                     is_uploading = False
-                data = f.read(1448)
+                data = f.read(MAX_DATA_SIZE)
                 is_repeat_send = False
                 # print(header)
             elif header.ACK:

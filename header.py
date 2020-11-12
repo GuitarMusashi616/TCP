@@ -220,6 +220,10 @@ class Header:
 
         return string
 
+    def __lt__(self, other):
+        assert isinstance(other, Header)
+        return self.seq_num < other.seq_num
+
     @classmethod
     def new(cls, source_port, dest_port, seq_num, ack_num):
         h = Header()
