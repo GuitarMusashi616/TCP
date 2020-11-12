@@ -85,8 +85,8 @@ class TCB:
 
     def initialize(self, header, addr):
         self.dest_address = addr if self.dest_address is None else self.dest_address
-        self.RCV_WND = MAX_DATA_SIZE*3
-        self.SND_WND = MAX_DATA_SIZE
+        self.RCV_WND = header.window  # todo: make sure server's header.window of 5808 not being divisible by 1448 doesn't screw things up
+        self.SND_WND = header.window
         self.RCV_UP = header.urgent_ptr
         self.sync_rcv(header)
 
