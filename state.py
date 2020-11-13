@@ -308,22 +308,33 @@ class Established(State):
         is_uploading = True
 
         data = f.read(MAX_DATA_SIZE)
+        attempts = ATTEMPTS_UNTIL_EXIT
         while is_uploading:
             # read file
             self._send_data(data, is_repeat_send, is_first_send)
             # wait for ack
-            header, addr = self._recvfrom_socket()
-            if header.ACK and self.tcb.is_next_seq(header) and self.tcb.is_next_ack(header):
-                self.tcb.sync_rcv(header)
-                is_first_send = False
-                # break if last of file
-                if len(data) < MAX_DATA_SIZE:
-                    is_uploading = False
-                data = f.read(MAX_DATA_SIZE)
-                is_repeat_send = False
-                # print(header)
-            elif header.ACK:
-                is_repeat_send = True
+            try:
+                header_bytes, addr = self.tcp.socket.recvfrom(1500)
+                header = Header(header_bytes)
+                if VERBOSE:
+                    print_compact(header)
+            except (socket.timeout, ConnectionResetError):
+                if not attempts:
+                    sys.exit("No response from server, shutting down...")
+                attempts -= 1
+            else:
+                attempts = ATTEMPTS_UNTIL_EXIT
+                if header.ACK and self.tcb.is_next_seq(header) and self.tcb.is_next_ack(header):
+                    self.tcb.sync_rcv(header)
+                    is_first_send = False
+                    # break if last of file
+                    if len(data) < MAX_DATA_SIZE:
+                        is_uploading = False
+                    data = f.read(MAX_DATA_SIZE)
+                    is_repeat_send = False
+                    # print(header)
+                elif header.ACK:
+                    is_repeat_send = True
         f.close()
 
     def open(self):
