@@ -307,7 +307,7 @@ class Established(State):
         is_first_send = True
         is_uploading = True
 
-        data = f.read(1448)
+        data = f.read(MAX_DATA_SIZE)
         while is_uploading:
             # read file
             self._send_data(data, is_repeat_send, is_first_send)
@@ -317,9 +317,9 @@ class Established(State):
                 self.tcb.sync_rcv(header)
                 is_first_send = False
                 # break if last of file
-                if len(data) < 1448:
+                if len(data) < MAX_DATA_SIZE:
                     is_uploading = False
-                data = f.read(1448)
+                data = f.read(MAX_DATA_SIZE)
                 is_repeat_send = False
                 # print(header)
             elif header.ACK:

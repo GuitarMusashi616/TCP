@@ -74,7 +74,7 @@ class TCB:
 
         self.init_sequence_nums()
 
-    def init_sequence_nums(self, window=1448):
+    def init_sequence_nums(self, window=MAX_DATA_SIZE):
         start_num = random.randint(0, 100)  # 2**32-1
         # self.ISS = start_num
         self.SND_UNA = start_num
