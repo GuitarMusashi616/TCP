@@ -1,0 +1,37 @@
+0.000 NEW RUN: Server, TEST: Read_file__Common_drops
+0.078 Received: b'\xb2)\xa73\x00\x00\x00-\x00\x00\x00\x00P\x02\x05\xac\x00\x00\x00\x00'
+0.079 Disassembled: source: 45609, dest: 42803, seq: 45, window: 1452, SYN
+0.080 SYN accepted; new connection: 127.0.0.1 on port 45609
+0.080 Assembling: source: 42803, dest: 45609, seq: 963318362, ack: 46, window: 1452, ACK, SYN
+0.080 Sent: b'\xa73\xb2)9k\x12Z\x00\x00\x00.P\x12\x05\xac\x00\x00\x00\x00'
+0.082 Received: b'\xb2)\xa73\x00\x00\x00.9k\x12[P\x10\x05\xac\x00\x00\x00\x00'
+0.083 Disassembled: source: 45609, dest: 42803, seq: 46, ack: 963318363, window: 1452, ACK
+0.083 Handshake complete
+0.083 Acknowledged seq: 963318362
+0.083 Assembling: source: 42803, dest: 45609, seq: 963318363, ack: 47, window: 1452, data: "Lorem ipsum dolo"...
+0.084 Sent: b'\xa73\xb2)9k\x12[\x00\x00\x00/P\x00\x05\xac\x00\x00\x00\x00Lorem ipsum dolo'...
+0.085 Failed to receive packet
+0.584 Failed to send packet
+1.084 Failed to send packet
+1.585 Sent: b'\xa73\xb2)9k\x12[\x00\x00\x00/P\x00\x05\xac\x00\x00\x00\x00Lorem ipsum dolo'...
+1.587 Received: b'\xb2)\xa73\x00\x00\x00.9k\x18\x07P\x10\x05\xac\x00\x00\x00\x00'
+1.588 Disassembled: source: 45609, dest: 42803, seq: 46, ack: 963319815, window: 1452, ACK
+1.588 Acknowledged seq: 963318363
+1.588 Assembling: source: 42803, dest: 45609, seq: 963319815, ack: 47, window: 1452, data: "hensam nam, aper"...
+1.589 Failed to send packet
+2.089 Sent: b'\xa73\xb2)9k\x18\x07\x00\x00\x00/P\x00\x05\xac\x00\x00\x00\x00hensam nam, aper'...
+2.092 Received: b'\xb2)\xa73\x00\x00\x00.9k\x1d\xb3P\x10\x05\xac\x00\x00\x00\x00'
+2.092 Disassembled: source: 45609, dest: 42803, seq: 46, ack: 963321267, window: 1452, ACK
+2.093 Acknowledged seq: 963319815
+2.093 Finished reading file
+2.093 Assembling: source: 42803, dest: 45609, seq: 963321267, ack: 47, window: 1452, data: "pudiare sea. No "...
+2.093 Sent: b'\xa73\xb2)9k\x1d\xb3\x00\x00\x00/P\x00\x05\xac\x00\x00\x00\x00pudiare sea. No '...
+2.096 Failed to receive packet
+2.594 Sent: b'\xa73\xb2)9k\x1d\xb3\x00\x00\x00/P\x00\x05\xac\x00\x00\x00\x00pudiare sea. No '...
+3.094 Sent: b'\xa73\xb2)9k\x1d\xb3\x00\x00\x00/P\x00\x05\xac\x00\x00\x00\x00pudiare sea. No '...
+3.595 Sent: b'\xa73\xb2)9k\x1d\xb3\x00\x00\x00/P\x00\x05\xac\x00\x00\x00\x00pudiare sea. No '...
+4.095 Failed to send packet
+4.595 Failed to send packet
+5.096 Error: Connection timed out
+5.096 Closed connection
+5.099 Shutting down

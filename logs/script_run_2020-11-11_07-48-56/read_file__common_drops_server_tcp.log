@@ -1,0 +1,36 @@
+0.000 NEW RUN: Server, TEST: Read_file__Common_drops
+0.077 Received: b'\xd1\x16\xac\x0f\x00\x00\x00%\x00\x00\x00\x00P\x02\x05\xa8\x00\x00\x00\x00'
+0.078 Disassembled: source: 53526, dest: 44047, seq: 37, window: 1448, SYN
+0.078 SYN accepted; new connection: 127.0.0.1 on port 53526
+0.079 Assembling: source: 44047, dest: 53526, seq: 3068527762, ack: 38, window: 1448, ACK, SYN
+0.079 Sent: b'\xac\x0f\xd1\x16\xb6\xe6\x04\x92\x00\x00\x00&P\x12\x05\xa8\x00\x00\x00\x00'
+0.081 Received: b'\xd1\x16\xac\x0f\x00\x00\x00&\xb6\xe6\x04\x93P\x10\x05\xa8\x00\x00\x00\x00'
+0.081 Disassembled: source: 53526, dest: 44047, seq: 38, ack: 3068527763, window: 1448, ACK
+0.082 Handshake complete
+0.082 Acknowledged seq: 3068527762
+0.082 Assembling: source: 44047, dest: 53526, seq: 3068527763, ack: 39, window: 1448, data: "Lorem ipsum dolo"...
+0.082 Sent: b"\xac\x0f\xd1\x16\xb6\xe6\x04\x93\x00\x00\x00'P\x00\x05\xa8\x00\x00\x00\x00Lorem ipsum dolo"...
+0.084 Failed to receive packet
+0.583 Sent: b"\xac\x0f\xd1\x16\xb6\xe6\x04\x93\x00\x00\x00'P\x00\x05\xa8\x00\x00\x00\x00Lorem ipsum dolo"...
+0.585 Received: b'\xd1\x16\xac\x0f\x00\x00\x00&\xb6\xe6\n;P\x10\x05\xa8\x00\x00\x00\x00'
+0.586 Disassembled: source: 53526, dest: 44047, seq: 38, ack: 3068529211, window: 1448, ACK
+0.586 Acknowledged seq: 3068527763
+0.586 Assembling: source: 44047, dest: 53526, seq: 3068529211, ack: 39, window: 1448, data: "mprehensam nam, "...
+0.587 Failed to send packet
+1.087 Failed to send packet
+1.588 Sent: b"\xac\x0f\xd1\x16\xb6\xe6\n;\x00\x00\x00'P\x00\x05\xa8\x00\x00\x00\x00mprehensam nam, "...
+1.591 Received: b'\xd1\x16\xac\x0f\x00\x00\x00&\xb6\xe6\x0f\xe3P\x10\x05\xa8\x00\x00\x00\x00'
+1.591 Disassembled: source: 53526, dest: 44047, seq: 38, ack: 3068530659, window: 1448, ACK
+1.591 Acknowledged seq: 3068529211
+1.592 Finished reading file
+1.592 Assembling: source: 44047, dest: 53526, seq: 3068530659, ack: 39, window: 1448, data: "ilisi repudiare "...
+1.592 Failed to send packet
+2.093 Failed to send packet
+2.593 Sent: b"\xac\x0f\xd1\x16\xb6\xe6\x0f\xe3\x00\x00\x00'P\x00\x05\xa8\x00\x00\x00\x00ilisi repudiare "...
+2.596 Failed to receive packet
+3.093 Sent: b"\xac\x0f\xd1\x16\xb6\xe6\x0f\xe3\x00\x00\x00'P\x00\x05\xa8\x00\x00\x00\x00ilisi repudiare "...
+3.594 Failed to send packet
+4.094 Sent: b"\xac\x0f\xd1\x16\xb6\xe6\x0f\xe3\x00\x00\x00'P\x00\x05\xa8\x00\x00\x00\x00ilisi repudiare "...
+4.595 Error: Connection timed out
+4.595 Closed connection
+4.598 Shutting down

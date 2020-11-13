@@ -1,0 +1,26 @@
+0.000 NEW RUN: Server, TEST: Write_file__Single_packet
+0.079 Received: b'\x7f;=\x92\x00\x00\x00<\x00\x00\x00\x00P\x02\x05\xa8\x00\x00\x00\x00'
+0.079 Disassembled: source: 32571, dest: 15762, seq: 60, window: 1448, SYN
+0.080 SYN accepted; new connection: 127.0.0.1 on port 32571
+0.080 Assembling: source: 15762, dest: 32571, seq: 3333147261, ack: 61, window: 5808, ACK, SYN
+0.080 Sent: b'=\x92\x7f;\xc6\xab\xca}\x00\x00\x00=P\x12\x16\xb0\x00\x00\x00\x00'
+0.082 Received: b'\x7f;=\x92\x00\x00\x00=\xc6\xab\xca~P\x10\x16\xb0\x00\x00\x00\x00'
+0.083 Disassembled: source: 32571, dest: 15762, seq: 61, ack: 3333147262, window: 5808, ACK
+0.083 Assembling: source: 15762, dest: 32571, seq: 3333147262, ack: 61, window: 5808, ACK
+0.083 Sent: b'=\x92\x7f;\xc6\xab\xca~\x00\x00\x00=P\x10\x16\xb0\x00\x00\x00\x00'
+0.083 Received: b'\x7f;=\x92\x00\x00\x00=\xc6\xab\xca~P\x10\x16\xb0\x00\x00\x00\x00This file fits i'...
+0.084 Disassembled: source: 32571, dest: 15762, seq: 61, ack: 3333147262, window: 5808, ACK, data: "This file fits i"...
+0.084 Handshake complete
+0.084 Data accepted; writing to file
+0.084 Assembling: source: 15762, dest: 32571, seq: 3333147262, ack: 104, window: 5808, ACK
+0.085 Sent: b'=\x92\x7f;\xc6\xab\xca~\x00\x00\x00hP\x10\x16\xb0\x00\x00\x00\x00'
+0.085 Received: b'\x7f;=\x92\x00\x00\x00=\xc6\xab\xca~P\x10\x16\xb0\x00\x00\x00\x00This file fits i'...
+0.085 Disassembled: source: 32571, dest: 15762, seq: 61, ack: 3333147262, window: 5808, ACK, data: "This file fits i"...
+0.085 Old data; ignoring
+0.585 Sent: b'=\x92\x7f;\xc6\xab\xca~\x00\x00\x00hP\x10\x16\xb0\x00\x00\x00\x00'
+1.086 Sent: b'=\x92\x7f;\xc6\xab\xca~\x00\x00\x00hP\x10\x16\xb0\x00\x00\x00\x00'
+1.586 Sent: b'=\x92\x7f;\xc6\xab\xca~\x00\x00\x00hP\x10\x16\xb0\x00\x00\x00\x00'
+2.086 Sent: b'=\x92\x7f;\xc6\xab\xca~\x00\x00\x00hP\x10\x16\xb0\x00\x00\x00\x00'
+2.587 Error: Connection timed out
+2.587 Closed connection
+2.588 Shutting down

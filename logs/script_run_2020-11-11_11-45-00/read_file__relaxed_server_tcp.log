@@ -1,0 +1,20 @@
+0.000 NEW RUN: Server, TEST: Read_file__Relaxed
+0.080 Received: b'\xc0\x9b\xd7\xc7\x00\x00\x00L\x00\x00\x00\x00P\x02\x05\xa8\x00\x00\x00\x00'
+0.081 Disassembled: source: 49307, dest: 55239, seq: 76, window: 1448, SYN
+0.081 SYN accepted; new connection: 127.0.0.1 on port 49307
+0.081 Assembling: source: 55239, dest: 49307, seq: 2702624411, ack: 77, window: 1448, ACK, SYN
+0.082 Sent: b'\xd7\xc7\xc0\x9b\xa1\x16\xc6\x9b\x00\x00\x00MP\x12\x05\xa8\x00\x00\x00\x00'
+0.085 Received: b'\xc0\x9b\xd7\xc7\x00\x00\x00M\xa1\x16\xc6\x9cP\x10\x05\xa8\x00\x00\x00\x00'
+0.085 Disassembled: source: 49307, dest: 55239, seq: 77, ack: 2702624412, window: 1448, ACK
+0.086 Handshake complete
+0.086 Acknowledged seq: 2702624411
+0.086 Finished reading file
+0.086 Assembling: source: 55239, dest: 49307, seq: 2702624412, ack: 78, window: 1448, ACK, FIN
+0.087 Sent: b'\xd7\xc7\xc0\x9b\xa1\x16\xc6\x9c\x00\x00\x00NP\x11\x05\xa8\x00\x00\x00\x00'
+0.089 Received: b'\xc0\x9b\xd7\xc7\x00\x00\x00M\xa1\x16\xc6\x9dP\x10\x05\xa8\x00\x00\x00\x00'
+0.090 Disassembled: source: 49307, dest: 55239, seq: 77, ack: 2702624413, window: 1448, ACK
+0.090 FIN accepted; sending final packet
+0.090 Assembling: source: 55239, dest: 49307, seq: 2702624413, ack: 78, window: 1448, ACK
+0.090 Sent: b'\xd7\xc7\xc0\x9b\xa1\x16\xc6\x9d\x00\x00\x00NP\x10\x05\xa8\x00\x00\x00\x00'
+0.091 Closed connection
+0.091 Shutting down

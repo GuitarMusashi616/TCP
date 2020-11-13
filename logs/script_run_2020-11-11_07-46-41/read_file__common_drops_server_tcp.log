@@ -1,0 +1,44 @@
+0.000 NEW RUN: Server, TEST: Read_file__Common_drops
+0.076 Received: b'Z\xd0w\n\x00\x00\x00O\x00\x00\x00\x00P\x02\x05\xa8\x00\x00\x00\x00'
+0.077 Disassembled: source: 23248, dest: 30474, seq: 79, window: 1448, SYN
+0.077 SYN accepted; new connection: 127.0.0.1 on port 23248
+0.078 Assembling: source: 30474, dest: 23248, seq: 2830552175, ack: 80, window: 1448, ACK, SYN
+0.078 Failed to send packet
+0.579 Sent: b'w\nZ\xd0\xa8\xb6\xcco\x00\x00\x00PP\x12\x05\xa8\x00\x00\x00\x00'
+0.582 Failed to receive packet
+1.079 Failed to send packet
+1.579 Sent: b'w\nZ\xd0\xa8\xb6\xcco\x00\x00\x00PP\x12\x05\xa8\x00\x00\x00\x00'
+1.582 Received: b'Z\xd0w\n\x00\x00\x00P\xa8\xb6\xccpP\x10\x05\xa8\x00\x00\x00\x00'
+1.583 Disassembled: source: 23248, dest: 30474, seq: 80, ack: 2830552176, window: 1448, ACK
+1.583 Handshake complete
+1.583 Acknowledged seq: 2830552175
+1.583 Assembling: source: 30474, dest: 23248, seq: 2830552176, ack: 81, window: 1448, data: "Lorem ipsum dolo"...
+1.584 Sent: b'w\nZ\xd0\xa8\xb6\xccp\x00\x00\x00QP\x00\x05\xa8\x00\x00\x00\x00Lorem ipsum dolo'...
+1.587 Failed to receive packet
+2.084 Failed to send packet
+2.584 Failed to send packet
+3.085 Sent: b'w\nZ\xd0\xa8\xb6\xccp\x00\x00\x00QP\x00\x05\xa8\x00\x00\x00\x00Lorem ipsum dolo'...
+3.087 Received: b'Z\xd0w\n\x00\x00\x00P\xa8\xb6\xd2\x18P\x10\x05\xa8\x00\x00\x00\x00'
+3.088 Disassembled: source: 23248, dest: 30474, seq: 80, ack: 2830553624, window: 1448, ACK
+3.088 Acknowledged seq: 2830552176
+3.088 Assembling: source: 30474, dest: 23248, seq: 2830553624, ack: 81, window: 1448, data: "mprehensam nam, "...
+3.089 Sent: b'w\nZ\xd0\xa8\xb6\xd2\x18\x00\x00\x00QP\x00\x05\xa8\x00\x00\x00\x00mprehensam nam, '...
+3.092 Received: b'Z\xd0w\n\x00\x00\x00P\xa8\xb6\xd7\xc0P\x10\x05\xa8\x00\x00\x00\x00'
+3.092 Disassembled: source: 23248, dest: 30474, seq: 80, ack: 2830555072, window: 1448, ACK
+3.093 Acknowledged seq: 2830553624
+3.093 Finished reading file
+3.093 Assembling: source: 30474, dest: 23248, seq: 2830555072, ack: 81, window: 1448, data: "ilisi repudiare "...
+3.093 Failed to send packet
+3.594 Sent: b'w\nZ\xd0\xa8\xb6\xd7\xc0\x00\x00\x00QP\x00\x05\xa8\x00\x00\x00\x00ilisi repudiare '...
+3.597 Received: b'Z\xd0w\n\x00\x00\x00P\xa8\xb6\xd9\x1bP\x10\x05\xa8\x00\x00\x00\x00'
+3.597 Disassembled: source: 23248, dest: 30474, seq: 80, ack: 2830555419, window: 1448, ACK
+3.598 Acknowledged seq: 2830555072
+3.598 Assembling: source: 30474, dest: 23248, seq: 2830555419, ack: 81, window: 1448, ACK, FIN
+3.598 Sent: b'w\nZ\xd0\xa8\xb6\xd9\x1b\x00\x00\x00QP\x11\x05\xa8\x00\x00\x00\x00'
+3.601 Received: b'Z\xd0w\n\x00\x00\x00P\xa8\xb6\xd9\x1cP\x10\x05\xa8\x00\x00\x00\x00'
+3.602 Disassembled: source: 23248, dest: 30474, seq: 80, ack: 2830555420, window: 1448, ACK
+3.602 FIN accepted; sending final packet
+3.602 Assembling: source: 30474, dest: 23248, seq: 2830555420, ack: 81, window: 1448, ACK
+3.602 Failed to send packet
+3.603 Closed connection
+3.603 Shutting down

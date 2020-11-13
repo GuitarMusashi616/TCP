@@ -1,0 +1,45 @@
+0.000 NEW RUN: Server, TEST: Read_file__Latency
+0.079 Received: b'7=\xdd\xb2\x00\x00\x00S\x00\x00\x00\x00P\x02\x05\xa8\x00\x00\x00\x00'
+0.080 Disassembled: source: 14141, dest: 56754, seq: 83, window: 1448, SYN
+0.080 SYN accepted; new connection: 127.0.0.1 on port 14141
+0.081 Assembling: source: 56754, dest: 14141, seq: 887842421, ack: 84, window: 1448, ACK, SYN
+0.081 Sent: b'\xdd\xb27=4\xebfu\x00\x00\x00TP\x12\x05\xa8\x00\x00\x00\x00'
+0.582 Sent: b'\xdd\xb27=4\xebfu\x00\x00\x00TP\x12\x05\xa8\x00\x00\x00\x00'
+1.082 Sent: b'\xdd\xb27=4\xebfu\x00\x00\x00TP\x12\x05\xa8\x00\x00\x00\x00'
+1.086 Received: b'7=\xdd\xb2\x00\x00\x00T4\xebfvP\x10\x05\xa8\x00\x00\x00\x00'
+1.087 Disassembled: source: 14141, dest: 56754, seq: 84, ack: 887842422, window: 1448, ACK
+1.087 Handshake complete
+1.087 Acknowledged seq: 887842421
+1.087 Assembling: source: 56754, dest: 14141, seq: 887842422, ack: 85, window: 1448, data: "Lorem ipsum dolo"...
+1.088 Sent: b'\xdd\xb27=4\xebfv\x00\x00\x00UP\x00\x05\xa8\x00\x00\x00\x00Lorem ipsum dolo'...
+1.586 Received: b'7=\xdd\xb2\x00\x00\x00T4\xebfvP\x10\x05\xa8\x00\x00\x00\x00'
+1.587 Disassembled: source: 14141, dest: 56754, seq: 84, ack: 887842422, window: 1448, ACK
+1.587 Assembling: source: 56754, dest: 14141, seq: 887843870, ack: 85, window: 1448, data: "m"
+1.587 Sent: b'\xdd\xb27=4\xebl\x1e\x00\x00\x00UP\x00\x05\xa8\x00\x00\x00\x00m'
+2.086 Received: b'7=\xdd\xb2\x00\x00\x00T4\xebfvP\x10\x05\xa8\x00\x00\x00\x00'
+2.087 Disassembled: source: 14141, dest: 56754, seq: 84, ack: 887842422, window: 1448, ACK
+2.087 Sent: b'\xdd\xb27=4\xebfv\x00\x00\x00UP\x00\x05\xa8\x00\x00\x00\x00Lorem ipsum dolo'...
+2.088 Sent: b'\xdd\xb27=4\xebl\x1e\x00\x00\x00UP\x00\x05\xa8\x00\x00\x00\x00m'
+2.092 Received: b'7=\xdd\xb2\x00\x00\x00T4\xebl\x1eP\x10\x05\xa8\x00\x00\x00\x00'
+2.093 Disassembled: source: 14141, dest: 56754, seq: 84, ack: 887843870, window: 1448, ACK
+2.093 Acknowledged seq: 887842422
+2.093 Assembling: source: 56754, dest: 14141, seq: 887843871, ack: 85, window: 1448, data: "prehensam nam, a"...
+2.094 Sent: b'\xdd\xb27=4\xebl\x1f\x00\x00\x00UP\x00\x05\xa8\x00\x00\x00\x00prehensam nam, a'...
+2.592 Received: b'7=\xdd\xb2\x00\x00\x00T4\xebl\x1fP\x10\x05\xa8\x00\x00\x00\x00'
+2.592 Disassembled: source: 14141, dest: 56754, seq: 84, ack: 887843871, window: 1448, ACK
+2.592 Acknowledged seq: 887843870
+2.593 Assembling: source: 56754, dest: 14141, seq: 887845318, ack: 85, window: 1448, data: "i"
+2.593 Sent: b'\xdd\xb27=4\xebq\xc6\x00\x00\x00UP\x00\x05\xa8\x00\x00\x00\x00i'
+3.094 Sent: b'\xdd\xb27=4\xebl\x1f\x00\x00\x00UP\x00\x05\xa8\x00\x00\x00\x00prehensam nam, a'...
+3.094 Sent: b'\xdd\xb27=4\xebq\xc6\x00\x00\x00UP\x00\x05\xa8\x00\x00\x00\x00i'
+3.594 Sent: b'\xdd\xb27=4\xebl\x1f\x00\x00\x00UP\x00\x05\xa8\x00\x00\x00\x00prehensam nam, a'...
+3.595 Sent: b'\xdd\xb27=4\xebq\xc6\x00\x00\x00UP\x00\x05\xa8\x00\x00\x00\x00i'
+4.095 Sent: b'\xdd\xb27=4\xebl\x1f\x00\x00\x00UP\x00\x05\xa8\x00\x00\x00\x00prehensam nam, a'...
+4.095 Sent: b'\xdd\xb27=4\xebq\xc6\x00\x00\x00UP\x00\x05\xa8\x00\x00\x00\x00i'
+4.595 Sent: b'\xdd\xb27=4\xebl\x1f\x00\x00\x00UP\x00\x05\xa8\x00\x00\x00\x00prehensam nam, a'...
+4.596 Sent: b'\xdd\xb27=4\xebq\xc6\x00\x00\x00UP\x00\x05\xa8\x00\x00\x00\x00i'
+5.096 Sent: b'\xdd\xb27=4\xebl\x1f\x00\x00\x00UP\x00\x05\xa8\x00\x00\x00\x00prehensam nam, a'...
+5.097 Sent: b'\xdd\xb27=4\xebq\xc6\x00\x00\x00UP\x00\x05\xa8\x00\x00\x00\x00i'
+5.597 Error: Connection timed out
+5.597 Closed connection
+6.096 Shutting down

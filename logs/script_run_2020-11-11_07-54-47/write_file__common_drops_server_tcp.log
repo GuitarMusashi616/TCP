@@ -1,0 +1,36 @@
+0.000 NEW RUN: Server, TEST: Write_file__Common_drops
+0.075 Received: b'\xf9\xb7\x89\xa1\x00\x00\x00N\x00\x00\x00\x00P\x02\x05\xa8\x00\x00\x00\x00'
+0.075 Disassembled: source: 63927, dest: 35233, seq: 78, window: 1448, SYN
+0.076 SYN accepted; new connection: 127.0.0.1 on port 63927
+0.076 Assembling: source: 35233, dest: 63927, seq: 3406165246, ack: 79, window: 5808, ACK, SYN
+0.077 Sent: b'\x89\xa1\xf9\xb7\xcb\x05\xf4\xfe\x00\x00\x00OP\x12\x16\xb0\x00\x00\x00\x00'
+0.080 Failed to receive packet
+0.082 Failed to receive packet
+0.577 Failed to send packet
+1.077 Sent: b'\x89\xa1\xf9\xb7\xcb\x05\xf4\xfe\x00\x00\x00OP\x12\x16\xb0\x00\x00\x00\x00'
+1.080 Received: b'\xf9\xb7\x89\xa1\x00\x00\x00O\xcb\x05\xf4\xffP\x10\x16\xb0\x00\x00\x00\x00Lorem ipsum dolo'...
+1.081 Disassembled: source: 63927, dest: 35233, seq: 79, ack: 3406165247, window: 5808, ACK, data: "Lorem ipsum dolo"...
+1.081 Handshake complete
+1.081 Data accepted; writing to file
+1.081 Assembling: source: 35233, dest: 63927, seq: 3406165247, ack: 1527, window: 5808, ACK
+1.082 Failed to send packet
+1.582 Failed to send packet
+2.083 Sent: b'\x89\xa1\xf9\xb7\xcb\x05\xf4\xff\x00\x00\x05\xf7P\x10\x16\xb0\x00\x00\x00\x00'
+2.086 Received: b'\xf9\xb7\x89\xa1\x00\x00\x05\xf7\xcb\x05\xf4\xffP\x00\x16\xb0\x00\x00\x00\x00mprehensam nam, '...
+2.086 Disassembled: source: 63927, dest: 35233, seq: 1527, ack: 3406165247, window: 5808, data: "mprehensam nam, "...
+2.086 Data accepted; writing to file
+2.087 Assembling: source: 35233, dest: 63927, seq: 3406165247, ack: 2975, window: 5808, ACK
+2.087 Failed to send packet
+2.587 Sent: b'\x89\xa1\xf9\xb7\xcb\x05\xf4\xff\x00\x00\x0b\x9fP\x10\x16\xb0\x00\x00\x00\x00'
+2.590 Received: b'\xf9\xb7\x89\xa1\x00\x00\x0b\x9f\xcb\x05\xf4\xffP\x00\x16\xb0\x00\x00\x00\x00ilisi repudiare '...
+2.591 Disassembled: source: 63927, dest: 35233, seq: 2975, ack: 3406165247, window: 5808, data: "ilisi repudiare "...
+2.591 Data accepted; writing to file
+2.591 Assembling: source: 35233, dest: 63927, seq: 3406165247, ack: 3322, window: 5808, ACK
+2.592 Sent: b'\x89\xa1\xf9\xb7\xcb\x05\xf4\xff\x00\x00\x0c\xfaP\x10\x16\xb0\x00\x00\x00\x00'
+3.092 Sent: b'\x89\xa1\xf9\xb7\xcb\x05\xf4\xff\x00\x00\x0c\xfaP\x10\x16\xb0\x00\x00\x00\x00'
+3.593 Failed to send packet
+4.093 Sent: b'\x89\xa1\xf9\xb7\xcb\x05\xf4\xff\x00\x00\x0c\xfaP\x10\x16\xb0\x00\x00\x00\x00'
+4.593 Failed to send packet
+5.094 Error: Connection timed out
+5.094 Closed connection
+5.096 Shutting down

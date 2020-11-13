@@ -1,0 +1,20 @@
+0.000 NEW RUN: Server, TEST: Read_file__Empty
+0.076 Received: b'[\xf9\xdaf\x00\x00\x00V\x00\x00\x00\x00P\x02\x05\xa8\x00\x00\x00\x00'
+0.077 Disassembled: source: 23545, dest: 55910, seq: 86, window: 1448, SYN
+0.077 SYN accepted; new connection: 127.0.0.1 on port 23545
+0.077 Assembling: source: 55910, dest: 23545, seq: 2804271724, ack: 87, window: 1448, ACK, SYN
+0.078 Sent: b'\xdaf[\xf9\xa7%\xcal\x00\x00\x00WP\x12\x05\xa8\x00\x00\x00\x00'
+0.079 Received: b'[\xf9\xdaf\x00\x00\x00W\xa7%\xcamP\x10\x05\xa8\x00\x00\x00\x00'
+0.080 Disassembled: source: 23545, dest: 55910, seq: 87, ack: 2804271725, window: 1448, ACK
+0.080 Handshake complete
+0.080 Acknowledged seq: 2804271724
+0.080 Finished reading file
+0.081 Assembling: source: 55910, dest: 23545, seq: 2804271725, ack: 88, window: 1448, ACK, FIN
+0.081 Sent: b'\xdaf[\xf9\xa7%\xcam\x00\x00\x00XP\x11\x05\xa8\x00\x00\x00\x00'
+0.083 Received: b'[\xf9\xdaf\x00\x00\x00W\xa7%\xcanP\x10\x05\xa8\x00\x00\x00\x00'
+0.083 Disassembled: source: 23545, dest: 55910, seq: 87, ack: 2804271726, window: 1448, ACK
+0.083 FIN accepted; sending final packet
+0.084 Assembling: source: 55910, dest: 23545, seq: 2804271726, ack: 88, window: 1448, ACK
+0.084 Sent: b'\xdaf[\xf9\xa7%\xcan\x00\x00\x00XP\x10\x05\xa8\x00\x00\x00\x00'
+0.084 Closed connection
+0.085 Shutting down

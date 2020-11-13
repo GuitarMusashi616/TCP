@@ -1,0 +1,35 @@
+0.000 NEW RUN: Server, TEST: Read_file__No_file_extension
+0.078 Received: b'\xe0\t\xcb\xc0\x00\x00\x00W\x00\x00\x00\x00P\x02\x05\xa8\x00\x00\x00\x00'
+0.079 Disassembled: source: 57353, dest: 52160, seq: 87, window: 1448, SYN
+0.079 SYN accepted; new connection: 127.0.0.1 on port 57353
+0.080 Assembling: source: 52160, dest: 57353, seq: 2806184261, ack: 88, window: 1448, ACK, SYN
+0.080 Sent: b'\xcb\xc0\xe0\t\xa7B\xf9E\x00\x00\x00XP\x12\x05\xa8\x00\x00\x00\x00'
+0.082 Received: b'\xe0\t\xcb\xc0\x00\x00\x00X\xa7B\xf9FP\x10\x05\xa8\x00\x00\x00\x00'
+0.082 Disassembled: source: 57353, dest: 52160, seq: 88, ack: 2806184262, window: 1448, ACK
+0.083 Handshake complete
+0.083 Acknowledged seq: 2806184261
+0.083 Assembling: source: 52160, dest: 57353, seq: 2806184262, ack: 89, window: 1448, data: "Lorem ipsum dolo"...
+0.083 Sent: b'\xcb\xc0\xe0\t\xa7B\xf9F\x00\x00\x00YP\x00\x05\xa8\x00\x00\x00\x00Lorem ipsum dolo'...
+0.085 Received: b'\xe0\t\xcb\xc0\x00\x00\x00X\xa7B\xfe\xeeP\x10\x05\xa8\x00\x00\x00\x00'
+0.085 Disassembled: source: 57353, dest: 52160, seq: 88, ack: 2806185710, window: 1448, ACK
+0.086 Acknowledged seq: 2806184262
+0.086 Assembling: source: 52160, dest: 57353, seq: 2806185710, ack: 89, window: 1448, data: "mprehensam nam, "...
+0.086 Sent: b'\xcb\xc0\xe0\t\xa7B\xfe\xee\x00\x00\x00YP\x00\x05\xa8\x00\x00\x00\x00mprehensam nam, '...
+0.088 Received: b'\xe0\t\xcb\xc0\x00\x00\x00X\xa7C\x04\x96P\x10\x05\xa8\x00\x00\x00\x00'
+0.089 Disassembled: source: 57353, dest: 52160, seq: 88, ack: 2806187158, window: 1448, ACK
+0.089 Acknowledged seq: 2806185710
+0.089 Finished reading file
+0.089 Assembling: source: 52160, dest: 57353, seq: 2806187158, ack: 89, window: 1448, data: "ilisi repudiare "...
+0.090 Sent: b'\xcb\xc0\xe0\t\xa7C\x04\x96\x00\x00\x00YP\x00\x05\xa8\x00\x00\x00\x00ilisi repudiare '...
+0.091 Received: b'\xe0\t\xcb\xc0\x00\x00\x00X\xa7C\x05\xf1P\x10\x05\xa8\x00\x00\x00\x00'
+0.092 Disassembled: source: 57353, dest: 52160, seq: 88, ack: 2806187505, window: 1448, ACK
+0.092 Acknowledged seq: 2806187158
+0.092 Assembling: source: 52160, dest: 57353, seq: 2806187505, ack: 89, window: 1448, ACK, FIN
+0.093 Sent: b'\xcb\xc0\xe0\t\xa7C\x05\xf1\x00\x00\x00YP\x11\x05\xa8\x00\x00\x00\x00'
+0.094 Received: b'\xe0\t\xcb\xc0\x00\x00\x00X\xa7C\x05\xf2P\x10\x05\xa8\x00\x00\x00\x00'
+0.095 Disassembled: source: 57353, dest: 52160, seq: 88, ack: 2806187506, window: 1448, ACK
+0.095 FIN accepted; sending final packet
+0.095 Assembling: source: 52160, dest: 57353, seq: 2806187506, ack: 89, window: 1448, ACK
+0.095 Sent: b'\xcb\xc0\xe0\t\xa7C\x05\xf2\x00\x00\x00YP\x10\x05\xa8\x00\x00\x00\x00'
+0.095 Closed connection
+0.096 Shutting down

@@ -1,0 +1,33 @@
+0.000 NEW RUN: Server, TEST: Read_file__Common_drops
+0.074 Received: b'PQ\xe7:\x00\x00\x005\x00\x00\x00\x00P\x02\x05\xa8\x00\x00\x00\x00'
+0.075 Disassembled: source: 20561, dest: 59194, seq: 53, window: 1448, SYN
+0.075 SYN accepted; new connection: 127.0.0.1 on port 20561
+0.075 Assembling: source: 59194, dest: 20561, seq: 2837181497, ack: 54, window: 1448, ACK, SYN
+0.076 Failed to send packet
+0.576 Failed to send packet
+1.076 Failed to send packet
+1.577 Failed to send packet
+2.077 Failed to send packet
+2.578 Sent: b'\xe7:PQ\xa9\x1b\xf49\x00\x00\x006P\x12\x05\xa8\x00\x00\x00\x00'
+2.581 Received: b'PQ\xe7:\x00\x00\x006\xa9\x1b\xf4:P\x10\x05\xa8\x00\x00\x00\x00'
+2.581 Disassembled: source: 20561, dest: 59194, seq: 54, ack: 2837181498, window: 1448, ACK
+2.582 Handshake complete
+2.582 Acknowledged seq: 2837181497
+2.582 Assembling: source: 59194, dest: 20561, seq: 2837181498, ack: 55, window: 1448, data: "Lorem ipsum dolo"...
+2.582 Sent: b'\xe7:PQ\xa9\x1b\xf4:\x00\x00\x007P\x00\x05\xa8\x00\x00\x00\x00Lorem ipsum dolo'...
+2.585 Failed to receive packet
+3.083 Sent: b'\xe7:PQ\xa9\x1b\xf4:\x00\x00\x007P\x00\x05\xa8\x00\x00\x00\x00Lorem ipsum dolo'...
+3.085 Received: b'PQ\xe7:\x00\x00\x006\xa9\x1b\xf9\xe2P\x10\x05\xa8\x00\x00\x00\x00'
+3.086 Disassembled: source: 20561, dest: 59194, seq: 54, ack: 2837182946, window: 1448, ACK
+3.086 Acknowledged seq: 2837181498
+3.086 Assembling: source: 59194, dest: 20561, seq: 2837182946, ack: 55, window: 1448, data: "mprehensam nam, "...
+3.087 Sent: b'\xe7:PQ\xa9\x1b\xf9\xe2\x00\x00\x007P\x00\x05\xa8\x00\x00\x00\x00mprehensam nam, '...
+3.089 Failed to receive packet
+3.587 Failed to send packet
+4.087 Failed to send packet
+4.588 Failed to send packet
+5.088 Failed to send packet
+5.588 Failed to send packet
+6.089 Error: Connection timed out
+6.089 Closed connection
+6.093 Shutting down

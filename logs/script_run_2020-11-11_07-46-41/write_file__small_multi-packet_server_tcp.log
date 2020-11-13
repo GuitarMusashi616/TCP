@@ -1,0 +1,39 @@
+0.000 NEW RUN: Server, TEST: Write_file__Small_multi-packet
+0.077 Received: b',)\x9e\xc7\x00\x00\x00\x18\x00\x00\x00\x00P\x02\x05\xa8\x00\x00\x00\x00'
+0.078 Disassembled: source: 11305, dest: 40647, seq: 24, window: 1448, SYN
+0.079 SYN accepted; new connection: 127.0.0.1 on port 11305
+0.079 Assembling: source: 40647, dest: 11305, seq: 2807884566, ack: 25, window: 5808, ACK, SYN
+0.079 Sent: b'\x9e\xc7,)\xa7\\\xeb\x16\x00\x00\x00\x19P\x12\x16\xb0\x00\x00\x00\x00'
+0.083 Received: b',)\x9e\xc7\x00\x00\x00\x19\xa7\\\xeb\x17P\x10\x16\xb0\x00\x00\x00\x00'
+0.083 Disassembled: source: 11305, dest: 40647, seq: 25, ack: 2807884567, window: 5808, ACK
+0.083 Assembling: source: 40647, dest: 11305, seq: 2807884567, ack: 25, window: 5808, ACK
+0.084 Sent: b'\x9e\xc7,)\xa7\\\xeb\x17\x00\x00\x00\x19P\x10\x16\xb0\x00\x00\x00\x00'
+0.085 Received: b',)\x9e\xc7\x00\x00\x00\x19\xa7\\\xeb\x17P\x10\x16\xb0\x00\x00\x00\x00Lorem ipsum dolo'...
+0.085 Disassembled: source: 11305, dest: 40647, seq: 25, ack: 2807884567, window: 5808, ACK, data: "Lorem ipsum dolo"...
+0.086 Handshake complete
+0.086 Data accepted; writing to file
+0.086 Assembling: source: 40647, dest: 11305, seq: 2807884567, ack: 1473, window: 5808, ACK
+0.086 Sent: b'\x9e\xc7,)\xa7\\\xeb\x17\x00\x00\x05\xc1P\x10\x16\xb0\x00\x00\x00\x00'
+0.087 Received: b',)\x9e\xc7\x00\x00\x00\x19\xa7\\\xeb\x17P\x10\x16\xb0\x00\x00\x00\x00Lorem ipsum dolo'...
+0.088 Disassembled: source: 11305, dest: 40647, seq: 25, ack: 2807884567, window: 5808, ACK, data: "Lorem ipsum dolo"...
+0.088 Old data; ignoring
+0.090 Received: b',)\x9e\xc7\x00\x00\x05\xc1\xa7\\\xeb\x17P\x00\x16\xb0\x00\x00\x00\x00mprehensam nam, '...
+0.090 Disassembled: source: 11305, dest: 40647, seq: 1473, ack: 2807884567, window: 5808, data: "mprehensam nam, "...
+0.091 Data accepted; writing to file
+0.091 Assembling: source: 40647, dest: 11305, seq: 2807884567, ack: 2921, window: 5808, ACK
+0.091 Sent: b'\x9e\xc7,)\xa7\\\xeb\x17\x00\x00\x0biP\x10\x16\xb0\x00\x00\x00\x00'
+0.094 Received: b',)\x9e\xc7\x00\x00\x0bi\xa7\\\xeb\x17P\x00\x16\xb0\x00\x00\x00\x00ilisi repudiare '...
+0.095 Disassembled: source: 11305, dest: 40647, seq: 2921, ack: 2807884567, window: 5808, data: "ilisi repudiare "...
+0.095 Data accepted; writing to file
+0.095 Assembling: source: 40647, dest: 11305, seq: 2807884567, ack: 3268, window: 5808, ACK
+0.095 Sent: b'\x9e\xc7,)\xa7\\\xeb\x17\x00\x00\x0c\xc4P\x10\x16\xb0\x00\x00\x00\x00'
+0.097 Received: b',)\x9e\xc7\x00\x00\x0c\xc4\xa7\\\xeb\x17P\x01\x16\xb0\x00\x00\x00\x00'
+0.098 Disassembled: source: 11305, dest: 40647, seq: 3268, ack: 2807884567, window: 5808, FIN
+0.098 Error: Incorrect acknowledgement flag
+0.596 Sent: b'\x9e\xc7,)\xa7\\\xeb\x17\x00\x00\x0c\xc4P\x10\x16\xb0\x00\x00\x00\x00'
+1.096 Sent: b'\x9e\xc7,)\xa7\\\xeb\x17\x00\x00\x0c\xc4P\x10\x16\xb0\x00\x00\x00\x00'
+1.597 Sent: b'\x9e\xc7,)\xa7\\\xeb\x17\x00\x00\x0c\xc4P\x10\x16\xb0\x00\x00\x00\x00'
+2.097 Sent: b'\x9e\xc7,)\xa7\\\xeb\x17\x00\x00\x0c\xc4P\x10\x16\xb0\x00\x00\x00\x00'
+2.598 Error: Connection timed out
+2.598 Closed connection
+2.600 Shutting down

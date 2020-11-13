@@ -1,0 +1,33 @@
+0.000 NEW RUN: Server, TEST: Write_file__Common_drops
+0.075 Received: b'\xe4\xe5^M\x00\x00\x00d\x00\x00\x00\x00P\x02\x05\xa8\x00\x00\x00\x00'
+0.076 Disassembled: source: 58597, dest: 24141, seq: 100, window: 1448, SYN
+0.076 SYN accepted; new connection: 127.0.0.1 on port 58597
+0.077 Assembling: source: 24141, dest: 58597, seq: 2849601838, ack: 101, window: 5808, ACK, SYN
+0.077 Sent: b'^M\xe4\xe5\xa9\xd9y.\x00\x00\x00eP\x12\x16\xb0\x00\x00\x00\x00'
+0.079 Failed to receive packet
+0.080 Failed to receive packet
+0.578 Sent: b'^M\xe4\xe5\xa9\xd9y.\x00\x00\x00eP\x12\x16\xb0\x00\x00\x00\x00'
+0.580 Received: b'\xe4\xe5^M\x00\x00\x00e\xa9\xd9y/P\x10\x16\xb0\x00\x00\x00\x00Lorem ipsum dolo'...
+0.581 Disassembled: source: 58597, dest: 24141, seq: 101, ack: 2849601839, window: 5808, ACK, data: "Lorem ipsum dolo"...
+0.581 Handshake complete
+0.581 Data accepted; writing to file
+0.582 Assembling: source: 24141, dest: 58597, seq: 2849601839, ack: 1549, window: 5808, ACK
+0.582 Failed to send packet
+1.082 Sent: b'^M\xe4\xe5\xa9\xd9y/\x00\x00\x06\rP\x10\x16\xb0\x00\x00\x00\x00'
+1.085 Received: b'\xe4\xe5^M\x00\x00\x06\r\xa9\xd9y/P\x00\x16\xb0\x00\x00\x00\x00mprehensam nam, '...
+1.086 Disassembled: source: 58597, dest: 24141, seq: 1549, ack: 2849601839, window: 5808, data: "mprehensam nam, "...
+1.086 Data accepted; writing to file
+1.086 Assembling: source: 24141, dest: 58597, seq: 2849601839, ack: 2997, window: 5808, ACK
+1.087 Sent: b'^M\xe4\xe5\xa9\xd9y/\x00\x00\x0b\xb5P\x10\x16\xb0\x00\x00\x00\x00'
+1.090 Received: b'\xe4\xe5^M\x00\x00\x0b\xb5\xa9\xd9y/P\x00\x16\xb0\x00\x00\x00\x00ilisi repudiare '...
+1.090 Disassembled: source: 58597, dest: 24141, seq: 2997, ack: 2849601839, window: 5808, data: "ilisi repudiare "...
+1.091 Data accepted; writing to file
+1.091 Assembling: source: 24141, dest: 58597, seq: 2849601839, ack: 3344, window: 5808, ACK
+1.091 Sent: b'^M\xe4\xe5\xa9\xd9y/\x00\x00\r\x10P\x10\x16\xb0\x00\x00\x00\x00'
+1.592 Sent: b'^M\xe4\xe5\xa9\xd9y/\x00\x00\r\x10P\x10\x16\xb0\x00\x00\x00\x00'
+2.092 Sent: b'^M\xe4\xe5\xa9\xd9y/\x00\x00\r\x10P\x10\x16\xb0\x00\x00\x00\x00'
+2.593 Sent: b'^M\xe4\xe5\xa9\xd9y/\x00\x00\r\x10P\x10\x16\xb0\x00\x00\x00\x00'
+3.093 Sent: b'^M\xe4\xe5\xa9\xd9y/\x00\x00\r\x10P\x10\x16\xb0\x00\x00\x00\x00'
+3.593 Error: Connection timed out
+3.594 Closed connection
+3.594 Shutting down

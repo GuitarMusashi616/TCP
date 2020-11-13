@@ -1,0 +1,36 @@
+0.000 NEW RUN: Server, TEST: Write_file__Small_multi-packet
+0.081 Received: b'k\xbb\xa2\x15\x00\x00\x00 \x00\x00\x00\x00P\x02\x05\xac\x00\x00\x00\x00'
+0.082 Disassembled: source: 27579, dest: 41493, seq: 32, window: 1452, SYN
+0.083 SYN accepted; new connection: 127.0.0.1 on port 27579
+0.083 Assembling: source: 41493, dest: 27579, seq: 2997088953, ack: 33, window: 5808, ACK, SYN
+0.083 Sent: b'\xa2\x15k\xbb\xb2\xa3\xf2\xb9\x00\x00\x00!P\x12\x16\xb0\x00\x00\x00\x00'
+0.086 Received: b'k\xbb\xa2\x15\x00\x00\x00!\xb2\xa3\xf2\xbaP\x10\x16\xb0\x00\x00\x00\x00'
+0.087 Disassembled: source: 27579, dest: 41493, seq: 33, ack: 2997088954, window: 5808, ACK
+0.087 Assembling: source: 41493, dest: 27579, seq: 2997088954, ack: 33, window: 5808, ACK
+0.088 Sent: b'\xa2\x15k\xbb\xb2\xa3\xf2\xba\x00\x00\x00!P\x10\x16\xb0\x00\x00\x00\x00'
+0.089 Received: b'k\xbb\xa2\x15\x00\x00\x00!\xb2\xa3\xf2\xbaP\x10\x16\xb0\x00\x00\x00\x00Lorem ipsum dolo'...
+0.089 Disassembled: source: 27579, dest: 41493, seq: 33, ack: 2997088954, window: 5808, ACK, data: "Lorem ipsum dolo"...
+0.089 Handshake complete
+0.090 Data accepted; writing to file
+0.090 Assembling: source: 41493, dest: 27579, seq: 2997088954, ack: 1485, window: 5808, ACK
+0.090 Sent: b'\xa2\x15k\xbb\xb2\xa3\xf2\xba\x00\x00\x05\xcdP\x10\x16\xb0\x00\x00\x00\x00'
+0.091 Received: b'k\xbb\xa2\x15\x00\x00\x00!\xb2\xa3\xf2\xbaP\x10\x16\xb0\x00\x00\x00\x00Lorem ipsum dolo'...
+0.092 Disassembled: source: 27579, dest: 41493, seq: 33, ack: 2997088954, window: 5808, ACK, data: "Lorem ipsum dolo"...
+0.092 Old data; ignoring
+0.093 Received: b'k\xbb\xa2\x15\x00\x00\x05\xcd\xb2\xa3\xf2\xbaP\x00\x16\xb0\x00\x00\x00\x00hensam nam, aper'...
+0.094 Disassembled: source: 27579, dest: 41493, seq: 1485, ack: 2997088954, window: 5808, data: "hensam nam, aper"...
+0.094 Data accepted; writing to file
+0.094 Assembling: source: 41493, dest: 27579, seq: 2997088954, ack: 2937, window: 5808, ACK
+0.095 Sent: b'\xa2\x15k\xbb\xb2\xa3\xf2\xba\x00\x00\x0byP\x10\x16\xb0\x00\x00\x00\x00'
+0.097 Received: b'k\xbb\xa2\x15\x00\x00\x0by\xb2\xa3\xf2\xbaP\x00\x16\xb0\x00\x00\x00\x00pudiare sea. No '...
+0.097 Disassembled: source: 27579, dest: 41493, seq: 2937, ack: 2997088954, window: 5808, data: "pudiare sea. No "...
+0.098 Data accepted; writing to file
+0.098 Assembling: source: 41493, dest: 27579, seq: 2997088954, ack: 3276, window: 5808, ACK
+0.098 Sent: b'\xa2\x15k\xbb\xb2\xa3\xf2\xba\x00\x00\x0c\xccP\x10\x16\xb0\x00\x00\x00\x00'
+0.599 Sent: b'\xa2\x15k\xbb\xb2\xa3\xf2\xba\x00\x00\x0c\xccP\x10\x16\xb0\x00\x00\x00\x00'
+1.099 Sent: b'\xa2\x15k\xbb\xb2\xa3\xf2\xba\x00\x00\x0c\xccP\x10\x16\xb0\x00\x00\x00\x00'
+1.600 Sent: b'\xa2\x15k\xbb\xb2\xa3\xf2\xba\x00\x00\x0c\xccP\x10\x16\xb0\x00\x00\x00\x00'
+2.100 Sent: b'\xa2\x15k\xbb\xb2\xa3\xf2\xba\x00\x00\x0c\xccP\x10\x16\xb0\x00\x00\x00\x00'
+2.600 Error: Connection timed out
+2.601 Closed connection
+2.601 Shutting down

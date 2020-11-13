@@ -1,0 +1,21 @@
+0.000 NEW RUN: Server, TEST: Write_file__Relaxed
+0.080 Received: b'@\x9a\x88n\x00\x00\x00]\x00\x00\x00\x00P\x02\x05\xac\x00\x00\x00\x00'
+0.081 Disassembled: source: 16538, dest: 34926, seq: 93, window: 1452, SYN
+0.081 SYN accepted; new connection: 127.0.0.1 on port 16538
+0.081 Assembling: source: 34926, dest: 16538, seq: 2951517105, ack: 94, window: 5808, ACK, SYN
+0.082 Sent: b'\x88n@\x9a\xaf\xec\x93\xb1\x00\x00\x00^P\x12\x16\xb0\x00\x00\x00\x00'
+0.084 Received: b'@\x9a\x88n\x00\x00\x00^\xaf\xec\x93\xb2P\x10\x16\xb0\x00\x00\x00\x00'
+0.084 Disassembled: source: 16538, dest: 34926, seq: 94, ack: 2951517106, window: 5808, ACK
+0.085 Assembling: source: 34926, dest: 16538, seq: 2951517106, ack: 94, window: 5808, ACK
+0.085 Sent: b'\x88n@\x9a\xaf\xec\x93\xb2\x00\x00\x00^P\x10\x16\xb0\x00\x00\x00\x00'
+0.085 Received: b'@\x9a\x88n\x00\x00\x00^\xaf\xec\x93\xb2P\x10\x16\xb0\x00\x00\x00\x00'
+0.086 Disassembled: source: 16538, dest: 34926, seq: 94, ack: 2951517106, window: 5808, ACK
+0.086 Assembling: source: 34926, dest: 16538, seq: 2951517106, ack: 94, window: 5808, ACK
+0.086 Sent: b'\x88n@\x9a\xaf\xec\x93\xb2\x00\x00\x00^P\x10\x16\xb0\x00\x00\x00\x00'
+0.587 Sent: b'\x88n@\x9a\xaf\xec\x93\xb2\x00\x00\x00^P\x10\x16\xb0\x00\x00\x00\x00'
+1.087 Sent: b'\x88n@\x9a\xaf\xec\x93\xb2\x00\x00\x00^P\x10\x16\xb0\x00\x00\x00\x00'
+1.588 Sent: b'\x88n@\x9a\xaf\xec\x93\xb2\x00\x00\x00^P\x10\x16\xb0\x00\x00\x00\x00'
+2.088 Sent: b'\x88n@\x9a\xaf\xec\x93\xb2\x00\x00\x00^P\x10\x16\xb0\x00\x00\x00\x00'
+2.588 Error: Connection timed out
+2.589 Closed connection
+2.589 Shutting down

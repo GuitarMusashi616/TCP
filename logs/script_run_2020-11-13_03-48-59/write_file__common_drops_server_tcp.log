@@ -1,0 +1,30 @@
+0.000 NEW RUN: Server, TEST: Write_file__Common_drops
+0.079 Received: b'|\xad\xc7\xa4\x00\x00\x00\x13\x00\x00\x00\x00P\x02\x05\xac\x00\x00\x00\x00'
+0.080 Disassembled: source: 31917, dest: 51108, seq: 19, window: 1452, SYN
+0.081 SYN accepted; new connection: 127.0.0.1 on port 31917
+0.081 Assembling: source: 51108, dest: 31917, seq: 3097102080, ack: 20, window: 5808, ACK, SYN
+0.082 Failed to send packet
+0.582 Sent: b'\xc7\xa4|\xad\xb8\x9a\x07\x00\x00\x00\x00\x14P\x12\x16\xb0\x00\x00\x00\x00'
+0.585 Received: b'|\xad\xc7\xa4\x00\x00\x00\x14\xb8\x9a\x07\x01P\x10\x16\xb0\x00\x00\x00\x00'
+0.585 Disassembled: source: 31917, dest: 51108, seq: 20, ack: 3097102081, window: 5808, ACK
+0.586 Assembling: source: 51108, dest: 31917, seq: 3097102081, ack: 20, window: 5808, ACK
+0.586 Sent: b'\xc7\xa4|\xad\xb8\x9a\x07\x01\x00\x00\x00\x14P\x10\x16\xb0\x00\x00\x00\x00'
+0.587 Received: b'|\xad\xc7\xa4\x00\x00\x00\x14\xb8\x9a\x07\x01P\x10\x16\xb0\x00\x00\x00\x00Lorem ipsum dolo'...
+0.588 Disassembled: source: 31917, dest: 51108, seq: 20, ack: 3097102081, window: 5808, ACK, data: "Lorem ipsum dolo"...
+0.588 Handshake complete
+0.588 Data accepted; writing to file
+0.588 Assembling: source: 51108, dest: 31917, seq: 3097102081, ack: 1472, window: 5808, ACK
+0.589 Sent: b'\xc7\xa4|\xad\xb8\x9a\x07\x01\x00\x00\x05\xc0P\x10\x16\xb0\x00\x00\x00\x00'
+0.590 Received: b'|\xad\xc7\xa4\x00\x00\x00\x14\xb8\x9a\x07\x01P\x10\x16\xb0\x00\x00\x00\x00Lorem ipsum dolo'...
+0.590 Disassembled: source: 31917, dest: 51108, seq: 20, ack: 3097102081, window: 5808, ACK, data: "Lorem ipsum dolo"...
+0.590 Old data; ignoring
+0.592 Failed to receive packet
+1.089 Sent: b'\xc7\xa4|\xad\xb8\x9a\x07\x01\x00\x00\x05\xc0P\x10\x16\xb0\x00\x00\x00\x00'
+1.092 Failed to receive packet
+1.589 Sent: b'\xc7\xa4|\xad\xb8\x9a\x07\x01\x00\x00\x05\xc0P\x10\x16\xb0\x00\x00\x00\x00'
+1.592 Failed to receive packet
+2.090 Failed to send packet
+2.590 Failed to send packet
+3.091 Error: Connection timed out
+3.091 Closed connection
+3.094 Shutting down

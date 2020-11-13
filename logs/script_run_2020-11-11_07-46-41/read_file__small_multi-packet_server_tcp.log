@@ -1,0 +1,35 @@
+0.000 NEW RUN: Server, TEST: Read_file__Small_multi-packet
+0.074 Received: b"C'\xba\xa4\x00\x00\x00P\x00\x00\x00\x00P\x02\x05\xa8\x00\x00\x00\x00"
+0.075 Disassembled: source: 17191, dest: 47780, seq: 80, window: 1448, SYN
+0.076 SYN accepted; new connection: 127.0.0.1 on port 17191
+0.076 Assembling: source: 47780, dest: 17191, seq: 2805064717, ack: 81, window: 1448, ACK, SYN
+0.077 Sent: b"\xba\xa4C'\xa71\xe4\r\x00\x00\x00QP\x12\x05\xa8\x00\x00\x00\x00"
+0.080 Received: b"C'\xba\xa4\x00\x00\x00Q\xa71\xe4\x0eP\x10\x05\xa8\x00\x00\x00\x00"
+0.080 Disassembled: source: 17191, dest: 47780, seq: 81, ack: 2805064718, window: 1448, ACK
+0.080 Handshake complete
+0.081 Acknowledged seq: 2805064717
+0.081 Assembling: source: 47780, dest: 17191, seq: 2805064718, ack: 82, window: 1448, data: "Lorem ipsum dolo"...
+0.081 Sent: b"\xba\xa4C'\xa71\xe4\x0e\x00\x00\x00RP\x00\x05\xa8\x00\x00\x00\x00Lorem ipsum dolo"...
+0.084 Received: b"C'\xba\xa4\x00\x00\x00Q\xa71\xe9\xb6P\x10\x05\xa8\x00\x00\x00\x00"
+0.085 Disassembled: source: 17191, dest: 47780, seq: 81, ack: 2805066166, window: 1448, ACK
+0.085 Acknowledged seq: 2805064718
+0.085 Assembling: source: 47780, dest: 17191, seq: 2805066166, ack: 82, window: 1448, data: "mprehensam nam, "...
+0.086 Sent: b"\xba\xa4C'\xa71\xe9\xb6\x00\x00\x00RP\x00\x05\xa8\x00\x00\x00\x00mprehensam nam, "...
+0.088 Received: b"C'\xba\xa4\x00\x00\x00Q\xa71\xef^P\x10\x05\xa8\x00\x00\x00\x00"
+0.089 Disassembled: source: 17191, dest: 47780, seq: 81, ack: 2805067614, window: 1448, ACK
+0.089 Acknowledged seq: 2805066166
+0.089 Finished reading file
+0.090 Assembling: source: 47780, dest: 17191, seq: 2805067614, ack: 82, window: 1448, data: "ilisi repudiare "...
+0.090 Sent: b"\xba\xa4C'\xa71\xef^\x00\x00\x00RP\x00\x05\xa8\x00\x00\x00\x00ilisi repudiare "...
+0.092 Received: b"C'\xba\xa4\x00\x00\x00Q\xa71\xf0\xb9P\x10\x05\xa8\x00\x00\x00\x00"
+0.092 Disassembled: source: 17191, dest: 47780, seq: 81, ack: 2805067961, window: 1448, ACK
+0.092 Acknowledged seq: 2805067614
+0.093 Assembling: source: 47780, dest: 17191, seq: 2805067961, ack: 82, window: 1448, ACK, FIN
+0.093 Sent: b"\xba\xa4C'\xa71\xf0\xb9\x00\x00\x00RP\x11\x05\xa8\x00\x00\x00\x00"
+0.095 Received: b"C'\xba\xa4\x00\x00\x00Q\xa71\xf0\xbaP\x10\x05\xa8\x00\x00\x00\x00"
+0.095 Disassembled: source: 17191, dest: 47780, seq: 81, ack: 2805067962, window: 1448, ACK
+0.095 FIN accepted; sending final packet
+0.096 Assembling: source: 47780, dest: 17191, seq: 2805067962, ack: 82, window: 1448, ACK
+0.096 Sent: b"\xba\xa4C'\xa71\xf0\xba\x00\x00\x00RP\x10\x05\xa8\x00\x00\x00\x00"
+0.096 Closed connection
+0.097 Shutting down

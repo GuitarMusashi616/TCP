@@ -1,0 +1,35 @@
+0.000 NEW RUN: Server, TEST: Read_file__No_file_extension
+0.076 Received: b'[)YO\x00\x00\x00N\x00\x00\x00\x00P\x02\x05\xa8\x00\x00\x00\x00'
+0.077 Disassembled: source: 23337, dest: 22863, seq: 78, window: 1448, SYN
+0.077 SYN accepted; new connection: 127.0.0.1 on port 23337
+0.078 Assembling: source: 22863, dest: 23337, seq: 2970204325, ack: 79, window: 1448, ACK, SYN
+0.078 Sent: b'YO[)\xb1\t\xb8\xa5\x00\x00\x00OP\x12\x05\xa8\x00\x00\x00\x00'
+0.081 Received: b'[)YO\x00\x00\x00O\xb1\t\xb8\xa6P\x10\x05\xa8\x00\x00\x00\x00'
+0.082 Disassembled: source: 23337, dest: 22863, seq: 79, ack: 2970204326, window: 1448, ACK
+0.082 Handshake complete
+0.082 Acknowledged seq: 2970204325
+0.082 Assembling: source: 22863, dest: 23337, seq: 2970204326, ack: 80, window: 1448, data: "Lorem ipsum dolo"...
+0.083 Sent: b'YO[)\xb1\t\xb8\xa6\x00\x00\x00PP\x00\x05\xa8\x00\x00\x00\x00Lorem ipsum dolo'...
+0.086 Received: b'[)YO\x00\x00\x00O\xb1\t\xbeNP\x10\x05\xa8\x00\x00\x00\x00'
+0.086 Disassembled: source: 23337, dest: 22863, seq: 79, ack: 2970205774, window: 1448, ACK
+0.086 Acknowledged seq: 2970204326
+0.087 Assembling: source: 22863, dest: 23337, seq: 2970205774, ack: 80, window: 1448, data: "mprehensam nam, "...
+0.087 Sent: b'YO[)\xb1\t\xbeN\x00\x00\x00PP\x00\x05\xa8\x00\x00\x00\x00mprehensam nam, '...
+0.090 Received: b'[)YO\x00\x00\x00O\xb1\t\xc3\xf6P\x10\x05\xa8\x00\x00\x00\x00'
+0.090 Disassembled: source: 23337, dest: 22863, seq: 79, ack: 2970207222, window: 1448, ACK
+0.091 Acknowledged seq: 2970205774
+0.091 Finished reading file
+0.091 Assembling: source: 22863, dest: 23337, seq: 2970207222, ack: 80, window: 1448, data: "ilisi repudiare "...
+0.092 Sent: b'YO[)\xb1\t\xc3\xf6\x00\x00\x00PP\x00\x05\xa8\x00\x00\x00\x00ilisi repudiare '...
+0.093 Received: b'[)YO\x00\x00\x00O\xb1\t\xc5QP\x10\x05\xa8\x00\x00\x00\x00'
+0.094 Disassembled: source: 23337, dest: 22863, seq: 79, ack: 2970207569, window: 1448, ACK
+0.094 Acknowledged seq: 2970207222
+0.094 Assembling: source: 22863, dest: 23337, seq: 2970207569, ack: 80, window: 1448, ACK, FIN
+0.095 Sent: b'YO[)\xb1\t\xc5Q\x00\x00\x00PP\x11\x05\xa8\x00\x00\x00\x00'
+0.096 Received: b'[)YO\x00\x00\x00O\xb1\t\xc5RP\x10\x05\xa8\x00\x00\x00\x00'
+0.097 Disassembled: source: 23337, dest: 22863, seq: 79, ack: 2970207570, window: 1448, ACK
+0.097 FIN accepted; sending final packet
+0.097 Assembling: source: 22863, dest: 23337, seq: 2970207570, ack: 80, window: 1448, ACK
+0.097 Sent: b'YO[)\xb1\t\xc5R\x00\x00\x00PP\x10\x05\xa8\x00\x00\x00\x00'
+0.097 Closed connection
+0.098 Shutting down
